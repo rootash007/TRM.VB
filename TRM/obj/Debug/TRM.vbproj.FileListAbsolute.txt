@@ -757,7 +757,6 @@ C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\RM.xml
 C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\RM.pdb
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.vbproj.AssemblyReference.cache
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.Form1.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarBack.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmMaterialAddEdit.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmMaterials.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmPermissions.resources
@@ -854,3 +853,4 @@ D:\GithubProjects\TRM.VB\TRM\obj\Debug\RM.exe.manifest
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\RM.application
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.vbproj.CopyComplete
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmProducts.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmImportProductData.resources

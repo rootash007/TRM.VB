@@ -44,6 +44,7 @@ Partial Class FrmActions
         Me.CBOutActions = New System.Windows.Forms.CheckBox()
         Me.CBInActions = New System.Windows.Forms.CheckBox()
         Me.BtnReload = New System.Windows.Forms.Button()
+        Me.BtnImportProducts = New System.Windows.Forms.Button()
         Me.GrpActionsList.SuspendLayout()
         CType(Me.DgvActionsList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -306,12 +307,28 @@ Partial Class FrmActions
         Me.BtnReload.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnReload.UseVisualStyleBackColor = False
         '
+        'BtnImportProducts
+        '
+        Me.BtnImportProducts.BackColor = System.Drawing.Color.White
+        Me.BtnImportProducts.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnImportProducts.Image = CType(resources.GetObject("BtnImportProducts.Image"), System.Drawing.Image)
+        Me.BtnImportProducts.Location = New System.Drawing.Point(1071, 590)
+        Me.BtnImportProducts.Margin = New System.Windows.Forms.Padding(4, 2, 4, 2)
+        Me.BtnImportProducts.Name = "BtnImportProducts"
+        Me.BtnImportProducts.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtnImportProducts.Size = New System.Drawing.Size(175, 85)
+        Me.BtnImportProducts.TabIndex = 46
+        Me.BtnImportProducts.Text = "Import products"
+        Me.BtnImportProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnImportProducts.UseVisualStyleBackColor = False
+        '
         'FrmActions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1259, 685)
+        Me.Controls.Add(Me.BtnImportProducts)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BtnExportToExcel)
         Me.Controls.Add(Me.BtnAddAction)
@@ -358,4 +375,5 @@ Partial Class FrmActions
     Friend WithEvents CmbMaterial As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TxtVendor As TextBox
+    Friend WithEvents BtnImportProducts As Button
 End Class

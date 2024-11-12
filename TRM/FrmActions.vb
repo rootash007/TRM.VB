@@ -114,4 +114,9 @@
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
+
+    Private Sub BtnImportProducts_Click(sender As Object, e As EventArgs) Handles BtnImportProducts.Click
+        FrmImportProductData.ShowDialog()
+
+    End Sub
 End Class

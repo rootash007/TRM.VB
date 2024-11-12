@@ -133,10 +133,10 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCarBack.Designer.vb">
-      <DependentUpon>FrmCarBack.vb</DependentUpon>
+    <Compile Include="FrmImportProductData.Designer.vb">
+      <DependentUpon>FrmImportProductData.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCarBack.vb">
+    <Compile Include="FrmImportProductData.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMaterialAddEdit.Designer.vb">
@@ -374,8 +374,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCarBack.resx">
-      <DependentUpon>FrmCarBack.vb</DependentUpon>
+    <EmbeddedResource Include="FrmImportProductData.resx">
+      <DependentUpon>FrmImportProductData.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaterialAddEdit.resx">
       <DependentUpon>FrmMaterialAddEdit.vb</DependentUpon>

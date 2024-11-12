@@ -267,11 +267,6 @@ Public Class FrmMain
         MsgBox(ActiveUser)
     End Sub
 
-
-    Private Sub שחזוררכבממכירהToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        FrmCarBack.ShowDialog()
-    End Sub
-
     Private Sub TSMCloseAll_Click(sender As Object, e As EventArgs) Handles TSMCloseAll.Click
         For Each Frm As Form In Me.MdiChildren
             Frm.Close()
@@ -362,5 +357,9 @@ Public Class FrmMain
             MsgBox(ex.Message)
         End Try
         'FrmProducts.ShowDialog()
+    End Sub
+
+    Private Sub TSBtnCreateTables_Click(sender As Object, e As EventArgs) Handles TSBtnCreateTables.Click
+        CreateTables()
     End Sub
 End Class

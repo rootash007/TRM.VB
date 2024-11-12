@@ -1422,5 +1422,66 @@ Module ModFunctions
             MsgBox(ex.Message)
         End Try
     End Sub
+    Public Sub CreateTables()
+        Dim Que As String
+        Que = "IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'users') AND type in (N'U'))
+               BEGIN
+
+               CREATE TABLE users(
+               id BIGINT IDENTITY (0, 1) NOT NULL PRIMARY KEY,
+               user_name nvarchar (50) NOT NULL,
+               user_pass nvarchar (50) NOT NULL,
+               user_lvl INT NOT NULL,
+               user_phone nvarchar (50) NOT NULL,
+	           isactive bit NOT NULL DEFAULT (1),
+               ) 
+               END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'action_types') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE action_types(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               action_type_name nvarchar (50) NOT NULL,
+	           isincrease bit NOT NULL,
+               ) 
+               END
+
+               
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'test') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE test(
+               id BIGINT IDENTITY (0, 1) NOT NULL PRIMARY KEY,
+               test_name nvarchar (50) NOT NULL,
+               test_pass nvarchar (50) NOT NULL,
+               ) 
+               END
+
+               INSERT INTO test (test_name,test_pass) values ('admin','0')
+
+               "
+
+        cmd = New SqlCommand
+        MyTab = New DataTable
+        Try
+            MyTab.Clear()
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = Que
+                .Connection = dbcon
+            End With
+            'cmd.Parameters.AddWithValue("@value1", value1)
+            'MsgBox(CarKind)
+
+
+            dbaddapter = New SqlDataAdapter(cmd)
+            dbaddapter.Fill(MyTab)
+            cmd = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
 End Module
