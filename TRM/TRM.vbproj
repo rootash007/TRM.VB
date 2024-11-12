@@ -314,10 +314,10 @@
     <Compile Include="FrmSoldReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTerminate.Designer.vb">
-      <DependentUpon>FrmTerminate.vb</DependentUpon>
+    <Compile Include="FrmProducts.Designer.vb">
+      <DependentUpon>FrmProducts.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmTerminate.vb">
+    <Compile Include="FrmProducts.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmActions.Designer.vb">
@@ -341,6 +341,7 @@
     <Compile Include="ModActions.vb" />
     <Compile Include="ModCounter.vb" />
     <Compile Include="ModCustomers.vb" />
+    <Compile Include="ModDGVDesigns.vb" />
     <Compile Include="ModFunctions.vb" />
     <Compile Include="ModMsgs.vb" />
     <Compile Include="ModMaterials.vb" />
@@ -463,8 +464,8 @@
     <EmbeddedResource Include="FrmSoldReport.resx">
       <DependentUpon>FrmSoldReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTerminate.resx">
-      <DependentUpon>FrmTerminate.vb</DependentUpon>
+    <EmbeddedResource Include="FrmProducts.resx">
+      <DependentUpon>FrmProducts.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmActions.resx">
       <DependentUpon>FrmActions.vb</DependentUpon>

@@ -308,9 +308,7 @@ Public Class FrmMain
         FrmBackUp.ShowDialog()
     End Sub
 
-    Private Sub TSBtnTest_Click(sender As Object, e As EventArgs) Handles TSBtnTest.Click
-        FrmPermissions.ShowDialog()
-    End Sub
+
 
     Private Sub TSPActions_Click(sender As Object, e As EventArgs) Handles TSPActions.Click
         If Application.OpenForms.OfType(Of FrmActions).Any = True Then
@@ -350,5 +348,19 @@ Public Class FrmMain
         End Try
     End Sub
 
-
+    Private Sub TSBtnProducts_Click(sender As Object, e As EventArgs) Handles TSBtnProducts.Click
+        Dim FmProducts As New FrmProducts
+        Try
+            If Application.OpenForms.OfType(Of FrmProducts).Any = True Then
+                FmProducts.Activate()
+            Else
+                'FmProducts = New FrmProducts
+                FmProducts.MdiParent = Me
+                FmProducts.Show()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        'FrmProducts.ShowDialog()
+    End Sub
 End Class

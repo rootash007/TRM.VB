@@ -497,51 +497,7 @@ Module ModFunctions
             .Columns(43).HeaderText = "הסכם מכירה"
             .Columns(44).HeaderText = "הוחלף על"
 
-            ''.Columns(0).Width = 30
-            ''.Columns(1).SortMode = 3
-            '.Columns(1).Width = 45
-            '.Columns(2).Width = 80
-            ''.Columns(3).Width = 50
-            '.Columns(4).Width = 60
-            '.Columns(5).Width = 60
-            '.Columns(6).Width = 60
-            '.Columns(7).Width = 50
-            '.Columns(8).Width = 90
-            '.Columns(9).Width = 35
-            '.Columns(10).Width = 90
-            '.Columns(11).Width = 70
-            '.Columns(12).Width = 50
-            '.Columns(13).Width = 50
-            '.Columns(14).Width = 50
-            '.Columns(15).Width = 70
-            '.Columns(16).Width = 50
-            '.Columns(17).Width = 50
-            '.Columns(18).Width = 50
-            '.Columns(19).Width = 60
-            '.Columns(20).Width = 100
-            '.Columns(21).Width = 50
-            '.Columns(22).Width = 50
-            '.Columns(23).Width = 50
-            '.Columns(24).Width = 50
-            '.Columns(25).Width = 50
-            '.Columns(26).Width = 50
-            '.Columns(27).Width = 50
-            '.Columns(28).Width = 70
-            '.Columns(29).Width = 60
-            '.Columns(30).Width = 50
-            '.Columns(31).Width = 50
-            '.Columns(32).Width = 50
-            '.Columns(33).Width = 50
-            '.Columns(34).Width = 50
-            '.Columns(35).Width = 50
-            '.Columns(36).Width = 50
-            '.Columns(37).Width = 50
-            '.Columns(38).Width = 50
-            '.Columns(39).Width = 40
-            '.Columns(40).Width = 50
-            '.Columns(41).Width = 50
-            '.Columns(42).Width = 50
-            '.Columns(43).Width = 50
+
 
 
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
