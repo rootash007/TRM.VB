@@ -1,0 +1,757 @@
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\bin\Debug\TRM.exe.config
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\bin\Debug\TRM.exe
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\bin\Debug\TRM.pdb
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\bin\Debug\TRM.xml
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\obj\Debug\TRM.Resources.resources
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\obj\Debug\TRM.vbproj.GenerateResource.Cache
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\obj\Debug\TRM.exe
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\obj\Debug\TRM.xml
+C:\Users\PC\AppData\Local\Temporary Projects\TRM\obj\Debug\TRM.pdb
+D:\Project\TRM\TRM\bin\Debug\TRM.exe.config
+D:\Project\TRM\TRM\obj\Debug\TRM.exe
+D:\Project\TRM\TRM\obj\Debug\TRM.xml
+D:\Project\TRM\TRM\obj\Debug\TRM.pdb
+D:\Project\TRM\TRM\obj\Debug\TRM.FrmMain.resources
+D:\Project\TRM\TRM\obj\Debug\TRM.Resources.resources
+D:\Project\TRM\TRM\obj\Debug\TRM.vbproj.GenerateResource.Cache
+D:\Project\TRM\TRM\bin\Debug\TRM.exe
+D:\Project\TRM\TRM\bin\Debug\TRM.pdb
+D:\Project\TRM\TRM\bin\Debug\TRM.xml
+D:\Project\TRM\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+D:\Project\TRM\TRM\obj\Debug\TRM.FrmVendors.resources
+D:\Project\TRM\TRM\obj\Debug\TRM.FrmAddVendors.resources
+D:\Project\TRM\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+D:\Project\TRM\TRM\obj\Debug\TRM.FrmJobInfoUpdate.resources
+C:\Talal\TRM\TRM\bin\Debug\TRM.exe.config
+C:\Talal\TRM\TRM\obj\Debug\TRM.exe
+C:\Talal\TRM\TRM\obj\Debug\TRM.xml
+C:\Talal\TRM\TRM\obj\Debug\TRM.pdb
+C:\Talal\TRM\TRM\bin\Debug\TRM.exe
+C:\Talal\TRM\TRM\bin\Debug\TRM.pdb
+C:\Talal\TRM\TRM\bin\Debug\TRM.xml
+C:\Talal\TRM\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\Talal\TRM\TRM\obj\Debug\TRM.FrmAddVendors.resources
+C:\Talal\TRM\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\Talal\TRM\TRM\obj\Debug\TRM.FrmJobInfoUpdate.resources
+C:\Talal\TRM\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Talal\TRM\TRM\obj\Debug\TRM.Resources.resources
+C:\Talal\TRM\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\Talal\TRM\TRM\obj\Debug\TRM.vbproj.GenerateResource.Cache
+C:\Talal\Project\TRM\TRM\bin\Debug\TRM.exe.config
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.exe
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.xml
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.pdb
+C:\Talal\Project\TRM\TRM\bin\Debug\TRM.exe
+C:\Talal\Project\TRM\TRM\bin\Debug\TRM.pdb
+C:\Talal\Project\TRM\TRM\bin\Debug\TRM.xml
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmAddVendors.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmJobInfoUpdate.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.Resources.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.vbproj.GenerateResource.Cache
+D:\Project\Project\TRM\TRM\bin\Debug\TRM.exe.config
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.exe
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.xml
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.pdb
+D:\Project\Project\TRM\TRM\bin\Debug\TRM.exe
+D:\Project\Project\TRM\TRM\bin\Debug\TRM.pdb
+D:\Project\Project\TRM\TRM\bin\Debug\TRM.xml
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmAddVendors.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmJobInfoUpdate.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmMain.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.Resources.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmVendors.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.vbproj.GenerateResource.Cache
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmCarCard.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmCarCard.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmCarSale.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.vbprojResolveAssemblyReference.cache
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmCarSale.resources
+D:\Project\Project\TRM\TRM\obj\Debug\RdlCompile.cache
+D:\Project\Project\TRM\TRM\obj\Debug\RdlCompile.compiled
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.vbprojResolveAssemblyReference.cache
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\RdlCompile.cache
+C:\Talal\Project\TRM\TRM\obj\Debug\RdlCompile.compiled
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmBackUp.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmCarKMT.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmBackUp.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmCarKMT.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmReportChose.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmReportChose.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\Talal\Project\TRM\TRM\obj\Debug\TRM.FrmSoldReport.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmSoldReport.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmSoldCard.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmLogin.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmUsers.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmAddUserUpdate.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmCarDelete.resources
+D:\Project\Project\TRM\TRM\bin\Debug\IrisSkin2.dll
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.Form1.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmOkMsg.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmYesNoMsg.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmMainList.resources
+D:\Project\Project\TRM\TRM\obj\Debug\TRM.FrmTestNeeded.resources
+C:\TRM\TRM\bin\Debug\TRM.exe.config
+C:\TRM\TRM\obj\Debug\TRM.exe
+C:\TRM\TRM\obj\Debug\TRM.xml
+C:\TRM\TRM\obj\Debug\TRM.pdb
+C:\TRM\TRM\bin\Debug\TRM.exe
+C:\TRM\TRM\bin\Debug\TRM.pdb
+C:\TRM\TRM\bin\Debug\TRM.xml
+C:\TRM\TRM\obj\Debug\TRM.vbprojResolveAssemblyReference.cache
+C:\TRM\TRM\obj\Debug\TRM.Form1.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmMainList.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmAddUserUpdate.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmAddVendors.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmBackUp.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCarCard.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCarDelete.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCarKMT.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCarSale.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmJobInfoUpdate.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmLogin.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmMain.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmOkMsg.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmReportChose.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmSoldCard.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmSoldReport.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmTestNeeded.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmUsers.resources
+C:\TRM\TRM\obj\Debug\TRM.Resources.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\TRM\TRM\obj\Debug\TRM.vbproj.GenerateResource.Cache
+C:\TRM\TRM\obj\Debug\RdlCompile.cache
+C:\TRM\TRM\obj\Debug\RdlCompile.compiled
+C:\TRM\TRM\obj\Debug\TRM.FrmTransactionCancel.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmSearch.resources
+C:\TRM\TRM\bin\Debug\TRM.exe.manifest
+C:\TRM\TRM\bin\Debug\TRM.application
+C:\TRM\TRM\obj\Debug\TRM.exe.manifest
+C:\TRM\TRM\obj\Debug\TRM.application
+C:\TRM\TRM\obj\Debug\TRM.FrmMlaiYear.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmMlaiList.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmTerminate.resources
+C:\TRM\TRM\obj\Debug\TRM.FrmCarBack.resources
+D:\TRM\TRM\obj\Debug\TRM.vbproj.AssemblyReference.cache
+D:\TRM\TRM\obj\Debug\TRM.Form1.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCarBack.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmAddVendors.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmBackUp.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCarCard.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCarDelete.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCarKMT.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCarSale.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmCustomers.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmLogin.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmMain.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmOkMsg.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmReportChose.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmSearch.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmSoldCard.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmSoldReport.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmTerminate.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmUsers.resources
+D:\TRM\TRM\obj\Debug\TRM.Resources.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmVendors.resources
+D:\TRM\TRM\obj\Debug\TRM.vbproj.GenerateResource.cache
+D:\TRM\TRM\obj\Debug\TRM.vbproj.CoreCompileInputs.cache
+D:\TRM\TRM\obj\Debug\TRM.exe
+D:\TRM\TRM\obj\Debug\TRM.xml
+D:\TRM\TRM\obj\Debug\TRM.pdb
+D:\TRM\TRM\bin\Debug\x86\SqlServerSpatial160.dll
+D:\TRM\TRM\bin\Debug\x64\SqlServerSpatial160.dll
+D:\TRM\TRM\bin\Debug\TRM.exe.config
+D:\TRM\TRM\bin\Debug\TRM.exe.manifest
+D:\TRM\TRM\bin\Debug\TRM.application
+D:\TRM\TRM\bin\Debug\TRM.exe
+D:\TRM\TRM\bin\Debug\TRM.pdb
+D:\TRM\TRM\bin\Debug\TRM.xml
+D:\TRM\TRM\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\TRM\TRM\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\TRM\TRM\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\TRM\TRM\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\TRM\TRM\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\TRM\TRM\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\TRM\TRM\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\TRM\TRM\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\TRM\TRM\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\TRM\TRM\obj\Debug\TRM.exe.manifest
+D:\TRM\TRM\obj\Debug\TRM.application
+D:\TRM\TRM\obj\Debug\TRM.vbproj.CopyComplete
+D:\TRM\TRM\obj\Debug\TRM.FrmMaterials.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmMaterialAddEdit.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmUserAddEdit.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmPermissions.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmMaterialsImportExcel.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmActions.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmActionAdd.resources
+D:\TRM\TRM\obj\Debug\TRM.FrmActionsTypes.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\TRM.exe.config
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\TRM.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\TRM.application
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\TRM.exe
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\TRM.pdb
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\TRM.xml
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.vbproj.AssemblyReference.cache
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.Form1.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCarBack.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmMaterialAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmMaterials.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmPermissions.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmActionAdd.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmUserAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmAddVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmBackUp.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCarCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCarDelete.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCarKMT.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCarSale.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmActionsTypes.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmLogin.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmOkMsg.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmReportChose.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmSearch.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmSoldCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmTerminate.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmActions.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmMaterialsImportExcel.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmUsers.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.Resources.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.vbproj.GenerateResource.cache
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.vbproj.CoreCompileInputs.cache
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.application
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.vbproj.Up2Date
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.exe
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.xml
+C:\Users\Win11\Desktop\TRM 0.1.2\TRM\obj\Debug\TRM.pdb
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\TRM.exe.config
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\TRM.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\TRM.application
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\TRM.exe
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\TRM.pdb
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\TRM.xml
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.vbproj.AssemblyReference.cache
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.Form1.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCarBack.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmMaterialAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmMaterials.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmPermissions.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmActionAdd.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmUserAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmAddVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmBackUp.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCarCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCarDelete.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCarKMT.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCarSale.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmActionsTypes.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmLogin.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmOkMsg.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmReportChose.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmSearch.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmSoldCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmTerminate.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmActions.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmMaterialsImportExcel.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmUsers.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.Resources.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.vbproj.GenerateResource.cache
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.vbproj.CoreCompileInputs.cache
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.application
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.vbproj.Up2Date
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.exe
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.xml
+C:\Users\Win11\Desktop\TRM 0.1.2 - Copy\TRM\obj\Debug\TRM.pdb
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.vbproj.AssemblyReference.cache
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.Form1.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCarBack.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmMaterialAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmMaterials.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmPermissions.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmActionAdd.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmUserAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmAddVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmBackUp.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCarCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCarDelete.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCarKMT.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCarSale.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmActionsTypes.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmLogin.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmOkMsg.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmReportChose.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmSearch.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmSoldCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmTerminate.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmActions.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmMaterialsImportExcel.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmUsers.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.Resources.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.vbproj.GenerateResource.cache
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.vbproj.CoreCompileInputs.cache
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\TRM.vbproj.Up2Date
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\RW.exe.config
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\RW.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\RW.application
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\RW.exe
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\RW.pdb
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\bin\Debug\RW.xml
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\RW.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\RW.application
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\RW.exe
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\RW.xml
+C:\Users\Win11\Desktop\TRM 0.1.4\TRM\obj\Debug\RW.pdb
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\RW.exe.config
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\RW.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\RW.application
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\RW.exe
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\RW.pdb
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\RW.xml
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.vbproj.AssemblyReference.cache
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.Form1.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCarBack.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmMaterialAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmMaterials.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmPermissions.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmActionAdd.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmUserAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmBackUp.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCarCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCarDelete.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCarKMT.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCarSale.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmActionsTypes.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmLogin.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmOkMsg.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmReportChose.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmSearch.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmSoldCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmTerminate.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmActions.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmMaterialsImportExcel.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmUsers.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.Resources.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.vbproj.GenerateResource.cache
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.vbproj.CoreCompileInputs.cache
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\RW.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\RW.application
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.vbproj.Up2Date
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\RW.exe
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\RW.xml
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\RW.pdb
+C:\Users\Win11\Desktop\TRM 0.1.5\TRM\obj\Debug\TRM.FrmDataBaseSettings.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.vbproj.AssemblyReference.cache
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.Form1.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCarBack.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmMaterialAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmMaterials.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmPermissions.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmActionAdd.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmPrintSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmAddCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmAddNewCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmUserAddEdit.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmDataBaseSettings.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmBackUp.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCarCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCarDelete.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCarKMT.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCarSale.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmCustomers.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmDeletedReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmActionsTypes.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmLogin.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmMain.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmOkMsg.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmReportChose.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmSearch.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmSoldCard.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmSoldCardPrint.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmSoldReport.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmTerminate.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmActions.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmMaterialsImportExcel.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmUsers.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.Resources.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.FrmVendors.resources
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.vbproj.GenerateResource.cache
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.vbproj.CoreCompileInputs.cache
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\TRM.vbproj.Up2Date
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\RM.exe.config
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\RM.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\RM.application
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\RM.exe
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\RM.pdb
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\bin\Debug\RM.xml
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\RM.exe.manifest
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\RM.application
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\RM.exe
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\RM.xml
+C:\Users\Win11\Desktop\TRM 0.1.6\TRM\obj\Debug\RM.pdb
