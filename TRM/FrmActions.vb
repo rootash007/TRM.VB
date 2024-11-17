@@ -1,8 +1,11 @@
 ﻿Public Class FrmActions
 
     'Dim IsIncrease As Boolean
+    Public SelectedRow As Integer
 
     Public Sub FrmActions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'MsgBox(SelectedRow)
+        If DgvActionsList.RowCount > 0 Then DgvActionsList.CurrentCell = DgvActionsList.Rows(SelectedRow).Cells(1)
         If AdminMode = True Then
             BtnEditAction.Visible = True
             BtnDeleteAction.Visible = True
@@ -39,6 +42,7 @@
         isAddAction = True
         FmActionAdd = New FrmActionAdd
         FmActionAdd.ShowDialog()
+        SelectedRow = DgvActionsList.CurrentRow.Index
     End Sub
 
     Public Sub BtnReload_Click(sender As Object, e As EventArgs) Handles BtnReload.Click
@@ -94,6 +98,8 @@
         isAddAction = False
         FmActionAdd = New FrmActionAdd
         FmActionAdd.ShowDialog()
+
+
     End Sub
 
     Private Sub BtnDeleteAction_Click(sender As Object, e As EventArgs) Handles BtnDeleteAction.Click
@@ -103,9 +109,24 @@
             Dim DelMsg As DialogResult
             DelMsg = MsgBox("هل انت متأكد انك تريد حذف العملية", vbYesNo + vbQuestion, "حذف")
             If DelMsg = 6 Then
-                DeleteAction(DgvActionsList.CurrentRow.Cells(0).Value)
-                'FrmActions_Load(Me, e)
-                ReloadActions()
+                Dim NewQuantity As Double
+                Dim que As String = "select * from materials where material_loc_barcode = @loc_barcode" ' & CmbLocBarcode.Text & ""
+                FillQuantity(que, DgvActionsList.CurrentRow.Cells(2).Value)
+                If DgvActionsList.CurrentRow.Cells(11).Value = True Then
+                    NewQuantity = MyTab.Rows(0).Item(4) - DgvActionsList.CurrentRow.Cells(6).Value
+
+                Else
+                    NewQuantity = MyTab.Rows(0).Item(4) + DgvActionsList.CurrentRow.Cells(6).Value
+
+                End If
+                'NewQuantity = MyTab.Rows(0).Item(4) ' - DgvActionsList.CurrentRow.Cells(6).Value
+
+                'MsgBox(NewQuantity)
+                'MsgBox(DgvActionsList.CurrentRow.Cells(6).Value)
+                DeleteAction(DgvActionsList.CurrentRow.Cells(0).Value, DgvActionsList.CurrentRow.Cells(2).Value, NewQuantity)
+                FmActions.FrmActions_Load(0, e)
+                FmMaterials.FrmMaterials_Load(0, e)
+                'ReloadActions()
             End If
 
         End If
@@ -119,4 +140,9 @@
         FrmImportProductData.ShowDialog()
 
     End Sub
+
+    'Private Sub FrmActions_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+    '    'MsgBox(SelectedRow)
+    '    If DgvActionsList.RowCount > 0 Then DgvActionsList.CurrentCell = DgvActionsList.Rows(SelectedRow).Cells(1)
+    'End Sub
 End Class

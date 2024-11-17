@@ -1,7 +1,10 @@
 ﻿Public Class FrmActionAdd
     Dim ActionTypeTab As DataTable
     Dim isIncrease As Boolean
+    Dim OldActionType As Boolean
+    Dim OldQuantity As Double
     Private Sub FrmActionAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FmActions.SelectedRow = FmActions.DgvActionsList.CurrentRow.Index
         Dim que As String
         If AdminMode = True Then
             DTPDate.Visible = True
@@ -39,19 +42,19 @@
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-
         Else
             CmbMaterialName.Text = FmActions.DgvActionsList.CurrentRow.Cells(1).Value
             CmbLocBarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(2).Value
             Txtbarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(3).Value
             TxtBlockNumber.Text = FmActions.DgvActionsList.CurrentRow.Cells(4).Value
-            CmbActionType.Text = FmActions.DgvActionsList.CurrentRow.Cells(5).Value
+            CmbActionType.Text = FmActions.DgvActionsList.CurrentRow.Cells(12).Value
             NumQuantity.Value = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
             TxtVendor.Text = FmActions.DgvActionsList.CurrentRow.Cells(8).Value
             TxtOrder.Text = FmActions.DgvActionsList.CurrentRow.Cells(9).Value
             TxtMoreInfo.Text = FmActions.DgvActionsList.CurrentRow.Cells(10).Value
             DTPDate.Value = FmActions.DgvActionsList.CurrentRow.Cells(7).Value
-
+            OldActionType = FmActions.DgvActionsList.CurrentRow.Cells(11).Value
+            OldQuantity = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
 
         End If
 
@@ -90,11 +93,7 @@
                 MsgBox("choose action type please", vbOKOnly + vbInformation, "alert")
                 Return
             End If
-            'For i = 0 To ActionTypeTab.Rows.Count - 1
-            '    If ActionTypeTab.Rows(i).Item(0) = CmbActionType.SelectedValue Then
-            '        isIncrease = ActionTypeTab.Rows(i).Item(2)
-            '    End If
-            'Next
+
             If CmbActionType.SelectedValue = True Then
                 If CmbMaterialName.Text = "" Then
                     MsgBox("name is requierd", vbOKOnly + vbCritical, "message")
@@ -107,9 +106,26 @@
                     Return
                 End If
                 Dim que As String = "select * from materials where material_loc_barcode = @loc_barcode" ' & CmbLocBarcode.Text & ""
-                FillQuantity(que)
-                NewQuantity = MyTab.Rows(0).Item(4) + NumQuantity.Value
-                'MsgBox(isIncrease)
+                FillQuantity(que, CmbLocBarcode.Text)
+
+
+
+                If isAddAction = True Then
+                    NewQuantity = MyTab.Rows(0).Item(4) + NumQuantity.Value
+                Else
+                    If OldActionType = True Then
+                        'MsgBox("was in still in")
+                        NewQuantity = MyTab.Rows(0).Item(4) - OldQuantity + NumQuantity.Value
+                    Else
+                        'MsgBox("was out changed to in")
+                        NewQuantity = MyTab.Rows(0).Item(4) + OldQuantity + NumQuantity.Value
+                    End If
+                End If
+
+                'NewQuantity = MyTab.Rows(0).Item(4) + NumQuantity.Value
+
+
+
             ElseIf CmbActionType.SelectedValue = False Then
                 If CmbMaterialName.Text = "" Then
                     MsgBox("name is requierd", vbOKOnly + vbCritical, "message")
@@ -135,8 +151,23 @@
                 End If
                 'MsgBox(isIncrease)
                 Dim que As String = "select * from materials where material_loc_barcode = @loc_barcode" ' & CmbLocBarcode.Text & ""
-                FillQuantity(que)
-                NewQuantity = MyTab.Rows(0).Item(4) - NumQuantity.Value
+                FillQuantity(que, CmbLocBarcode.Text)
+
+                If isAddAction = True Then
+                    NewQuantity = MyTab.Rows(0).Item(4) - NumQuantity.Value
+                Else
+                    If OldActionType = True Then
+                        'MsgBox("was in changed to out")
+                        NewQuantity = MyTab.Rows(0).Item(4) - OldQuantity - NumQuantity.Value
+                    Else
+                        'MsgBox("was out still out")
+                        NewQuantity = MyTab.Rows(0).Item(4) + OldQuantity - NumQuantity.Value
+                    End If
+                End If
+
+                'NewQuantity = MyTab.Rows(0).Item(4) - NumQuantity.Value
+
+
             End If
             If AdminMode = True Then
                 If isAddAction = True Then
@@ -156,6 +187,7 @@
             End If
             FmActions.FrmActions_Load(0, e)
             FmMaterials.FrmMaterials_Load(0, e)
+            If FmActions.DgvActionsList.RowCount > 0 Then FmActions.DgvActionsList.CurrentCell = FmActions.DgvActionsList.Rows(FmActions.SelectedRow).Cells(1)
             Me.Close()
         Catch ex As Exception
             MsgBox(ex.Message)

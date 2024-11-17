@@ -163,8 +163,8 @@ Module ModFunctions
         End Try
     End Sub
 
-    Public Sub FillQuantity(Que As String)
-        Dim loc_barcode As String = FmActionAdd.CmbLocBarcode.Text
+    Public Sub FillQuantity(Que As String, loc_barcode As String)
+        'Dim loc_barcode As String = FmActionAdd.CmbLocBarcode.Text
         cmd = New SqlCommand
         MyTab = New DataTable
         Try
@@ -728,34 +728,6 @@ Module ModFunctions
         Finally
             dbcon.Close()
         End Try
-    End Sub
-
-    Public Sub LoadCarCard(Frm As Object)
-        With FrmCarCard
-            .TxtCarSerial.Text = Frm.DgvMain.CurrentRow.Cells(1).Value
-            .TxtCarId.Text = Frm.DgvMain.CurrentRow.Cells(2).Value
-            .TxtCarKind.Text = Frm.DgvMain.CurrentRow.Cells(4).Value
-            .TxtCarModel.Text = Frm.DgvMain.CurrentRow.Cells(5).Value
-            .TxtCarType.Text = Frm.DgvMain.CurrentRow.Cells(6).Value
-            .TxtCarYear.Text = Frm.DgvMain.CurrentRow.Cells(7).Value
-            .TxtCarColor.Text = Frm.DgvMain.CurrentRow.Cells(8).Value
-            .TxtCarHand.Text = Frm.DgvMain.CurrentRow.Cells(9).Value
-            .TxtMainIs.Text = Frm.DgvMain.CurrentRow.Cells(10).Value
-            .TxtCarOil.Text = Frm.DgvMain.CurrentRow.Cells(11).Value
-            .TxtCarGear.Text = Frm.DgvMain.CurrentRow.Cells(12).Value
-            .TxtEngine.Text = Frm.DgvMain.CurrentRow.Cells(13).Value
-            .TxtCarKM.Text = Frm.DgvMain.CurrentRow.Cells(14).Value
-            .TxtPriceOut.Text = Frm.DgvMain.CurrentRow.Cells(15).Value
-            .TxtShelda.Text = Frm.DgvMain.CurrentRow.Cells(16).Value
-            .TxtCarCode.Text = Frm.DgvMain.CurrentRow.Cells(17).Value
-            .TxtKeyNum.Text = Frm.DgvMain.CurrentRow.Cells(18).Value
-            .TxtDateTest.Text = Frm.DgvMain.CurrentRow.Cells(20).Value
-            .TxtCarInfo.Text = Frm.DgvMain.CurrentRow.Cells(23).Value
-            .ChkRoof.Checked = Frm.DgvMain.CurrentRow.Cells(24).Value
-            .ChkVav.Checked = Frm.DgvMain.CurrentRow.Cells(25).Value
-            .ChkWheels.Checked = Frm.DgvMain.CurrentRow.Cells(26).Value
-            .ChkSeats.Checked = Frm.DgvMain.CurrentRow.Cells(27).Value
-        End With
     End Sub
 
     Public Sub NumbersOnly(e As KeyPressEventArgs)

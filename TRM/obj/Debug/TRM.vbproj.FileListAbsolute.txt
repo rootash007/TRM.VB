@@ -768,7 +768,6 @@ D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmUserAddEdit.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmDataBaseSettings.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmAgreementPrint.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmBackUp.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarCard.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarDelete.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarKMT.resources
@@ -851,6 +850,7 @@ D:\GithubProjects\TRM.VB\TRM\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisuali
 D:\GithubProjects\TRM.VB\TRM\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\RM.exe.manifest
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\RM.application
-D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.vbproj.CopyComplete
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmProducts.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmImportProductData.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.vbproj.Up2Date
+D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmUnits.resources

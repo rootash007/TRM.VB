@@ -86,7 +86,7 @@ Partial Class FrmActions
         Me.LblStartDate.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.LblStartDate.Location = New System.Drawing.Point(1157, 21)
         Me.LblStartDate.Name = "LblStartDate"
-        Me.LblStartDate.Size = New System.Drawing.Size(61, 21)
+        Me.LblStartDate.Size = New System.Drawing.Size(52, 17)
         Me.LblStartDate.TabIndex = 1
         Me.LblStartDate.Text = "من تاريخ"
         '
@@ -95,7 +95,7 @@ Partial Class FrmActions
         Me.DTPStartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPStartDate.Location = New System.Drawing.Point(1004, 18)
         Me.DTPStartDate.Name = "DTPStartDate"
-        Me.DTPStartDate.Size = New System.Drawing.Size(147, 26)
+        Me.DTPStartDate.Size = New System.Drawing.Size(147, 22)
         Me.DTPStartDate.TabIndex = 2
         '
         'BtnExportToExcel
@@ -179,7 +179,7 @@ Partial Class FrmActions
         Me.Label1.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.Label1.Location = New System.Drawing.Point(922, 22)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 21)
+        Me.Label1.Size = New System.Drawing.Size(59, 17)
         Me.Label1.TabIndex = 43
         Me.Label1.Text = "حتى تاريخ"
         '
@@ -188,7 +188,7 @@ Partial Class FrmActions
         Me.DTPEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPEndDate.Location = New System.Drawing.Point(769, 18)
         Me.DTPEndDate.Name = "DTPEndDate"
-        Me.DTPEndDate.Size = New System.Drawing.Size(147, 26)
+        Me.DTPEndDate.Size = New System.Drawing.Size(147, 22)
         Me.DTPEndDate.TabIndex = 44
         '
         'GroupBox1
@@ -219,7 +219,7 @@ Partial Class FrmActions
         Me.Label4.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.Label4.Location = New System.Drawing.Point(513, 105)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 21)
+        Me.Label4.Size = New System.Drawing.Size(58, 17)
         Me.Label4.TabIndex = 54
         Me.Label4.Text = "اسم المورد"
         '
@@ -227,7 +227,7 @@ Partial Class FrmActions
         '
         Me.TxtVendor.Location = New System.Drawing.Point(407, 102)
         Me.TxtVendor.Name = "TxtVendor"
-        Me.TxtVendor.Size = New System.Drawing.Size(100, 26)
+        Me.TxtVendor.Size = New System.Drawing.Size(100, 22)
         Me.TxtVendor.TabIndex = 53
         '
         'Label3
@@ -236,7 +236,7 @@ Partial Class FrmActions
         Me.Label3.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.Label3.Location = New System.Drawing.Point(801, 105)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 21)
+        Me.Label3.Size = New System.Drawing.Size(56, 17)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "اسم المنتج"
         '
@@ -247,7 +247,7 @@ Partial Class FrmActions
         Me.CmbMaterial.FormattingEnabled = True
         Me.CmbMaterial.Location = New System.Drawing.Point(674, 102)
         Me.CmbMaterial.Name = "CmbMaterial"
-        Me.CmbMaterial.Size = New System.Drawing.Size(121, 25)
+        Me.CmbMaterial.Size = New System.Drawing.Size(121, 23)
         Me.CmbMaterial.TabIndex = 51
         '
         'Label2
@@ -256,7 +256,7 @@ Partial Class FrmActions
         Me.Label2.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.Label2.Location = New System.Drawing.Point(1073, 105)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(145, 21)
+        Me.Label2.Size = New System.Drawing.Size(120, 17)
         Me.Label2.TabIndex = 50
         Me.Label2.Text = "عمليات حسب المستخدم"
         '
@@ -267,7 +267,7 @@ Partial Class FrmActions
         Me.CmbUserName.FormattingEnabled = True
         Me.CmbUserName.Location = New System.Drawing.Point(946, 102)
         Me.CmbUserName.Name = "CmbUserName"
-        Me.CmbUserName.Size = New System.Drawing.Size(121, 25)
+        Me.CmbUserName.Size = New System.Drawing.Size(121, 23)
         Me.CmbUserName.TabIndex = 49
         '
         'CBOutActions
@@ -276,7 +276,7 @@ Partial Class FrmActions
         Me.CBOutActions.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.CBOutActions.Location = New System.Drawing.Point(1079, 78)
         Me.CBOutActions.Name = "CBOutActions"
-        Me.CBOutActions.Size = New System.Drawing.Size(135, 25)
+        Me.CBOutActions.Size = New System.Drawing.Size(113, 21)
         Me.CBOutActions.TabIndex = 48
         Me.CBOutActions.Text = "عمليات الاستهلاك"
         Me.CBOutActions.UseVisualStyleBackColor = True
@@ -287,7 +287,7 @@ Partial Class FrmActions
         Me.CBInActions.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.CBInActions.Location = New System.Drawing.Point(1093, 49)
         Me.CBInActions.Name = "CBInActions"
-        Me.CBInActions.Size = New System.Drawing.Size(121, 25)
+        Me.CBInActions.Size = New System.Drawing.Size(101, 21)
         Me.CBInActions.TabIndex = 47
         Me.CBInActions.Text = "عمليات الادخال"
         Me.CBInActions.UseVisualStyleBackColor = True
@@ -324,7 +324,7 @@ Partial Class FrmActions
         '
         'FrmActions
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1259, 685)

@@ -200,15 +200,6 @@ Module ModActions
         Try
             worksheet = workbook.ActiveSheet
             worksheet.Name = "דוח פעולות"
-            'worksheet.Cells(row,column).value = "test"
-
-            'For i = 0 To FrmCounts.DGVBadsKinds.RowCount - 1
-            '    If FrmCounts.DGVBadsKinds.Rows(i).Cells(FrmCounts.DGVBadsKinds.Columns.Count - 1).Value.Contains("רץ") Then
-            '        RazCount += 1
-            '    Else
-            '        SqurCount += 1
-            '    End If
-            'Next
 
 
             For i = 0 To FmActions.DgvActionsList.ColumnCount - 1
@@ -217,201 +208,10 @@ Module ModActions
                     worksheet.Cells(d + 2, i + 1).value = FmActions.DgvActionsList.Rows(d).Cells(i).Value
                     FrmMain.TSMainProgBar.Increment(1)
                 Next
-                'If i < 6 Then
-                '    For d = 0 To FmActions.DgvActionsList.RowCount - 1
-                '        worksheet.Cells(d + 2, i + 1).value = FmActions.DgvActionsList.Rows(d).Cells(i).Value
-                '        FrmMain.TSMainProgBar.Increment(1)
-                '    Next
-                'ElseIf i = 6 Then
-                '    For d = 0 To FmActions.DgvActionsList.RowCount - 1
-                '        worksheet.Cells(d + 2, i + 1).value = FmActions.DgvActionsList.Rows(d).Cells(i + 6).Value
-                '        FrmMain.TSMainProgBar.Increment(1)
-                '    Next
-                'ElseIf i > 6 Then
-                '    For d = 0 To FmActions.DgvActionsList.RowCount - 1
-                '        worksheet.Cells(d + 2, i + 2).value = FmActions.DgvActionsList.Rows(d).Cells(i).Value
-                '        FrmMain.TSMainProgBar.Increment(1)
-                '    Next
-                'ElseIf 1 = 11 Then
-                '    'For d = 0 To FmActions.DgvActionsList.RowCount - 1
-                '    '    worksheet.Cells(d + 2, i - 6).value = FmActions.DgvActionsList.Rows(d).Cells(i).Value
-                '    '    FrmMain.TSMainProgBar.Increment(1)
-                '    'Next
 
-                'End If
-                'If i = 0 Then
-                '    For d = 0 To FrmCounts.DGVBadsKinds.Columns.Count - 1
-                '        worksheet.Cells(2, 7 + d).value = FrmCounts.DGVBadsKinds.Columns(d).HeaderText
-                '        worksheet.Cells(5 + RazCount, 7 + d).value = FrmCounts.DGVBadsKinds.Columns(d).HeaderText
-                '    Next
-                'End If
-                'If FrmCounts.DGVBadsKinds.Rows(i).Cells(FrmCounts.DGVBadsKinds.Columns.Count - 1).Value.Contains("רץ") Then
-                '    For d = 0 To FrmCounts.DGVBadsKinds.Columns.Count - 1
-                '        worksheet.Cells(3 + RazColumn, 7 + d).value = FrmCounts.DGVBadsKinds.Rows(i).Cells(d).Value
-
-                '    Next
-                '    RazColumn += 1
-                'Else
-                '    For d = 0 To FrmCounts.DGVBadsKinds.Columns.Count - 1
-                '        worksheet.Cells(6 + RazCount + SqurColumn, 7 + d).value = FrmCounts.DGVBadsKinds.Rows(i).Cells(d).Value
-                '    Next
-                '    SqurColumn += 1
-                'End If
             Next
-            'FrmProgressBar.ProgBar.Increment(20)
-
-            ''**Goods**
-            'Dim FamilyChk As String
-            'Dim FamilyCol As Integer
-            'Dim PassSqr As Integer = 0
-            'Dim Passratz As Integer = 0
-            'RazCount = 0
-            'SqurCount = 0
-            'For i = 0 To FrmCounts.DgvGoods.RowCount - 1
-            '    FamilyChk = FrmCounts.DgvGoods.Rows(i).Cells(0).Value
-            '    For R = 0 To FamilyTab.Columns.Count - 1
-            '        For T = 0 To FamilyTab.Rows.Count - 1
-            '            If FamilyChk.Contains(FamilyTab.Rows(T).Item(R)) Then
-            '                If R = 0 Or R = 2 Then
-            '                    SqurCount += 1
-            '                Else
-            '                    RazCount += 1
-            '                End If
-            '            End If
-            '        Next
-            '    Next
-            'Next
-
-            'For i = 0 To FrmCounts.DgvGoods.RowCount - 1
-            '    FamilyChk = FrmCounts.DgvGoods.Rows(i).Cells(0).Value
-            '    For R = 0 To FamilyTab.Columns.Count - 1
-            '        For T = 0 To FamilyTab.Rows.Count - 1
-            '            If FamilyChk.Contains(FamilyTab.Rows(T).Item(R)) Then
-            '                FamilyCol = R
-            '            End If
-            '        Next
-            '    Next
-            '    If FamilyCol = 0 Or FamilyCol = 2 Then
-            '        PassSqr += 1
-            '    Else
-            '        Passratz += 1
-            '    End If
-            '    For D = 0 To FrmCounts.DgvGoods.Columns.Count - 1
-            '        If i = 0 Then
-            '            worksheet.Cells(10, 1 + D).value = FrmCounts.DgvGoods.Columns(D).HeaderText
-            '            worksheet.Cells(12 + SqurCount, 1 + D).value = FrmCounts.DgvGoods.Columns(D).HeaderText
-            '        End If
-            '        If FamilyCol = 0 Or FamilyCol = 2 Then
-            '            worksheet.Cells(10 + PassSqr, 1 + D).value = FrmCounts.DgvGoods.Rows(i).Cells(D).Value
-            '        Else
-            '            worksheet.Cells(12 + SqurCount + Passratz, 1 + D).value = FrmCounts.DgvGoods.Rows(i).Cells(D).Value
-            '        End If
-            '    Next
-            'Next
-
-            '**Timers\Pakas**
-            'worksheet = workbook.Sheets.Add
-            'worksheet.Name = "דוח D"
-            'FrmProgressBar.ProgBar.Increment(20)
-
-            'For i = 0 To FrmCounts.DGVCount.ColumnCount - 1
-            '    worksheet.Cells(2, 2 + i).value = FrmCounts.DGVCount.Columns(i).HeaderText
-            '    For b = 0 To FrmCounts.DGVCount.RowCount - 1
-            '        worksheet.Cells(4 + b, 2 + i).value = FrmCounts.DGVCount.Rows(b).Cells(i).Value
-            '    Next
-            'Next
-
-            'FrmProgressBar.ProgBar.Increment(10)
-            'If FrmProgressBar.ProgBar.Value = 100 Then
-            '    FrmProgressBar.Close()
-            'End If
 
 
-            '**Operators**
-            'Dim AllZero As Boolean = True
-            'Dim Empt As Integer = 0
-            'Dim UperZero As Boolean = False
-            'Dim locat As String
-
-            'worksheet = workbook.Sheets.Add
-            'worksheet.Name = "דוח מפעילים אריזה"
-            'For i = 0 To OprTab.Rows.Count - 1
-            '    If i = 0 Then
-            '        'adding the columns names
-            '        For b = 0 To OprTab.Columns.Count - 1
-            '            worksheet.Cells(2 + i, 2 + b).value = OprTab.Rows(i).Item(b)
-            '        Next
-            '    Else
-            '        If OprTab.Rows(i).Item(0).ToString.Contains("משמרות") Then
-            '            If UperZero = False Then
-            '                worksheet.Cells(2 + i - Empt, 2).value = OprTab.Rows(i).Item(0)
-            '                For b = 1 To OprTab.Columns.Count - 1
-            '                    If OprTab.Rows(i - 1).Item(b) <> 0 Then
-            '                        locat = "=" & Chr(66 + b) & (1 + i + Empt) & "/ 8"
-            '                        worksheet.Cells(2 + i - Empt, 2 + b).value = locat ''Asc(65)
-            '                    Else
-            '                        worksheet.Cells(2 + i - Empt, 2 + b).value = OprTab.Rows(i).Item(b)
-            '                    End If
-            '                Next
-            '                Empt -= 1
-            '                worksheet.Cells(2 + i - Empt, 2).value = OprTab.Rows(i + 1).Item(0)
-            '                For b = 1 To OprTab.Columns.Count - 1
-            '                    If OprTab.Rows(i - 1).Item(b) <> 0 Then
-            '                        locat = "=" & Chr(66 + b) & (1 + i + Empt) & "/" & Chr(66 + b) & (3 + i + Empt)
-            '                        worksheet.Cells(2 + i - Empt, 2 + b).value = locat ''Asc(65)
-
-            '                    Else
-            '                        worksheet.Cells(2 + i - Empt, 2 + b).value = "תפוקה"
-
-            '                    End If
-            '                Next
-            '                UperZero = False
-            '                Empt += 1
-
-            '            End If
-            '        ElseIf OprTab.Rows(i).Item(0).ToString.Contains("תפוקת") Then
-
-            '        Else
-            '            For b = 1 To OprTab.Columns.Count - 1
-            '                If OprTab.Rows(i).Item(b) <> 0 Then
-            '                    AllZero = False
-            '                End If
-            '            Next
-            '            If AllZero = False Then
-            '                For b = 0 To OprTab.Columns.Count - 1
-            '                    worksheet.Cells(2 + i - Empt, 2 + b).value = OprTab.Rows(i).Item(b)
-            '                Next
-            '                AllZero = True
-            '                UperZero = False
-            '            Else
-            '                Empt += 1
-            '                UperZero = True
-            '            End If
-            '        End If
-            '    End If
-
-            'Next
-            'If ShiftsChk = True Then
-
-            'End If
-
-            '***Shaerit**
-            'worksheet = workbook.Sheets.Add
-            'worksheet.Name = "דוח פקע''ות"
-
-            'For i = 0 To FrmCounts.DGVPaka.ColumnCount - 1
-            '    worksheet.Cells(2, 2 + i).value = FrmCounts.DGVPaka.Columns(i).Name
-
-            '    For b = 0 To FrmCounts.DGVPaka.RowCount - 1
-
-            '        worksheet.Cells(3 + b, 2 + i).value = FrmCounts.DGVPaka.Rows(b).Cells(i).Value
-            '    Next
-            '    FrmProgressBar.ProgBar.Increment(5)
-            '    If FrmProgressBar.ProgBar.Value >= 100 Then
-            '        FrmProgressBar.Close()
-            '    End If
-            'Next
-            ''end adding 
             Dim SaveDialog As New SaveFileDialog()
             SaveDialog.Filter = "Excel Files(*.xlsx)|*.xlsx|All files (*.*)|*.*"
             SaveDialog.FilterIndex = 2
@@ -446,7 +246,7 @@ Module ModActions
 
     End Sub
 
-    Public Sub DeleteAction(id As Integer)
+    Public Sub DeleteAction(id As Integer, material_loc_barcode As String, new_quantity As Double)
         Try
             cmd = New SqlCommand
 
@@ -456,9 +256,27 @@ Module ModActions
                 .Connection = dbcon
             End With
             cmd.Parameters.AddWithValue("@id", id)
+            cmd.Parameters.AddWithValue("@new_quantity", new_quantity)
+            cmd.Parameters.AddWithValue("@material_loc_barcode", material_loc_barcode)
+
+
 
             dbcon.Open()
             cmd.ExecuteNonQuery()
+            'dbcon.Close()
+
+            'cmd = New SqlCommand
+            With cmd
+                '.CommandType = CommandType.Text
+                .CommandText = "Update materials set material_quantity=@new_quantity where material_loc_barcode=@material_loc_barcode"
+
+                '.Connection = dbcon
+            End With
+            'cmd.Parameters.AddWithValue("@material_loc_barcode", material_loc_barcode)
+
+            'dbcon.Open()
+            cmd.ExecuteNonQuery()
+
             dbcon.Close()
         Catch ex As Exception
             MsgBox(ex.Message)

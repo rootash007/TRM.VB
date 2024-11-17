@@ -112,8 +112,15 @@ Public Class FrmMain
     End Sub
 
     Private Sub רכביםToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSMUnits.Click
-        Dim FmCarKMT As New FrmCarKMT
-        FmCarKMT.ShowDialog()
+        Dim FmUnits As New FrmUnits
+        If Application.OpenForms.OfType(Of FrmUnits).Any = True Then
+            FmUnits.Activate()
+        Else
+            FmUnits = New FrmUnits
+            FmUnits.MdiParent = Me
+            FmUnits.Show()
+        End If
+        'FmUnits.ShowDialog()
     End Sub
 
     Private Sub גיבוישחזורToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles גיבוישחזורToolStripMenuItem1.Click

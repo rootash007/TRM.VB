@@ -205,10 +205,10 @@
     <Compile Include="FrmBackUp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCarCard.Designer.vb">
-      <DependentUpon>FrmCarCard.vb</DependentUpon>
+    <Compile Include="FrmUnits.Designer.vb">
+      <DependentUpon>FrmUnits.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCarCard.vb">
+    <Compile Include="FrmUnits.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCarCardPrint.Designer.vb">
@@ -410,8 +410,8 @@
     <EmbeddedResource Include="FrmBackUp.resx">
       <DependentUpon>FrmBackUp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCarCard.resx">
-      <DependentUpon>FrmCarCard.vb</DependentUpon>
+    <EmbeddedResource Include="FrmUnits.resx">
+      <DependentUpon>FrmUnits.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCarCardPrint.resx">
       <DependentUpon>FrmCarCardPrint.vb</DependentUpon>
