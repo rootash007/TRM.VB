@@ -112,14 +112,21 @@ Public Class FrmMain
     End Sub
 
     Private Sub רכביםToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSMUnits.Click
-        Dim FmUnits As New FrmUnits
-        If Application.OpenForms.OfType(Of FrmUnits).Any = True Then
-            FmUnits.Activate()
+        If ActiveLvl < 2 Then
+            Dim FmUnits As New FrmUnits
+            If Application.OpenForms.OfType(Of FrmUnits).Any = True Then
+                FmUnits.Activate()
+            Else
+                FmUnits = New FrmUnits
+                FmUnits.MdiParent = Me
+                FmUnits.Show()
+            End If
         Else
-            FmUnits = New FrmUnits
-            FmUnits.MdiParent = Me
-            FmUnits.Show()
+            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+
         End If
+
+
         'FmUnits.ShowDialog()
     End Sub
 

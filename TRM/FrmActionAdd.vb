@@ -4,7 +4,8 @@
     Dim OldActionType As Boolean
     Dim OldQuantity As Double
     Private Sub FrmActionAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        FmActions.SelectedRow = FmActions.DgvActionsList.CurrentRow.Index
+        If FmActions.DgvActionsList.RowCount > 0 Then FmActions.SelectedRow = FmActions.DgvActionsList.CurrentRow.Index
+
         Dim que As String
         If AdminMode = True Then
             DTPDate.Visible = True
@@ -198,15 +199,8 @@
         Me.Close()
     End Sub
 
-    Private Sub LblQuantity_Click(sender As Object, e As EventArgs) Handles LblQuantity.Click
 
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
+    Private Sub NumQuantity_Enter(sender As Object, e As EventArgs) Handles NumQuantity.Enter
+        NumQuantity.Select(0, NumQuantity.Text.Length)
     End Sub
 End Class

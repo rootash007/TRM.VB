@@ -42,7 +42,7 @@
         isAddAction = True
         FmActionAdd = New FrmActionAdd
         FmActionAdd.ShowDialog()
-        SelectedRow = DgvActionsList.CurrentRow.Index
+        'SelectedRow = DgvActionsList.CurrentRow.Index
     End Sub
 
     Public Sub BtnReload_Click(sender As Object, e As EventArgs) Handles BtnReload.Click

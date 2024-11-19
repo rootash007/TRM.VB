@@ -141,7 +141,6 @@ Module ModFunctions
 
 
     Public Sub FillList(Que As String)
-        'Dim value1 As String = FrmActionAdd.CmbLocBarcode.Text
         cmd = New SqlCommand
         MyTab = New DataTable
         Try
@@ -151,10 +150,6 @@ Module ModFunctions
                 .CommandText = Que
                 .Connection = dbcon
             End With
-            'cmd.Parameters.AddWithValue("@value1", value1)
-            'MsgBox(CarKind)
-
-
             dbaddapter = New SqlDataAdapter(cmd)
             dbaddapter.Fill(MyTab)
             cmd = Nothing

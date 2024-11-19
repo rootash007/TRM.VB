@@ -127,6 +127,7 @@ Partial Class FrmMaterialAddEdit
         '
         'NumQuantity
         '
+        Me.NumQuantity.CausesValidation = False
         Me.NumQuantity.Location = New System.Drawing.Point(84, 141)
         Me.NumQuantity.Margin = New System.Windows.Forms.Padding(4)
         Me.NumQuantity.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})

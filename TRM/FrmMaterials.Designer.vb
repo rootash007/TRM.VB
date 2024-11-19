@@ -127,6 +127,7 @@ Partial Class FrmMaterials
         Me.DGVMaterialsOff.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
         Me.DGVMaterialsOff.MultiSelect = False
         Me.DGVMaterialsOff.Name = "DGVMaterialsOff"
+        Me.DGVMaterialsOff.ReadOnly = True
         Me.DGVMaterialsOff.RowHeadersVisible = False
         Me.DGVMaterialsOff.RowHeadersWidth = 51
         Me.DGVMaterialsOff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
