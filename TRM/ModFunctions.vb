@@ -1432,23 +1432,23 @@ Module ModFunctions
 
         cmd = New SqlCommand
         MyTab = New DataTable
-        Try
-            MyTab.Clear()
-            With cmd
-                .CommandType = CommandType.Text
-                .CommandText = Que
-                .Connection = dbcon
-            End With
-            'cmd.Parameters.AddWithValue("@value1", value1)
-            'MsgBox(CarKind)
+        '    Try
+        '        MyTab.Clear()
+        '        With cmd
+        '            .CommandType = CommandType.Text
+        '            .CommandText = Que
+        '            .Connection = dbcon
+        '        End With
+        '        'cmd.Parameters.AddWithValue("@value1", value1)
+        '        'MsgBox(CarKind)
 
 
-            dbaddapter = New SqlDataAdapter(cmd)
-            dbaddapter.Fill(MyTab)
-            cmd = Nothing
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        '        dbaddapter = New SqlDataAdapter(cmd)
+        '        dbaddapter.Fill(MyTab)
+        '        cmd = Nothing
+        '    Catch ex As Exception
+        '        MsgBox(ex.Message)
+        '    End Try
     End Sub
 
 End Module

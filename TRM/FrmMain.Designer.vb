@@ -46,6 +46,7 @@ Partial Class FrmMain
         Me.מערכתToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.גיבוישחזורToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.עדכוןתוכנהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSBtnCreateTables = New System.Windows.Forms.ToolStripMenuItem()
         Me.אודותToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.חלונותToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMCloseAll = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,7 +61,6 @@ Partial Class FrmMain
         Me.TSBtnBackUp = New System.Windows.Forms.ToolStripButton()
         Me.TSPActions = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnProducts = New System.Windows.Forms.ToolStripButton()
-        Me.TSBtnCreateTables = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuMain.SuspendLayout()
         Me.SSMain.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -75,7 +75,7 @@ Partial Class FrmMain
         Me.MenuMain.MdiWindowListItem = Me.חלונותToolStripMenuItem
         Me.MenuMain.Name = "MenuMain"
         Me.MenuMain.Padding = New System.Windows.Forms.Padding(5, 1, 0, 1)
-        Me.MenuMain.Size = New System.Drawing.Size(1349, 26)
+        Me.MenuMain.Size = New System.Drawing.Size(1349, 25)
         Me.MenuMain.TabIndex = 0
         Me.MenuMain.Text = "MenuStrip1"
         '
@@ -115,39 +115,41 @@ Partial Class FrmMain
         '
         Me.הפקתמסמכיםToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.הסכםמכירהToolStripMenuItem, Me.הכסםקנייהToolStripMenuItem, Me.הסכםריקToolStripMenuItem, Me.ספירתמלאיToolStripMenuItem})
         Me.הפקתמסמכיםToolStripMenuItem.Name = "הפקתמסמכיםToolStripMenuItem"
-        Me.הפקתמסמכיםToolStripMenuItem.Size = New System.Drawing.Size(84, 24)
+        Me.הפקתמסמכיםToolStripMenuItem.Size = New System.Drawing.Size(84, 23)
         Me.הפקתמסמכיםToolStripMenuItem.Text = "انتاج مستندات"
+        Me.הפקתמסמכיםToolStripMenuItem.Visible = False
         '
         'הסכםמכירהToolStripMenuItem
         '
         Me.הסכםמכירהToolStripMenuItem.Name = "הסכםמכירהToolStripMenuItem"
-        Me.הסכםמכירהToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
+        Me.הסכםמכירהToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.הסכםמכירהToolStripMenuItem.Text = "הסכם מכירה"
         '
         'הכסםקנייהToolStripMenuItem
         '
         Me.הכסםקנייהToolStripMenuItem.Name = "הכסםקנייהToolStripMenuItem"
-        Me.הכסםקנייהToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
+        Me.הכסםקנייהToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.הכסםקנייהToolStripMenuItem.Text = "הכסם קנייה"
         '
         'הסכםריקToolStripMenuItem
         '
         Me.הסכםריקToolStripMenuItem.Name = "הסכםריקToolStripMenuItem"
-        Me.הסכםריקToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
+        Me.הסכםריקToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.הסכםריקToolStripMenuItem.Text = "הסכם ריק"
         '
         'ספירתמלאיToolStripMenuItem
         '
         Me.ספירתמלאיToolStripMenuItem.Name = "ספירתמלאיToolStripMenuItem"
-        Me.ספירתמלאיToolStripMenuItem.Size = New System.Drawing.Size(185, 26)
+        Me.ספירתמלאיToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.ספירתמלאיToolStripMenuItem.Text = "ספירת מלאי"
         '
         'הגדרותToolStripMenuItem
         '
         Me.הגדרותToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.הגדרתמספרביומןToolStripMenuItem, Me.הגדרתפרטיביתהעסקToolStripMenuItem, Me.הגדרתשדותחובהToolStripMenuItem, Me.הפעלתמצבמנהלToolStripMenuItem})
         Me.הגדרותToolStripMenuItem.Name = "הגדרותToolStripMenuItem"
-        Me.הגדרותToolStripMenuItem.Size = New System.Drawing.Size(57, 24)
+        Me.הגדרותToolStripMenuItem.Size = New System.Drawing.Size(57, 23)
         Me.הגדרותToolStripMenuItem.Text = "خيارات"
+        Me.הגדרותToolStripMenuItem.Visible = False
         '
         'הגדרתמספרביומןToolStripMenuItem
         '
@@ -183,19 +185,19 @@ Partial Class FrmMain
         'TSMUnits
         '
         Me.TSMUnits.Name = "TSMUnits"
-        Me.TSMUnits.Size = New System.Drawing.Size(156, 26)
+        Me.TSMUnits.Size = New System.Drawing.Size(224, 26)
         Me.TSMUnits.Text = "وحدات القياس"
         '
         'TSUsers
         '
         Me.TSUsers.Name = "TSUsers"
-        Me.TSUsers.Size = New System.Drawing.Size(156, 26)
+        Me.TSUsers.Size = New System.Drawing.Size(224, 26)
         Me.TSUsers.Text = "مستخدمين"
         '
         'TSActions
         '
         Me.TSActions.Name = "TSActions"
-        Me.TSActions.Size = New System.Drawing.Size(156, 26)
+        Me.TSActions.Size = New System.Drawing.Size(224, 26)
         Me.TSActions.Text = "العمليات"
         '
         'מערכתToolStripMenuItem
@@ -208,19 +210,25 @@ Partial Class FrmMain
         'גיבוישחזורToolStripMenuItem1
         '
         Me.גיבוישחזורToolStripMenuItem1.Name = "גיבוישחזורToolStripMenuItem1"
-        Me.גיבוישחזורToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.גיבוישחזורToolStripMenuItem1.Size = New System.Drawing.Size(199, 26)
         Me.גיבוישחזורToolStripMenuItem1.Text = "النسخ الاحتياطي"
         '
         'עדכוןתוכנהToolStripMenuItem
         '
         Me.עדכוןתוכנהToolStripMenuItem.Name = "עדכוןתוכנהToolStripMenuItem"
-        Me.עדכוןתוכנהToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.עדכוןתוכנהToolStripMenuItem.Size = New System.Drawing.Size(199, 26)
         Me.עדכוןתוכנהToolStripMenuItem.Text = "تحديث البرنامج"
+        '
+        'TSBtnCreateTables
+        '
+        Me.TSBtnCreateTables.Name = "TSBtnCreateTables"
+        Me.TSBtnCreateTables.Size = New System.Drawing.Size(199, 26)
+        Me.TSBtnCreateTables.Text = "creating tables"
         '
         'אודותToolStripMenuItem1
         '
         Me.אודותToolStripMenuItem1.Name = "אודותToolStripMenuItem1"
-        Me.אודותToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.אודותToolStripMenuItem1.Size = New System.Drawing.Size(199, 26)
         Me.אודותToolStripMenuItem1.Text = "حول"
         '
         'חלונותToolStripMenuItem
@@ -279,7 +287,7 @@ Partial Class FrmMain
         '
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBtnUsers, Me.TSBtnMaterial, Me.TSBtnBackUp, Me.TSPActions, Me.TSBtnProducts})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 26)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 25)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1349, 55)
         Me.ToolStrip1.TabIndex = 20
@@ -340,12 +348,7 @@ Partial Class FrmMain
         Me.TSBtnProducts.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.TSBtnProducts.Size = New System.Drawing.Size(67, 52)
         Me.TSBtnProducts.Text = "ToolStripButton1"
-        '
-        'TSBtnCreateTables
-        '
-        Me.TSBtnCreateTables.Name = "TSBtnCreateTables"
-        Me.TSBtnCreateTables.Size = New System.Drawing.Size(224, 26)
-        Me.TSBtnCreateTables.Text = "creating tables"
+        Me.TSBtnProducts.Visible = False
         '
         'FrmMain
         '

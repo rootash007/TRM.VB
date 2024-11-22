@@ -199,7 +199,7 @@ Module ModActions
         FrmMain.TSMainProgBar.Increment(10)
         Try
             worksheet = workbook.ActiveSheet
-            worksheet.Name = "דוח פעולות"
+            worksheet.Name = "ملف العمليات"
 
 
             For i = 0 To FmActions.DgvActionsList.ColumnCount - 1
@@ -218,7 +218,7 @@ Module ModActions
 
             If SaveDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
                 workbook.SaveAs(SaveDialog.FileName)
-                MsgBox("יצירת קובץ הסתיימה בהצלחה", vbOKOnly + vbInformation, "נשמר בהצלחה")
+                MsgBox("تم حفظ الملف بنجاح", vbOKOnly + vbInformation, "حفظ الملف")
                 Dim ExcelFileName As String
                 ExcelFileName = SaveDialog.FileName
 
@@ -230,7 +230,7 @@ Module ModActions
                 Dim ExitMsg As DialogResult
                 workbook.Close()
 
-                ExitMsg = MsgBox("האם לפתוח את הדוח הנוצר באקסיל", vbYesNo + vbQuestion, "הצגת דוח")
+                ExitMsg = MsgBox("هل تريد فتح الملف", vbYesNo + vbQuestion, "عرض الملف")
                 If ExitMsg = 6 Then
                     Process.Start(ExcelFileName)
                 End If
