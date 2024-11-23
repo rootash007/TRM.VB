@@ -298,8 +298,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub TSBtnUsers_Click(sender As Object, e As EventArgs) Handles TSBtnUsers.Click
-
-        If ActiveLvl < 2 Then
+        If ActiveLvl = 0 Then
             If Application.OpenForms.OfType(Of FrmUsers).Any = True Then
                 FmUsers.Activate()
             Else
@@ -308,9 +307,33 @@ Public Class FrmMain
                 FmUsers.Show()
             End If
         Else
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            If isAllowed(1) = True Then
 
+                If Application.OpenForms.OfType(Of FrmUsers).Any = True Then
+                    FmUsers.Activate()
+                Else
+                    FmUsers = New FrmUsers
+                    FmUsers.MdiParent = Me
+                    FmUsers.Show()
+                End If
+            Else
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            End If
         End If
+
+
+        'If ActiveLvl < 2 Then
+        '    If Application.OpenForms.OfType(Of FrmUsers).Any = True Then
+        '        FmUsers.Activate()
+        '    Else
+        '        FmUsers = New FrmUsers
+        '        FmUsers.MdiParent = Me
+        '        FmUsers.Show()
+        '    End If
+        'Else
+        '    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+
+        'End If
     End Sub
 
     Private Sub TSBtnBackUp_Click(sender As Object, e As EventArgs) Handles TSBtnBackUp.Click
@@ -320,6 +343,31 @@ Public Class FrmMain
 
 
     Private Sub TSPActions_Click(sender As Object, e As EventArgs) Handles TSPActions.Click
+        'Dim Increase As Boolean = isAlowed(4)
+        'Dim Decrease As Boolean = isAlowed(3)
+        'If AdminMode = True Then
+        '    If DgvActionsList.RowCount = 0 Then
+        '        MsgBox("list is empty", vbOKOnly + vbInformation, "message")
+        '    Else
+        '        isAddAction = False
+        '        FmActionAdd = New FrmActionAdd
+        '        FmActionAdd.ShowDialog()
+        '    End If
+        'Else
+        '    If isAlowed(4) = True Then
+        '        If DgvActionsList.RowCount = 0 Then
+        '            MsgBox("list is empty", vbOKOnly + vbInformation, "message")
+        '        Else
+        '            isAddAction = False
+        '            FmActionAdd = New FrmActionAdd
+        '            FmActionAdd.ShowDialog()
+        '        End If
+        '    Else
+        '        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+        '    End If
+        'End If
+
+
         If Application.OpenForms.OfType(Of FrmActions).Any = True Then
             FmActions.Activate()
         Else
@@ -382,6 +430,18 @@ Public Class FrmMain
             OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
 
             Return
+        End If
+    End Sub
+
+    Private Sub PermisionsTSM_Click(sender As Object, e As EventArgs) Handles PermisionsTSM.Click
+        If AdminMode = True Then
+            FrmPermissions.ShowDialog()
+        Else
+            If isAllowed(6) = True Then
+                FrmPermissions.ShowDialog()
+            Else
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            End If
         End If
     End Sub
 End Class

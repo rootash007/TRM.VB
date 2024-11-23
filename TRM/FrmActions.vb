@@ -10,8 +10,17 @@
             BtnEditAction.Visible = True
             BtnDeleteAction.Visible = True
         Else
-            BtnEditAction.Visible = False
-            BtnDeleteAction.Visible = False
+            If isAllowed(4) = True Then
+                BtnEditAction.Visible = True
+            Else
+                BtnEditAction.Visible = False
+            End If
+            If isAllowed(5) = True Then
+                BtnDeleteAction.Visible = True
+            Else
+                BtnDeleteAction.Visible = False
+            End If
+
         End If
         DTPStartDate.Value = Today
         DTPEndDate.Value = Today.AddHours(23).AddMinutes(59).AddSeconds(59)
@@ -39,9 +48,25 @@
     End Sub
 
     Private Sub BtnAddAction_Click(sender As Object, e As EventArgs) Handles BtnAddAction.Click
-        isAddAction = True
-        FmActionAdd = New FrmActionAdd
-        FmActionAdd.ShowDialog()
+        Dim Increase As Boolean = isAllowed(2)
+        Dim Decrease As Boolean = isAllowed(3)
+        If AdminMode = True Then
+            isAddAction = True
+            FmActionAdd = New FrmActionAdd
+            FmActionAdd.ShowDialog()
+        Else
+            If Increase = True Or Decrease = True Then
+                isAddAction = True
+                FmActionAdd = New FrmActionAdd
+                FmActionAdd.ShowDialog()
+            Else
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            End If
+        End If
+
+        'isAddAction = True
+        'FmActionAdd = New FrmActionAdd
+        'FmActionAdd.ShowDialog()
         'SelectedRow = DgvActionsList.CurrentRow.Index
     End Sub
 
@@ -95,11 +120,37 @@
 
 
     Private Sub BtnEditAction_Click(sender As Object, e As EventArgs) Handles BtnEditAction.Click
-        isAddAction = False
-        FmActionAdd = New FrmActionAdd
-        FmActionAdd.ShowDialog()
+        'Dim Increase As Boolean = isAlowed(4)
+        'Dim Decrease As Boolean = isAlowed(3)
+        'If AdminMode = True Then
+        '    If DgvActionsList.RowCount = 0 Then
+        '        MsgBox("list is empty", vbOKOnly + vbInformation, "message")
+        '    Else
+        '        isAddAction = False
+        '        FmActionAdd = New FrmActionAdd
+        '        FmActionAdd.ShowDialog()
+        '    End If
+        'Else
+        '    If isAlowed(4) = True Then
+        '        If DgvActionsList.RowCount = 0 Then
+        '            MsgBox("list is empty", vbOKOnly + vbInformation, "message")
+        '        Else
+        '            isAddAction = False
+        '            FmActionAdd = New FrmActionAdd
+        '            FmActionAdd.ShowDialog()
+        '        End If
+        '    Else
+        '        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+        '    End If
+        'End If
 
-
+        If DgvActionsList.RowCount = 0 Then
+            MsgBox("list is empty", vbOKOnly + vbInformation, "message")
+        Else
+            isAddAction = False
+            FmActionAdd = New FrmActionAdd
+            FmActionAdd.ShowDialog()
+        End If
     End Sub
 
     Private Sub BtnDeleteAction_Click(sender As Object, e As EventArgs) Handles BtnDeleteAction.Click

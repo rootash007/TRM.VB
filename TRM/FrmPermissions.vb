@@ -1,22 +1,15 @@
 ﻿Public Class FrmPermissions
 
-    Private Sub FrmMlaiList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub FrmPermissions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim Que As String = "select * from permissions"
         FillList(Que)
         DGVPermissions.DataSource = MyTab
         With DGVPermissions
             .Columns(0).Visible = False
-            '.Columns(1).Visible = True
-            '.Columns(2).Visible = True
-            '.Columns(3).Visible = True
-            '.Columns(4).Visible = True
-            '.Columns(5).Visible = False
-            '.Columns(6).Visible = False
-            '.Columns(7).Visible = False
-            '.Columns(8).Visible = False
+
             '.Columns(2).DefaultCellStyle.Format = "*"
 
-            '.Columns(0).HeaderText = "שם הרשאה"
             .Columns(1).HeaderText = "שם הרשאה"
             .Columns(2).HeaderText = "רמה 1"
             .Columns(3).HeaderText = "רמה 2"
@@ -32,7 +25,6 @@
 
             .Columns(0).Width = 55
             .Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-            '.Columns(1).Width = 140
             .Columns(2).Width = 50
             .Columns(3).Width = 50
             .Columns(4).Width = 50
@@ -42,6 +34,14 @@
             .Columns(8).Width = 50
             .Columns(9).Width = 50
             .Columns(10).Width = 50
+            If ActiveLvl = 0 Then
+                .Columns(2).ReadOnly = False
+            Else
+                .Columns(2).ReadOnly = True
+            End If
+            .Columns(2).DefaultCellStyle.BackColor = Color.LightGreen
+
+
 
 
         End With
@@ -72,5 +72,24 @@
         'FillMlaiList(FrmMlaiYear.DtpMlaiYear.Value.ToShortDateString)
         'DGVMlaiList.DataSource = MlaiTab
     End Sub
+    Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
+        Me.Close()
+    End Sub
+
+    Private Sub DGVPermissions_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown, DGVPermissions.KeyDown, BtnSave.KeyDown, BtnCancel.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+        Dim SaveMSg As DialogResult
+        SaveMSg = MsgBox("هل تريد حفظ التغييرات", vbYesNo + vbQuestion, "حفظ التغييرات")
+        If SaveMSg = 6 Then
+            SavePermissions(Me.DGVPermissions)
+            Me.Close()
+        End If
+    End Sub
+
 
 End Class

@@ -13,12 +13,17 @@
         Else
             DTPDate.Visible = False
         End If
-        If ActiveLvl < 3 Then
+        Dim Increase As Boolean = isAllowed(2)
+        Dim Decrease As Boolean = isAllowed(3)
+
+        If AdminMode = True Or (Increase = True And Decrease = True) Then
             que = "select * from action_types"
-        ElseIf ActiveLvl = 3 Then
-            que = "select * from action_types where isincrease = 0"
-        Else
+        ElseIf Increase = True And Decrease = False Then
             que = "select * from action_types where isincrease = 1"
+        ElseIf Increase = False And Decrease = True Then
+            que = "select * from action_types where isincrease = 0"
+        ElseIf Increase = False And Decrease = False Then
+            Me.Close()
         End If
         FillList(que)
         ActionTypeTab = MyTab

@@ -29,13 +29,6 @@ Public Class FrmLogin
             Else
                 If UserTab.Rows(0).Item(3) <= 1 Then
                     AdminMode = True
-                    'ActiveUser = TxtUsername.Text
-                    'MsgBox(UserTab.Rows(0).Item(0))
-                    ActiveUserSerial = UserTab.Rows(0).Item(0)
-                    ActiveUser = UserTab.Rows(0).Item(1).ToString
-                    ActiveLvl = UserTab.Rows(0).Item(3)
-
-                    'FrmMain.Text = ActiveUser
                 End If
                 ActiveUserSerial = UserTab.Rows(0).Item(0)
                 ActiveUser = UserTab.Rows(0).Item(1).ToString

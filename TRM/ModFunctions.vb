@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Diagnostics.Eventing.Reader
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
 Imports Microsoft.Reporting.WinForms
 
 Module ModFunctions
@@ -30,6 +31,8 @@ Module ModFunctions
     Public UserTab As DataTable
     Public MaterialsTab As DataTable
     Public ActionsTab As DataTable
+    Public PermissionsTab As DataTable
+
 
     Public ActiveUser As String                            'המשתמש הפעיל בכניסה לתוכנה
     Public ActiveLvl As Integer                            'רמת המשתמש הפעיל
@@ -1394,7 +1397,6 @@ Module ModFunctions
         Que = "IF NOT EXISTS (SELECT * FROM sys.objects 
                WHERE object_id = OBJECT_ID(N'users') AND type in (N'U'))
                BEGIN
-
                CREATE TABLE users(
                id BIGINT IDENTITY (0, 1) NOT NULL PRIMARY KEY,
                user_name nvarchar (50) NOT NULL,
@@ -1403,7 +1405,9 @@ Module ModFunctions
                user_phone nvarchar (50) NOT NULL,
 	           isactive bit NOT NULL DEFAULT (1),
                ) 
+               INSERT INTO users (user_name,user_pass) values ('admin','0')
                END
+
 
                IF NOT EXISTS (SELECT * FROM sys.objects 
                WHERE object_id = OBJECT_ID(N'action_types') AND type in (N'U'))
@@ -1415,40 +1419,232 @@ Module ModFunctions
                ) 
                END
 
-               
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'permissions') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE permissions(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               permission_name nvarchar (50) NOT NULL,
+	           lvl1 bit NOT NULL Default(1),
+	           lvl2 bit NOT NULL Default(0),
+	           lvl3 bit NOT NULL Default(0),
+	           lvl4 bit NOT NULL Default(0),
+	           lvl5 bit NOT NULL Default(0),
+	           lvl6 bit NOT NULL Default(0),
+	           lvl7 bit NOT NULL Default(0),
+	           lvl8 bit NOT NULL Default(0),
+	           lvl9 bit NOT NULL Default(0),
+               ) 
+               END
+
                IF NOT EXISTS (SELECT * FROM sys.objects 
                WHERE object_id = OBJECT_ID(N'test') AND type in (N'U'))
                BEGIN
                CREATE TABLE test(
-               id BIGINT IDENTITY (0, 1) NOT NULL PRIMARY KEY,
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
                test_name nvarchar (50) NOT NULL,
-               test_pass nvarchar (50) NOT NULL,
+	           lvl1 bit NOT NULL Default(1),
+	           lvl2 bit NOT NULL Default(0),
+	           lvl3 bit NOT NULL Default(0),
+	           lvl4 bit NOT NULL Default(0),
+	           lvl5 bit NOT NULL Default(0),
+	           lvl6 bit NOT NULL Default(0),
+	           lvl7 bit NOT NULL Default(0),
+	           lvl8 bit NOT NULL Default(0),
+	           lvl9 bit NOT NULL Default(0),
                ) 
+               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('users',1,0,0,0,0,0,0,0,0)
+               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('increase',1,0,0,0,0,0,0,0,0)
+               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('decrease',1,0,0,0,0,0,0,0,0)
                END
+               ELSE
+               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('testing',1,1,1,1,1,1,1,1,1)
 
-               INSERT INTO test (test_name,test_pass) values ('admin','0')
+
 
                "
 
         cmd = New SqlCommand
         MyTab = New DataTable
-        '    Try
-        '        MyTab.Clear()
-        '        With cmd
-        '            .CommandType = CommandType.Text
-        '            .CommandText = Que
-        '            .Connection = dbcon
-        '        End With
-        '        'cmd.Parameters.AddWithValue("@value1", value1)
-        '        'MsgBox(CarKind)
+        Try
+            MyTab.Clear()
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = Que
+                .Connection = dbcon
+            End With
+            dbaddapter = New SqlDataAdapter(cmd)
+            dbaddapter.Fill(MyTab)
+            cmd = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Function isAllowed(PermissionID As Integer) As Boolean
+        Dim Que As String
+        'Dim UserLvl As Integer
+        Que = "select * from users where id = " & ActiveUserSerial
+        FillList(Que)
+        ActiveLvl = MyTab.Rows(0).Item(3)
+        Que = "select * from permissions where id = " & PermissionID
+        FillList(Que)
+        Select Case ActiveLvl
+            Case 1
+                If MyTab.Rows(0).Item(2) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 2
+                If MyTab.Rows(0).Item(3) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 3
+                If MyTab.Rows(0).Item(4) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 4
+                If MyTab.Rows(0).Item(5) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 5
+                If MyTab.Rows(0).Item(6) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 6
+                If MyTab.Rows(0).Item(7) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 7
+                If MyTab.Rows(0).Item(8) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 8
+                If MyTab.Rows(0).Item(9) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+            Case 9
+                If MyTab.Rows(0).Item(10) = True Then
+                    isAllowed = True
+                Else
+                    isAllowed = False
+                End If
+
+        End Select
+        'For i = 0 To MyTab.Rows.Count - 1
+        '    If MyTab.Rows(i).Item(1) = PermissionName Then
+        '        Select Case UserLvl
+        '            Case 1
+        '                If MyTab.Rows(i).Item(2) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 2
+        '                If MyTab.Rows(i).Item(3) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 3
+        '                If MyTab.Rows(i).Item(4) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 4
+        '                If MyTab.Rows(i).Item(5) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 5
+        '                If MyTab.Rows(i).Item(6) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 6
+        '                If MyTab.Rows(i).Item(7) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 7
+        '                If MyTab.Rows(i).Item(8) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 8
+        '                If MyTab.Rows(i).Item(9) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+        '            Case 9
+        '                If MyTab.Rows(i).Item(10) = True Then
+        '                    isAlowed = True
+        '                Else
+        '                    isAlowed = False
+        '                End If
+
+        '        End Select
+        '    End If
+        'Next
+
+    End Function
+
+    Public Sub SavePermissions(DGV As DataGridView)
+        Try
+            For i = 0 To DGV.RowCount - 1
+                cmd = New SqlCommand
+
+                With cmd
+                    .CommandType = CommandType.Text
+                    .CommandText = "update permissions set permission_name=@permission_name,lvl1=@lvl1,lvl2=@lvl2,lvl3=@lvl3,lvl4=@lvl4,lvl5=@lvl5,lvl6=@lvl6,lvl7=@lvl7,lvl8=@lvl8,lvl9=@lvl9 where id=@id"
+                    .Connection = dbcon
+                End With
+                cmd.Parameters.AddWithValue("@permission_name", DGV.Rows(i).Cells(1).Value)
+                cmd.Parameters.AddWithValue("@lvl1", DGV.Rows(i).Cells(2).Value)
+                cmd.Parameters.AddWithValue("@lvl2", DGV.Rows(i).Cells(3).Value)
+                cmd.Parameters.AddWithValue("@lvl3", DGV.Rows(i).Cells(4).Value)
+                cmd.Parameters.AddWithValue("@lvl4", DGV.Rows(i).Cells(5).Value)
+                cmd.Parameters.AddWithValue("@lvl5", DGV.Rows(i).Cells(6).Value)
+                cmd.Parameters.AddWithValue("@lvl6", DGV.Rows(i).Cells(7).Value)
+                cmd.Parameters.AddWithValue("@lvl7", DGV.Rows(i).Cells(8).Value)
+                cmd.Parameters.AddWithValue("@lvl8", DGV.Rows(i).Cells(9).Value)
+                cmd.Parameters.AddWithValue("@lvl9", DGV.Rows(i).Cells(10).Value)
 
 
-        '        dbaddapter = New SqlDataAdapter(cmd)
-        '        dbaddapter.Fill(MyTab)
-        '        cmd = Nothing
-        '    Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '    End Try
+                cmd.Parameters.AddWithValue("@id", DGV.Rows(i).Cells(0).Value)
+
+
+                dbcon.Open()
+                cmd.ExecuteNonQuery()
+                dbcon.Close()
+                cmd = Nothing
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
     End Sub
 
 End Module
