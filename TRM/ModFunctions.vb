@@ -1647,4 +1647,48 @@ Module ModFunctions
         End Try
     End Sub
 
+    Public Sub SaveUnits(DGV As DataGridView)
+        Try
+            For i = 0 To DGV.RowCount - 2
+                cmd = New SqlCommand
+                'MsgBox(DGV.Rows(i).Cells(0).Value)
+
+                If DGV.Rows(i).Cells(0).Value Is Nothing OrElse DGV.Rows(i).Cells(0).Value.ToString.Trim = "" Then
+                    'MsgBox("enmpt")
+                    With cmd
+                        .CommandType = CommandType.Text
+                        .CommandText = "insert into units (unit_name)values(@unit_name)"
+                        .Connection = dbcon
+                    End With
+                    cmd.Parameters.AddWithValue("@unit_name", DGV.Rows(i).Cells(1).Value)
+
+                    dbcon.Open()
+                    cmd.ExecuteNonQuery()
+                    dbcon.Close()
+                Else
+                    'MsgBox(DGV.Rows(i).Cells(1).Value)
+
+                    With cmd
+                        .CommandType = CommandType.Text
+                        .CommandText = "update units set unit_name=@unit_name where id=@id"
+                        .Connection = dbcon
+                    End With
+                    cmd.Parameters.AddWithValue("@unit_name", DGV.Rows(i).Cells(1).Value)
+                    cmd.Parameters.AddWithValue("@id", DGV.Rows(i).Cells(0).Value)
+
+                    dbcon.Open()
+                    cmd.ExecuteNonQuery()
+                    dbcon.Close()
+                    cmd = Nothing
+                End If
+            Next
+
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
 End Module

@@ -422,7 +422,11 @@ Public Class FrmMain
     End Sub
 
     Private Sub TSBtnCreateTables_Click(sender As Object, e As EventArgs) Handles TSBtnCreateTables.Click
-        CreateTables()
+        If ActiveLvl = 0 Then
+            CreateTables()
+        Else
+            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+        End If
     End Sub
 
     Private Sub הפקתמסמכיםToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles הפקתמסמכיםToolStripMenuItem.Click
