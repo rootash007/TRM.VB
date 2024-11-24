@@ -12,9 +12,9 @@
             '.Columns(0).HeaderText = "מס"
             .Columns(1).HeaderText = "اسم المادة"
             .Columns(2).HeaderText = "الرمز"
-            .Columns(3).HeaderText = "can"
-            .Columns(4).HeaderText = "box"
-            .Columns(5).HeaderText = "block"
+            .Columns(3).HeaderText = "عدد العلب"
+            .Columns(4).HeaderText = "عدد الصناديق"
+            .Columns(5).HeaderText = "المجموع بالمشتاح"
 
 
 

@@ -1,30 +1,14 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO, System.Net, System.Web
 Imports TRM.ModFunctions
-'Public AdminMode As Boolean = False
 
 Public Class FrmMain
     Dim switcher As Boolean = True
     Public isConnected As Boolean = False
-    'Public ReConnect As Boolean = False    'החלפת משתמש
-    'Public AdminMode As Boolean = False    'מצב מנהל
-    'Public OfficeServer As String = My.Settings.CurrentServer
-    'Public dbcon As New SqlConnection With {.ConnectionString = OfficeServer}
-
-
-
-
 
     Public Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'System.Threading.Thread.Sleep(3000)
-        'ReConnect = False
-        'MsgBox(ReConnect)
-
-
-        'AdminMode = False
-        'OfficeServer = My.Settings.CurrentServer
-
 
         'Me.Hide()
 
@@ -33,23 +17,11 @@ Public Class FrmMain
             FrmLogin.ShowDialog()
         End If
 
-        '*************
-        'If isConnected = False Then
-        '    FrmLogin.ShowDialog()
-        'End If
-        'isConnected = False
-
-        'FrmLogin.ShowDialog()
-
         ReConnect = False
         For Each Frm As Form In Me.MdiChildren
             Frm.Close()
         Next
-        'ReLoadMain()
-        'LblJobName.Text = My.Settings.JobName
-        'LblJobDetails.Text = "כתובת :" & My.Settings.JobAdress & "   טלפון :" & My.Settings.JobPhone & "   פקס :" & My.Settings.JobFax & "   אימייל:" & My.Settings.JobEmail & "   ח.פ / ע.מ :" & My.Settings.JobId
-        'FirstEmptyCarSerial()
-        'Me.Text = My.Settings.JobName
+
         Me.Text = ActiveUser
 
         If AdminMode = True Then
@@ -88,14 +60,6 @@ Public Class FrmMain
     Private Sub BtnVendors_Click(sender As Object, e As EventArgs)
         VendorsWindow = "VendorUpdate"
         FrmVendors.ShowDialog()
-    End Sub
-
-    Private Sub הגדרתמספרביומןToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles הגדרתמספרביומןToolStripMenuItem.Click
-        If AdminMode = True Then
-            FrmCarSerialUpdate.ShowDialog()
-        Else
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
-        End If
     End Sub
 
     Private Sub BtnSale_Click(sender As Object, e As EventArgs)
@@ -406,15 +370,31 @@ Public Class FrmMain
     End Sub
 
     Private Sub TSBtnProducts_Click(sender As Object, e As EventArgs) Handles TSBtnProducts.Click
-        Dim FmProducts As New FrmProducts
         Try
-            If Application.OpenForms.OfType(Of FrmProducts).Any = True Then
-                FmProducts.Activate()
+            If AdminMode = True Then
+                Dim FmProducts As New FrmProducts
+                If Application.OpenForms.OfType(Of FrmProducts).Any = True Then
+                    FmProducts.Activate()
+                Else
+                    'FmProducts = New FrmProducts
+                    FmProducts.MdiParent = Me
+                    FmProducts.Show()
+                End If
             Else
-                'FmProducts = New FrmProducts
-                FmProducts.MdiParent = Me
-                FmProducts.Show()
+                If isAllowed(7) = True Then
+                    Dim FmProducts As New FrmProducts
+                    If Application.OpenForms.OfType(Of FrmProducts).Any = True Then
+                        FmProducts.Activate()
+                    Else
+                        'FmProducts = New FrmProducts
+                        FmProducts.MdiParent = Me
+                        FmProducts.Show()
+                    End If
+                Else
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                End If
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

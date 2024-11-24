@@ -24,152 +24,152 @@ Partial Class FrmProducts
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProducts))
         Me.GrpProducts = New System.Windows.Forms.GroupBox()
-        Me.TabMaterials = New System.Windows.Forms.TabControl()
-        Me.TabMaterialsOn = New System.Windows.Forms.TabPage()
-        Me.DGVProducts = New System.Windows.Forms.DataGridView()
-        Me.TabMaterialsOff = New System.Windows.Forms.TabPage()
-        Me.DGVMaterialsOff = New System.Windows.Forms.DataGridView()
+        Me.TabProducts = New System.Windows.Forms.TabControl()
+        Me.TabProductsOn = New System.Windows.Forms.TabPage()
+        Me.DGVProductsOn = New System.Windows.Forms.DataGridView()
+        Me.TabProductsOff = New System.Windows.Forms.TabPage()
+        Me.DGVProductsOff = New System.Windows.Forms.DataGridView()
         Me.BtnExcelLoad = New System.Windows.Forms.Button()
-        Me.BtnAddMaterial = New System.Windows.Forms.Button()
+        Me.BtnAddProduct = New System.Windows.Forms.Button()
         Me.BtnUpdateMaterial = New System.Windows.Forms.Button()
         Me.BtnDeleteMaterial = New System.Windows.Forms.Button()
         Me.BtnClose = New System.Windows.Forms.Button()
         Me.GrpProducts.SuspendLayout()
-        Me.TabMaterials.SuspendLayout()
-        Me.TabMaterialsOn.SuspendLayout()
-        CType(Me.DGVProducts, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabMaterialsOff.SuspendLayout()
-        CType(Me.DGVMaterialsOff, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabProducts.SuspendLayout()
+        Me.TabProductsOn.SuspendLayout()
+        CType(Me.DGVProductsOn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabProductsOff.SuspendLayout()
+        CType(Me.DGVProductsOff, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GrpProducts
         '
-        Me.GrpProducts.Controls.Add(Me.TabMaterials)
-        Me.GrpProducts.Location = New System.Drawing.Point(13, 9)
-        Me.GrpProducts.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.GrpProducts.Controls.Add(Me.TabProducts)
+        Me.GrpProducts.Location = New System.Drawing.Point(17, 11)
+        Me.GrpProducts.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
         Me.GrpProducts.Name = "GrpProducts"
-        Me.GrpProducts.Padding = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.GrpProducts.Size = New System.Drawing.Size(654, 395)
+        Me.GrpProducts.Padding = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.GrpProducts.Size = New System.Drawing.Size(872, 486)
         Me.GrpProducts.TabIndex = 42
         Me.GrpProducts.TabStop = False
-        Me.GrpProducts.Text = "قائمة المواد"
+        Me.GrpProducts.Text = "قائمة المنتجات"
         '
-        'TabMaterials
+        'TabProducts
         '
-        Me.TabMaterials.Controls.Add(Me.TabMaterialsOn)
-        Me.TabMaterials.Controls.Add(Me.TabMaterialsOff)
-        Me.TabMaterials.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabMaterials.Location = New System.Drawing.Point(9, 33)
-        Me.TabMaterials.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterials.Name = "TabMaterials"
-        Me.TabMaterials.RightToLeftLayout = True
-        Me.TabMaterials.SelectedIndex = 0
-        Me.TabMaterials.Size = New System.Drawing.Size(626, 352)
-        Me.TabMaterials.TabIndex = 1
+        Me.TabProducts.Controls.Add(Me.TabProductsOn)
+        Me.TabProducts.Controls.Add(Me.TabProductsOff)
+        Me.TabProducts.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabProducts.Location = New System.Drawing.Point(12, 41)
+        Me.TabProducts.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.TabProducts.Name = "TabProducts"
+        Me.TabProducts.RightToLeftLayout = True
+        Me.TabProducts.SelectedIndex = 0
+        Me.TabProducts.Size = New System.Drawing.Size(835, 433)
+        Me.TabProducts.TabIndex = 1
         '
-        'TabMaterialsOn
+        'TabProductsOn
         '
-        Me.TabMaterialsOn.Controls.Add(Me.DGVProducts)
-        Me.TabMaterialsOn.Location = New System.Drawing.Point(4, 29)
-        Me.TabMaterialsOn.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterialsOn.Name = "TabMaterialsOn"
-        Me.TabMaterialsOn.Padding = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterialsOn.Size = New System.Drawing.Size(618, 319)
-        Me.TabMaterialsOn.TabIndex = 0
-        Me.TabMaterialsOn.Text = "قائمة المواد المفعلة"
-        Me.TabMaterialsOn.UseVisualStyleBackColor = True
+        Me.TabProductsOn.Controls.Add(Me.DGVProductsOn)
+        Me.TabProductsOn.Location = New System.Drawing.Point(4, 33)
+        Me.TabProductsOn.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.TabProductsOn.Name = "TabProductsOn"
+        Me.TabProductsOn.Padding = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.TabProductsOn.Size = New System.Drawing.Size(827, 396)
+        Me.TabProductsOn.TabIndex = 0
+        Me.TabProductsOn.Text = "قائمة المنتجات المفعلة"
+        Me.TabProductsOn.UseVisualStyleBackColor = True
         '
-        'DGVProducts
+        'DGVProductsOn
         '
-        Me.DGVProducts.AllowUserToAddRows = False
-        Me.DGVProducts.AllowUserToDeleteRows = False
-        Me.DGVProducts.AllowUserToResizeColumns = False
-        Me.DGVProducts.AllowUserToResizeRows = False
-        Me.DGVProducts.BackgroundColor = System.Drawing.Color.White
-        Me.DGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVProducts.Location = New System.Drawing.Point(8, 7)
-        Me.DGVProducts.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.DGVProducts.MultiSelect = False
-        Me.DGVProducts.Name = "DGVProducts"
-        Me.DGVProducts.ReadOnly = True
-        Me.DGVProducts.RowHeadersVisible = False
-        Me.DGVProducts.RowHeadersWidth = 51
-        Me.DGVProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVProducts.Size = New System.Drawing.Size(600, 300)
-        Me.DGVProducts.TabIndex = 0
+        Me.DGVProductsOn.AllowUserToAddRows = False
+        Me.DGVProductsOn.AllowUserToDeleteRows = False
+        Me.DGVProductsOn.AllowUserToResizeColumns = False
+        Me.DGVProductsOn.AllowUserToResizeRows = False
+        Me.DGVProductsOn.BackgroundColor = System.Drawing.Color.White
+        Me.DGVProductsOn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVProductsOn.Location = New System.Drawing.Point(11, 9)
+        Me.DGVProductsOn.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.DGVProductsOn.MultiSelect = False
+        Me.DGVProductsOn.Name = "DGVProductsOn"
+        Me.DGVProductsOn.ReadOnly = True
+        Me.DGVProductsOn.RowHeadersVisible = False
+        Me.DGVProductsOn.RowHeadersWidth = 51
+        Me.DGVProductsOn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVProductsOn.Size = New System.Drawing.Size(800, 369)
+        Me.DGVProductsOn.TabIndex = 0
         '
-        'TabMaterialsOff
+        'TabProductsOff
         '
-        Me.TabMaterialsOff.Controls.Add(Me.DGVMaterialsOff)
-        Me.TabMaterialsOff.Location = New System.Drawing.Point(4, 29)
-        Me.TabMaterialsOff.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterialsOff.Name = "TabMaterialsOff"
-        Me.TabMaterialsOff.Padding = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterialsOff.Size = New System.Drawing.Size(618, 319)
-        Me.TabMaterialsOff.TabIndex = 1
-        Me.TabMaterialsOff.Text = "قائمة المواد الغير مفعلة"
-        Me.TabMaterialsOff.UseVisualStyleBackColor = True
+        Me.TabProductsOff.Controls.Add(Me.DGVProductsOff)
+        Me.TabProductsOff.Location = New System.Drawing.Point(4, 33)
+        Me.TabProductsOff.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.TabProductsOff.Name = "TabProductsOff"
+        Me.TabProductsOff.Padding = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.TabProductsOff.Size = New System.Drawing.Size(827, 396)
+        Me.TabProductsOff.TabIndex = 1
+        Me.TabProductsOff.Text = "قائمة المنتجات الغير مفعلة"
+        Me.TabProductsOff.UseVisualStyleBackColor = True
         '
-        'DGVMaterialsOff
+        'DGVProductsOff
         '
-        Me.DGVMaterialsOff.AllowUserToAddRows = False
-        Me.DGVMaterialsOff.AllowUserToDeleteRows = False
-        Me.DGVMaterialsOff.AllowUserToResizeColumns = False
-        Me.DGVMaterialsOff.AllowUserToResizeRows = False
-        Me.DGVMaterialsOff.BackgroundColor = System.Drawing.Color.White
-        Me.DGVMaterialsOff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVMaterialsOff.Location = New System.Drawing.Point(8, 7)
-        Me.DGVMaterialsOff.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.DGVMaterialsOff.MultiSelect = False
-        Me.DGVMaterialsOff.Name = "DGVMaterialsOff"
-        Me.DGVMaterialsOff.RowHeadersVisible = False
-        Me.DGVMaterialsOff.RowHeadersWidth = 51
-        Me.DGVMaterialsOff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVMaterialsOff.Size = New System.Drawing.Size(600, 300)
-        Me.DGVMaterialsOff.TabIndex = 1
+        Me.DGVProductsOff.AllowUserToAddRows = False
+        Me.DGVProductsOff.AllowUserToDeleteRows = False
+        Me.DGVProductsOff.AllowUserToResizeColumns = False
+        Me.DGVProductsOff.AllowUserToResizeRows = False
+        Me.DGVProductsOff.BackgroundColor = System.Drawing.Color.White
+        Me.DGVProductsOff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVProductsOff.Location = New System.Drawing.Point(11, 9)
+        Me.DGVProductsOff.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.DGVProductsOff.MultiSelect = False
+        Me.DGVProductsOff.Name = "DGVProductsOff"
+        Me.DGVProductsOff.RowHeadersVisible = False
+        Me.DGVProductsOff.RowHeadersWidth = 51
+        Me.DGVProductsOff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVProductsOff.Size = New System.Drawing.Size(800, 369)
+        Me.DGVProductsOff.TabIndex = 1
         '
         'BtnExcelLoad
         '
         Me.BtnExcelLoad.BackColor = System.Drawing.Color.White
         Me.BtnExcelLoad.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnExcelLoad.Image = CType(resources.GetObject("BtnExcelLoad.Image"), System.Drawing.Image)
-        Me.BtnExcelLoad.Location = New System.Drawing.Point(406, 414)
-        Me.BtnExcelLoad.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnExcelLoad.Location = New System.Drawing.Point(541, 510)
+        Me.BtnExcelLoad.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnExcelLoad.Name = "BtnExcelLoad"
         Me.BtnExcelLoad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnExcelLoad.Size = New System.Drawing.Size(123, 63)
+        Me.BtnExcelLoad.Size = New System.Drawing.Size(164, 78)
         Me.BtnExcelLoad.TabIndex = 43
         Me.BtnExcelLoad.Text = "استخراج المعلومات"
         Me.BtnExcelLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnExcelLoad.UseVisualStyleBackColor = False
         '
-        'BtnAddMaterial
+        'BtnAddProduct
         '
-        Me.BtnAddMaterial.BackColor = System.Drawing.Color.White
-        Me.BtnAddMaterial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnAddMaterial.Image = Global.TRM.My.Resources.Resources.plus
-        Me.BtnAddMaterial.Location = New System.Drawing.Point(13, 414)
-        Me.BtnAddMaterial.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.BtnAddMaterial.Name = "BtnAddMaterial"
-        Me.BtnAddMaterial.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnAddMaterial.Size = New System.Drawing.Size(123, 63)
-        Me.BtnAddMaterial.TabIndex = 41
-        Me.BtnAddMaterial.Text = "اضافة مادة"
-        Me.BtnAddMaterial.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnAddMaterial.UseVisualStyleBackColor = False
+        Me.BtnAddProduct.BackColor = System.Drawing.Color.White
+        Me.BtnAddProduct.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnAddProduct.Image = Global.TRM.My.Resources.Resources.plus
+        Me.BtnAddProduct.Location = New System.Drawing.Point(17, 510)
+        Me.BtnAddProduct.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.BtnAddProduct.Name = "BtnAddProduct"
+        Me.BtnAddProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtnAddProduct.Size = New System.Drawing.Size(164, 78)
+        Me.BtnAddProduct.TabIndex = 41
+        Me.BtnAddProduct.Text = "اضافة منتج"
+        Me.BtnAddProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnAddProduct.UseVisualStyleBackColor = False
         '
         'BtnUpdateMaterial
         '
         Me.BtnUpdateMaterial.BackColor = System.Drawing.Color.White
         Me.BtnUpdateMaterial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnUpdateMaterial.Image = CType(resources.GetObject("BtnUpdateMaterial.Image"), System.Drawing.Image)
-        Me.BtnUpdateMaterial.Location = New System.Drawing.Point(144, 414)
-        Me.BtnUpdateMaterial.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnUpdateMaterial.Location = New System.Drawing.Point(192, 510)
+        Me.BtnUpdateMaterial.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnUpdateMaterial.Name = "BtnUpdateMaterial"
         Me.BtnUpdateMaterial.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnUpdateMaterial.Size = New System.Drawing.Size(123, 63)
+        Me.BtnUpdateMaterial.Size = New System.Drawing.Size(164, 78)
         Me.BtnUpdateMaterial.TabIndex = 40
-        Me.BtnUpdateMaterial.Text = "تعديل مادة"
+        Me.BtnUpdateMaterial.Text = "تعديل منتج"
         Me.BtnUpdateMaterial.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnUpdateMaterial.UseVisualStyleBackColor = False
         '
@@ -178,13 +178,13 @@ Partial Class FrmProducts
         Me.BtnDeleteMaterial.BackColor = System.Drawing.Color.White
         Me.BtnDeleteMaterial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnDeleteMaterial.Image = Global.TRM.My.Resources.Resources.delete48
-        Me.BtnDeleteMaterial.Location = New System.Drawing.Point(275, 414)
-        Me.BtnDeleteMaterial.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnDeleteMaterial.Location = New System.Drawing.Point(367, 510)
+        Me.BtnDeleteMaterial.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnDeleteMaterial.Name = "BtnDeleteMaterial"
         Me.BtnDeleteMaterial.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnDeleteMaterial.Size = New System.Drawing.Size(123, 63)
+        Me.BtnDeleteMaterial.Size = New System.Drawing.Size(164, 78)
         Me.BtnDeleteMaterial.TabIndex = 39
-        Me.BtnDeleteMaterial.Text = "حذف مادة"
+        Me.BtnDeleteMaterial.Text = "حذف منتج"
         Me.BtnDeleteMaterial.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnDeleteMaterial.UseVisualStyleBackColor = False
         '
@@ -193,11 +193,11 @@ Partial Class FrmProducts
         Me.BtnClose.BackColor = System.Drawing.Color.White
         Me.BtnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(535, 414)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnClose.Location = New System.Drawing.Point(713, 510)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnClose.Size = New System.Drawing.Size(123, 63)
+        Me.BtnClose.Size = New System.Drawing.Size(164, 78)
         Me.BtnClose.TabIndex = 38
         Me.BtnClose.Text = "اغلاق"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -205,43 +205,44 @@ Partial Class FrmProducts
         '
         'FrmProducts
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(680, 491)
+        Me.ClientSize = New System.Drawing.Size(907, 604)
         Me.Controls.Add(Me.GrpProducts)
         Me.Controls.Add(Me.BtnExcelLoad)
-        Me.Controls.Add(Me.BtnAddMaterial)
+        Me.Controls.Add(Me.BtnAddProduct)
         Me.Controls.Add(Me.BtnUpdateMaterial)
         Me.Controls.Add(Me.BtnDeleteMaterial)
         Me.Controls.Add(Me.BtnClose)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmProducts"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.RightToLeftLayout = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "מחיקת רכב"
+        Me.Text = "قائمة المنتجات"
         Me.GrpProducts.ResumeLayout(False)
-        Me.TabMaterials.ResumeLayout(False)
-        Me.TabMaterialsOn.ResumeLayout(False)
-        CType(Me.DGVProducts, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabMaterialsOff.ResumeLayout(False)
-        CType(Me.DGVMaterialsOff, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabProducts.ResumeLayout(False)
+        Me.TabProductsOn.ResumeLayout(False)
+        CType(Me.DGVProductsOn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabProductsOff.ResumeLayout(False)
+        CType(Me.DGVProductsOff, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GrpProducts As GroupBox
-    Friend WithEvents TabMaterials As TabControl
-    Friend WithEvents TabMaterialsOn As TabPage
-    Friend WithEvents DGVProducts As DataGridView
-    Friend WithEvents TabMaterialsOff As TabPage
-    Friend WithEvents DGVMaterialsOff As DataGridView
+    Friend WithEvents TabProducts As TabControl
+    Friend WithEvents TabProductsOn As TabPage
+    Friend WithEvents DGVProductsOn As DataGridView
+    Friend WithEvents TabProductsOff As TabPage
+    Friend WithEvents DGVProductsOff As DataGridView
     Friend WithEvents BtnExcelLoad As Button
-    Friend WithEvents BtnAddMaterial As Button
+    Friend WithEvents BtnAddProduct As Button
     Friend WithEvents BtnUpdateMaterial As Button
     Friend WithEvents BtnDeleteMaterial As Button
     Friend WithEvents BtnClose As Button

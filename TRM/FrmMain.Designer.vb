@@ -35,7 +35,6 @@ Partial Class FrmMain
         Me.הסכםריקToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ספירתמלאיToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הגדרותToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.הגדרתמספרביומןToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הגדרתפרטיביתהעסקToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הגדרתשדותחובהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הפעלתמצבמנהלToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -76,7 +75,7 @@ Partial Class FrmMain
         Me.MenuMain.MdiWindowListItem = Me.חלונותToolStripMenuItem
         Me.MenuMain.Name = "MenuMain"
         Me.MenuMain.Padding = New System.Windows.Forms.Padding(5, 1, 0, 1)
-        Me.MenuMain.Size = New System.Drawing.Size(1349, 30)
+        Me.MenuMain.Size = New System.Drawing.Size(1349, 25)
         Me.MenuMain.TabIndex = 0
         Me.MenuMain.Text = "MenuStrip1"
         '
@@ -84,7 +83,7 @@ Partial Class FrmMain
         '
         Me.קובץToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.החלפתמשתמשToolStripMenuItem, Me.יציאהToolStripMenuItem})
         Me.קובץToolStripMenuItem.Name = "קובץToolStripMenuItem"
-        Me.קובץToolStripMenuItem.Size = New System.Drawing.Size(42, 28)
+        Me.קובץToolStripMenuItem.Size = New System.Drawing.Size(42, 23)
         Me.קובץToolStripMenuItem.Text = "ملف"
         '
         'החלפתמשתמשToolStripMenuItem
@@ -103,7 +102,7 @@ Partial Class FrmMain
         '
         Me.TSMTickets.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMUsers})
         Me.TSMTickets.Name = "TSMTickets"
-        Me.TSMTickets.Size = New System.Drawing.Size(60, 28)
+        Me.TSMTickets.Size = New System.Drawing.Size(60, 23)
         Me.TSMTickets.Text = "مستندات"
         '
         'TSMUsers
@@ -146,17 +145,11 @@ Partial Class FrmMain
         '
         'הגדרותToolStripMenuItem
         '
-        Me.הגדרותToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.הגדרתמספרביומןToolStripMenuItem, Me.הגדרתפרטיביתהעסקToolStripMenuItem, Me.הגדרתשדותחובהToolStripMenuItem, Me.הפעלתמצבמנהלToolStripMenuItem})
+        Me.הגדרותToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.הגדרתפרטיביתהעסקToolStripMenuItem, Me.הגדרתשדותחובהToolStripMenuItem, Me.הפעלתמצבמנהלToolStripMenuItem})
         Me.הגדרותToolStripMenuItem.Name = "הגדרותToolStripMenuItem"
         Me.הגדרותToolStripMenuItem.Size = New System.Drawing.Size(57, 23)
         Me.הגדרותToolStripMenuItem.Text = "خيارات"
         Me.הגדרותToolStripMenuItem.Visible = False
-        '
-        'הגדרתמספרביומןToolStripMenuItem
-        '
-        Me.הגדרתמספרביומןToolStripMenuItem.Name = "הגדרתמספרביומןToolStripMenuItem"
-        Me.הגדרתמספרביומןToolStripMenuItem.Size = New System.Drawing.Size(251, 26)
-        Me.הגדרתמספרביומןToolStripMenuItem.Text = "הגדרת מספר ביומן"
         '
         'הגדרתפרטיביתהעסקToolStripMenuItem
         '
@@ -180,69 +173,69 @@ Partial Class FrmMain
         '
         Me.טבלאותToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMUnits, Me.TSUsers, Me.TSActions})
         Me.טבלאותToolStripMenuItem.Name = "טבלאותToolStripMenuItem"
-        Me.טבלאותToolStripMenuItem.Size = New System.Drawing.Size(52, 28)
+        Me.טבלאותToolStripMenuItem.Size = New System.Drawing.Size(52, 23)
         Me.טבלאותToolStripMenuItem.Text = "جداول"
         '
         'TSMUnits
         '
         Me.TSMUnits.Name = "TSMUnits"
-        Me.TSMUnits.Size = New System.Drawing.Size(156, 26)
+        Me.TSMUnits.Size = New System.Drawing.Size(224, 26)
         Me.TSMUnits.Text = "وحدات القياس"
         '
         'TSUsers
         '
         Me.TSUsers.Name = "TSUsers"
-        Me.TSUsers.Size = New System.Drawing.Size(156, 26)
+        Me.TSUsers.Size = New System.Drawing.Size(224, 26)
         Me.TSUsers.Text = "مستخدمين"
         '
         'TSActions
         '
         Me.TSActions.Name = "TSActions"
-        Me.TSActions.Size = New System.Drawing.Size(156, 26)
+        Me.TSActions.Size = New System.Drawing.Size(224, 26)
         Me.TSActions.Text = "العمليات"
         '
         'מערכתToolStripMenuItem
         '
         Me.מערכתToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.גיבוישחזורToolStripMenuItem1, Me.עדכוןתוכנהToolStripMenuItem, Me.TSBtnCreateTables, Me.אודותToolStripMenuItem1, Me.PermisionsTSM})
         Me.מערכתToolStripMenuItem.Name = "מערכתToolStripMenuItem"
-        Me.מערכתToolStripMenuItem.Size = New System.Drawing.Size(48, 28)
+        Me.מערכתToolStripMenuItem.Size = New System.Drawing.Size(48, 23)
         Me.מערכתToolStripMenuItem.Text = "النظام"
         '
         'גיבוישחזורToolStripMenuItem1
         '
         Me.גיבוישחזורToolStripMenuItem1.Name = "גיבוישחזורToolStripMenuItem1"
-        Me.גיבוישחזורToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.גיבוישחזורToolStripMenuItem1.Size = New System.Drawing.Size(199, 26)
         Me.גיבוישחזורToolStripMenuItem1.Text = "النسخ الاحتياطي"
         '
         'עדכוןתוכנהToolStripMenuItem
         '
         Me.עדכוןתוכנהToolStripMenuItem.Name = "עדכוןתוכנהToolStripMenuItem"
-        Me.עדכוןתוכנהToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.עדכוןתוכנהToolStripMenuItem.Size = New System.Drawing.Size(199, 26)
         Me.עדכוןתוכנהToolStripMenuItem.Text = "تحديث البرنامج"
         '
         'TSBtnCreateTables
         '
         Me.TSBtnCreateTables.Name = "TSBtnCreateTables"
-        Me.TSBtnCreateTables.Size = New System.Drawing.Size(224, 26)
+        Me.TSBtnCreateTables.Size = New System.Drawing.Size(199, 26)
         Me.TSBtnCreateTables.Text = "creating tables"
         '
         'אודותToolStripMenuItem1
         '
         Me.אודותToolStripMenuItem1.Name = "אודותToolStripMenuItem1"
-        Me.אודותToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
+        Me.אודותToolStripMenuItem1.Size = New System.Drawing.Size(199, 26)
         Me.אודותToolStripMenuItem1.Text = "حول"
         '
         'PermisionsTSM
         '
         Me.PermisionsTSM.Name = "PermisionsTSM"
-        Me.PermisionsTSM.Size = New System.Drawing.Size(224, 26)
+        Me.PermisionsTSM.Size = New System.Drawing.Size(199, 26)
         Me.PermisionsTSM.Text = "Permissions"
         '
         'חלונותToolStripMenuItem
         '
         Me.חלונותToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMCloseAll, Me.ToolStripSeparator1})
         Me.חלונותToolStripMenuItem.Name = "חלונותToolStripMenuItem"
-        Me.חלונותToolStripMenuItem.Size = New System.Drawing.Size(44, 28)
+        Me.חלונותToolStripMenuItem.Size = New System.Drawing.Size(44, 23)
         Me.חלונותToolStripMenuItem.Text = "نوافذ"
         '
         'TSMCloseAll
@@ -294,7 +287,7 @@ Partial Class FrmMain
         '
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBtnUsers, Me.TSBtnMaterial, Me.TSBtnBackUp, Me.TSPActions, Me.TSBtnProducts})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 30)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 25)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1349, 55)
         Me.ToolStrip1.TabIndex = 20
@@ -355,7 +348,6 @@ Partial Class FrmMain
         Me.TSBtnProducts.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.TSBtnProducts.Size = New System.Drawing.Size(67, 52)
         Me.TSBtnProducts.Text = "ToolStripButton1"
-        Me.TSBtnProducts.Visible = False
         '
         'FrmMain
         '
@@ -394,7 +386,6 @@ Partial Class FrmMain
     Friend WithEvents הגדרותToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents מערכתToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הגדרתפרטיביתהעסקToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents הגדרתמספרביומןToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הגדרתשדותחובהToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents טבלאותToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TSMUnits As System.Windows.Forms.ToolStripMenuItem

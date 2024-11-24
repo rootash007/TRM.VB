@@ -5,21 +5,13 @@ Public Class FrmProducts
     Private Sub FrmProducts_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim que As String = "select * from products"
         FillList(que)
-        DGVProducts.DataSource = MyTab
-        ProductsDGVDesign(DGVProducts)
+        DGVProductsOn.DataSource = MyTab
+        ProductsDGVDesign(DGVProductsOn)
 
     End Sub
 
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs)
         NumbersOnly(e)
-    End Sub
-
-    Private Sub FrmTerminate_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.Escape Then
-            Me.Close()
-        ElseIf e.KeyCode = Keys.Enter Then
-            'BtnTerminate.PerformClick()
-        End If
     End Sub
 
     Private Sub BtnTerminate_Click(sender As Object, e As EventArgs)
@@ -49,5 +41,13 @@ Public Class FrmProducts
         End If
     End Sub
 
+    Private Sub FrmProducts_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown, DGVProductsOn.KeyDown, BtnUpdateMaterial.KeyDown, BtnExcelLoad.KeyDown, BtnDeleteMaterial.KeyDown, BtnClose.KeyDown, BtnAddProduct.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
 
+    Private Sub BtnAddProduct_Click(sender As Object, e As EventArgs) Handles BtnAddProduct.Click
+        FrmProductAE.ShowDialog()
+    End Sub
 End Class

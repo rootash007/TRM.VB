@@ -772,7 +772,6 @@ D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarCardPrint.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarDelete.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarKMT.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarSale.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCarSerialUpdate.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmCustomers.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmDeletedReport.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmActionsTypes.resources
@@ -854,3 +853,4 @@ D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmProducts.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmImportProductData.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.vbproj.Up2Date
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmUnits.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmProductAE.resources

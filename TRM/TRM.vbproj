@@ -236,10 +236,10 @@
     <Compile Include="FrmCarSale.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCarSerialUpdate.Designer.vb">
-      <DependentUpon>FrmCarSerialUpdate.vb</DependentUpon>
+    <Compile Include="FrmProductAE.Designer.vb">
+      <DependentUpon>FrmProductAE.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCarSerialUpdate.vb">
+    <Compile Include="FrmProductAE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCustomers.Designer.vb">
@@ -426,8 +426,8 @@
     <EmbeddedResource Include="FrmCarSale.resx">
       <DependentUpon>FrmCarSale.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCarSerialUpdate.resx">
-      <DependentUpon>FrmCarSerialUpdate.vb</DependentUpon>
+    <EmbeddedResource Include="FrmProductAE.resx">
+      <DependentUpon>FrmProductAE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomers.resx">
       <DependentUpon>FrmCustomers.vb</DependentUpon>
