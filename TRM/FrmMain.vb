@@ -372,21 +372,20 @@ Public Class FrmMain
     Private Sub TSBtnProducts_Click(sender As Object, e As EventArgs) Handles TSBtnProducts.Click
         Try
             If AdminMode = True Then
-                Dim FmProducts As New FrmProducts
                 If Application.OpenForms.OfType(Of FrmProducts).Any = True Then
                     FmProducts.Activate()
                 Else
                     'FmProducts = New FrmProducts
+                    FmProducts = New FrmProducts
                     FmProducts.MdiParent = Me
                     FmProducts.Show()
                 End If
             Else
                 If isAllowed(7) = True Then
-                    Dim FmProducts As New FrmProducts
                     If Application.OpenForms.OfType(Of FrmProducts).Any = True Then
                         FmProducts.Activate()
                     Else
-                        'FmProducts = New FrmProducts
+                        FmProducts = New FrmProducts
                         FmProducts.MdiParent = Me
                         FmProducts.Show()
                     End If

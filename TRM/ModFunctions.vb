@@ -32,14 +32,12 @@ Module ModFunctions
     Public MaterialsTab As DataTable
     Public ActionsTab As DataTable
     Public PermissionsTab As DataTable
-
-
     Public ActiveUser As String                            'המשתמש הפעיל בכניסה לתוכנה
     Public ActiveLvl As Integer                            'רמת המשתמש הפעיל
     Public ActiveUserSerial As Integer
     Public OldQuantity As Double
     Public ReConnect As Boolean = False    'החלפת משתמש
-
+    Public isAddProduct As Boolean = False
     Public AdminMode As Boolean = False    'מצב מנהל
     'Public isConnected As Boolean
 
@@ -50,6 +48,8 @@ Module ModFunctions
     Public FmMaterials As New FrmMaterials
     Public FmActionsTypes As New FrmActionsTypes
     Public FmActionAdd As New FrmActionAdd
+    Public FmProducts As New FrmProducts
+
 
 
 #End Region
@@ -1435,32 +1435,40 @@ Module ModFunctions
 	           lvl8 bit NOT NULL Default(0),
 	           lvl9 bit NOT NULL Default(0),
                ) 
+               INSERT INTO permissions (permission_name) values ('Users')
+               INSERT INTO permissions (permission_name) values ('Increase Actions')
+               INSERT INTO permissions (permission_name) values ('Decrease Actions')
+               INSERT INTO permissions (permission_name) values ('Edit Action')
+               INSERT INTO permissions (permission_name) values ('Delete Action')
+               INSERT INTO permissions (permission_name) values ('Permissions')
+               INSERT INTO permissions (permission_name) values ('Products')
                END
 
                IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'test') AND type in (N'U'))
+               WHERE object_id = OBJECT_ID(N'material_types') AND type in (N'U'))
                BEGIN
-               CREATE TABLE test(
+               CREATE TABLE material_types(
                id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               test_name nvarchar (50) NOT NULL,
-	           lvl1 bit NOT NULL Default(1),
-	           lvl2 bit NOT NULL Default(0),
-	           lvl3 bit NOT NULL Default(0),
-	           lvl4 bit NOT NULL Default(0),
-	           lvl5 bit NOT NULL Default(0),
-	           lvl6 bit NOT NULL Default(0),
-	           lvl7 bit NOT NULL Default(0),
-	           lvl8 bit NOT NULL Default(0),
-	           lvl9 bit NOT NULL Default(0),
+               material_id int NOT NULL,
+               type_name nvarchar (50) NOT NULL,
+               type_quantity decimal(18, 2) NOT NULL Default(0),
                ) 
-               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('users',1,0,0,0,0,0,0,0,0)
-               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('increase',1,0,0,0,0,0,0,0,0)
-               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('decrease',1,0,0,0,0,0,0,0,0)
                END
-               ELSE
-               INSERT INTO test (test_name,lvl1,lvl2,lvl3,lvl4,lvl5,lvl6,lvl7,lvl8,lvl9) values ('testing',1,1,1,1,1,1,1,1,1)
 
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'product_materials') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE product_materials(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               product_id int NOT NULL,
+               material_id int NOT NULL,
+               material_name nvarchar (50) NOT NULL,
+               material_loc_barcode nvarchar (50) NOT NULL,
+               material_quantity decimal(18, 2) NOT NULL Default(0),
+               material_unit nvarchar (15) NOT NULL,
 
+               ) 
+               END
 
                "
 

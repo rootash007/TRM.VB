@@ -50,10 +50,10 @@ Partial Class FrmMaterials
         '
         Me.GrpMaterials.Controls.Add(Me.TabMaterials)
         Me.GrpMaterials.Location = New System.Drawing.Point(14, 19)
-        Me.GrpMaterials.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.GrpMaterials.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.GrpMaterials.Name = "GrpMaterials"
-        Me.GrpMaterials.Padding = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.GrpMaterials.Size = New System.Drawing.Size(1156, 603)
+        Me.GrpMaterials.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
+        Me.GrpMaterials.Size = New System.Drawing.Size(1157, 603)
         Me.GrpMaterials.TabIndex = 36
         Me.GrpMaterials.TabStop = False
         Me.GrpMaterials.Text = "قائمة المواد"
@@ -65,7 +65,7 @@ Partial Class FrmMaterials
         Me.TabMaterials.Controls.Add(Me.TabMaterialsAlarm)
         Me.TabMaterials.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabMaterials.Location = New System.Drawing.Point(9, 33)
-        Me.TabMaterials.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.TabMaterials.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterials.Name = "TabMaterials"
         Me.TabMaterials.RightToLeftLayout = True
         Me.TabMaterials.SelectedIndex = 0
@@ -75,11 +75,11 @@ Partial Class FrmMaterials
         'TabMaterialsOn
         '
         Me.TabMaterialsOn.Controls.Add(Me.DgvMaterials)
-        Me.TabMaterialsOn.Location = New System.Drawing.Point(4, 33)
-        Me.TabMaterialsOn.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.TabMaterialsOn.Location = New System.Drawing.Point(4, 29)
+        Me.TabMaterialsOn.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsOn.Name = "TabMaterialsOn"
-        Me.TabMaterialsOn.Padding = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterialsOn.Size = New System.Drawing.Size(1131, 520)
+        Me.TabMaterialsOn.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
+        Me.TabMaterialsOn.Size = New System.Drawing.Size(1131, 524)
         Me.TabMaterialsOn.TabIndex = 0
         Me.TabMaterialsOn.Text = "قائمة المواد المفعلة"
         Me.TabMaterialsOn.UseVisualStyleBackColor = True
@@ -93,7 +93,7 @@ Partial Class FrmMaterials
         Me.DgvMaterials.BackgroundColor = System.Drawing.Color.White
         Me.DgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvMaterials.Location = New System.Drawing.Point(9, 11)
-        Me.DgvMaterials.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.DgvMaterials.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.DgvMaterials.MultiSelect = False
         Me.DgvMaterials.Name = "DgvMaterials"
         Me.DgvMaterials.ReadOnly = True
@@ -106,11 +106,11 @@ Partial Class FrmMaterials
         'TabMaterialsOff
         '
         Me.TabMaterialsOff.Controls.Add(Me.DGVMaterialsOff)
-        Me.TabMaterialsOff.Location = New System.Drawing.Point(4, 33)
-        Me.TabMaterialsOff.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.TabMaterialsOff.Location = New System.Drawing.Point(4, 29)
+        Me.TabMaterialsOff.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsOff.Name = "TabMaterialsOff"
-        Me.TabMaterialsOff.Padding = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterialsOff.Size = New System.Drawing.Size(1131, 520)
+        Me.TabMaterialsOff.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
+        Me.TabMaterialsOff.Size = New System.Drawing.Size(1131, 524)
         Me.TabMaterialsOff.TabIndex = 1
         Me.TabMaterialsOff.Text = "قائمة المواد الغير مفعلة"
         Me.TabMaterialsOff.UseVisualStyleBackColor = True
@@ -124,7 +124,7 @@ Partial Class FrmMaterials
         Me.DGVMaterialsOff.BackgroundColor = System.Drawing.Color.White
         Me.DGVMaterialsOff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVMaterialsOff.Location = New System.Drawing.Point(9, 11)
-        Me.DGVMaterialsOff.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.DGVMaterialsOff.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.DGVMaterialsOff.MultiSelect = False
         Me.DGVMaterialsOff.Name = "DGVMaterialsOff"
         Me.DGVMaterialsOff.ReadOnly = True
@@ -140,11 +140,11 @@ Partial Class FrmMaterials
         Me.TabMaterialsAlarm.Controls.Add(Me.DGVAlarm)
         Me.TabMaterialsAlarm.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
         Me.TabMaterialsAlarm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.TabMaterialsAlarm.Location = New System.Drawing.Point(4, 33)
-        Me.TabMaterialsAlarm.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.TabMaterialsAlarm.Location = New System.Drawing.Point(4, 29)
+        Me.TabMaterialsAlarm.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsAlarm.Name = "TabMaterialsAlarm"
-        Me.TabMaterialsAlarm.Padding = New System.Windows.Forms.Padding(4, 7, 4, 7)
-        Me.TabMaterialsAlarm.Size = New System.Drawing.Size(1131, 520)
+        Me.TabMaterialsAlarm.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
+        Me.TabMaterialsAlarm.Size = New System.Drawing.Size(1131, 524)
         Me.TabMaterialsAlarm.TabIndex = 2
         Me.TabMaterialsAlarm.Tag = ""
         Me.TabMaterialsAlarm.Text = "قائمة التنبيهات"
@@ -158,7 +158,7 @@ Partial Class FrmMaterials
         Me.DGVAlarm.BackgroundColor = System.Drawing.Color.White
         Me.DGVAlarm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVAlarm.Location = New System.Drawing.Point(9, 11)
-        Me.DGVAlarm.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.DGVAlarm.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.DGVAlarm.MultiSelect = False
         Me.DGVAlarm.Name = "DGVAlarm"
         Me.DGVAlarm.ReadOnly = True
@@ -173,11 +173,11 @@ Partial Class FrmMaterials
         Me.BtnExcelLoad.BackColor = System.Drawing.Color.White
         Me.BtnExcelLoad.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnExcelLoad.Image = CType(resources.GetObject("BtnExcelLoad.Image"), System.Drawing.Image)
-        Me.BtnExcelLoad.Location = New System.Drawing.Point(500, 632)
-        Me.BtnExcelLoad.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnExcelLoad.Location = New System.Drawing.Point(501, 632)
+        Me.BtnExcelLoad.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.BtnExcelLoad.Name = "BtnExcelLoad"
         Me.BtnExcelLoad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnExcelLoad.Size = New System.Drawing.Size(156, 84)
+        Me.BtnExcelLoad.Size = New System.Drawing.Size(155, 84)
         Me.BtnExcelLoad.TabIndex = 37
         Me.BtnExcelLoad.Text = "استخراج المعلومات"
         Me.BtnExcelLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -189,10 +189,10 @@ Partial Class FrmMaterials
         Me.BtnAddMaterial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnAddMaterial.Image = Global.TRM.My.Resources.Resources.plus
         Me.BtnAddMaterial.Location = New System.Drawing.Point(13, 632)
-        Me.BtnAddMaterial.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnAddMaterial.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.BtnAddMaterial.Name = "BtnAddMaterial"
         Me.BtnAddMaterial.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnAddMaterial.Size = New System.Drawing.Size(156, 84)
+        Me.BtnAddMaterial.Size = New System.Drawing.Size(155, 84)
         Me.BtnAddMaterial.TabIndex = 35
         Me.BtnAddMaterial.Text = "اضافة مادة"
         Me.BtnAddMaterial.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -204,10 +204,10 @@ Partial Class FrmMaterials
         Me.BtnUpdateMaterial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnUpdateMaterial.Image = CType(resources.GetObject("BtnUpdateMaterial.Image"), System.Drawing.Image)
         Me.BtnUpdateMaterial.Location = New System.Drawing.Point(176, 632)
-        Me.BtnUpdateMaterial.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnUpdateMaterial.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.BtnUpdateMaterial.Name = "BtnUpdateMaterial"
         Me.BtnUpdateMaterial.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnUpdateMaterial.Size = New System.Drawing.Size(156, 84)
+        Me.BtnUpdateMaterial.Size = New System.Drawing.Size(155, 84)
         Me.BtnUpdateMaterial.TabIndex = 34
         Me.BtnUpdateMaterial.Text = "تعديل مادة"
         Me.BtnUpdateMaterial.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -219,10 +219,10 @@ Partial Class FrmMaterials
         Me.BtnDeleteMaterial.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnDeleteMaterial.Image = Global.TRM.My.Resources.Resources.delete48
         Me.BtnDeleteMaterial.Location = New System.Drawing.Point(337, 632)
-        Me.BtnDeleteMaterial.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnDeleteMaterial.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.BtnDeleteMaterial.Name = "BtnDeleteMaterial"
         Me.BtnDeleteMaterial.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnDeleteMaterial.Size = New System.Drawing.Size(156, 84)
+        Me.BtnDeleteMaterial.Size = New System.Drawing.Size(155, 84)
         Me.BtnDeleteMaterial.TabIndex = 33
         Me.BtnDeleteMaterial.Text = "حذف مادة"
         Me.BtnDeleteMaterial.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -234,10 +234,10 @@ Partial Class FrmMaterials
         Me.BtnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
         Me.BtnClose.Location = New System.Drawing.Point(662, 632)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnClose.Size = New System.Drawing.Size(156, 84)
+        Me.BtnClose.Size = New System.Drawing.Size(155, 84)
         Me.BtnClose.TabIndex = 32
         Me.BtnClose.Text = "اغلاق"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -245,7 +245,7 @@ Partial Class FrmMaterials
         '
         'FrmMaterials
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 24.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1186, 731)
@@ -257,7 +257,7 @@ Partial Class FrmMaterials
         Me.Controls.Add(Me.BtnClose)
         Me.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
+        Me.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.Name = "FrmMaterials"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.RightToLeftLayout = True

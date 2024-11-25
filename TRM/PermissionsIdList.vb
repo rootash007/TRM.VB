@@ -5,7 +5,7 @@
 '    4  = edit action
 '    5  = delete action
 '    6  = permissions
-'    7  = 
+'    7  = products
 '    8  = 
 '    9  = 
 '    10 = 

@@ -41,11 +41,29 @@ Partial Class FrmMaterialAddEdit
         Me.TxtLocBarcode = New System.Windows.Forms.TextBox()
         Me.LblUnit = New System.Windows.Forms.Label()
         Me.LblMaterialName = New System.Windows.Forms.Label()
+        Me.TabMaterialEA = New System.Windows.Forms.TabControl()
+        Me.TabMaterial = New System.Windows.Forms.TabPage()
+        Me.TabTypes = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DGVMaterialTypes = New System.Windows.Forms.DataGridView()
+        Me.TxtTypeName = New System.Windows.Forms.TextBox()
+        Me.BtnAddType = New System.Windows.Forms.Button()
+        Me.NumTypeQuantity = New System.Windows.Forms.NumericUpDown()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.IsActive, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpDetails.SuspendLayout()
         CType(Me.NumWeigth, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumMinQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabMaterialEA.SuspendLayout()
+        Me.TabMaterial.SuspendLayout()
+        Me.TabTypes.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DGVMaterialTypes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumTypeQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnMaterialAE
@@ -53,7 +71,7 @@ Partial Class FrmMaterialAddEdit
         Me.BtnMaterialAE.BackColor = System.Drawing.Color.White
         Me.BtnMaterialAE.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnMaterialAE.Image = CType(resources.GetObject("BtnMaterialAE.Image"), System.Drawing.Image)
-        Me.BtnMaterialAE.Location = New System.Drawing.Point(106, 307)
+        Me.BtnMaterialAE.Location = New System.Drawing.Point(226, 298)
         Me.BtnMaterialAE.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnMaterialAE.Name = "BtnMaterialAE"
         Me.BtnMaterialAE.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -68,7 +86,7 @@ Partial Class FrmMaterialAddEdit
         Me.BtnClose.BackColor = System.Drawing.Color.White
         Me.BtnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(255, 307)
+        Me.BtnClose.Location = New System.Drawing.Point(7, 298)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -97,7 +115,7 @@ Partial Class FrmMaterialAddEdit
         Me.LblWeigth.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblWeigth.Name = "LblWeigth"
         Me.LblWeigth.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblWeigth.Size = New System.Drawing.Size(48, 23)
+        Me.LblWeigth.Size = New System.Drawing.Size(37, 18)
         Me.LblWeigth.TabIndex = 39
         Me.LblWeigth.Text = "الوزن"
         '
@@ -105,11 +123,11 @@ Partial Class FrmMaterialAddEdit
         '
         Me.LblMinQuantity.AutoSize = True
         Me.LblMinQuantity.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblMinQuantity.Location = New System.Drawing.Point(274, 177)
+        Me.LblMinQuantity.Location = New System.Drawing.Point(283, 177)
         Me.LblMinQuantity.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblMinQuantity.Name = "LblMinQuantity"
         Me.LblMinQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblMinQuantity.Size = New System.Drawing.Size(83, 23)
+        Me.LblMinQuantity.Size = New System.Drawing.Size(63, 18)
         Me.LblMinQuantity.TabIndex = 37
         Me.LblMinQuantity.Text = "الكمية الدنيا"
         '
@@ -121,7 +139,7 @@ Partial Class FrmMaterialAddEdit
         Me.LblQuantity.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblQuantity.Name = "LblQuantity"
         Me.LblQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblQuantity.Size = New System.Drawing.Size(47, 23)
+        Me.LblQuantity.Size = New System.Drawing.Size(36, 18)
         Me.LblQuantity.TabIndex = 35
         Me.LblQuantity.Text = "الكمية"
         '
@@ -134,7 +152,7 @@ Partial Class FrmMaterialAddEdit
         Me.NumQuantity.Minimum = New Decimal(New Integer() {9999999, 0, 0, -2147483648})
         Me.NumQuantity.Name = "NumQuantity"
         Me.NumQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.NumQuantity.Size = New System.Drawing.Size(179, 30)
+        Me.NumQuantity.Size = New System.Drawing.Size(179, 26)
         Me.NumQuantity.TabIndex = 3
         Me.NumQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -142,11 +160,11 @@ Partial Class FrmMaterialAddEdit
         '
         Me.LblBarecode.AutoSize = True
         Me.LblBarecode.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblBarecode.Location = New System.Drawing.Point(311, 110)
+        Me.LblBarecode.Location = New System.Drawing.Point(310, 110)
         Me.LblBarecode.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblBarecode.Name = "LblBarecode"
         Me.LblBarecode.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblBarecode.Size = New System.Drawing.Size(46, 23)
+        Me.LblBarecode.Size = New System.Drawing.Size(36, 18)
         Me.LblBarecode.TabIndex = 31
         Me.LblBarecode.Text = "الرمز"
         '
@@ -155,7 +173,7 @@ Partial Class FrmMaterialAddEdit
         Me.TxtMaterialName.Location = New System.Drawing.Point(84, 39)
         Me.TxtMaterialName.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtMaterialName.Name = "TxtMaterialName"
-        Me.TxtMaterialName.Size = New System.Drawing.Size(179, 30)
+        Me.TxtMaterialName.Size = New System.Drawing.Size(179, 26)
         Me.TxtMaterialName.TabIndex = 0
         Me.TxtMaterialName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -164,7 +182,7 @@ Partial Class FrmMaterialAddEdit
         Me.Txtbarcode.Location = New System.Drawing.Point(84, 107)
         Me.Txtbarcode.Margin = New System.Windows.Forms.Padding(4)
         Me.Txtbarcode.Name = "Txtbarcode"
-        Me.Txtbarcode.Size = New System.Drawing.Size(179, 30)
+        Me.Txtbarcode.Size = New System.Drawing.Size(179, 26)
         Me.Txtbarcode.TabIndex = 2
         Me.Txtbarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -185,7 +203,7 @@ Partial Class FrmMaterialAddEdit
         Me.GrpDetails.Controls.Add(Me.TxtMaterialName)
         Me.GrpDetails.Controls.Add(Me.Txtbarcode)
         Me.GrpDetails.Controls.Add(Me.LblMaterialName)
-        Me.GrpDetails.Location = New System.Drawing.Point(36, 16)
+        Me.GrpDetails.Location = New System.Drawing.Point(7, 7)
         Me.GrpDetails.Margin = New System.Windows.Forms.Padding(4)
         Me.GrpDetails.Name = "GrpDetails"
         Me.GrpDetails.Padding = New System.Windows.Forms.Padding(4)
@@ -202,7 +220,7 @@ Partial Class FrmMaterialAddEdit
         Me.CmbUnits.Location = New System.Drawing.Point(84, 209)
         Me.CmbUnits.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CmbUnits.Name = "CmbUnits"
-        Me.CmbUnits.Size = New System.Drawing.Size(179, 31)
+        Me.CmbUnits.Size = New System.Drawing.Size(179, 26)
         Me.CmbUnits.Sorted = True
         Me.CmbUnits.TabIndex = 5
         '
@@ -214,7 +232,7 @@ Partial Class FrmMaterialAddEdit
         Me.NumWeigth.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
         Me.NumWeigth.Name = "NumWeigth"
         Me.NumWeigth.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.NumWeigth.Size = New System.Drawing.Size(179, 30)
+        Me.NumWeigth.Size = New System.Drawing.Size(179, 26)
         Me.NumWeigth.TabIndex = 6
         Me.NumWeigth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -225,7 +243,7 @@ Partial Class FrmMaterialAddEdit
         Me.NumMinQuantity.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
         Me.NumMinQuantity.Name = "NumMinQuantity"
         Me.NumMinQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.NumMinQuantity.Size = New System.Drawing.Size(179, 30)
+        Me.NumMinQuantity.Size = New System.Drawing.Size(179, 26)
         Me.NumMinQuantity.TabIndex = 4
         Me.NumMinQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -233,11 +251,11 @@ Partial Class FrmMaterialAddEdit
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(262, 76)
+        Me.Label1.Location = New System.Drawing.Point(274, 76)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label1.Size = New System.Drawing.Size(95, 23)
+        Me.Label1.Size = New System.Drawing.Size(72, 18)
         Me.Label1.TabIndex = 45
         Me.Label1.Text = "الرمز المحلي"
         '
@@ -246,7 +264,7 @@ Partial Class FrmMaterialAddEdit
         Me.TxtLocBarcode.Location = New System.Drawing.Point(84, 73)
         Me.TxtLocBarcode.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtLocBarcode.Name = "TxtLocBarcode"
-        Me.TxtLocBarcode.Size = New System.Drawing.Size(179, 30)
+        Me.TxtLocBarcode.Size = New System.Drawing.Size(179, 26)
         Me.TxtLocBarcode.TabIndex = 1
         Me.TxtLocBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -254,11 +272,11 @@ Partial Class FrmMaterialAddEdit
         '
         Me.LblUnit.AutoSize = True
         Me.LblUnit.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblUnit.Location = New System.Drawing.Point(269, 212)
+        Me.LblUnit.Location = New System.Drawing.Point(278, 212)
         Me.LblUnit.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblUnit.Name = "LblUnit"
         Me.LblUnit.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblUnit.Size = New System.Drawing.Size(88, 23)
+        Me.LblUnit.Size = New System.Drawing.Size(68, 18)
         Me.LblUnit.TabIndex = 41
         Me.LblUnit.Text = "وحدة القياس"
         '
@@ -266,23 +284,158 @@ Partial Class FrmMaterialAddEdit
         '
         Me.LblMaterialName.AutoSize = True
         Me.LblMaterialName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblMaterialName.Location = New System.Drawing.Point(285, 42)
+        Me.LblMaterialName.Location = New System.Drawing.Point(291, 42)
         Me.LblMaterialName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblMaterialName.Name = "LblMaterialName"
         Me.LblMaterialName.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblMaterialName.Size = New System.Drawing.Size(72, 23)
+        Me.LblMaterialName.Size = New System.Drawing.Size(55, 18)
         Me.LblMaterialName.TabIndex = 0
         Me.LblMaterialName.Text = "اسم المادة"
         '
+        'TabMaterialEA
+        '
+        Me.TabMaterialEA.Controls.Add(Me.TabMaterial)
+        Me.TabMaterialEA.Controls.Add(Me.TabTypes)
+        Me.TabMaterialEA.Location = New System.Drawing.Point(12, 12)
+        Me.TabMaterialEA.Name = "TabMaterialEA"
+        Me.TabMaterialEA.RightToLeftLayout = True
+        Me.TabMaterialEA.SelectedIndex = 0
+        Me.TabMaterialEA.Size = New System.Drawing.Size(393, 420)
+        Me.TabMaterialEA.TabIndex = 3
+        '
+        'TabMaterial
+        '
+        Me.TabMaterial.Controls.Add(Me.GrpDetails)
+        Me.TabMaterial.Controls.Add(Me.BtnClose)
+        Me.TabMaterial.Controls.Add(Me.BtnMaterialAE)
+        Me.TabMaterial.Location = New System.Drawing.Point(4, 27)
+        Me.TabMaterial.Name = "TabMaterial"
+        Me.TabMaterial.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabMaterial.Size = New System.Drawing.Size(385, 389)
+        Me.TabMaterial.TabIndex = 0
+        Me.TabMaterial.Text = "تفاصيل المادة"
+        Me.TabMaterial.UseVisualStyleBackColor = True
+        '
+        'TabTypes
+        '
+        Me.TabTypes.Controls.Add(Me.GroupBox2)
+        Me.TabTypes.Location = New System.Drawing.Point(4, 27)
+        Me.TabTypes.Name = "TabTypes"
+        Me.TabTypes.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabTypes.Size = New System.Drawing.Size(385, 389)
+        Me.TabTypes.TabIndex = 1
+        Me.TabTypes.Text = "انواع المادة"
+        Me.TabTypes.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.GroupBox1)
+        Me.GroupBox2.Controls.Add(Me.TxtTypeName)
+        Me.GroupBox2.Controls.Add(Me.BtnAddType)
+        Me.GroupBox2.Controls.Add(Me.NumTypeQuantity)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 17)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(373, 358)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.DGVMaterialTypes)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 93)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(361, 259)
+        Me.GroupBox1.TabIndex = 65
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "انواع المنتج"
+        '
+        'DGVMaterialTypes
+        '
+        Me.DGVMaterialTypes.AllowUserToAddRows = False
+        Me.DGVMaterialTypes.AllowUserToDeleteRows = False
+        Me.DGVMaterialTypes.AllowUserToResizeColumns = False
+        Me.DGVMaterialTypes.AllowUserToResizeRows = False
+        Me.DGVMaterialTypes.BackgroundColor = System.Drawing.Color.White
+        Me.DGVMaterialTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVMaterialTypes.Location = New System.Drawing.Point(8, 23)
+        Me.DGVMaterialTypes.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.DGVMaterialTypes.MultiSelect = False
+        Me.DGVMaterialTypes.Name = "DGVMaterialTypes"
+        Me.DGVMaterialTypes.ReadOnly = True
+        Me.DGVMaterialTypes.RowHeadersVisible = False
+        Me.DGVMaterialTypes.RowHeadersWidth = 51
+        Me.DGVMaterialTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVMaterialTypes.Size = New System.Drawing.Size(345, 224)
+        Me.DGVMaterialTypes.TabIndex = 1
+        '
+        'TxtTypeName
+        '
+        Me.TxtTypeName.Location = New System.Drawing.Point(105, 26)
+        Me.TxtTypeName.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTypeName.Name = "TxtTypeName"
+        Me.TxtTypeName.Size = New System.Drawing.Size(179, 26)
+        Me.TxtTypeName.TabIndex = 73
+        Me.TxtTypeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BtnAddType
+        '
+        Me.BtnAddType.BackColor = System.Drawing.Color.White
+        Me.BtnAddType.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnAddType.Image = Global.TRM.My.Resources.Resources.plus
+        Me.BtnAddType.Location = New System.Drawing.Point(26, 26)
+        Me.BtnAddType.Name = "BtnAddType"
+        Me.BtnAddType.Size = New System.Drawing.Size(61, 61)
+        Me.BtnAddType.TabIndex = 74
+        Me.BtnAddType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnAddType.UseVisualStyleBackColor = False
+        '
+        'NumTypeQuantity
+        '
+        Me.NumTypeQuantity.CausesValidation = False
+        Me.NumTypeQuantity.DecimalPlaces = 2
+        Me.NumTypeQuantity.Location = New System.Drawing.Point(105, 60)
+        Me.NumTypeQuantity.Margin = New System.Windows.Forms.Padding(4)
+        Me.NumTypeQuantity.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
+        Me.NumTypeQuantity.Minimum = New Decimal(New Integer() {9999999, 0, 0, -2147483648})
+        Me.NumTypeQuantity.Name = "NumTypeQuantity"
+        Me.NumTypeQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.NumTypeQuantity.Size = New System.Drawing.Size(179, 26)
+        Me.NumTypeQuantity.TabIndex = 64
+        Me.NumTypeQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.Label3.Location = New System.Drawing.Point(294, 31)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label3.Size = New System.Drawing.Size(54, 17)
+        Me.Label3.TabIndex = 72
+        Me.Label3.Text = "نوع المادة"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(312, 63)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label4.Size = New System.Drawing.Size(36, 18)
+        Me.Label4.TabIndex = 66
+        Me.Label4.Text = "الكمية"
+        '
         'FrmMaterialAddEdit
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(438, 419)
-        Me.Controls.Add(Me.BtnMaterialAE)
-        Me.Controls.Add(Me.BtnClose)
-        Me.Controls.Add(Me.GrpDetails)
+        Me.ClientSize = New System.Drawing.Size(416, 442)
+        Me.Controls.Add(Me.TabMaterialEA)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
@@ -299,6 +452,14 @@ Partial Class FrmMaterialAddEdit
         Me.GrpDetails.PerformLayout()
         CType(Me.NumWeigth, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumMinQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabMaterialEA.ResumeLayout(False)
+        Me.TabMaterial.ResumeLayout(False)
+        Me.TabTypes.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.DGVMaterialTypes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumTypeQuantity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -321,4 +482,15 @@ Partial Class FrmMaterialAddEdit
     Friend WithEvents CmbUnits As ComboBox
     Friend WithEvents NumWeigth As NumericUpDown
     Friend WithEvents LblUnit As Label
+    Friend WithEvents TabMaterialEA As TabControl
+    Friend WithEvents TabMaterial As TabPage
+    Friend WithEvents TabTypes As TabPage
+    Friend WithEvents Label3 As Label
+    Friend WithEvents NumTypeQuantity As NumericUpDown
+    Friend WithEvents Label4 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents DGVMaterialTypes As DataGridView
+    Friend WithEvents TxtTypeName As TextBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents BtnAddType As Button
 End Class

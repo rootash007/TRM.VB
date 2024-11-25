@@ -1,6 +1,8 @@
 ﻿Public Class FrmMaterials
     Public Sub FrmMaterials_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadMaterials()
+        Me.Dock = DockStyle.Fill
+
         'For i = 0 To FmMaterials.DgvMaterials.RowCount - 1
         '    If FmMaterials.DgvMaterials.Rows(i).Cells(4).Value < 0 Then
         '        FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.Pink
@@ -101,4 +103,6 @@
     Private Sub FrmMaterials_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         LoadMaterials()
     End Sub
+
+
 End Class

@@ -10,6 +10,9 @@
             BtnMaterialAE.Text = "اضافة مادة"
             Me.Text = "اضافة مادة"
             IsActive.Visible = False
+            'DGVMaterialTypes = New DataGridView
+            MaterialTypesDGVDesign(DGVMaterialTypes)
+            'DGVMaterialTypes.
         Else
             If FmMaterials.TabMaterials.SelectedIndex = 0 Then
                 IsActive.Visible = True
@@ -29,6 +32,11 @@
                 End If
                 BtnMaterialAE.Text = "تعديل مادة"
                 Me.Text = "تعديل مادة"
+                Dim que As String = "select * from material_types where material_id = " & FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value
+                FillList(que)
+                DGVMaterialTypes.DataSource = MyTab
+                MaterialTypesDGVDesign(DGVMaterialTypes)
+
             ElseIf FmMaterials.TabMaterials.SelectedIndex = 1 Then
                 IsActive.Visible = True
                 TxtMaterialName.Text = FmMaterials.DGVMaterialsOff.CurrentRow.Cells(1).Value
@@ -47,6 +55,10 @@
                 End If
                 BtnMaterialAE.Text = "تعديل مادة"
                 Me.Text = "تعديل مادة"
+                Dim que As String = "select * from material_types where material_id = " & FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value
+                FillList(que)
+                DGVMaterialTypes.DataSource = MyTab
+                MaterialTypesDGVDesign(DGVMaterialTypes)
             End If
 
 
@@ -139,5 +151,19 @@
 
     Private Sub NumWeigth_Enter(sender As Object, e As EventArgs) Handles NumWeigth.Enter
         NumWeigth.Select(0, NumWeigth.Text.Length)
+    End Sub
+
+    Private Sub NumTypeQuantity_Enter(sender As Object, e As EventArgs) Handles NumTypeQuantity.Enter
+        NumTypeQuantity.Select(0, NumTypeQuantity.Text.Length)
+    End Sub
+
+    Private Sub BtnAddType_Click(sender As Object, e As EventArgs) Handles BtnAddType.Click
+        If TxtTypeName.Text <> "" Then
+            DGVMaterialTypes.Rows.Add()
+            DGVMaterialTypes.Rows(DGVMaterialTypes.Rows.Count - 1).Cells(2).Value = TxtTypeName.Text
+            DGVMaterialTypes.Rows(DGVMaterialTypes.Rows.Count - 1).Cells(3).Value = NumTypeQuantity.Value
+        Else
+            MsgBox("typename cannot be empty")
+        End If
     End Sub
 End Class

@@ -48,6 +48,14 @@ Public Class FrmProducts
     End Sub
 
     Private Sub BtnAddProduct_Click(sender As Object, e As EventArgs) Handles BtnAddProduct.Click
-        FrmProductAE.ShowDialog()
+        Dim FmProductAE As New FrmProductAE
+        isAddProduct = True
+        FmProductAE.ShowDialog()
+    End Sub
+
+    Private Sub BtnUpdateMaterial_Click(sender As Object, e As EventArgs) Handles BtnUpdateMaterial.Click
+        Dim FmProductAE As New FrmProductAE
+        isAddProduct = False
+        FmProductAE.ShowDialog()
     End Sub
 End Class

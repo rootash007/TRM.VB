@@ -583,14 +583,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RM.exe" size="6278656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RM.exe" size="6288896">
       <assemblyIdentity name="RM" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Qz2kCSJmGqVc+5m6DhHkXwwfD2Srnr2hcDBMRK34O10=</dsig:DigestValue>
+        <dsig:DigestValue>+y8+nqqMFn+RfRBsu0Xq49OvqW6XfhRo4BbrxUpep30=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

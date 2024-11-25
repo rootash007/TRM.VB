@@ -23,20 +23,20 @@ Partial Class FrmProductAE
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProductAE))
-        Me.BtnSave11 = New System.Windows.Forms.Button()
+        Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnCancel = New System.Windows.Forms.Button()
         Me.GrpDetails = New System.Windows.Forms.GroupBox()
         Me.NumCans = New System.Windows.Forms.NumericUpDown()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtProductName = New System.Windows.Forms.TextBox()
+        Me.TxtProdiuctBarcode = New System.Windows.Forms.TextBox()
         Me.NumTotalCans = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.NumBoxes = New System.Windows.Forms.NumericUpDown()
+        Me.IsActive = New System.Windows.Forms.PictureBox()
         Me.LblBoxes = New System.Windows.Forms.Label()
         Me.LblTotalCans = New System.Windows.Forms.Label()
         Me.LblCans = New System.Windows.Forms.Label()
         Me.LblProductName = New System.Windows.Forms.Label()
-        Me.IsActive = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGVProductMaterials = New System.Windows.Forms.DataGridView()
         Me.CmbMaterialName = New System.Windows.Forms.ComboBox()
@@ -45,7 +45,7 @@ Partial Class FrmProductAE
         Me.BtnAdd = New System.Windows.Forms.Button()
         Me.TxtUnit = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BtnSave = New System.Windows.Forms.Button()
+        Me.BtnAddToDGV = New System.Windows.Forms.Button()
         Me.LblMaterialName = New System.Windows.Forms.Label()
         Me.NumQuantity = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -61,17 +61,17 @@ Partial Class FrmProductAE
         CType(Me.NumQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BtnSave11
+        'BtnSave
         '
-        Me.BtnSave11.BackColor = System.Drawing.Color.White
-        Me.BtnSave11.Image = CType(resources.GetObject("BtnSave11.Image"), System.Drawing.Image)
-        Me.BtnSave11.Location = New System.Drawing.Point(525, 340)
-        Me.BtnSave11.Name = "BtnSave11"
-        Me.BtnSave11.Size = New System.Drawing.Size(100, 55)
-        Me.BtnSave11.TabIndex = 2
-        Me.BtnSave11.Text = "שמירה"
-        Me.BtnSave11.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnSave11.UseVisualStyleBackColor = False
+        Me.BtnSave.BackColor = System.Drawing.Color.White
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.Location = New System.Drawing.Point(525, 340)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(100, 55)
+        Me.BtnSave.TabIndex = 2
+        Me.BtnSave.Text = "שמירה"
+        Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnSave.UseVisualStyleBackColor = False
         '
         'BtnCancel
         '
@@ -89,8 +89,8 @@ Partial Class FrmProductAE
         'GrpDetails
         '
         Me.GrpDetails.Controls.Add(Me.NumCans)
-        Me.GrpDetails.Controls.Add(Me.TextBox2)
-        Me.GrpDetails.Controls.Add(Me.TextBox1)
+        Me.GrpDetails.Controls.Add(Me.TxtProductName)
+        Me.GrpDetails.Controls.Add(Me.TxtProdiuctBarcode)
         Me.GrpDetails.Controls.Add(Me.NumTotalCans)
         Me.GrpDetails.Controls.Add(Me.Label1)
         Me.GrpDetails.Controls.Add(Me.NumBoxes)
@@ -122,23 +122,23 @@ Partial Class FrmProductAE
         Me.NumCans.TabIndex = 48
         Me.NumCans.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox2
+        'TxtProductName
         '
-        Me.TextBox2.Location = New System.Drawing.Point(8, 44)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(179, 21)
-        Me.TextBox2.TabIndex = 47
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtProductName.Location = New System.Drawing.Point(8, 44)
+        Me.TxtProductName.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtProductName.Name = "TxtProductName"
+        Me.TxtProductName.Size = New System.Drawing.Size(179, 21)
+        Me.TxtProductName.TabIndex = 47
+        Me.TxtProductName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox1
+        'TxtProdiuctBarcode
         '
-        Me.TextBox1.Location = New System.Drawing.Point(8, 76)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(179, 21)
-        Me.TextBox1.TabIndex = 46
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtProdiuctBarcode.Location = New System.Drawing.Point(8, 76)
+        Me.TxtProdiuctBarcode.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtProdiuctBarcode.Name = "TxtProdiuctBarcode"
+        Me.TxtProdiuctBarcode.Size = New System.Drawing.Size(179, 21)
+        Me.TxtProdiuctBarcode.TabIndex = 46
+        Me.TxtProdiuctBarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'NumTotalCans
         '
@@ -176,6 +176,17 @@ Partial Class FrmProductAE
         Me.NumBoxes.Size = New System.Drawing.Size(179, 21)
         Me.NumBoxes.TabIndex = 3
         Me.NumBoxes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'IsActive
+        '
+        Me.IsActive.Image = CType(resources.GetObject("IsActive.Image"), System.Drawing.Image)
+        Me.IsActive.Location = New System.Drawing.Point(8, 14)
+        Me.IsActive.Margin = New System.Windows.Forms.Padding(4)
+        Me.IsActive.Name = "IsActive"
+        Me.IsActive.Size = New System.Drawing.Size(60, 25)
+        Me.IsActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.IsActive.TabIndex = 44
+        Me.IsActive.TabStop = False
         '
         'LblBoxes
         '
@@ -224,17 +235,6 @@ Partial Class FrmProductAE
         Me.LblProductName.Size = New System.Drawing.Size(57, 18)
         Me.LblProductName.TabIndex = 0
         Me.LblProductName.Text = "اسم المنتج"
-        '
-        'IsActive
-        '
-        Me.IsActive.Image = CType(resources.GetObject("IsActive.Image"), System.Drawing.Image)
-        Me.IsActive.Location = New System.Drawing.Point(8, 14)
-        Me.IsActive.Margin = New System.Windows.Forms.Padding(4)
-        Me.IsActive.Name = "IsActive"
-        Me.IsActive.Size = New System.Drawing.Size(60, 25)
-        Me.IsActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.IsActive.TabIndex = 44
-        Me.IsActive.TabStop = False
         '
         'GroupBox1
         '
@@ -292,7 +292,7 @@ Partial Class FrmProductAE
         Me.GroupBox2.Controls.Add(Me.BtnAdd)
         Me.GroupBox2.Controls.Add(Me.TxtUnit)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.BtnSave)
+        Me.GroupBox2.Controls.Add(Me.BtnAddToDGV)
         Me.GroupBox2.Controls.Add(Me.CmbMaterialBarcode)
         Me.GroupBox2.Controls.Add(Me.LblMaterialName)
         Me.GroupBox2.Controls.Add(Me.CmbMaterialName)
@@ -343,18 +343,18 @@ Partial Class FrmProductAE
         Me.Label2.TabIndex = 62
         Me.Label2.Text = "رقم المادة"
         '
-        'BtnSave
+        'BtnAddToDGV
         '
-        Me.BtnSave.BackColor = System.Drawing.Color.White
-        Me.BtnSave.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnSave.Image = Global.TRM.My.Resources.Resources.save
-        Me.BtnSave.Location = New System.Drawing.Point(12, 138)
-        Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(179, 56)
-        Me.BtnSave.TabIndex = 50
-        Me.BtnSave.Text = "اضافة مادة مطلوبة للمنتج"
-        Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnSave.UseVisualStyleBackColor = False
+        Me.BtnAddToDGV.BackColor = System.Drawing.Color.White
+        Me.BtnAddToDGV.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnAddToDGV.Image = Global.TRM.My.Resources.Resources.save
+        Me.BtnAddToDGV.Location = New System.Drawing.Point(12, 138)
+        Me.BtnAddToDGV.Name = "BtnAddToDGV"
+        Me.BtnAddToDGV.Size = New System.Drawing.Size(179, 56)
+        Me.BtnAddToDGV.TabIndex = 50
+        Me.BtnAddToDGV.Text = "اضافة مادة مطلوبة للمنتج"
+        Me.BtnAddToDGV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnAddToDGV.UseVisualStyleBackColor = False
         '
         'LblMaterialName
         '
@@ -415,7 +415,7 @@ Partial Class FrmProductAE
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GrpDetails)
-        Me.Controls.Add(Me.BtnSave11)
+        Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnCancel)
         Me.Font = New System.Drawing.Font("David", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -443,7 +443,7 @@ Partial Class FrmProductAE
 
     End Sub
     Friend WithEvents BtnCancel As System.Windows.Forms.Button
-    Friend WithEvents BtnSave11 As System.Windows.Forms.Button
+    Friend WithEvents BtnSave As System.Windows.Forms.Button
     Friend WithEvents GrpDetails As GroupBox
     Friend WithEvents NumTotalCans As NumericUpDown
     Friend WithEvents Label1 As Label
@@ -457,8 +457,8 @@ Partial Class FrmProductAE
     Friend WithEvents DGVProductMaterials As DataGridView
     Friend WithEvents CmbMaterialName As ComboBox
     Friend WithEvents CmbMaterialBarcode As ComboBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtProductName As TextBox
+    Friend WithEvents TxtProdiuctBarcode As TextBox
     Friend WithEvents NumCans As NumericUpDown
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents NumQuantity As NumericUpDown
@@ -466,7 +466,7 @@ Partial Class FrmProductAE
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents LblMaterialName As Label
-    Friend WithEvents BtnSave As Button
+    Friend WithEvents BtnAddToDGV As Button
     Friend WithEvents TxtUnit As TextBox
     Friend WithEvents BtnAdd As Button
 End Class
