@@ -1699,4 +1699,24 @@ Module ModFunctions
             dbcon.Close()
         End Try
     End Sub
+
+    Public Sub ChkForUpdates()
+        Try
+            Dim Request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("https://www.ctrlmanager.com/TRM/Version.txt")
+            Dim Response As System.Net.HttpWebResponse = Request.GetResponse()
+            Dim StreamR As System.IO.StreamReader = New System.IO.StreamReader(Response.GetResponseStream())
+            Dim NewVersion As String = StreamR.ReadToEnd()
+            Dim CurVersion As String = Application.ProductVersion
+            If NewVersion > CurVersion Then
+                Dim FmNewUpdate As New FrmNewUpdate
+                FmNewUpdate.LblCurrentVersion.Text = CurVersion
+                FmNewUpdate.LblNewVersion.Text = NewVersion
+                FmNewUpdate.ShowDialog()
+            Else
+                'MsgBox("There is no update available", vbOKOnly + vbInformation, "No Update")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Module

@@ -23,6 +23,7 @@ Public Class FrmMain
         Next
 
         Me.Text = ActiveUser
+        TSSLblVersion.Text = Application.ProductVersion
 
         If AdminMode = True Then
             SSAdminStatus.Text = "פעיל"
@@ -101,14 +102,6 @@ Public Class FrmMain
     Private Sub BtnCustomers_Click(sender As Object, e As EventArgs)
         CustomersWindow = "CustomerUpdate"
         FrmCustomers.ShowDialog()
-    End Sub
-
-    Private Sub BtnReports_Click(sender As Object, e As EventArgs)
-        If AdminMode = True Then
-            FrmReportChose.ShowDialog()
-        Else
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
-        End If
     End Sub
 
     Private Sub הסכםמכירהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles הסכםמכירהToolStripMenuItem.Click
@@ -192,46 +185,49 @@ Public Class FrmMain
     End Sub
 
     Private Sub עדכוןתוכנהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles עדכוןתוכנהToolStripMenuItem.Click
+        ChkForUpdates()
 
-        Dim TradeInCarSerial As Integer
-        Dim Id As Integer
-        Dim que As String
-        'que = "select carserial,Priceout from MainList where carserial = 389"
-        que = "select carserial,CarStatus from MainList where carserial = 389"
 
-        FillList(que)
-        'MsgBox(MyTab.Rows(0).Item(0).ToString)
-        'For i = 0 To MyTab.Rows.Count - 1
-        '    Id = MyTab.Rows(i).Item(0).ToString
-        '    TradeInCarSerial = MyTab.Rows(i).Item(0).ToString
-        Try
-            cmd = New SqlCommand
-            With cmd
-                .CommandType = CommandType.Text
-                '.CommandText = "update MainList set PriceOut=@PriceOut where carserial=@carserial"
-                .CommandText = "update MainList set CarStatus=@CarStatus where carserial=@carserial"
-                '.CommandText = "delete from MainList where carserial=@carserial"
-                .Connection = dbcon
-            End With
-            cmd.Parameters.AddWithValue("@CarStatus", True)
 
-            'cmd.Parameters.AddWithValue("@PriceOut", "38000")
-            'cmd.Parameters.AddWithValue("@carsaleinfo", "שולם 23200 בצקים + 1500 מזומן")
-            'cmd.Parameters.AddWithValue("@receiptnum", 274)
+        'Dim TradeInCarSerial As Integer
+        'Dim Id As Integer
+        'Dim que As String
+        ''que = "select carserial,Priceout from MainList where carserial = 389"
+        'que = "select carserial,CarStatus from MainList where carserial = 389"
 
-            cmd.Parameters.AddWithValue("@carserial", 389)
-            dbcon.Open()
-            cmd.ExecuteNonQuery()
-            dbcon.Close()
-            cmd = Nothing
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-            dbcon.Close()
-        End Try
-        'Next
+        'FillList(que)
+        ''MsgBox(MyTab.Rows(0).Item(0).ToString)
+        ''For i = 0 To MyTab.Rows.Count - 1
+        ''    Id = MyTab.Rows(i).Item(0).ToString
+        ''    TradeInCarSerial = MyTab.Rows(i).Item(0).ToString
+        'Try
+        '    cmd = New SqlCommand
+        '    With cmd
+        '        .CommandType = CommandType.Text
+        '        '.CommandText = "update MainList set PriceOut=@PriceOut where carserial=@carserial"
+        '        .CommandText = "update MainList set CarStatus=@CarStatus where carserial=@carserial"
+        '        '.CommandText = "delete from MainList where carserial=@carserial"
+        '        .Connection = dbcon
+        '    End With
+        '    cmd.Parameters.AddWithValue("@CarStatus", True)
 
-        MsgBox("Done")
+        '    'cmd.Parameters.AddWithValue("@PriceOut", "38000")
+        '    'cmd.Parameters.AddWithValue("@carsaleinfo", "שולם 23200 בצקים + 1500 מזומן")
+        '    'cmd.Parameters.AddWithValue("@receiptnum", 274)
+
+        '    cmd.Parameters.AddWithValue("@carserial", 389)
+        '    dbcon.Open()
+        '    cmd.ExecuteNonQuery()
+        '    dbcon.Close()
+        '    cmd = Nothing
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'Finally
+        '    dbcon.Close()
+        'End Try
+        ''Next
+
+        'MsgBox("Done")
 
     End Sub
 

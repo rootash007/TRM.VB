@@ -61,6 +61,7 @@ Partial Class FrmMain
         Me.TSBtnBackUp = New System.Windows.Forms.ToolStripButton()
         Me.TSPActions = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnProducts = New System.Windows.Forms.ToolStripButton()
+        Me.TSSLblVersion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuMain.SuspendLayout()
         Me.SSMain.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -179,19 +180,19 @@ Partial Class FrmMain
         'TSMUnits
         '
         Me.TSMUnits.Name = "TSMUnits"
-        Me.TSMUnits.Size = New System.Drawing.Size(224, 26)
+        Me.TSMUnits.Size = New System.Drawing.Size(156, 26)
         Me.TSMUnits.Text = "وحدات القياس"
         '
         'TSUsers
         '
         Me.TSUsers.Name = "TSUsers"
-        Me.TSUsers.Size = New System.Drawing.Size(224, 26)
+        Me.TSUsers.Size = New System.Drawing.Size(156, 26)
         Me.TSUsers.Text = "مستخدمين"
         '
         'TSActions
         '
         Me.TSActions.Name = "TSActions"
-        Me.TSActions.Size = New System.Drawing.Size(224, 26)
+        Me.TSActions.Size = New System.Drawing.Size(156, 26)
         Me.TSActions.Text = "العمليات"
         '
         'מערכתToolStripMenuItem
@@ -256,7 +257,7 @@ Partial Class FrmMain
         '
         Me.SSMain.BackColor = System.Drawing.Color.White
         Me.SSMain.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.SSMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSAdminStatus, Me.SSAdmin, Me.TSMainProgBar})
+        Me.SSMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSAdminStatus, Me.SSAdmin, Me.TSSLblVersion, Me.TSMainProgBar})
         Me.SSMain.Location = New System.Drawing.Point(0, 603)
         Me.SSMain.Name = "SSMain"
         Me.SSMain.Padding = New System.Windows.Forms.Padding(12, 0, 1, 0)
@@ -349,6 +350,11 @@ Partial Class FrmMain
         Me.TSBtnProducts.Size = New System.Drawing.Size(67, 52)
         Me.TSBtnProducts.Text = "ToolStripButton1"
         '
+        'TSSLblVersion
+        '
+        Me.TSSLblVersion.Name = "TSSLblVersion"
+        Me.TSSLblVersion.Size = New System.Drawing.Size(0, 20)
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 15.0!)
@@ -417,4 +423,5 @@ Partial Class FrmMain
     Friend WithEvents הפעלתמצבמנהלToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TSBtnCreateTables As ToolStripMenuItem
     Friend WithEvents PermisionsTSM As ToolStripMenuItem
+    Friend WithEvents TSSLblVersion As ToolStripStatusLabel
 End Class

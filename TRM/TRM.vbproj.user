@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>C:\Users\Win11\Desktop\RW\|publish\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <PublishUrlHistory>d:\publishing\|C:\Users\Win11\Desktop\RW\|publish\</PublishUrlHistory>
+    <InstallUrlHistory>https://www.ctrlmanager.com/TRM/|https://www.ctrlmanager.com/TRM/setup.exe/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />

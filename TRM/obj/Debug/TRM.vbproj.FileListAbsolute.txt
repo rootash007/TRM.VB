@@ -778,7 +778,6 @@ D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmActionsTypes.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmLogin.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmMain.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmOkMsg.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmReportChose.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmRequiredAddCar.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmSearch.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmSoldCard.resources
@@ -854,3 +853,4 @@ D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmImportProductData.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.vbproj.Up2Date
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmUnits.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmProductAE.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Debug\TRM.FrmNewUpdate.resources

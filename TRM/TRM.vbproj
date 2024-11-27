@@ -13,21 +13,24 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\Win11\Desktop\RW\</PublishUrl>
+    <PublishUrl>d:\publishing\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>6</ApplicationRevision>
+    <InstallUrl>https://www.ctrlmanager.com/TRM/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -279,10 +282,10 @@
     <Compile Include="FrmOkMsg.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReportChose.Designer.vb">
-      <DependentUpon>FrmReportChose.vb</DependentUpon>
+    <Compile Include="FrmNewUpdate.Designer.vb">
+      <DependentUpon>FrmNewUpdate.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmReportChose.vb">
+    <Compile Include="FrmNewUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRequiredAddCar.Designer.vb">
@@ -447,8 +450,8 @@
     <EmbeddedResource Include="FrmOkMsg.resx">
       <DependentUpon>FrmOkMsg.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReportChose.resx">
-      <DependentUpon>FrmReportChose.vb</DependentUpon>
+    <EmbeddedResource Include="FrmNewUpdate.resx">
+      <DependentUpon>FrmNewUpdate.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRequiredAddCar.resx">
       <DependentUpon>FrmRequiredAddCar.vb</DependentUpon>

@@ -8,6 +8,7 @@ Public Class FrmLogin
         AdminMode = False
         TxtUsername.Text = ""
         TxtPassWord.Text = ""
+        ChkForUpdates()
     End Sub
 
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
