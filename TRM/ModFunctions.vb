@@ -807,7 +807,7 @@ Module ModFunctions
         Else
             Frm.TxtCarId.BackColor = Color.White
         End If
-        If My.Settings.CarKind = True Then
+        If My.Settings.EditDataBase = True Then
             Frm.CmbCarKind.BackColor = Color.LightPink
         Else
             Frm.CmbCarKind.BackColor = Color.White
@@ -842,7 +842,7 @@ Module ModFunctions
         Else
             Frm.TxtPriceOut.BackColor = Color.White
         End If
-        If My.Settings.CarModel = True Then
+        If My.Settings.CurrentVersion = True Then
             Frm.CmbCarModel.BackColor = Color.LightPink
         Else
             Frm.CmbCarModel.BackColor = Color.White
@@ -1174,7 +1174,7 @@ Module ModFunctions
         If AgreementStatus = "CarSale" Then
             AgreeDateTime = FmCarSale.DtpSaleDate.Value
             SalerName = My.Settings.LocalServer
-            SalerId = My.Settings.JobId
+            SalerId = My.Settings.isShowWhatsNew
             SalerAdress = My.Settings.OnlineServer
             SalerPhone = My.Settings.CurrentServer
             BuyerName = FmCarSale.TxtBuyerName.Text
@@ -1199,7 +1199,7 @@ Module ModFunctions
         If AgreementStatus = "SaleNon" Then
             'AgreeDateTime = FrmCarSale.DtpSaleDate.Value
             SalerName = My.Settings.LocalServer
-            SalerId = My.Settings.JobId
+            SalerId = My.Settings.isShowWhatsNew
             SalerAdress = My.Settings.OnlineServer
             SalerPhone = My.Settings.CurrentServer
             BuyerName = ""
@@ -1223,7 +1223,7 @@ Module ModFunctions
             SalerAdress = ""
             SalerPhone = ""
             BuyerName = My.Settings.LocalServer
-            BuyerId = My.Settings.JobId
+            BuyerId = My.Settings.isShowWhatsNew
             BuyerAdress = My.Settings.OnlineServer
             BuyerPhone = My.Settings.CurrentServer
             CarMT = ""
@@ -1243,7 +1243,7 @@ Module ModFunctions
             SalerAdress = FmAddNewCar.TxtSalerAdress.Text
             SalerPhone = FmAddNewCar.TxtSalerPhone.Text
             BuyerName = My.Settings.LocalServer
-            BuyerId = My.Settings.JobId
+            BuyerId = My.Settings.isShowWhatsNew
             BuyerAdress = My.Settings.OnlineServer
             BuyerPhone = My.Settings.CurrentServer
             CarMT = FmAddNewCar.CmbCarModel.Text & " " & FmAddNewCar.CmbCarType.Text
@@ -1263,7 +1263,7 @@ Module ModFunctions
         Agparams(1) = New ReportParameter("JobPhone", My.Settings.CurrentServer)
         Agparams(2) = New ReportParameter("JobFax", My.Settings.AdminUser)
         Agparams(3) = New ReportParameter("JobEmail", My.Settings.AdminPass)
-        Agparams(4) = New ReportParameter("JobId", My.Settings.JobId)
+        Agparams(4) = New ReportParameter("JobId", My.Settings.isShowWhatsNew)
         Agparams(5) = New ReportParameter("JobAdress", My.Settings.OnlineServer)
         Agparams(6) = New ReportParameter("AgreeDateTime", AgreeDateTime)
         Agparams(7) = New ReportParameter("SalerName", SalerName)
@@ -1682,6 +1682,53 @@ Module ModFunctions
                         .Connection = dbcon
                     End With
                     cmd.Parameters.AddWithValue("@unit_name", DGV.Rows(i).Cells(1).Value)
+                    cmd.Parameters.AddWithValue("@id", DGV.Rows(i).Cells(0).Value)
+
+                    dbcon.Open()
+                    cmd.ExecuteNonQuery()
+                    dbcon.Close()
+                    cmd = Nothing
+                End If
+            Next
+
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
+    Public Sub SaveActionTypes(DGV As DataGridView)
+        Try
+            For i = 0 To DGV.RowCount - 2
+                cmd = New SqlCommand
+                'MsgBox(DGV.Rows(i).Cells(0).Value)
+
+                If DGV.Rows(i).Cells(0).Value Is Nothing OrElse DGV.Rows(i).Cells(0).Value.ToString.Trim = "" Then
+                    'MsgBox("enmpt")
+                    With cmd
+                        .CommandType = CommandType.Text
+                        .CommandText = "insert into action_typers (action_type_name,isincrease)values(@action_type_name,@isincrease)"
+                        .Connection = dbcon
+                    End With
+                    cmd.Parameters.AddWithValue("@action_type_name", DGV.Rows(i).Cells(1).Value)
+                    cmd.Parameters.AddWithValue("@isincrease", DGV.Rows(i).Cells(2).Value)
+
+                    dbcon.Open()
+                    cmd.ExecuteNonQuery()
+                    dbcon.Close()
+                Else
+                    'MsgBox(DGV.Rows(i).Cells(1).Value)
+
+                    With cmd
+                        .CommandType = CommandType.Text
+                        .CommandText = "update action_types set action_type_name=@action_type_name,isincrease=@isincrease where id=@id"
+                        .Connection = dbcon
+                    End With
+                    cmd.Parameters.AddWithValue("@action_type_name", DGV.Rows(i).Cells(1).Value)
+                    cmd.Parameters.AddWithValue("@isincrease", DGV.Rows(i).Cells(2).Value)
                     cmd.Parameters.AddWithValue("@id", DGV.Rows(i).Cells(0).Value)
 
                     dbcon.Open()

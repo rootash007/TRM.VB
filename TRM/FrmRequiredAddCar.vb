@@ -1,14 +1,14 @@
 ﻿Public Class FrmRequiredAddCar
 
     Private Sub FrmRequiredAddCar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ChkCarKind.Checked = My.Settings.CarKind
+        ChkCarKind.Checked = My.Settings.EditDataBase
         ChkCarType.Checked = My.Settings.CarType
         ChkCarColor.Checked = My.Settings.CarColor
         ChkCarOil.Checked = My.Settings.CarOil
         ChkCarKM.Checked = My.Settings.CarKM
         ChkShelda.Checked = My.Settings.Shelda
         ChkPriceOut.Checked = My.Settings.PriceOut
-        ChkCarModel.Checked = My.Settings.CarModel
+        ChkCarModel.Checked = My.Settings.CurrentVersion
         ChkMainIs.Checked = My.Settings.MainIs
         ChkCarGear.Checked = My.Settings.CarGear
         ChkEngine.Checked = My.Settings.Engine
@@ -28,14 +28,14 @@
         Dim ExitMsg As DialogResult
         ExitMsg = MsgBox("האם אתה בטוח שברצונך לשמור", vbYesNo + vbQuestion, "שמירה")
         If ExitMsg = 6 Then
-            My.Settings.CarKind = ChkCarKind.Checked
+            My.Settings.EditDataBase = ChkCarKind.Checked
             My.Settings.CarType = ChkCarType.Checked
             My.Settings.CarColor = ChkCarColor.Checked
             My.Settings.CarOil = ChkCarOil.Checked
             My.Settings.CarKM = ChkCarKM.Checked
             My.Settings.Shelda = ChkShelda.Checked
             My.Settings.PriceOut = ChkPriceOut.Checked
-            My.Settings.CarModel = ChkCarModel.Checked
+            My.Settings.CurrentVersion = ChkCarModel.Checked
             My.Settings.MainIs = ChkMainIs.Checked
             My.Settings.CarGear = ChkCarGear.Checked
             My.Settings.Engine = ChkEngine.Checked

@@ -1,5 +1,6 @@
 ﻿Public Class FrmActionAdd
     Dim ActionTypeTab As DataTable
+    Dim MaterialTab As DataTable
     Dim isIncrease As Boolean
     Dim OldActionType As Boolean
     Dim OldQuantity As Double
@@ -32,6 +33,7 @@
         Me.CmbActionType.ValueMember = "isincrease"
         que = "select * from materials where material_isactive = 1"
         FillList(que)
+        MaterialTab = MyTab
         Me.CmbMaterialName.DataSource = MyTab
         Me.CmbMaterialName.DisplayMember = "material_name"
         Me.CmbMaterialName.ValueMember = "material_loc_barcode"
@@ -207,5 +209,47 @@
 
     Private Sub NumQuantity_Enter(sender As Object, e As EventArgs) Handles NumQuantity.Enter
         NumQuantity.Select(0, NumQuantity.Text.Length)
+    End Sub
+
+    Private Sub CmbMaterialName_Leave(sender As Object, e As EventArgs) Handles CmbMaterialName.Leave
+        If CmbMaterialName.Text <> "" Then
+            Dim isFound As Boolean = False
+            For i = 0 To MaterialTab.Rows.Count - 1
+                If CmbMaterialName.Text = MaterialTab.Rows(i).Item(1) Then
+                    isFound = True
+                    CmbLocBarcode.Text = MaterialTab.Rows(i).Item(3)
+                    GoTo Found
+                    'Exit Sub
+                End If
+            Next
+Found:
+            If isFound = False Then
+                MsgBox("اسم المادة غير موجود في قاعدة البيانات", vbOKOnly + vbCritical, "خطاء")
+                CmbMaterialName.Text = ""
+                CmbMaterialName.Focus()
+                Return
+            End If
+        End If
+    End Sub
+
+    Private Sub CmbLocBarcode_Leave(sender As Object, e As EventArgs) Handles CmbLocBarcode.Leave
+        If CmbLocBarcode.Text <> "" Then
+            Dim isFound As Boolean = False
+            For i = 0 To MaterialTab.Rows.Count - 1
+                If CmbLocBarcode.Text = MaterialTab.Rows(i).Item(3) Then
+                    isFound = True
+                    CmbMaterialName.Text = MaterialTab.Rows(i).Item(1)
+                    GoTo Found
+                    'Exit Sub
+                End If
+            Next
+Found:
+            If isFound = False Then
+                MsgBox("الرمز المحلي غير موجود في قاعدة البيانات", vbOKOnly + vbCritical, "خطاء")
+                CmbLocBarcode.Text = ""
+                CmbLocBarcode.Focus()
+                Return
+            End If
+        End If
     End Sub
 End Class

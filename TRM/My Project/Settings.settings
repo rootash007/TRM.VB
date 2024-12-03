@@ -20,14 +20,14 @@
     <Setting Name="AdminPass" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="JobId" Type="System.String" Scope="User">
-      <Value Profile="(Default)">אין</Value>
-    </Setting>
-    <Setting Name="CarKind" Type="System.Boolean" Scope="User">
+    <Setting Name="isShowWhatsNew" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="CarModel" Type="System.Boolean" Scope="User">
+    <Setting Name="EditDataBase" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CurrentVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">none</Value>
     </Setting>
     <Setting Name="CarColor" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

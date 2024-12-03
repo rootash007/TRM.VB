@@ -128,37 +128,37 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("אין")>  _
-        Public Property JobId() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property isShowWhatsNew() As Boolean
             Get
-                Return CType(Me("JobId"),String)
+                Return CType(Me("isShowWhatsNew"),Boolean)
             End Get
             Set
-                Me("JobId") = value
+                Me("isShowWhatsNew") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property CarKind() As Boolean
+        Public Property EditDataBase() As Boolean
             Get
-                Return CType(Me("CarKind"),Boolean)
+                Return CType(Me("EditDataBase"),Boolean)
             End Get
             Set
-                Me("CarKind") = value
+                Me("EditDataBase") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property CarModel() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("none")>  _
+        Public Property CurrentVersion() As String
             Get
-                Return CType(Me("CarModel"),Boolean)
+                Return CType(Me("CurrentVersion"),String)
             End Get
             Set
-                Me("CarModel") = value
+                Me("CurrentVersion") = value
             End Set
         End Property
         

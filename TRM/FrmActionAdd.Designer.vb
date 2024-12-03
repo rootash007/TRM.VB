@@ -73,12 +73,12 @@ Partial Class FrmActionAdd
         Me.GroupBox1.Controls.Add(Me.Txtbarcode)
         Me.GroupBox1.Controls.Add(Me.LblMaterialName)
         Me.GroupBox1.Font = New System.Drawing.Font("David", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(15, 13)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 14)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(7, 5, 7, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(6, 4, 6, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(7, 5, 7, 5)
         Me.GroupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.GroupBox1.Size = New System.Drawing.Size(413, 474)
+        Me.GroupBox1.Size = New System.Drawing.Size(466, 505)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "اضافة عملية"
@@ -86,20 +86,21 @@ Partial Class FrmActionAdd
         'DTPDate
         '
         Me.DTPDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPDate.Location = New System.Drawing.Point(9, 24)
+        Me.DTPDate.Location = New System.Drawing.Point(11, 30)
+        Me.DTPDate.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPDate.Name = "DTPDate"
-        Me.DTPDate.Size = New System.Drawing.Size(132, 25)
+        Me.DTPDate.Size = New System.Drawing.Size(158, 22)
         Me.DTPDate.TabIndex = 72
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label6.Location = New System.Drawing.Point(328, 28)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label6.Location = New System.Drawing.Point(394, 30)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label6.Size = New System.Drawing.Size(74, 21)
+        Me.Label6.Size = New System.Drawing.Size(61, 17)
         Me.Label6.TabIndex = 71
         Me.Label6.Text = "نوع العملية"
         '
@@ -107,22 +108,26 @@ Partial Class FrmActionAdd
         '
         Me.CmbLocBarcode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.CmbLocBarcode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CmbLocBarcode.Font = New System.Drawing.Font("David", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.CmbLocBarcode.FormattingEnabled = True
-        Me.CmbLocBarcode.ItemHeight = 17
-        Me.CmbLocBarcode.Location = New System.Drawing.Point(159, 89)
+        Me.CmbLocBarcode.ItemHeight = 16
+        Me.CmbLocBarcode.Location = New System.Drawing.Point(177, 91)
+        Me.CmbLocBarcode.Margin = New System.Windows.Forms.Padding(4)
         Me.CmbLocBarcode.Name = "CmbLocBarcode"
-        Me.CmbLocBarcode.Size = New System.Drawing.Size(154, 25)
+        Me.CmbLocBarcode.Size = New System.Drawing.Size(184, 24)
         Me.CmbLocBarcode.TabIndex = 2
         '
         'CmbMaterialName
         '
         Me.CmbMaterialName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.CmbMaterialName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CmbMaterialName.Font = New System.Drawing.Font("David", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.CmbMaterialName.FormattingEnabled = True
-        Me.CmbMaterialName.ItemHeight = 17
-        Me.CmbMaterialName.Location = New System.Drawing.Point(159, 54)
+        Me.CmbMaterialName.ItemHeight = 16
+        Me.CmbMaterialName.Location = New System.Drawing.Point(177, 59)
+        Me.CmbMaterialName.Margin = New System.Windows.Forms.Padding(4)
         Me.CmbMaterialName.Name = "CmbMaterialName"
-        Me.CmbMaterialName.Size = New System.Drawing.Size(154, 25)
+        Me.CmbMaterialName.Size = New System.Drawing.Size(184, 24)
         Me.CmbMaterialName.TabIndex = 1
         '
         'BtnSave
@@ -130,10 +135,10 @@ Partial Class FrmActionAdd
         Me.BtnSave.BackColor = System.Drawing.Color.White
         Me.BtnSave.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(149, 407)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnSave.Location = New System.Drawing.Point(179, 420)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(126, 59)
+        Me.BtnSave.Size = New System.Drawing.Size(151, 73)
         Me.BtnSave.TabIndex = 9
         Me.BtnSave.Text = "حفظ"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -144,10 +149,10 @@ Partial Class FrmActionAdd
         Me.BtnCancel.BackColor = System.Drawing.Color.White
         Me.BtnCancel.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnCancel.Image = CType(resources.GetObject("BtnCancel.Image"), System.Drawing.Image)
-        Me.BtnCancel.Location = New System.Drawing.Point(15, 407)
-        Me.BtnCancel.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.BtnCancel.Location = New System.Drawing.Point(18, 420)
+        Me.BtnCancel.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(126, 59)
+        Me.BtnCancel.Size = New System.Drawing.Size(151, 73)
         Me.BtnCancel.TabIndex = 10
         Me.BtnCancel.Text = "الغاء"
         Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -157,41 +162,41 @@ Partial Class FrmActionAdd
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label5.Location = New System.Drawing.Point(342, 292)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label5.Location = New System.Drawing.Point(406, 273)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label5.Size = New System.Drawing.Size(60, 21)
+        Me.Label5.Size = New System.Drawing.Size(49, 17)
         Me.Label5.TabIndex = 68
         Me.Label5.Text = "معلومات"
         '
         'TxtMoreInfo
         '
-        Me.TxtMoreInfo.Location = New System.Drawing.Point(15, 288)
-        Me.TxtMoreInfo.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.TxtMoreInfo.Location = New System.Drawing.Point(18, 273)
+        Me.TxtMoreInfo.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
         Me.TxtMoreInfo.Multiline = True
         Me.TxtMoreInfo.Name = "TxtMoreInfo"
-        Me.TxtMoreInfo.Size = New System.Drawing.Size(298, 113)
+        Me.TxtMoreInfo.Size = New System.Drawing.Size(343, 139)
         Me.TxtMoreInfo.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label4.Location = New System.Drawing.Point(331, 261)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label4.Location = New System.Drawing.Point(396, 243)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label4.Size = New System.Drawing.Size(71, 21)
+        Me.Label4.Size = New System.Drawing.Size(58, 17)
         Me.Label4.TabIndex = 66
         Me.Label4.Text = "رقم الانتاج"
         '
         'TxtOrder
         '
-        Me.TxtOrder.Location = New System.Drawing.Point(159, 257)
-        Me.TxtOrder.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.TxtOrder.Location = New System.Drawing.Point(177, 243)
+        Me.TxtOrder.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
         Me.TxtOrder.Name = "TxtOrder"
-        Me.TxtOrder.Size = New System.Drawing.Size(154, 25)
+        Me.TxtOrder.Size = New System.Drawing.Size(184, 22)
         Me.TxtOrder.TabIndex = 7
         Me.TxtOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -199,20 +204,20 @@ Partial Class FrmActionAdd
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label3.Location = New System.Drawing.Point(329, 228)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label3.Location = New System.Drawing.Point(397, 213)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label3.Size = New System.Drawing.Size(73, 21)
+        Me.Label3.Size = New System.Drawing.Size(58, 17)
         Me.Label3.TabIndex = 64
         Me.Label3.Text = "اسم المورد"
         '
         'TxtVendor
         '
-        Me.TxtVendor.Location = New System.Drawing.Point(159, 224)
-        Me.TxtVendor.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.TxtVendor.Location = New System.Drawing.Point(176, 213)
+        Me.TxtVendor.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
         Me.TxtVendor.Name = "TxtVendor"
-        Me.TxtVendor.Size = New System.Drawing.Size(154, 25)
+        Me.TxtVendor.Size = New System.Drawing.Size(184, 22)
         Me.TxtVendor.TabIndex = 6
         Me.TxtVendor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -220,20 +225,20 @@ Partial Class FrmActionAdd
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label2.Location = New System.Drawing.Point(324, 197)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label2.Location = New System.Drawing.Point(391, 183)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label2.Size = New System.Drawing.Size(78, 21)
+        Me.Label2.Size = New System.Drawing.Size(63, 17)
         Me.Label2.TabIndex = 62
         Me.Label2.Text = "رقم المشتاح"
         '
         'TxtBlockNumber
         '
-        Me.TxtBlockNumber.Location = New System.Drawing.Point(159, 193)
-        Me.TxtBlockNumber.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.TxtBlockNumber.Location = New System.Drawing.Point(176, 183)
+        Me.TxtBlockNumber.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
         Me.TxtBlockNumber.Name = "TxtBlockNumber"
-        Me.TxtBlockNumber.Size = New System.Drawing.Size(154, 25)
+        Me.TxtBlockNumber.Size = New System.Drawing.Size(184, 22)
         Me.TxtBlockNumber.TabIndex = 5
         Me.TxtBlockNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -241,11 +246,11 @@ Partial Class FrmActionAdd
         '
         Me.CmbActionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbActionType.FormattingEnabled = True
-        Me.CmbActionType.ItemHeight = 17
-        Me.CmbActionType.Location = New System.Drawing.Point(159, 24)
-        Me.CmbActionType.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.CmbActionType.ItemHeight = 13
+        Me.CmbActionType.Location = New System.Drawing.Point(177, 30)
+        Me.CmbActionType.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.CmbActionType.Name = "CmbActionType"
-        Me.CmbActionType.Size = New System.Drawing.Size(154, 25)
+        Me.CmbActionType.Size = New System.Drawing.Size(184, 21)
         Me.CmbActionType.Sorted = True
         Me.CmbActionType.TabIndex = 0
         '
@@ -253,11 +258,11 @@ Partial Class FrmActionAdd
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label1.Location = New System.Drawing.Point(337, 93)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label1.Location = New System.Drawing.Point(403, 93)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label1.Size = New System.Drawing.Size(65, 21)
+        Me.Label1.Size = New System.Drawing.Size(52, 17)
         Me.Label1.TabIndex = 60
         Me.Label1.Text = "رقم المادة"
         '
@@ -265,43 +270,43 @@ Partial Class FrmActionAdd
         '
         Me.LblQuantity.AutoSize = True
         Me.LblQuantity.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.LblQuantity.Location = New System.Drawing.Point(359, 164)
-        Me.LblQuantity.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LblQuantity.Location = New System.Drawing.Point(418, 152)
+        Me.LblQuantity.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.LblQuantity.Name = "LblQuantity"
         Me.LblQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblQuantity.Size = New System.Drawing.Size(43, 21)
+        Me.LblQuantity.Size = New System.Drawing.Size(36, 17)
         Me.LblQuantity.TabIndex = 55
         Me.LblQuantity.Text = "الكمية"
         '
         'NumQuantity
         '
         Me.NumQuantity.DecimalPlaces = 2
-        Me.NumQuantity.Location = New System.Drawing.Point(159, 161)
-        Me.NumQuantity.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.NumQuantity.Location = New System.Drawing.Point(176, 153)
+        Me.NumQuantity.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
         Me.NumQuantity.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
         Me.NumQuantity.Name = "NumQuantity"
         Me.NumQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.NumQuantity.Size = New System.Drawing.Size(154, 25)
+        Me.NumQuantity.Size = New System.Drawing.Size(185, 22)
         Me.NumQuantity.TabIndex = 4
         '
         'LblBarecode
         '
         Me.LblBarecode.AutoSize = True
         Me.LblBarecode.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.LblBarecode.Location = New System.Drawing.Point(354, 131)
-        Me.LblBarecode.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LblBarecode.Location = New System.Drawing.Point(416, 123)
+        Me.LblBarecode.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.LblBarecode.Name = "LblBarecode"
         Me.LblBarecode.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblBarecode.Size = New System.Drawing.Size(48, 21)
+        Me.LblBarecode.Size = New System.Drawing.Size(39, 17)
         Me.LblBarecode.TabIndex = 54
         Me.LblBarecode.Text = "باركود"
         '
         'Txtbarcode
         '
-        Me.Txtbarcode.Location = New System.Drawing.Point(159, 127)
-        Me.Txtbarcode.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
+        Me.Txtbarcode.Location = New System.Drawing.Point(177, 123)
+        Me.Txtbarcode.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
         Me.Txtbarcode.Name = "Txtbarcode"
-        Me.Txtbarcode.Size = New System.Drawing.Size(154, 25)
+        Me.Txtbarcode.Size = New System.Drawing.Size(184, 22)
         Me.Txtbarcode.TabIndex = 3
         Me.Txtbarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -309,24 +314,24 @@ Partial Class FrmActionAdd
         '
         Me.LblMaterialName.AutoSize = True
         Me.LblMaterialName.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.LblMaterialName.Location = New System.Drawing.Point(362, 58)
-        Me.LblMaterialName.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.LblMaterialName.Location = New System.Drawing.Point(423, 61)
+        Me.LblMaterialName.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.LblMaterialName.Name = "LblMaterialName"
         Me.LblMaterialName.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LblMaterialName.Size = New System.Drawing.Size(40, 21)
+        Me.LblMaterialName.Size = New System.Drawing.Size(32, 17)
         Me.LblMaterialName.TabIndex = 46
         Me.LblMaterialName.Text = "المادة"
         '
         'FrmActionAdd
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(443, 495)
+        Me.ClientSize = New System.Drawing.Size(495, 531)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Font = New System.Drawing.Font("David", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        Me.Font = New System.Drawing.Font("David", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
+        Me.Margin = New System.Windows.Forms.Padding(7, 5, 7, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmActionAdd"

@@ -5,6 +5,7 @@ Imports TRM.ModFunctions
 Public Class FrmMain
     Dim switcher As Boolean = True
     Public isConnected As Boolean = False
+    Dim FreshLogin As Boolean = True
 
     Public Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -21,9 +22,26 @@ Public Class FrmMain
         For Each Frm As Form In Me.MdiChildren
             Frm.Close()
         Next
-
         Me.Text = ActiveUser
-        TSSLblVersion.Text = Application.ProductVersion
+
+        If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
+            Dim CurrentVersion As String = My.Settings.CurrentVersion
+            With System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion
+                TSSLblVersion.Text = .Major & "." & .Minor & "." & .Build & "." & .Revision
+            End With
+            If CurrentVersion <> TSSLblVersion.Text Then
+                My.Settings.isShowWhatsNew = True
+                My.Settings.CurrentVersion = TSSLblVersion.Text
+                My.Settings.EditDataBase = True
+                My.Settings.Save()
+            End If
+            If FreshLogin = True Then
+                If My.Settings.isShowWhatsNew = True Then
+                    FrmWhatsNew.ShowDialog()
+                End If
+                FreshLogin = False
+            End If
+        End If
 
         If AdminMode = True Then
             SSAdminStatus.Text = "פעיל"
@@ -353,12 +371,26 @@ Public Class FrmMain
 
     Private Sub TSActions_Click(sender As Object, e As EventArgs) Handles TSActions.Click
         Try
-            If Application.OpenForms.OfType(Of FrmActionsTypes).Any = True Then
-                FmActionsTypes.Activate()
+            If AdminMode = True Then
+                If Application.OpenForms.OfType(Of FrmActionsTypes).Any = True Then
+                    FmActionsTypes.Activate()
+                Else
+                    FmActionsTypes = New FrmActionsTypes
+                    FmActionsTypes.MdiParent = Me
+                    FmActionsTypes.Show()
+                End If
             Else
-                FmActionsTypes = New FrmActionsTypes
-                FmActionsTypes.MdiParent = Me
-                FmActionsTypes.Show()
+                If isAllowed(8) = True Then
+                    If Application.OpenForms.OfType(Of FrmActionsTypes).Any = True Then
+                        FmActionsTypes.Activate()
+                    Else
+                        FmActionsTypes = New FrmActionsTypes
+                        FmActionsTypes.MdiParent = Me
+                        FmActionsTypes.Show()
+                    End If
+                Else
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

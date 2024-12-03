@@ -9,7 +9,7 @@ Public Class FrmSoldCardPrint
         Params(1) = New ReportParameter("JobPhone", My.Settings.CurrentServer)
         Params(2) = New ReportParameter("JobFax", My.Settings.AdminUser)
         Params(3) = New ReportParameter("JobEmail", My.Settings.AdminPass)
-        Params(4) = New ReportParameter("JobId", My.Settings.JobId)
+        Params(4) = New ReportParameter("JobId", My.Settings.isShowWhatsNew)
         Params(5) = New ReportParameter("JobAdress", My.Settings.OnlineServer)
         Params(6) = New ReportParameter("CarSerial", FrmSoldCard.TxtCarSerial.Text)
         Params(7) = New ReportParameter("CarId", FrmSoldCard.TxtCarId.Text)

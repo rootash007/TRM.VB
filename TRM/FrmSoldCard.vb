@@ -5,7 +5,7 @@
         LblJobAdress.Text = My.Settings.OnlineServer
         LblJobEmail.Text = My.Settings.AdminPass
         LblJobFax.Text = My.Settings.AdminUser
-        LblJobId.Text = My.Settings.JobId
+        LblJobId.Text = My.Settings.isShowWhatsNew
         LblJobName.Text = My.Settings.LocalServer
         LblJobPhone.Text = My.Settings.CurrentServer
         If SoldCardWinDow = "Search" Then

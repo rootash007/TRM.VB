@@ -97,3 +97,4 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\RM.application
 D:\GithubProjects\TRM.VB\TRM\obj\Release\RM.exe
 D:\GithubProjects\TRM.VB\TRM\obj\Release\RM.xml
 D:\GithubProjects\TRM.VB\TRM\obj\Release\RM.pdb
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmWhatsNew.resources
