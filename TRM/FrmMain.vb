@@ -8,12 +8,13 @@ Public Class FrmMain
     Dim FreshLogin As Boolean = True
 
     Public Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.Dock = DockStyle.Fill
         'System.Threading.Thread.Sleep(3000)
 
         'Me.Hide()
 
         '***********
+
         If ReConnect = False Then
             FrmLogin.ShowDialog()
         End If
@@ -298,20 +299,8 @@ Public Class FrmMain
                 OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
             End If
         End If
+        'ChkPermission()
 
-
-        'If ActiveLvl < 2 Then
-        '    If Application.OpenForms.OfType(Of FrmUsers).Any = True Then
-        '        FmUsers.Activate()
-        '    Else
-        '        FmUsers = New FrmUsers
-        '        FmUsers.MdiParent = Me
-        '        FmUsers.Show()
-        '    End If
-        'Else
-        '    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
-
-        'End If
     End Sub
 
     Private Sub TSBtnBackUp_Click(sender As Object, e As EventArgs) Handles TSBtnBackUp.Click
@@ -454,5 +443,9 @@ Public Class FrmMain
                 OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
             End If
         End If
+    End Sub
+
+    Private Sub تحريركلالنوافذالقيدالاستخدامToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles تحريركلالنوافذالقيدالاستخدامToolStripMenuItem.Click
+        inUSEFree()
     End Sub
 End Class

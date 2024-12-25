@@ -33,27 +33,27 @@ Partial Class FrmMaterialsImportExcel
         'BtnClose
         '
         Me.BtnClose.BackColor = System.Drawing.Color.White
-        Me.BtnClose.Font = New System.Drawing.Font("David", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnClose.Font = New System.Drawing.Font("David", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
         Me.BtnClose.Location = New System.Drawing.Point(280, 335)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 55)
         Me.BtnClose.TabIndex = 3
-        Me.BtnClose.Text = "סגירה"
+        Me.BtnClose.Text = "اغلاق"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnClose.UseVisualStyleBackColor = False
         '
         'BtnAccept
         '
         Me.BtnAccept.BackColor = System.Drawing.Color.White
-        Me.BtnAccept.Font = New System.Drawing.Font("David", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnAccept.Font = New System.Drawing.Font("David", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnAccept.Location = New System.Drawing.Point(175, 335)
         Me.BtnAccept.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnAccept.Name = "BtnAccept"
         Me.BtnAccept.Size = New System.Drawing.Size(101, 55)
         Me.BtnAccept.TabIndex = 2
-        Me.BtnAccept.Text = "הוסף לרשימת מוצרים"
+        Me.BtnAccept.Text = "اضافه الى قائمة المواد"
         Me.BtnAccept.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnAccept.UseVisualStyleBackColor = False
         '
@@ -79,16 +79,17 @@ Partial Class FrmMaterialsImportExcel
         'LinkLblSelect
         '
         Me.LinkLblSelect.AutoSize = True
+        Me.LinkLblSelect.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.LinkLblSelect.Location = New System.Drawing.Point(12, 335)
         Me.LinkLblSelect.Name = "LinkLblSelect"
-        Me.LinkLblSelect.Size = New System.Drawing.Size(61, 16)
+        Me.LinkLblSelect.Size = New System.Drawing.Size(52, 16)
         Me.LinkLblSelect.TabIndex = 4
         Me.LinkLblSelect.TabStop = True
-        Me.LinkLblSelect.Text = "בחר הכל"
+        Me.LinkLblSelect.Text = "اختيار الكل"
         '
         'FrmMaterialsImportExcel
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(796, 402)
@@ -104,7 +105,7 @@ Partial Class FrmMaterialsImportExcel
         Me.RightToLeftLayout = True
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "רשימת מוצרים מאקסיל"
+        Me.Text = "قائمة المواد من الاكسيل"
         CType(Me.DgvMaterials, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

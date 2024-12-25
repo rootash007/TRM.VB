@@ -6,6 +6,8 @@ Public Class FrmLogin
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AdminMode = False
+        'TxtUsername.Text = "admin"
+        'TxtPassWord.Text = "0"
         TxtUsername.Text = ""
         TxtPassWord.Text = ""
         ChkForUpdates()

@@ -52,6 +52,15 @@ Partial Class FrmMaterialAddEdit
         Me.NumTypeQuantity = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.TabPricies = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DGVMaterialPrice = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.NumYear = New System.Windows.Forms.NumericUpDown()
         CType(Me.IsActive, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpDetails.SuspendLayout()
@@ -64,6 +73,12 @@ Partial Class FrmMaterialAddEdit
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVMaterialTypes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumTypeQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPricies.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.DGVMaterialPrice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumYear, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnMaterialAE
@@ -296,6 +311,7 @@ Partial Class FrmMaterialAddEdit
         '
         Me.TabMaterialEA.Controls.Add(Me.TabMaterial)
         Me.TabMaterialEA.Controls.Add(Me.TabTypes)
+        Me.TabMaterialEA.Controls.Add(Me.TabPricies)
         Me.TabMaterialEA.Location = New System.Drawing.Point(12, 12)
         Me.TabMaterialEA.Name = "TabMaterialEA"
         Me.TabMaterialEA.RightToLeftLayout = True
@@ -429,6 +445,124 @@ Partial Class FrmMaterialAddEdit
         Me.Label4.TabIndex = 66
         Me.Label4.Text = "الكمية"
         '
+        'TabPricies
+        '
+        Me.TabPricies.Controls.Add(Me.GroupBox3)
+        Me.TabPricies.Location = New System.Drawing.Point(4, 27)
+        Me.TabPricies.Name = "TabPricies"
+        Me.TabPricies.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPricies.Size = New System.Drawing.Size(385, 389)
+        Me.TabPricies.TabIndex = 2
+        Me.TabPricies.Text = "الاسعار"
+        Me.TabPricies.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.NumYear)
+        Me.GroupBox3.Controls.Add(Me.GroupBox4)
+        Me.GroupBox3.Controls.Add(Me.Button1)
+        Me.GroupBox3.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 17)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(373, 358)
+        Me.GroupBox3.TabIndex = 1
+        Me.GroupBox3.TabStop = False
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.DGVMaterialPrice)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 93)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(361, 259)
+        Me.GroupBox4.TabIndex = 65
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "انواع المنتج"
+        '
+        'DGVMaterialPrice
+        '
+        Me.DGVMaterialPrice.AllowUserToAddRows = False
+        Me.DGVMaterialPrice.AllowUserToDeleteRows = False
+        Me.DGVMaterialPrice.AllowUserToResizeColumns = False
+        Me.DGVMaterialPrice.AllowUserToResizeRows = False
+        Me.DGVMaterialPrice.BackgroundColor = System.Drawing.Color.White
+        Me.DGVMaterialPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVMaterialPrice.Location = New System.Drawing.Point(8, 23)
+        Me.DGVMaterialPrice.Margin = New System.Windows.Forms.Padding(5, 9, 5, 9)
+        Me.DGVMaterialPrice.MultiSelect = False
+        Me.DGVMaterialPrice.Name = "DGVMaterialPrice"
+        Me.DGVMaterialPrice.ReadOnly = True
+        Me.DGVMaterialPrice.RowHeadersVisible = False
+        Me.DGVMaterialPrice.RowHeadersWidth = 51
+        Me.DGVMaterialPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVMaterialPrice.Size = New System.Drawing.Size(345, 224)
+        Me.DGVMaterialPrice.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.Button1.Image = Global.TRM.My.Resources.Resources.plus
+        Me.Button1.Location = New System.Drawing.Point(26, 26)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(61, 61)
+        Me.Button1.TabIndex = 74
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.CausesValidation = False
+        Me.NumericUpDown1.DecimalPlaces = 2
+        Me.NumericUpDown1.Location = New System.Drawing.Point(105, 60)
+        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(4)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
+        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {9999999, 0, 0, -2147483648})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.NumericUpDown1.Size = New System.Drawing.Size(179, 26)
+        Me.NumericUpDown1.TabIndex = 64
+        Me.NumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.Label2.Location = New System.Drawing.Point(330, 31)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label2.Size = New System.Drawing.Size(32, 17)
+        Me.Label2.TabIndex = 72
+        Me.Label2.Text = "السنة"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(326, 62)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label5.Size = New System.Drawing.Size(36, 18)
+        Me.Label5.TabIndex = 66
+        Me.Label5.Text = "الكمية"
+        '
+        'NumYear
+        '
+        Me.NumYear.CausesValidation = False
+        Me.NumYear.Location = New System.Drawing.Point(105, 27)
+        Me.NumYear.Margin = New System.Windows.Forms.Padding(4)
+        Me.NumYear.Maximum = New Decimal(New Integer() {2999, 0, 0, 0})
+        Me.NumYear.Minimum = New Decimal(New Integer() {2023, 0, 0, 0})
+        Me.NumYear.Name = "NumYear"
+        Me.NumYear.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.NumYear.Size = New System.Drawing.Size(179, 26)
+        Me.NumYear.TabIndex = 75
+        Me.NumYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.NumYear.Value = New Decimal(New Integer() {2023, 0, 0, 0})
+        '
         'FrmMaterialAddEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -460,6 +594,13 @@ Partial Class FrmMaterialAddEdit
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGVMaterialTypes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumTypeQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPricies.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        CType(Me.DGVMaterialPrice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumYear, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -493,4 +634,13 @@ Partial Class FrmMaterialAddEdit
     Friend WithEvents TxtTypeName As TextBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents BtnAddType As Button
+    Friend WithEvents TabPricies As TabPage
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents DGVMaterialPrice As DataGridView
+    Friend WithEvents Button1 As Button
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents NumYear As NumericUpDown
 End Class

@@ -5,6 +5,7 @@
 
     Public Sub FrmActions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'MsgBox(SelectedRow)
+        Me.Dock = DockStyle.Fill
         If DgvActionsList.RowCount > 0 Then DgvActionsList.CurrentCell = DgvActionsList.Rows(SelectedRow).Cells(1)
         If AdminMode = True Then
             BtnEditAction.Visible = True

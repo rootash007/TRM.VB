@@ -22,11 +22,12 @@
                     End If
                 Next
                 If isNameFound = True And isLocBarcodeFound = False Then
-                    MsgBox("המוצר " & DgvMaterials.Rows(i).Cells(1).Value & " נמצא במערכת , אין אפשרות לשכפל מוצר", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "התראה")
+                    MsgBox("المادة " & DgvMaterials.Rows(i).Cells(1).Value & "موجودة في النظام , لا يمكنك تكرار المادة", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "تنبيه")
                 ElseIf isLocBarcodeFound = True And isNameFound = False Then
-                    MsgBox("הברקוד  " & DgvMaterials.Rows(i).Cells(2).Value & " נמצא במערכת , אין אפשרות לשכפל מוצר", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "התראה")
+                    MsgBox("الرمز " & DgvMaterials.Rows(i).Cells(2).Value & "موجودة في النظام , لا يمكنك تكرار الرمز", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "تنبيه")
                 ElseIf isNameFound = True And isLocBarcodeFound = True Then
-                    MsgBox("name and loc barcode  " & DgvMaterials.Rows(i).Cells(2).Value & " נמצא במערכת , אין אפשרות לשכפל מוצר", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "התראה")
+                    'MsgBox("" & DgvMaterials.Rows(i).Cells(2).Value & " נמצא במערכת , אין אפשרות לשכפל מוצר", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "התראה")
+                    MsgBox("الاسم والرمز  " & DgvMaterials.Rows(i).Cells(2).Value & "موجودان في النظام , لا يمكنك تكرار الرمز او الاسم", MsgBoxStyle.MsgBoxRtlReading + vbOKOnly + MsgBoxStyle.Critical, "تنبيه")
 
                 Else
                     'MsgBox("added")
@@ -39,7 +40,7 @@
             End If
         Next
         FrmMain.TSMainProgBar.Value = 100
-        MsgBox("adding material done as successfully")
+        MsgBox("تمت عملية الاضافة", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "استعلام")
         FrmMain.TSMainProgBar.Value = 0
         LoadMaterials()
         Me.Close()
@@ -75,13 +76,13 @@
                 DgvMaterials.Rows(i).Cells(0).Value = True
             Next
             IsSelectAll = True
-            LinkLblSelect.Text = "בטל הכל"
+            LinkLblSelect.Text = "الغاء الكل"
         Else
             For i = 0 To DgvMaterials.RowCount - 1
                 DgvMaterials.Rows(i).Cells(0).Value = False
             Next
             IsSelectAll = False
-            LinkLblSelect.Text = "בחר הכל"
+            LinkLblSelect.Text = "اختيار الكل"
 
         End If
     End Sub

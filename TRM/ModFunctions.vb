@@ -15,6 +15,7 @@ Module ModFunctions
 
     'online server
     'Dim OfficeServer As String = "server=192.168.2.140; database=StorageCtrl; user id=storage_login; password=Wm8kg7paK6jzAb2ZYnT5qE"
+    'Dim OfficeServer As String = "mysql:host=localhost; database=u651653991_anymlai; user id=u651653991_TRManymlai; password=TRManymlai0524373033@@"
 
 
     'Public dbcon As New SqlConnection With {.ConnectionString = "Data Source=DELTA-DFXZ455;Initial Catalog=TRM;Integrated Security=True"}
@@ -1360,38 +1361,6 @@ Module ModFunctions
         End With
     End Sub
 
-    Public Sub FirstEmptyCarSerial()
-        Dim que As String
-        que = "select CarSerial from MainList order by CarSerial"
-        FillList(que)
-        For i = My.Settings.EmptyCarSerial - 1 To MyTab.Rows.Count - 1
-            If My.Settings.EmptyCarSerial = MyTab.Rows(i).Item(0).ToString Then
-                My.Settings.EmptyCarSerial += 1
-            End If
-            'MsgBox(My.Settings.EmptyCarSerial)
-            'MsgBox(MyTab.Rows(i).Item(0).ToString)
-        Next
-        My.Settings.Save()
-    End Sub
-
-    Public Sub LoadBuyerName()
-        ' לא בשימוש כרגע
-        cmd = New SqlCommand
-        MyTab = New DataTable
-        Try
-            MyTab.Clear()
-            With cmd
-                .CommandType = CommandType.Text
-                .CommandText = "select BuyerName from MainList"
-                .Connection = dbcon
-            End With
-            dbaddapter = New SqlDataAdapter(cmd)
-            dbaddapter.Fill(MyTab)
-            cmd = Nothing
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
     Public Sub CreateTables()
         Dim Que As String
         Que = "IF NOT EXISTS (SELECT * FROM sys.objects 
@@ -1407,7 +1376,6 @@ Module ModFunctions
                ) 
                INSERT INTO users (user_name,user_pass) values ('admin','0')
                END
-
 
                IF NOT EXISTS (SELECT * FROM sys.objects 
                WHERE object_id = OBJECT_ID(N'action_types') AND type in (N'U'))
@@ -1442,6 +1410,7 @@ Module ModFunctions
                INSERT INTO permissions (permission_name) values ('Delete Action')
                INSERT INTO permissions (permission_name) values ('Permissions')
                INSERT INTO permissions (permission_name) values ('Products')
+               INSERT INTO permissions (permission_name) values ('Action Types')
                END
 
                IF NOT EXISTS (SELECT * FROM sys.objects 
@@ -1456,6 +1425,17 @@ Module ModFunctions
                END
 
                IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'material_pricies') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE material_pricies(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               material_id int NOT NULL,
+               price_year int NOT NULL,
+               material_price decimal(18, 2) NOT NULL Default(0),
+               ) 
+               END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
                WHERE object_id = OBJECT_ID(N'product_materials') AND type in (N'U'))
                BEGIN
                CREATE TABLE product_materials(
@@ -1466,7 +1446,65 @@ Module ModFunctions
                material_loc_barcode nvarchar (50) NOT NULL,
                material_quantity decimal(18, 2) NOT NULL Default(0),
                material_unit nvarchar (15) NOT NULL,
+               ) 
+               END
 
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'units') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE units(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               unit_name nchar (10) NOT NULL,
+               ) 
+               END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'materials') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE materials(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               material_name nvarchar (50),
+               material_barcode nvarchar (50),
+               material_loc_barcode nvarchar (50),
+               material_quantity  decimal(18, 2) NOT NULL Default(0),
+               material_min_quantity decimal(18, 2) NOT NULL Default(0),
+               material_unit nchar (10),
+               material_weight int,
+               material_isactive bit NOT NULL Default(1),
+               material_inuse bit NOT NULL Default(0),
+               ) 
+               END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'products') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE products(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               product_name nvarchar (50),
+               product_barcode nvarchar (50),
+               product_can int,
+               product_box int,              
+               product_total int,              
+               ) 
+               END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'actions') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE actions(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               material_name nvarchar (50),
+               material_loc_barcode nvarchar (50),
+               material_barcode nvarchar (50),
+               block_number nchar (10),
+               action_user nvarchar (50),
+               material_quantity  decimal(18, 2) NOT NULL Default(0),
+               action_date datetime,
+               vendor_name nvarchar (50),
+               action_order nvarchar (50),
+               more_info nvarchar (200),
+               action_isincrease int,
+               action_type nchar (10),
                ) 
                END
 

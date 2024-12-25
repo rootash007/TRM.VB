@@ -98,19 +98,19 @@
         Try
             Dim NewQuantity As Double
             If CmbActionType.Text = "" Then
-                MsgBox("choose action type please", vbOKOnly + vbInformation, "alert")
+                MsgBox("الرجاء اختيار نوع العملية", vbOKOnly + vbInformation, "استعلام")
                 Return
             End If
 
             If CmbActionType.SelectedValue = True Then
                 If CmbMaterialName.Text = "" Then
-                    MsgBox("name is requierd", vbOKOnly + vbCritical, "message")
+                    MsgBox("الرجاء ادخال اسم المادة", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf CmbLocBarcode.Text = "" Then
-                    MsgBox("local barcode is requierd", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال الرمز المحلي", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf NumQuantity.Value = 0 Then
-                    MsgBox("quantity cannot be 0 ", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال الكمية", vbOKOnly + vbInformation, "استعلام")
                     Return
                 End If
                 Dim que As String = "select * from materials where material_loc_barcode = @loc_barcode" ' & CmbLocBarcode.Text & ""
@@ -136,25 +136,25 @@
 
             ElseIf CmbActionType.SelectedValue = False Then
                 If CmbMaterialName.Text = "" Then
-                    MsgBox("name is requierd", vbOKOnly + vbCritical, "message")
+                    MsgBox("الرجاء ادخال اسم المادة", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf CmbLocBarcode.Text = "" Then
-                    MsgBox("local barcode is requierd", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال الرمز المحلي", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf Txtbarcode.Text = "" Then
-                    MsgBox("barcode is requierd ", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال الرمز", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf NumQuantity.Value = 0 Then
-                    MsgBox("quantity cannot be 0 ", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال الكمية", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf TxtBlockNumber.Text = "" Then
-                    MsgBox("block number is requierd ", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال رقم المشتاح", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf TxtVendor.Text = "" Then
-                    MsgBox("vendor is requierd ", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال اسم المورد", vbOKOnly + vbInformation, "استعلام")
                     Return
                 ElseIf TxtOrder.Text = "" Then
-                    MsgBox("order number is requierd ", vbOKOnly + vbInformation, "message")
+                    MsgBox("الرجاء ادخال رقم الطلبية", vbOKOnly + vbInformation, "استعلام")
                     Return
                 End If
                 'MsgBox(isIncrease)

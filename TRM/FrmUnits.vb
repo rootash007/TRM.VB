@@ -36,4 +36,12 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub حذفToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles حذفToolStripMenuItem.Click
+        MsgBox("delete unit test , its not active yet")
+    End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        Me.Close()
+    End Sub
 End Class

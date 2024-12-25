@@ -28,9 +28,14 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://www.ctrlmanager.com/TRM/</InstallUrl>
+    <SupportUrl>https://www.ctrlmanager.com/TRM/</SupportUrl>
+    <ErrorReportUrl>https://www.ctrlmanager.com/TRM/</ErrorReportUrl>
+    <ProductName>TRM</ProductName>
+    <PublisherName>TRM</PublisherName>
+    <SuiteName>TRM</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -83,6 +88,9 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="IrisSkin2">
       <HintPath>..\..\..\..\Skine Files\Skine Files\IrisSkin2.dll</HintPath>
@@ -125,6 +133,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller_FrmMain.vb" />
     <Compile Include="FrmWhatsNew.Designer.vb">
       <DependentUpon>FrmWhatsNew.vb</DependentUpon>
     </Compile>
@@ -379,6 +388,7 @@
     <Compile Include="FrmVendors.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TestModel.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -515,6 +525,7 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

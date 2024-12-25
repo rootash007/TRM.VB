@@ -2,6 +2,7 @@
     Dim Swicher As Boolean
     Private Sub FrmMaterialAddEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadUnits()
+        NumYear.Value = Today.Year
         Me.CmbUnits.DataSource = MyTab
         Me.CmbUnits.DisplayMember = "unit_name"
         Me.CmbUnits.ValueMember = "id"
@@ -36,6 +37,7 @@
                 FillList(que)
                 DGVMaterialTypes.DataSource = MyTab
                 MaterialTypesDGVDesign(DGVMaterialTypes)
+                'inUSEMaterial(FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value, 1)
 
             ElseIf FmMaterials.TabMaterials.SelectedIndex = 1 Then
                 IsActive.Visible = True
@@ -59,19 +61,27 @@
                 FillList(que)
                 DGVMaterialTypes.DataSource = MyTab
                 MaterialTypesDGVDesign(DGVMaterialTypes)
+                'inUSEMaterial(FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value, 1)
             End If
-
-
         End If
-
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        If FmMaterials.TabMaterials.SelectedIndex = 0 Then
+            inUSEMaterial(FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value, 0)
+        Else
+            inUSEMaterial(FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value, 0)
+        End If
         Me.Close()
     End Sub
 
     Private Sub TxtMaterialName_KeyDown(sender As Object, e As KeyEventArgs) Handles Txtbarcode.KeyDown, TxtMaterialName.KeyDown, TxtLocBarcode.KeyDown, NumWeigth.KeyDown, NumQuantity.KeyDown, NumMinQuantity.KeyDown, CmbUnits.KeyDown, BtnMaterialAE.KeyDown, BtnClose.KeyDown
         If e.KeyCode = Keys.Escape Then
+            If FmMaterials.TabMaterials.SelectedIndex = 0 Then
+                inUSEMaterial(FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value, 0)
+            Else
+                inUSEMaterial(FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value, 0)
+            End If
             Me.Close()
         End If
     End Sub
@@ -101,10 +111,12 @@
         If isAddMaterial = True Then
             For i = 0 To MyTab.Rows.Count - 1
                 If TxtMaterialName.Text = MyTab.Rows(i).Item(1) Then
-                    MsgBox("material name found please choose another material name", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "name found")
+                    'MsgBox("material name found please choose another material name", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "name found")
+                    MsgBox("اسم المادة موجود في النظام , الرجاء اختيار اسم اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
+
                     Return
                 ElseIf TxtLocBarcode.Text = MyTab.Rows(i).Item(2) Then
-                    MsgBox("material loc barcode found please choose another material loc barcode", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "loc barcode found")
+                    MsgBox("رمز المادة موجود في النظام , الرجاء اختيار رمز اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
                     Return
                 End If
             Next
@@ -113,10 +125,10 @@
             If FmMaterials.TabMaterials.SelectedIndex = 0 Then
                 For i = 0 To MyTab.Rows.Count - 1
                     If TxtMaterialName.Text = MyTab.Rows(i).Item(1) And FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value <> MyTab.Rows(i).Item(0) Then
-                        MsgBox("material name found please choose another material name", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "name found")
+                        MsgBox("اسم المادة موجود في النظام , الرجاء اختيار اسم اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
                         Return
                     ElseIf TxtLocBarcode.Text = MyTab.Rows(i).Item(2) And FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value <> MyTab.Rows(i).Item(0) Then
-                        MsgBox("material loc barcode found please choose another material loc barcode", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "loc barcode found")
+                        MsgBox("رمز المادة موجود في النظام , الرجاء اختيار رمز اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
                         Return
                     End If
                 Next
@@ -124,10 +136,10 @@
             ElseIf FmMaterials.TabMaterials.SelectedIndex = 1 Then
                 For i = 0 To MyTab.Rows.Count - 1
                     If TxtMaterialName.Text = MyTab.Rows(i).Item(1) And FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value <> MyTab.Rows(i).Item(0) Then
-                        MsgBox("material name found please choose another material name", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "name found")
+                        MsgBox("اسم المادة موجود في النظام , الرجاء اختيار اسم اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
                         Return
                     ElseIf TxtLocBarcode.Text = MyTab.Rows(i).Item(2) And FmMaterials.DgvMaterialsoff.CurrentRow.Cells(0).Value <> MyTab.Rows(i).Item(0) Then
-                        MsgBox("material loc barcode found please choose another material loc barcode", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "loc barcode found")
+                        MsgBox("رمز المادة موجود في النظام , الرجاء اختيار رمز اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
                         Return
                     End If
                 Next
@@ -164,6 +176,14 @@
             DGVMaterialTypes.Rows(DGVMaterialTypes.Rows.Count - 1).Cells(3).Value = NumTypeQuantity.Value
         Else
             MsgBox("typename cannot be empty")
+        End If
+    End Sub
+
+    Private Sub FrmMaterialAddEdit_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If FmMaterials.TabMaterials.SelectedIndex = 0 Then
+            inUSEMaterial(FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value, 0)
+        Else
+            inUSEMaterial(FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value, 0)
         End If
     End Sub
 End Class

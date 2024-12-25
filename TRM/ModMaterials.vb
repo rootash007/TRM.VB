@@ -18,6 +18,8 @@ Module ModMaterials
     Public Dta As OleDbDataAdapter
     Public SheetName As String = ""
     Public OpenFileDialog As New OpenFileDialog
+    Public MaterialsOnTab = New DataTable
+
 
     Public Sub LoadUnits()
         cmd = New SqlCommand
@@ -37,7 +39,6 @@ Module ModMaterials
         End Try
     End Sub
     Public Sub FillMaterialsList(Que As String)
-        Dim CarKind As String = FmSearch.CmbCarKind.Text
         cmd = New SqlCommand
         MaterialsTab = New DataTable
         Try
@@ -71,6 +72,7 @@ Module ModMaterials
 
         FillList(queOn)
         FmMaterials.DgvMaterials.DataSource = MyTab
+        MaterialsOnTab = MyTab
         DesignMaterialsDGV(FmMaterials.DgvMaterials)
         If FmMaterials.DgvMaterials.RowCount > 0 Then
             For i = 0 To FmMaterials.DgvMaterials.RowCount - 1
@@ -98,9 +100,10 @@ Module ModMaterials
             'FmMaterials.TabMaterialsAlarm.Visible = False
             FmMaterials.TabMaterialsAlarm.Text = "قائمة التنبيهات ( فارغ )"
         End If
+        DesignMaterialsDGV(FmMaterials.DGVAlarm)
+
         'FmMaterials.TabMaterialsAlarm.Visible = False
         FillMaterialsList(queMaterials)
-        DesignMaterialsDGV(FmMaterials.DGVAlarm)
         'FmMaterials.DGVMaterialsOff.ClearSelection()
         'FmMaterials.DgvMaterials.ClearSelection()
         'FmMaterials.DGVAlarm.ClearSelection()
@@ -186,9 +189,12 @@ Module ModMaterials
             .Columns(3).Width = 120
             .Columns(4).Width = 80
             .Columns(5).Width = 80
-            .Columns(6).Width = 70
+            .Columns(6).Width = 80
             .Columns(7).Width = 70
             .DefaultCellStyle.Font = New Font(10, 12)
+            .ColumnHeadersDefaultCellStyle.Font = New Font(10, 12)
+            '.ColumnHeadersDefaultCellStyle. = New Font(10, 12)
+
             '.Columns(8).Width = 55
             .ClearSelection()
 
@@ -269,7 +275,7 @@ Module ModMaterials
             cmd = New SqlCommand
             With cmd
                 .CommandType = CommandType.Text
-                .CommandText = "update materials set material_name=@material_name,material_barcode=@material_barcode,material_loc_barcode=@material_loc_barcode,material_quantity=@material_quantity,material_min_quantity=@material_min_quantity,material_unit=@material_unit,material_weigth=@material_weigth,material_isactive=@material_isactive where id=@id"
+                .CommandText = "update materials set material_name=@material_name,material_barcode=@material_barcode,material_loc_barcode=@material_loc_barcode,material_quantity=@material_quantity,material_min_quantity=@material_min_quantity,material_unit=@material_unit,material_weigth=@material_weigth,material_isactive=@material_isactive,material_inuse=@material_inuse where id=@id"
                 .Connection = dbcon
             End With
             cmd.Parameters.AddWithValue("@material_name", material_name)
@@ -280,6 +286,8 @@ Module ModMaterials
             cmd.Parameters.AddWithValue("@material_unit", material_unit)
             cmd.Parameters.AddWithValue("@material_weigth", material_weigth)
             cmd.Parameters.AddWithValue("@material_isactive", material_isactive)
+            cmd.Parameters.AddWithValue("@material_inuse", 0)
+
 
             cmd.Parameters.AddWithValue("@id", id)
             dbcon.Open()
@@ -292,95 +300,48 @@ Module ModMaterials
         End Try
     End Sub
 
-    'Public Sub LoadNewUser(Frm As Object)
-    '    'Frm.BtnUserAU.Image = My.Resources.adduser
-    '    'Frm.Text = "הוספת משתמש חדש"
-    '    'Frm.BtnUserAU.Text = "הוספת משתמש"
-    '    'Frm.NumUserLvl.Value = 2
-    '    'FrmAddUserUpdate.BtnUserAU.Image = My.Resources.adduser
-    '    'FrmAddUserUpdate.Text = "הוספת משתמש חדש"
-    '    'FrmAddUserUpdate.BtnUserAU.Text = "הוספת משתמש"
-    '    'FrmAddUserUpdate.TxtUserName.Text = ""
-    '    'FrmAddUserUpdate.TxtPassWord.Text = ""
-    '    'FrmAddUserUpdate.NumUserLvl.Value = 2
-    'End Sub
+    Public Sub inUSEMaterial(id As Integer, IsInUSE As Integer)
+        Try
+            cmd = New SqlCommand
 
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "Update Materials set material_inuse=@material_inuse where id=@id"
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("@material_inuse", IsInUSE)
+            cmd.Parameters.AddWithValue("@id", id)
 
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
 
+    Public Sub inUSEFree()
+        Try
+            cmd = New SqlCommand
 
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "Update Materials set material_inuse=@material_inuse where material_inuse = 1"
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("@material_inuse", 0)
+            'cmd.Parameters.AddWithValue("@id", id)
 
-    'Public Sub LoadUpdateUser()
-    '    If FrmUsers.TabUsers.SelectedIndex = 0 Then
-    '        With FrmAddUserUpdate
-    '            .BtnUserAU.Image = My.Resources.save
-    '            .Text = ""
-    '            .BtnUserAU.Text = "עדכון משתמש"
-    '            .TxtUserName.Text = FrmUsers.DgvUsers.CurrentRow.Cells(1).Value
-    '            .TxtPassWord.Text = FrmUsers.DgvUsers.CurrentRow.Cells(2).Value
-    '            .NumUserLvl.Value = FrmUsers.DgvUsers.CurrentRow.Cells(3).Value
-    '            .TxtName.Text = FrmUsers.DgvUsers.CurrentRow.Cells(4).Value
-    '            .TxtId.Text = FrmUsers.DgvUsers.CurrentRow.Cells(5).Value
-    '            .TxtPhone.Text = FrmUsers.DgvUsers.CurrentRow.Cells(6).Value
-    '            .TxtAdress.Text = FrmUsers.DgvUsers.CurrentRow.Cells(7).Value
-    '        End With
-    '        'If FrmUsers.DgvUsers.CurrentRow.Cells(8).Value = True Then
-    '        Switcher = True
-    '        FrmAddUserUpdate.StatusSwitch.Image = My.Resources.swon1
-    '        'Else
-    '        '    Switcher = False
-    '        '    FrmAddUserUpdate.StatusSwitch.Image = My.Resources.swoff1
-
-    '        'End If
-    '    Else
-    '        With FrmAddUserUpdate
-    '            .BtnUserAU.Image = My.Resources.save
-    '            .Text = ""
-    '            .BtnUserAU.Text = "עדכון משתמש"
-    '            .TxtUserName.Text = FrmUsers.DGVUsersOff.CurrentRow.Cells(1).Value
-    '            .TxtPassWord.Text = FrmUsers.DGVUsersOff.CurrentRow.Cells(2).Value
-    '            .NumUserLvl.Value = FrmUsers.DGVUsersOff.CurrentRow.Cells(3).Value
-    '            .TxtName.Text = FrmUsers.DGVUsersOff.CurrentRow.Cells(4).Value
-    '            .TxtId.Text = FrmUsers.DGVUsersOff.CurrentRow.Cells(5).Value
-    '            .TxtPhone.Text = FrmUsers.DGVUsersOff.CurrentRow.Cells(6).Value
-    '            .TxtAdress.Text = FrmUsers.DGVUsersOff.CurrentRow.Cells(7).Value
-    '        End With
-    '        'If FrmUsers.DgvUsers.CurrentRow.Cells(8).Value = True Then
-    '        '    Switcher = True
-    '        '    FrmAddUserUpdate.StatusSwitch.Image = My.Resources.swon1
-    '        'Else
-    '        Switcher = False
-    '        FrmAddUserUpdate.StatusSwitch.Image = My.Resources.swoff1
-
-    '        'End If
-    '    End If
-    '    'With FrmAddUserUpdate
-    '    '    .BtnUserAU.Image = My.Resources.save
-    '    '    .Text = ""
-    '    '    .BtnUserAU.Text = "עדכון משתמש"
-    '    '    .TxtUserName.Text = FrmUsers.DgvUsers.CurrentRow.Cells(1).Value
-    '    '    .TxtPassWord.Text = FrmUsers.DgvUsers.CurrentRow.Cells(2).Value
-    '    '    .NumUserLvl.Value = FrmUsers.DgvUsers.CurrentRow.Cells(3).Value
-    '    '    .TxtName.Text = FrmUsers.DgvUsers.CurrentRow.Cells(4).Value
-    '    '    .TxtId.Text = FrmUsers.DgvUsers.CurrentRow.Cells(5).Value
-    '    '    .TxtPhone.Text = FrmUsers.DgvUsers.CurrentRow.Cells(6).Value
-    '    '    .TxtAdress.Text = FrmUsers.DgvUsers.CurrentRow.Cells(7).Value
-    '    'End With
-    '    'If FrmUsers.DgvUsers.CurrentRow.Cells(8).Value = True Then
-    '    '    Switcher = True
-    '    '    FrmAddUserUpdate.StatusSwitch.Image = My.Resources.swon1
-    '    'Else
-    '    '    Switcher = False
-    '    '    FrmAddUserUpdate.StatusSwitch.Image = My.Resources.swoff1
-
-    '    'End If
-    '    'FrmAddUserUpdate.BtnUserAU.Image = My.Resources.save
-    '    'FrmAddUserUpdate.Text = ""
-    '    'FrmAddUserUpdate.BtnUserAU.Text = "עדכון משתמש"
-    '    'FrmAddUserUpdate.TxtUserName.Text = FrmUsers.DgvUsers.CurrentRow.Cells(1).Value
-    '    'FrmAddUserUpdate.TxtPassWord.Text = FrmUsers.DgvUsers.CurrentRow.Cells(2).Value
-    '    'FrmAddUserUpdate.NumUserLvl.Value = FrmUsers.DgvUsers.CurrentRow.Cells(3).Value
-    'End Sub
-
-
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
 
 End Module

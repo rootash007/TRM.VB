@@ -3,10 +3,10 @@
   <PropertyGroup>
     <PublishUrlHistory>d:\publishing\|C:\Users\Win11\Desktop\RW\|publish\</PublishUrlHistory>
     <InstallUrlHistory>https://www.ctrlmanager.com/TRM/|https://www.ctrlmanager.com/TRM/setup.exe/</InstallUrlHistory>
-    <SupportUrlHistory />
+    <SupportUrlHistory>https://www.ctrlmanager.com/TRM/</SupportUrlHistory>
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
-    <ErrorReportUrlHistory />
+    <ErrorReportUrlHistory>https://www.ctrlmanager.com/TRM/</ErrorReportUrlHistory>
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>

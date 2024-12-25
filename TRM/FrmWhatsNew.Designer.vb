@@ -24,19 +24,19 @@ Partial Class FrmWhatsNew
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmWhatsNew))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Lbl1 = New System.Windows.Forms.Label()
-        Me.ChkShowAgain = New System.Windows.Forms.CheckBox()
-        Me.BtnSave = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.ChkEditDataBase = New System.Windows.Forms.CheckBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ChkShowAgain = New System.Windows.Forms.CheckBox()
+        Me.Lbl1 = New System.Windows.Forms.Label()
+        Me.BtnSave = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,15 +61,114 @@ Partial Class FrmWhatsNew
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'Lbl1
+        'ChkEditDataBase
         '
-        Me.Lbl1.AutoSize = True
-        Me.Lbl1.Location = New System.Drawing.Point(175, 17)
-        Me.Lbl1.Name = "Lbl1"
-        Me.Lbl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Lbl1.Size = New System.Drawing.Size(135, 13)
-        Me.Lbl1.TabIndex = 0
-        Me.Lbl1.Text = "اضافة انواع عمليات وتعديلها"
+        Me.ChkEditDataBase.AutoSize = True
+        Me.ChkEditDataBase.Location = New System.Drawing.Point(211, 144)
+        Me.ChkEditDataBase.Name = "ChkEditDataBase"
+        Me.ChkEditDataBase.Size = New System.Drawing.Size(120, 17)
+        Me.ChkEditDataBase.TabIndex = 11
+        Me.ChkEditDataBase.Text = "تعديل قاعدة البيانات"
+        Me.ChkEditDataBase.UseVisualStyleBackColor = True
+        Me.ChkEditDataBase.Visible = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(175, 116)
+        Me.Label9.Name = "Label9"
+        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label9.Size = New System.Drawing.Size(135, 13)
+        Me.Label9.TabIndex = 10
+        Me.Label9.Text = "اضافة انواع عمليات وتعديلها"
+        Me.Label9.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(175, 91)
+        Me.Label8.Name = "Label8"
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label8.Size = New System.Drawing.Size(135, 13)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "اضافة انواع عمليات وتعديلها"
+        Me.Label8.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(203, 66)
+        Me.Label7.Name = "Label7"
+        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label7.Size = New System.Drawing.Size(104, 13)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "اضافة انواع  وتعديلها"
+        Me.Label7.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(219, 42)
+        Me.Label6.Name = "Label6"
+        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label6.Size = New System.Drawing.Size(91, 13)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "فحص بعض الاخطاء"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        Me.Label5.Location = New System.Drawing.Point(316, 116)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(20, 25)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "*"
+        Me.Label5.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        Me.Label4.Location = New System.Drawing.Point(316, 66)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(20, 25)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "*"
+        Me.Label4.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        Me.Label3.Location = New System.Drawing.Point(316, 42)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(20, 25)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "*"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        Me.Label2.Location = New System.Drawing.Point(316, 91)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(20, 25)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "*"
+        Me.Label2.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
+        Me.Label1.Location = New System.Drawing.Point(316, 17)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(20, 25)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "*"
         '
         'ChkShowAgain
         '
@@ -80,6 +179,17 @@ Partial Class FrmWhatsNew
         Me.ChkShowAgain.TabIndex = 1
         Me.ChkShowAgain.Text = "لا تظهر هذه الرسالة مرة اخرى "
         Me.ChkShowAgain.UseVisualStyleBackColor = True
+        '
+        'Lbl1
+        '
+        Me.Lbl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Lbl1.AutoSize = True
+        Me.Lbl1.Location = New System.Drawing.Point(206, 17)
+        Me.Lbl1.Name = "Lbl1"
+        Me.Lbl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Lbl1.Size = New System.Drawing.Size(104, 13)
+        Me.Lbl1.TabIndex = 0
+        Me.Lbl1.Text = "تعديلات على التصاميم"
         '
         'BtnSave
         '
@@ -93,112 +203,6 @@ Partial Class FrmWhatsNew
         Me.BtnSave.TabIndex = 10
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnSave.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.Label1.Location = New System.Drawing.Point(316, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(20, 25)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "*"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.Label2.Location = New System.Drawing.Point(316, 91)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(20, 25)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "*"
-        Me.Label2.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.Label3.Location = New System.Drawing.Point(316, 42)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(20, 25)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "*"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.Label4.Location = New System.Drawing.Point(316, 66)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(20, 25)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "*"
-        Me.Label4.Visible = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
-        Me.Label5.Location = New System.Drawing.Point(316, 116)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(20, 25)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "*"
-        Me.Label5.Visible = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(140, 42)
-        Me.Label6.Name = "Label6"
-        Me.Label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label6.Size = New System.Drawing.Size(170, 13)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "اضافة صلاحية جديدة (انواع العمليات)"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(175, 66)
-        Me.Label7.Name = "Label7"
-        Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label7.Size = New System.Drawing.Size(135, 13)
-        Me.Label7.TabIndex = 8
-        Me.Label7.Text = "اضافة انواع عمليات وتعديلها"
-        Me.Label7.Visible = False
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(175, 91)
-        Me.Label8.Name = "Label8"
-        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label8.Size = New System.Drawing.Size(135, 13)
-        Me.Label8.TabIndex = 9
-        Me.Label8.Text = "اضافة انواع عمليات وتعديلها"
-        Me.Label8.Visible = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(175, 116)
-        Me.Label9.Name = "Label9"
-        Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label9.Size = New System.Drawing.Size(135, 13)
-        Me.Label9.TabIndex = 10
-        Me.Label9.Text = "اضافة انواع عمليات وتعديلها"
-        Me.Label9.Visible = False
-        '
-        'ChkEditDataBase
-        '
-        Me.ChkEditDataBase.AutoSize = True
-        Me.ChkEditDataBase.Location = New System.Drawing.Point(211, 144)
-        Me.ChkEditDataBase.Name = "ChkEditDataBase"
-        Me.ChkEditDataBase.Size = New System.Drawing.Size(120, 17)
-        Me.ChkEditDataBase.TabIndex = 11
-        Me.ChkEditDataBase.Text = "تعديل قاعدة البيانات"
-        Me.ChkEditDataBase.UseVisualStyleBackColor = True
         '
         'FrmWhatsNew
         '

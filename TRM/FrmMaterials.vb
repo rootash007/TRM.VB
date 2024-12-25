@@ -1,8 +1,14 @@
 ﻿Public Class FrmMaterials
+    Dim FmMaterialAddEdit = New FrmMaterialAddEdit
+    Dim ActiveId As Integer = 0
+
     Public Sub FrmMaterials_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadMaterials()
         Me.Dock = DockStyle.Fill
 
+        'Me.AutoSize = True
+        'Dim ss As String = Me.AutoSizeMode.
+        'Me.SizeFromClientSize = 100
         'For i = 0 To FmMaterials.DgvMaterials.RowCount - 1
         '    If FmMaterials.DgvMaterials.Rows(i).Cells(4).Value < 0 Then
         '        FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.Pink
@@ -88,21 +94,103 @@
     End Sub
 
     Private Sub BtnUpdateMaterial_Click(sender As Object, e As EventArgs) Handles BtnUpdateMaterial.Click
-        isAddMaterial = False
-        Dim FmMaterialAddEdit = New FrmMaterialAddEdit
-        FmMaterialAddEdit.ShowDialog()
+        Dim que As String
+        If TabMaterials.SelectedIndex = 0 Then
+            que = "select * from materials where id =" & DgvMaterials.CurrentRow.Cells(0).Value
+            FillList(que)
+            If MyTab.Rows(0).Item(9) = 0 Then
+                inUSEMaterial(DgvMaterials.CurrentRow.Cells(0).Value, 1)
+                isAddMaterial = False
+                FmMaterialAddEdit.ShowDialog()
+            Else
+                MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+            End If
+        ElseIf TabMaterials.SelectedIndex = 1 Then
+            que = "select * from materials where id =" & DGVMaterialsOff.CurrentRow.Cells(0).Value
+            FillList(que)
+            If MyTab.Rows(0).Item(9) = 0 Then
+                inUSEMaterial(DGVMaterialsOff.CurrentRow.Cells(0).Value, 1)
+                isAddMaterial = False
+                FmMaterialAddEdit.ShowDialog()
+            Else
+                MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+            End If
+        End If
+
+        'isAddMaterial = False
+        'FmMaterialAddEdit.ShowDialog()
+
+
+
+        'If Application.OpenForms.OfType(Of FrmMaterialAddEdit).Any = True Then
+        '    FmMaterialAddEdit.Activate()
+        '    'FmMaterialAddEdit = New FrmMaterialAddEdit
+
+        '    'FmMaterialAddEdit.MdiParent = FrmMain
+        '    'FmMaterialAddEdit.Show()
+        'Else
+        '    FmMaterialAddEdit = New FrmMaterialAddEdit
+        '    FmMaterialAddEdit.MdiParent = FrmMain
+        '    FmMaterialAddEdit.Show()
+        'End If
     End Sub
 
     Private Sub DgvMaterials_DoubleClick(sender As Object, e As EventArgs) Handles DgvMaterials.DoubleClick
         'DgvMaterials.CurrentRow.DefaultCellStyle.BackColor = Color.Pink
-        isAddMaterial = False
-        Dim FmMaterialAddEdit = New FrmMaterialAddEdit
-        FmMaterialAddEdit.ShowDialog()
+        'isAddMaterial = False
+        'Dim FmMaterialAddEdit = New FrmMaterialAddEdit
+        'FmMaterialAddEdit.ShowDialog()
+        BtnUpdateMaterial_Click(Me, e)
     End Sub
 
     Private Sub FrmMaterials_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         LoadMaterials()
     End Sub
 
+    Private Sub FrmMaterials_MaximumSizeChanged(sender As Object, e As EventArgs) Handles MyBase.MaximumSizeChanged
+        Me.Dock = DockStyle.Fill
+    End Sub
 
+    Private Sub TxtFilter_TextChanged(sender As Object, e As EventArgs) Handles TxtFilter.TextChanged
+        Try
+            If Not (String.IsNullOrWhiteSpace(TxtFilter.Text)) Then
+                Dim dv As DataView
+                Dim MaterialTab_Copy As DataTable = MaterialsOnTab.Copy
+                dv = MaterialTab_Copy.DefaultView
+                dv.RowFilter = "material_name+material_barcode+material_loc_barcode+material_quantity+material_unit like '%" & TxtFilter.Text & "%'"
+                DgvMaterials.DataSource = MaterialTab_Copy
+            Else
+                DgvMaterials.DataSource = MaterialsOnTab
+                If FmMaterials.DgvMaterials.RowCount > 0 Then
+                    For i = 0 To FmMaterials.DgvMaterials.RowCount - 1
+                        If FmMaterials.DgvMaterials.Rows(i).Cells(4).Value < 0 Then
+                            FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.Pink
+                        ElseIf FmMaterials.DgvMaterials.Rows(i).Cells(4).Value = 0 Then
+                            FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.LightYellow
+                        Else
+                            FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.White
+                        End If
+                    Next
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        TxtFilter.Text = ""
+        DgvMaterials.DataSource = MaterialsOnTab
+        If FmMaterials.DgvMaterials.RowCount > 0 Then
+            For i = 0 To FmMaterials.DgvMaterials.RowCount - 1
+                If FmMaterials.DgvMaterials.Rows(i).Cells(4).Value < 0 Then
+                    FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.Pink
+                ElseIf FmMaterials.DgvMaterials.Rows(i).Cells(4).Value = 0 Then
+                    FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.LightYellow
+                Else
+                    FmMaterials.DgvMaterials.Rows(i).DefaultCellStyle.BackColor = Color.White
+                End If
+            Next
+        End If
+    End Sub
 End Class
