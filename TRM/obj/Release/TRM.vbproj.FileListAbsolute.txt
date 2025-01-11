@@ -16,10 +16,8 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmUnits.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCarCardPrint.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCarDelete.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCarKMT.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCarSale.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmProductAE.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCustomers.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmDeletedReport.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmActionsTypes.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmLogin.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmMain.resources
@@ -29,7 +27,6 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmRequiredAddCar.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSearch.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSoldCard.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSoldCardPrint.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSoldReport.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmProducts.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmActions.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmMaterialsImportExcel.resources
@@ -98,3 +95,9 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\RM.exe
 D:\GithubProjects\TRM.VB\TRM\obj\Release\RM.xml
 D:\GithubProjects\TRM.VB\TRM\obj\Release\RM.pdb
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmWhatsNew.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmMaterialPriceEdit.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAudits.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAlerts.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAuditAdd.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAuditView.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCostList.resources

@@ -11,8 +11,8 @@ Public Class FrmPrintSoldReport
         Params(3) = New ReportParameter("JobEmail", My.Settings.AdminPass)
         Params(4) = New ReportParameter("JobId", My.Settings.isShowWhatsNew)
         Params(5) = New ReportParameter("JobAdress", My.Settings.OnlineServer)
-        Params(6) = New ReportParameter("Date1", FmSoldReport.DtpFrom.Value.ToShortDateString)
-        Params(7) = New ReportParameter("Date2", FmSoldReport.DtpTo.Value.ToShortDateString)
+        Params(6) = New ReportParameter("Date1", FmSoldReport.DtpStartDate.Value.ToShortDateString)
+        Params(7) = New ReportParameter("Date2", FmSoldReport.DtpEndDate.Value.ToShortDateString)
         Params(8) = New ReportParameter("TotalCars", FmSoldReport.TxtCarsTotal.Text)
         Params(9) = New ReportParameter("SumTotal", FmSoldReport.TxtTotalProfits.Text)
 

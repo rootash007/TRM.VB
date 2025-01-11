@@ -29,6 +29,7 @@ Partial Class FrmMain
         Me.יציאהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMTickets = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMUsers = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMAudits = New System.Windows.Forms.ToolStripMenuItem()
         Me.הפקתמסמכיםToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הסכםמכירהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הכסםקנייהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,6 +64,8 @@ Partial Class FrmMain
         Me.TSBtnBackUp = New System.Windows.Forms.ToolStripButton()
         Me.TSPActions = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnProducts = New System.Windows.Forms.ToolStripButton()
+        Me.TSBtnAlerts = New System.Windows.Forms.ToolStripButton()
+        Me.TSMCostList = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuMain.SuspendLayout()
         Me.SSMain.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -102,7 +105,7 @@ Partial Class FrmMain
         '
         'TSMTickets
         '
-        Me.TSMTickets.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMUsers})
+        Me.TSMTickets.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMUsers, Me.TSMAudits, Me.TSMCostList})
         Me.TSMTickets.Name = "TSMTickets"
         Me.TSMTickets.Size = New System.Drawing.Size(57, 22)
         Me.TSMTickets.Text = "مستندات"
@@ -110,8 +113,14 @@ Partial Class FrmMain
         'TSMUsers
         '
         Me.TSMUsers.Name = "TSMUsers"
-        Me.TSMUsers.Size = New System.Drawing.Size(126, 22)
+        Me.TSMUsers.Size = New System.Drawing.Size(180, 22)
         Me.TSMUsers.Text = "المستخدمين"
+        '
+        'TSMAudits
+        '
+        Me.TSMAudits.Name = "TSMAudits"
+        Me.TSMAudits.Size = New System.Drawing.Size(180, 22)
+        Me.TSMAudits.Text = "التحققات"
         '
         'הפקתמסמכיםToolStripMenuItem
         '
@@ -299,7 +308,7 @@ Partial Class FrmMain
         'ToolStrip1
         '
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBtnUsers, Me.TSBtnMaterial, Me.TSBtnBackUp, Me.TSPActions, Me.TSBtnProducts})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBtnUsers, Me.TSBtnMaterial, Me.TSBtnBackUp, Me.TSPActions, Me.TSBtnProducts, Me.TSBtnAlerts})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1349, 55)
@@ -362,6 +371,24 @@ Partial Class FrmMain
         Me.TSBtnProducts.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.TSBtnProducts.Size = New System.Drawing.Size(67, 52)
         Me.TSBtnProducts.Text = "ToolStripButton1"
+        '
+        'TSBtnAlerts
+        '
+        Me.TSBtnAlerts.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TSBtnAlerts.Image = CType(resources.GetObject("TSBtnAlerts.Image"), System.Drawing.Image)
+        Me.TSBtnAlerts.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.TSBtnAlerts.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TSBtnAlerts.Name = "TSBtnAlerts"
+        Me.TSBtnAlerts.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.TSBtnAlerts.Size = New System.Drawing.Size(67, 52)
+        Me.TSBtnAlerts.Text = "تنبيهات"
+        Me.TSBtnAlerts.Visible = False
+        '
+        'TSMCostList
+        '
+        Me.TSMCostList.Name = "TSMCostList"
+        Me.TSMCostList.Size = New System.Drawing.Size(180, 22)
+        Me.TSMCostList.Text = "حساب التكاليف"
         '
         'FrmMain
         '
@@ -434,4 +461,7 @@ Partial Class FrmMain
     Friend WithEvents PermisionsTSM As ToolStripMenuItem
     Friend WithEvents TSSLblVersion As ToolStripStatusLabel
     Friend WithEvents تحريركلالنوافذالقيدالاستخدامToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TSBtnAlerts As ToolStripButton
+    Friend WithEvents TSMAudits As ToolStripMenuItem
+    Friend WithEvents TSMCostList As ToolStripMenuItem
 End Class

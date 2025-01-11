@@ -18,10 +18,10 @@
 
     Private Sub BtnBuyAgreement_Click(sender As Object, e As EventArgs) Handles BtnBuyAgreement.Click
         Try
-            If FmSoldReport.DGVSoldReport.CurrentRow.Cells(42).Value = "" Then
+            If FmSoldReport.DGVAlerts.CurrentRow.Cells(42).Value = "" Then
                 MsgBox("אין הסכם קנייה", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "הסכם קנייה")
             Else
-                Process.Start(FmSoldReport.DGVSoldReport.CurrentRow.Cells(42).Value)
+                Process.Start(FmSoldReport.DGVAlerts.CurrentRow.Cells(42).Value)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -30,10 +30,10 @@
 
     Private Sub BtnSaleAgreement_Click(sender As Object, e As EventArgs) Handles BtnSaleAgreement.Click
         Try
-            If FmSoldReport.DGVSoldReport.CurrentRow.Cells(42).Value.ToString = "" Then
+            If FmSoldReport.DGVAlerts.CurrentRow.Cells(42).Value.ToString = "" Then
                 MsgBox("אין הסכם מכירה", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "הסכם מכירה")
             Else
-                Process.Start(FmSoldReport.DGVSoldReport.CurrentRow.Cells(43).Value)
+                Process.Start(FmSoldReport.DGVAlerts.CurrentRow.Cells(43).Value)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

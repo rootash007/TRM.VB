@@ -101,19 +101,6 @@
         FrmAddCustomers.ShowDialog()
     End Sub
 
-    Private Sub DgvCustomersOn_DoubleClick(sender As Object, e As EventArgs) Handles DgvCustomersOn.DoubleClick
-        If CustomersWindow = "CarSale" Then
-            FmCarSale.TxtBuyerName.Text = DgvCustomersOn.CurrentRow.Cells(1).Value
-            FmCarSale.TxtBuyerId.Text = DgvCustomersOn.CurrentRow.Cells(3).Value
-            FmCarSale.TxtBuyerAdress.Text = DgvCustomersOn.CurrentRow.Cells(4).Value
-            FmCarSale.TxtBuyerPhone.Text = DgvCustomersOn.CurrentRow.Cells(5).Value
-            Me.Close()
-        ElseIf CustomersWindow = "CustomerUpdate" Then
-            LoadUpdateCustomer()
-            FrmAddCustomers.ShowDialog()
-        End If
-    End Sub
-
     Private Sub BtnUpdateCustomer_KeyDown(sender As Object, e As KeyEventArgs) Handles TabCustomers.KeyDown, BtnUpdateCustomer.KeyDown, BtnDeleteCustomer.KeyDown, BtnClose.KeyDown, BtnAddNewCustomer.KeyDown
         If e.KeyCode = Keys.Escape Then
             Me.Close()

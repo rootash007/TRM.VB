@@ -50,6 +50,10 @@ Module ModFunctions
     Public FmActionsTypes As New FrmActionsTypes
     Public FmActionAdd As New FrmActionAdd
     Public FmProducts As New FrmProducts
+    Public FmAudits As New FrmAudits
+    Public FmCostList As New FrmCostList
+
+
 
 
 
@@ -75,12 +79,12 @@ Module ModFunctions
 #Region "Variables for Forms Copies"
 
     Public FmAddNewCar As New FrmAddNewCar
-    Public FmCarSale As New FrmCarSale
+    Public FmCarSale As New FrmCostList
     Public FmSearch As New FrmSearch
     Public FmSoldcard As New FrmSoldCard
     Public FmVendors As New FrmVendors
     Public FmCustomers As New FrmCustomers
-    Public FmSoldReport As New FrmSoldReport
+    Public FmSoldReport As New FrmAlerts
     Public FmTransactionCancel As New FrmMaterialsImportExcel
     Public FmUserAddEdit As New FrmUserAddEdit
     Public FmActions As New FrmActions
@@ -104,26 +108,26 @@ Module ModFunctions
         End Try
     End Sub
 
-    'Public Function CountMe() As Integer
-    '    Dim CountCMD As New SqlCommand
-    '    Dim Counter As Integer = 0
-    '    With CountCMD
-    '        .CommandType = CommandType.Text
-    '        .CommandText = "select count(*) from mainlist where carstatus = 1 and canceled = 0"
-    '        .Connection = dbcon
-    '    End With
-    '    Try
-    '        dbcon.Open()
-    '        Counter = CountCMD.ExecuteScalar
-    '        dbcon.Close()
-    '        cmd = Nothing
-    '    Catch ex As Exception
-    '        Return Counter
-    '    Finally
-    '        dbcon.Close()
-    '    End Try
-    '    Return Counter
-    'End Function
+    Public Function AlertsCount() As Integer
+        Dim CountCMD As New SqlCommand
+        Dim Counter As Integer = 0
+        With CountCMD
+            .CommandType = CommandType.Text
+            .CommandText = "select count(*) from Audits where audit_alert_on = 1"
+            .Connection = dbcon
+        End With
+        Try
+            dbcon.Open()
+            Counter = CountCMD.ExecuteScalar
+            dbcon.Close()
+            cmd = Nothing
+        Catch ex As Exception
+            Return Counter
+        Finally
+            dbcon.Close()
+        End Try
+        Return Counter
+    End Function
     Public Sub ChkUserChanges(Que As String) '//check if the user lvl still same
         cmd = New SqlCommand
         UserTab = New DataTable
@@ -184,7 +188,7 @@ Module ModFunctions
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Sub Fill2Dates(d1 As Date, d2 As Date)
+    Public Sub Fill2Dates(StartDate As Date, EndDate As Date)
         cmd = New SqlCommand
         SoldTab = New DataTable
         Try
@@ -194,8 +198,8 @@ Module ModFunctions
                 .CommandText = "select * from MainList where saledate >= @d1 and saledate <= @d2 and carstatus = 0  and canceled = 0 order by saledate"
                 .Connection = dbcon
             End With
-            cmd.Parameters.AddWithValue("d1", d1)
-            cmd.Parameters.AddWithValue("d2", d2)
+            cmd.Parameters.AddWithValue("d1", StartDate)
+            cmd.Parameters.AddWithValue("d2", EndDate)
             'cmd.Parameters.AddWithValue("d1", FrmSoldReport.DtpFrom.Value.AddDays(-1))
             'cmd.Parameters.AddWithValue("d2", FrmSoldReport.DtpTo.Value)
             dbcon.Open()
@@ -260,145 +264,6 @@ Module ModFunctions
         Finally
             dbcon.Close()
         End Try
-    End Sub
-
-
-
-    Public Sub DesignMainDGV(dgv As DataGridView)
-        With dgv
-            .Columns(0).Visible = False
-            .Columns(1).Visible = True
-            .Columns(2).Visible = True
-            .Columns(3).Visible = False
-            .Columns(4).Visible = True
-            .Columns(5).Visible = True
-            .Columns(6).Visible = True
-            .Columns(7).Visible = True
-            .Columns(8).Visible = True
-            .Columns(9).Visible = True
-            .Columns(10).Visible = True
-            .Columns(11).Visible = True
-            .Columns(12).Visible = False
-            .Columns(13).Visible = False
-            .Columns(14).Visible = False
-            .Columns(15).Visible = False
-            .Columns(16).Visible = False
-            .Columns(17).Visible = False
-            .Columns(18).Visible = False
-            .Columns(19).Visible = False
-            .Columns(20).Visible = True
-            .Columns(21).Visible = False
-            .Columns(22).Visible = False
-            .Columns(23).Visible = False
-            .Columns(24).Visible = False
-            .Columns(25).Visible = False
-            .Columns(26).Visible = False
-            .Columns(27).Visible = False
-            .Columns(28).Visible = False
-            .Columns(29).Visible = False
-            .Columns(30).Visible = False
-            .Columns(31).Visible = False
-            .Columns(32).Visible = False
-            .Columns(33).Visible = False
-            .Columns(34).Visible = False
-            .Columns(35).Visible = False
-            .Columns(36).Visible = False
-            .Columns(37).Visible = False
-            .Columns(38).Visible = False
-            .Columns(39).Visible = False
-            .Columns(40).Visible = False
-            .Columns(41).Visible = False
-            .Columns(42).Visible = False
-            .Columns(43).Visible = False
-            .Columns(44).Visible = False
-
-            .Columns(0).HeaderText = "מס"
-            .Columns(1).HeaderText = "מספר ביומן"
-            .Columns(2).HeaderText = "מספר רישוי"
-            .Columns(3).HeaderText = "מצב"
-            .Columns(4).HeaderText = "סוג רכב"
-            .Columns(5).HeaderText = "שם יצרן"
-            .Columns(6).HeaderText = "דגם רכב"
-            .Columns(7).HeaderText = "שנת ייצור"
-            .Columns(8).HeaderText = "צבע"
-            .Columns(9).HeaderText = "יד"
-            .Columns(10).HeaderText = "רישום רכב"
-            .Columns(11).HeaderText = "סוג דלק"
-            .Columns(12).HeaderText = "ת.הילוכים"
-            .Columns(13).HeaderText = "נפח מנוע"
-            .Columns(14).HeaderText = "קילומטרים"
-            .Columns(15).HeaderText = "מחיר דרוש"
-            .Columns(16).HeaderText = "שילדה"
-            .Columns(17).HeaderText = "קוד רכב"
-            .Columns(18).HeaderText = "מפתחות"
-            .Columns(19).HeaderText = "תאריך קליטה"
-            .Columns(20).HeaderText = "תאריך טסט"
-            .Columns(21).HeaderText = "שם המוכר"
-            .Columns(22).HeaderText = "ת.ז המוכר"
-            .Columns(23).HeaderText = "הערות"
-            .Columns(24).HeaderText = "גג נפתח"
-            .Columns(25).HeaderText = "וו גרירה"
-            .Columns(26).HeaderText = "ח. מגניזיום"
-            .Columns(27).HeaderText = "ר. עור"
-            .Columns(28).HeaderText = "מחיר רכישה"
-            .Columns(29).HeaderText = "תאריך מכירה"
-            .Columns(30).HeaderText = "מבוטל"
-            .Columns(31).HeaderText = "שם הקונה"
-            .Columns(32).HeaderText = "כתובת הקונה"
-            .Columns(33).HeaderText = "ת.ז הקונה"
-            .Columns(34).HeaderText = "טלפון הקונה"
-            .Columns(35).HeaderText = "כתובת המוכר"
-            .Columns(36).HeaderText = "טלפון המוכר"
-            .Columns(37).HeaderText = "הערות מכירה"
-            .Columns(38).HeaderText = "בנסיעת מבחן"
-
-            '.Columns(0).Width = 30
-            '.Columns(1).SortMode = 3
-            .Columns(1).Width = 45
-            .Columns(2).Width = 80
-            '.Columns(3).Width = 50
-            .Columns(4).Width = 100
-            .Columns(5).Width = 100
-            .Columns(6).Width = 100
-            .Columns(7).Width = 70
-            .Columns(8).Width = 90
-            .Columns(9).Width = 35
-            .Columns(10).Width = 90
-            .Columns(11).Width = 70
-            .Columns(12).Width = 50
-            .Columns(13).Width = 50
-            .Columns(14).Width = 50
-            .Columns(15).Width = 50
-            .Columns(16).Width = 50
-            .Columns(17).Width = 50
-            .Columns(18).Width = 50
-            .Columns(19).Width = 50
-            .Columns(20).Width = 100
-            .Columns(21).Width = 50
-            .Columns(22).Width = 50
-            .Columns(23).Width = 50
-            .Columns(24).Width = 50
-            .Columns(25).Width = 50
-            .Columns(26).Width = 50
-            .Columns(27).Width = 50
-            .Columns(28).Width = 50
-            .Columns(29).Width = 50
-            .Columns(30).Width = 50
-            .Columns(31).Width = 50
-            .Columns(32).Width = 50
-            .Columns(33).Width = 50
-            .Columns(34).Width = 50
-            .Columns(35).Width = 50
-            .Columns(36).Width = 50
-            .Columns(37).Width = 50
-            .Columns(38).Width = 50
-
-
-            '.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-            'dgv.ClearSelection()
-            '.rows(0).DefaultCellStyle.BackColor = 
-
-        End With
     End Sub
 
     Public Sub DesignSoldDGV(dgv As DataGridView)
@@ -753,55 +618,6 @@ Module ModFunctions
         FmAddNewCar.ShowDialog()
     End Sub
 
-    Public Sub AddNewCarChange()
-        Dim CarPrice As Integer
-        FmAddNewCar = New FrmAddNewCar
-        LoadRequired(FmAddNewCar)
-        ChangeWindow = True
-        FmAddNewCar.Text = "הוספת רכב חדש"
-        FmAddNewCar.BtnAdd.Text = "הוספה"
-        FmAddNewCar.TxtCarSerial.Text = My.Settings.LocalDataBase
-        FmAddNewCar.BtnAdd.Image = My.Resources.plus
-        'FmAddNewCar.TxtSalerName.ReadOnly = True
-        'FmAddNewCar.TxtSalerPhone.ReadOnly = True
-        'FmAddNewCar.TxtSalerId.ReadOnly = True
-        'FmAddNewCar.TxtSalerAdress.ReadOnly = True
-        FmAddNewCar.BtnCancel.Enabled = False
-        FmAddNewCar.BtnSelectVendor.Enabled = False
-        FmAddNewCar.TxtPriceIn.ReadOnly = True
-        FmAddNewCar.BtnBuyAgreement.Enabled = False
-        FmAddNewCar.ControlBox = False
-        FmAddNewCar.TxtPriceIn.Visible = False
-        FmAddNewCar.LblShowPrice.Text = "הצג מחיר"
-        FmAddNewCar.LblShowPrice.Visible = True
-        FmAddNewCar.TxtSalerName.Text = FmCarSale.TxtBuyerName.Text
-        FmAddNewCar.TxtSalerPhone.Text = FmCarSale.TxtBuyerPhone.Text
-        FmAddNewCar.TxtSalerId.Text = FmCarSale.TxtBuyerId.Text
-        FmAddNewCar.TxtSalerAdress.Text = FmCarSale.TxtBuyerAdress.Text
-        FmAddNewCar.DtpDatein.Value = FmCarSale.DtpSaleDate.Value
-        If FmCarSale.ChkChange.Checked = True Then
-            CarPrice = FmCarSale.DgvCarList.CurrentRow.Cells(28).Value - Val(FmCarSale.TxtMoney.Text)
-            If CarPrice < 0 Then
-                CarPrice = 0
-            End If
-        ElseIf FmCarSale.ChkChangeAdd.Checked = True Then
-            CarPrice = FmCarSale.DgvCarList.CurrentRow.Cells(28).Value + Val(FmCarSale.TxtMoney.Text)
-        ElseIf FmCarSale.ChkChangeNon.Checked = True Then
-            CarPrice = Val(FmCarSale.DgvCarList.CurrentRow.Cells(28).Value)
-        End If
-        FmAddNewCar.TxtPriceIn.Text = CarPrice
-        If FmCarSale.ChkChange.Checked = True Then
-            FmAddNewCar.TxtCarInfo.Text = "עסקת החלפה על רכב מס " & FmCarSale.DgvCarList.CurrentRow.Cells(1).Value & " ביומן + הפרש מחיר " & FmCarSale.TxtMoney.Text
-        ElseIf FmCarSale.ChkChangeAdd.Checked = True Then
-            FmAddNewCar.TxtCarInfo.Text = "עסקת החלפה על רכב מס " & FmCarSale.DgvCarList.CurrentRow.Cells(1).Value & " ביומן + תוספת מחיר " & FmCarSale.TxtMoney.Text
-        ElseIf FmCarSale.ChkNormal.Checked Then
-            FmAddNewCar.TxtCarInfo.Text = FmCarSale.TxtCarInfo.Text
-        ElseIf FmCarSale.ChkChangeNon.Checked Then
-            FmAddNewCar.TxtCarInfo.Text = "עסקת החלפה על רכב מס " & FmCarSale.DgvCarList.CurrentRow.Cells(1).Value & " ביומן ללא תוספת מחיר או הפרש "
-        End If
-        FmAddNewCar.ShowDialog()
-    End Sub
-
     Public Sub LoadRequired(Frm As Object)
         If Frm.TxtCarId.Text = "" Then
             Frm.TxtCarId.BackColor = Color.LightPink
@@ -1046,44 +862,44 @@ Module ModFunctions
     Public Sub LoadSoldCard()
 
         With FrmSoldCard
-            .TxtCarSerial.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(1).Value
-            .TxtCarId.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(2).Value
-            .TxtCarKind.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(4).Value
-            .TxtCarModel.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(5).Value
-            .TxtCarType.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(6).Value
-            .TxtCarYear.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(7).Value
-            .TxtCarColor.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(8).Value
-            .TxtCarHand.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(9).Value
-            .TxtMainIs.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(10).Value
-            .TxtCarOil.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(11).Value
-            .TxtCarGear.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(12).Value
-            .TxtEngine.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(13).Value
-            .TxtCarKM.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(14).Value
-            .TxtPriceOut.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(15).Value
-            .TxtShelda.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(16).Value
-            .TxtCarCode.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(17).Value
-            .TxtKeyNum.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(18).Value
-            .TxtDateIn.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(19).Value
-            .TxtDateTest.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(20).Value
-            .TxtSalerName.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(21).Value
-            .TxtSalerId.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(22).Value
-            .TxtCarBuyInfo.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(23).Value
-            .ChkRoof.Checked = FmSoldReport.DGVSoldReport.CurrentRow.Cells(24).Value
-            .ChkVav.Checked = FmSoldReport.DGVSoldReport.CurrentRow.Cells(25).Value
-            .ChkWheels.Checked = FmSoldReport.DGVSoldReport.CurrentRow.Cells(26).Value
-            .ChkSeats.Checked = FmSoldReport.DGVSoldReport.CurrentRow.Cells(27).Value
-            .TxtPriceIn.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(28).Value
-            .TxtSaleDate.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(29).Value
-            .TxtBuyerName.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(31).Value
-            .TxtBuyerAdress.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(32).Value
-            .TxtBuyerId.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(33).Value
-            .TxtBuyerPhone.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(34).Value
-            .TxtSalerAdress.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(35).Value
-            .TxtSalerPhone.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(36).Value
-            .TxtCarSaleInfo.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(37).Value
-            .TxtReceiptNum.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(40).Value
-            .TxtInvoiceNum.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(39).Value
-            .TxtConfirmNum.Text = FmSoldReport.DGVSoldReport.CurrentRow.Cells(41).Value
+            .TxtCarSerial.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(1).Value
+            .TxtCarId.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(2).Value
+            .TxtCarKind.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(4).Value
+            .TxtCarModel.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(5).Value
+            .TxtCarType.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(6).Value
+            .TxtCarYear.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(7).Value
+            .TxtCarColor.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(8).Value
+            .TxtCarHand.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(9).Value
+            .TxtMainIs.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(10).Value
+            .TxtCarOil.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(11).Value
+            .TxtCarGear.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(12).Value
+            .TxtEngine.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(13).Value
+            .TxtCarKM.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(14).Value
+            .TxtPriceOut.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(15).Value
+            .TxtShelda.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(16).Value
+            .TxtCarCode.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(17).Value
+            .TxtKeyNum.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(18).Value
+            .TxtDateIn.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(19).Value
+            .TxtDateTest.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(20).Value
+            .TxtSalerName.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(21).Value
+            .TxtSalerId.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(22).Value
+            .TxtCarBuyInfo.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(23).Value
+            .ChkRoof.Checked = FmSoldReport.DGVAlerts.CurrentRow.Cells(24).Value
+            .ChkVav.Checked = FmSoldReport.DGVAlerts.CurrentRow.Cells(25).Value
+            .ChkWheels.Checked = FmSoldReport.DGVAlerts.CurrentRow.Cells(26).Value
+            .ChkSeats.Checked = FmSoldReport.DGVAlerts.CurrentRow.Cells(27).Value
+            .TxtPriceIn.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(28).Value
+            .TxtSaleDate.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(29).Value
+            .TxtBuyerName.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(31).Value
+            .TxtBuyerAdress.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(32).Value
+            .TxtBuyerId.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(33).Value
+            .TxtBuyerPhone.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(34).Value
+            .TxtSalerAdress.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(35).Value
+            .TxtSalerPhone.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(36).Value
+            .TxtCarSaleInfo.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(37).Value
+            .TxtReceiptNum.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(40).Value
+            .TxtInvoiceNum.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(39).Value
+            .TxtConfirmNum.Text = FmSoldReport.DGVAlerts.CurrentRow.Cells(41).Value
 
         End With
     End Sub
@@ -1171,32 +987,6 @@ Module ModFunctions
         Dim Price As String = ""
         Dim SaleInfo As String = ""
 
-
-        If AgreementStatus = "CarSale" Then
-            AgreeDateTime = FmCarSale.DtpSaleDate.Value
-            SalerName = My.Settings.LocalServer
-            SalerId = My.Settings.isShowWhatsNew
-            SalerAdress = My.Settings.OnlineServer
-            SalerPhone = My.Settings.CurrentServer
-            BuyerName = FmCarSale.TxtBuyerName.Text
-            BuyerId = FmCarSale.TxtBuyerId.Text
-            BuyerAdress = FmCarSale.TxtBuyerAdress.Text
-            BuyerPhone = FmCarSale.TxtBuyerPhone.Text
-            CarMT = FmCarSale.DgvCarList.CurrentRow.Cells(5).Value & " " & FmCarSale.DgvCarList.CurrentRow.Cells(6).Value
-            MainIs = FmCarSale.DgvCarList.CurrentRow.Cells(10).Value
-            CarId = FmCarSale.DgvCarList.CurrentRow.Cells(2).Value
-            CarYear = FmCarSale.DgvCarList.CurrentRow.Cells(7).Value
-            CarKM = FmCarSale.DgvCarList.CurrentRow.Cells(14).Value
-            AgreeCarSerial = FmCarSale.DgvCarList.CurrentRow.Cells(1).Value
-            If FmCarSale.ChkNormal.Checked = True Then
-                Price = FmCarSale.TxtMoney.Text
-            Else
-                Price = ""
-                'SaleInfo = FmCarSale.TxtCarInfo.Text
-            End If
-            SaleInfo = FmCarSale.TxtCarInfo.Text
-        End If
-
         If AgreementStatus = "SaleNon" Then
             'AgreeDateTime = FrmCarSale.DtpSaleDate.Value
             SalerName = My.Settings.LocalServer
@@ -1218,7 +1008,7 @@ Module ModFunctions
         End If
 
         If AgreementStatus = "BuyNon" Then
-            AgreeDateTime = FmCarSale.DtpSaleDate.Value
+            AgreeDateTime = FmCarSale.DTPStartDate.Value
             SalerName = ""
             SalerId = ""
             SalerAdress = ""
@@ -1237,29 +1027,6 @@ Module ModFunctions
             SaleInfo = ""
         End If
 
-        If AgreementStatus = "CarBuy" Then
-            AgreeDateTime = FmAddNewCar.DtpDatein.Value
-            SalerName = FmAddNewCar.TxtSalerName.Text
-            SalerId = FmAddNewCar.TxtSalerId.Text
-            SalerAdress = FmAddNewCar.TxtSalerAdress.Text
-            SalerPhone = FmAddNewCar.TxtSalerPhone.Text
-            BuyerName = My.Settings.LocalServer
-            BuyerId = My.Settings.isShowWhatsNew
-            BuyerAdress = My.Settings.OnlineServer
-            BuyerPhone = My.Settings.CurrentServer
-            CarMT = FmAddNewCar.CmbCarModel.Text & " " & FmAddNewCar.CmbCarType.Text
-            MainIs = FmAddNewCar.CmbMainIs.Text
-            CarId = FmAddNewCar.TxtCarId.Text
-            CarYear = FmAddNewCar.NumCarYear.Value
-            CarKM = FmAddNewCar.TxtCarKM.Text
-            AgreeCarSerial = FmAddNewCar.TxtCarSerial.Text
-            If FmCarSale.ChkChange.Checked = True Or FmCarSale.ChkChangeAdd.Checked = True Or FmCarSale.ChkChangeNon.Checked = True Then
-                Price = ""
-            Else
-                Price = FmAddNewCar.TxtPriceIn.Text
-            End If
-            SaleInfo = FmAddNewCar.TxtCarInfo.Text
-        End If
         Agparams(0) = New ReportParameter("JobName", My.Settings.LocalServer)
         Agparams(1) = New ReportParameter("JobPhone", My.Settings.CurrentServer)
         Agparams(2) = New ReportParameter("JobFax", My.Settings.AdminUser)
@@ -1361,171 +1128,7 @@ Module ModFunctions
         End With
     End Sub
 
-    Public Sub CreateTables()
-        Dim Que As String
-        Que = "IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'users') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE users(
-               id BIGINT IDENTITY (0, 1) NOT NULL PRIMARY KEY,
-               user_name nvarchar (50) NOT NULL,
-               user_pass nvarchar (50) NOT NULL,
-               user_lvl INT NOT NULL,
-               user_phone nvarchar (50) NOT NULL,
-	           isactive bit NOT NULL DEFAULT (1),
-               ) 
-               INSERT INTO users (user_name,user_pass) values ('admin','0')
-               END
 
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'action_types') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE action_types(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               action_type_name nvarchar (50) NOT NULL,
-	           isincrease bit NOT NULL,
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'permissions') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE permissions(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               permission_name nvarchar (50) NOT NULL,
-	           lvl1 bit NOT NULL Default(1),
-	           lvl2 bit NOT NULL Default(0),
-	           lvl3 bit NOT NULL Default(0),
-	           lvl4 bit NOT NULL Default(0),
-	           lvl5 bit NOT NULL Default(0),
-	           lvl6 bit NOT NULL Default(0),
-	           lvl7 bit NOT NULL Default(0),
-	           lvl8 bit NOT NULL Default(0),
-	           lvl9 bit NOT NULL Default(0),
-               ) 
-               INSERT INTO permissions (permission_name) values ('Users')
-               INSERT INTO permissions (permission_name) values ('Increase Actions')
-               INSERT INTO permissions (permission_name) values ('Decrease Actions')
-               INSERT INTO permissions (permission_name) values ('Edit Action')
-               INSERT INTO permissions (permission_name) values ('Delete Action')
-               INSERT INTO permissions (permission_name) values ('Permissions')
-               INSERT INTO permissions (permission_name) values ('Products')
-               INSERT INTO permissions (permission_name) values ('Action Types')
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'material_types') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE material_types(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               material_id int NOT NULL,
-               type_name nvarchar (50) NOT NULL,
-               type_quantity decimal(18, 2) NOT NULL Default(0),
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'material_pricies') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE material_pricies(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               material_id int NOT NULL,
-               price_year int NOT NULL,
-               material_price decimal(18, 2) NOT NULL Default(0),
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'product_materials') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE product_materials(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               product_id int NOT NULL,
-               material_id int NOT NULL,
-               material_name nvarchar (50) NOT NULL,
-               material_loc_barcode nvarchar (50) NOT NULL,
-               material_quantity decimal(18, 2) NOT NULL Default(0),
-               material_unit nvarchar (15) NOT NULL,
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'units') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE units(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               unit_name nchar (10) NOT NULL,
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'materials') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE materials(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               material_name nvarchar (50),
-               material_barcode nvarchar (50),
-               material_loc_barcode nvarchar (50),
-               material_quantity  decimal(18, 2) NOT NULL Default(0),
-               material_min_quantity decimal(18, 2) NOT NULL Default(0),
-               material_unit nchar (10),
-               material_weight int,
-               material_isactive bit NOT NULL Default(1),
-               material_inuse bit NOT NULL Default(0),
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'products') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE products(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               product_name nvarchar (50),
-               product_barcode nvarchar (50),
-               product_can int,
-               product_box int,              
-               product_total int,              
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'actions') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE actions(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               material_name nvarchar (50),
-               material_loc_barcode nvarchar (50),
-               material_barcode nvarchar (50),
-               block_number nchar (10),
-               action_user nvarchar (50),
-               material_quantity  decimal(18, 2) NOT NULL Default(0),
-               action_date datetime,
-               vendor_name nvarchar (50),
-               action_order nvarchar (50),
-               more_info nvarchar (200),
-               action_isincrease int,
-               action_type nchar (10),
-               ) 
-               END
-
-               "
-
-        cmd = New SqlCommand
-        MyTab = New DataTable
-        Try
-            MyTab.Clear()
-            With cmd
-                .CommandType = CommandType.Text
-                .CommandText = Que
-                .Connection = dbcon
-            End With
-            dbaddapter = New SqlDataAdapter(cmd)
-            dbaddapter.Fill(MyTab)
-            cmd = Nothing
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
 
     Public Function isAllowed(PermissionID As Integer) As Boolean
         Dim Que As String
@@ -1804,4 +1407,5 @@ Module ModFunctions
             MsgBox(ex.Message)
         End Try
     End Sub
+
 End Module

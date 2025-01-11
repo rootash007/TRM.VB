@@ -19,6 +19,11 @@ Module ModMaterials
     Public SheetName As String = ""
     Public OpenFileDialog As New OpenFileDialog
     Public MaterialsOnTab = New DataTable
+    Public MaterialPriceTab = New DataTable
+    Public FmMaterialAddEdit As New FrmMaterialAddEdit
+    'Dim FmMaterialAddEdit = New FrmMaterialAddEdit
+
+
 
 
     Public Sub LoadUnits()
@@ -343,5 +348,92 @@ Module ModMaterials
             dbcon.Close()
         End Try
     End Sub
+    Public Sub AddMaterialPrice(material_id As Integer, price_year As Integer, material_main_price As Double)
+        Try
+            cmd = New SqlCommand
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "insert into material_prices (material_id,price_year,material_main_price,material_price)values(@material_id,@price_year,@material_main_price,@material_price)"
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("@material_id", material_id)
+            cmd.Parameters.AddWithValue("@price_year", price_year)
+            cmd.Parameters.AddWithValue("@material_main_price", material_main_price)
+            cmd.Parameters.AddWithValue("@material_price", material_main_price)
 
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
+    Public Sub EditMaterialPrice(id As Integer, material_price As Double, material_main_price As Double, price_discount As Double)
+        Try
+            cmd = New SqlCommand
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "update material_prices set material_main_price=@material_main_price,material_price=@material_price,price_discount=@price_discount where id=@id"
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("@material_main_price", material_main_price)
+            cmd.Parameters.AddWithValue("@material_price", material_price)
+            cmd.Parameters.AddWithValue("@price_discount", price_discount)
+            cmd.Parameters.AddWithValue("@id", id)
+
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
+    Public Sub DeleteMaterialPrice(id As Integer)
+        Try
+            cmd = New SqlCommand
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "Delete from material_prices where id = @id"
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("@id", id)
+
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
+    Public Sub AddMaterialType(type_name As String, type_quantity As Double, material_id As Integer)
+        Try
+            cmd = New SqlCommand
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "insert into material_types (type_name,type_quantity,material_id)values(@type_name,@type_quantity,@material_id)"
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("@type_name", type_name)
+            cmd.Parameters.AddWithValue("@type_quantity", type_quantity)
+            cmd.Parameters.AddWithValue("@material_id", material_id)
+
+
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
 End Module

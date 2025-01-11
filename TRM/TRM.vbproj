@@ -133,7 +133,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Audits_Controller.vb" />
+    <Compile Include="Controllers\Costs_Controller.vb" />
     <Compile Include="Controller_FrmMain.vb" />
+    <Compile Include="Controllers\DataBase_Controller.vb" />
+    <Compile Include="Forms\Audits\FrmAuditAdd.Designer.vb">
+      <DependentUpon>FrmAuditAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Audits\FrmAuditAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Audits\FrmAuditView.Designer.vb">
+      <DependentUpon>FrmAuditView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Audits\FrmAuditView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Materials\FrmMaterialPriceEdit.Designer.vb">
+      <DependentUpon>FrmMaterialPriceEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Materials\FrmMaterialPriceEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmWhatsNew.Designer.vb">
       <DependentUpon>FrmWhatsNew.vb</DependentUpon>
     </Compile>
@@ -152,34 +173,34 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmImportProductData.Designer.vb">
+    <Compile Include="Forms\Products\FrmImportProductData.Designer.vb">
       <DependentUpon>FrmImportProductData.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmImportProductData.vb">
+    <Compile Include="Forms\Products\FrmImportProductData.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMaterialAddEdit.Designer.vb">
+    <Compile Include="Forms\Materials\FrmMaterialAddEdit.Designer.vb">
       <DependentUpon>FrmMaterialAddEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmMaterialAddEdit.vb">
+    <Compile Include="Forms\Materials\FrmMaterialAddEdit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMaterials.Designer.vb">
+    <Compile Include="Forms\Materials\FrmMaterials.Designer.vb">
       <DependentUpon>FrmMaterials.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmMaterials.vb">
+    <Compile Include="Forms\Materials\FrmMaterials.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPermissions.Designer.vb">
+    <Compile Include="Forms\System\FrmPermissions.Designer.vb">
       <DependentUpon>FrmPermissions.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmPermissions.vb">
+    <Compile Include="Forms\System\FrmPermissions.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmActionAdd.Designer.vb">
+    <Compile Include="Forms\Actions\FrmActionAdd.Designer.vb">
       <DependentUpon>FrmActionAdd.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmActionAdd.vb">
+    <Compile Include="Forms\Actions\FrmActionAdd.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPrintSoldReport.Designer.vb">
@@ -200,16 +221,16 @@
     <Compile Include="FrmAddNewCar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUserAddEdit.Designer.vb">
+    <Compile Include="Forms\Users\FrmUserAddEdit.Designer.vb">
       <DependentUpon>FrmUserAddEdit.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmUserAddEdit.vb">
+    <Compile Include="Forms\Users\FrmUserAddEdit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDataBaseSettings.Designer.vb">
+    <Compile Include="Forms\System\FrmDataBaseSettings.Designer.vb">
       <DependentUpon>FrmDataBaseSettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmDataBaseSettings.vb">
+    <Compile Include="Forms\System\FrmDataBaseSettings.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAgreementPrint.Designer.vb">
@@ -218,10 +239,10 @@
     <Compile Include="FrmAgreementPrint.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBackUp.Designer.vb">
+    <Compile Include="Forms\System\FrmBackUp.Designer.vb">
       <DependentUpon>FrmBackUp.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBackUp.vb">
+    <Compile Include="Forms\System\FrmBackUp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmUnits.Designer.vb">
@@ -248,16 +269,16 @@
     <Compile Include="FrmCarKMT.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCarSale.Designer.vb">
-      <DependentUpon>FrmCarSale.vb</DependentUpon>
+    <Compile Include="Forms\Costs\FrmCostList.Designer.vb">
+      <DependentUpon>FrmCostList.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmCarSale.vb">
+    <Compile Include="Forms\Costs\FrmCostList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProductAE.Designer.vb">
+    <Compile Include="Forms\Products\FrmProductAE.Designer.vb">
       <DependentUpon>FrmProductAE.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmProductAE.vb">
+    <Compile Include="Forms\Products\FrmProductAE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCustomers.Designer.vb">
@@ -266,22 +287,22 @@
     <Compile Include="FrmCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDeletedReport.Designer.vb">
-      <DependentUpon>FrmDeletedReport.vb</DependentUpon>
+    <Compile Include="Forms\Audits\FrmAudits.Designer.vb">
+      <DependentUpon>FrmAudits.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmDeletedReport.vb">
+    <Compile Include="Forms\Audits\FrmAudits.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmActionsTypes.Designer.vb">
+    <Compile Include="Forms\Actions\FrmActionsTypes.Designer.vb">
       <DependentUpon>FrmActionsTypes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmActionsTypes.vb">
+    <Compile Include="Forms\Actions\FrmActionsTypes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.vb">
+    <Compile Include="Forms\System\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.vb">
+    <Compile Include="Forms\System\FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.vb">
@@ -291,10 +312,10 @@
       <DependentUpon>FrmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOkMsg.Designer.vb">
+    <Compile Include="Forms\System\FrmOkMsg.Designer.vb">
       <DependentUpon>FrmOkMsg.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmOkMsg.vb">
+    <Compile Include="Forms\System\FrmOkMsg.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmNewUpdate.Designer.vb">
@@ -327,37 +348,37 @@
     <Compile Include="FrmSoldCardPrint.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSoldReport.Designer.vb">
-      <DependentUpon>FrmSoldReport.vb</DependentUpon>
+    <Compile Include="Forms\Audits\FrmAlerts.Designer.vb">
+      <DependentUpon>FrmAlerts.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmSoldReport.vb">
+    <Compile Include="Forms\Audits\FrmAlerts.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProducts.Designer.vb">
+    <Compile Include="Forms\Products\FrmProducts.Designer.vb">
       <DependentUpon>FrmProducts.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmProducts.vb">
+    <Compile Include="Forms\Products\FrmProducts.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmActions.Designer.vb">
+    <Compile Include="Forms\Actions\FrmActions.Designer.vb">
       <DependentUpon>FrmActions.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmActions.vb">
+    <Compile Include="Forms\Actions\FrmActions.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMaterialsImportExcel.Designer.vb">
+    <Compile Include="Forms\Materials\FrmMaterialsImportExcel.Designer.vb">
       <DependentUpon>FrmMaterialsImportExcel.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmMaterialsImportExcel.vb">
+    <Compile Include="Forms\Materials\FrmMaterialsImportExcel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmUsers.Designer.vb">
+    <Compile Include="Forms\Users\FrmUsers.Designer.vb">
       <DependentUpon>FrmUsers.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmUsers.vb">
+    <Compile Include="Forms\Users\FrmUsers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModActions.vb" />
+    <Compile Include="Controllers\Actions_Controller.vb" />
     <Compile Include="ModCounter.vb" />
     <Compile Include="ModCustomers.vb" />
     <Compile Include="ModDGVDesigns.vb" />
@@ -388,25 +409,33 @@
     <Compile Include="FrmVendors.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestModel.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmImportProductData.resx">
+    <EmbeddedResource Include="Forms\Audits\FrmAuditAdd.resx">
+      <DependentUpon>FrmAuditAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Audits\FrmAuditView.resx">
+      <DependentUpon>FrmAuditView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Products\FrmImportProductData.resx">
       <DependentUpon>FrmImportProductData.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMaterialAddEdit.resx">
+    <EmbeddedResource Include="Forms\Materials\FrmMaterialAddEdit.resx">
       <DependentUpon>FrmMaterialAddEdit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMaterials.resx">
+    <EmbeddedResource Include="Forms\Materials\FrmMaterialPriceEdit.resx">
+      <DependentUpon>FrmMaterialPriceEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Materials\FrmMaterials.resx">
       <DependentUpon>FrmMaterials.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPermissions.resx">
+    <EmbeddedResource Include="Forms\System\FrmPermissions.resx">
       <DependentUpon>FrmPermissions.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmActionAdd.resx">
+    <EmbeddedResource Include="Forms\Actions\FrmActionAdd.resx">
       <DependentUpon>FrmActionAdd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrintSoldReport.resx">
@@ -418,16 +447,16 @@
     <EmbeddedResource Include="FrmAddNewCar.resx">
       <DependentUpon>FrmAddNewCar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUserAddEdit.resx">
+    <EmbeddedResource Include="Forms\Users\FrmUserAddEdit.resx">
       <DependentUpon>FrmUserAddEdit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDataBaseSettings.resx">
+    <EmbeddedResource Include="Forms\System\FrmDataBaseSettings.resx">
       <DependentUpon>FrmDataBaseSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAgreementPrint.resx">
       <DependentUpon>FrmAgreementPrint.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBackUp.resx">
+    <EmbeddedResource Include="Forms\System\FrmBackUp.resx">
       <DependentUpon>FrmBackUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnits.resx">
@@ -442,28 +471,28 @@
     <EmbeddedResource Include="FrmCarKMT.resx">
       <DependentUpon>FrmCarKMT.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCarSale.resx">
-      <DependentUpon>FrmCarSale.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Costs\FrmCostList.resx">
+      <DependentUpon>FrmCostList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProductAE.resx">
+    <EmbeddedResource Include="Forms\Products\FrmProductAE.resx">
       <DependentUpon>FrmProductAE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomers.resx">
       <DependentUpon>FrmCustomers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDeletedReport.resx">
-      <DependentUpon>FrmDeletedReport.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Audits\FrmAudits.resx">
+      <DependentUpon>FrmAudits.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmActionsTypes.resx">
+    <EmbeddedResource Include="Forms\Actions\FrmActionsTypes.resx">
       <DependentUpon>FrmActionsTypes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Forms\System\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOkMsg.resx">
+    <EmbeddedResource Include="Forms\System\FrmOkMsg.resx">
       <DependentUpon>FrmOkMsg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNewUpdate.resx">
@@ -481,19 +510,19 @@
     <EmbeddedResource Include="FrmSoldCardPrint.resx">
       <DependentUpon>FrmSoldCardPrint.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSoldReport.resx">
-      <DependentUpon>FrmSoldReport.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Audits\FrmAlerts.resx">
+      <DependentUpon>FrmAlerts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProducts.resx">
+    <EmbeddedResource Include="Forms\Products\FrmProducts.resx">
       <DependentUpon>FrmProducts.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmActions.resx">
+    <EmbeddedResource Include="Forms\Actions\FrmActions.resx">
       <DependentUpon>FrmActions.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMaterialsImportExcel.resx">
+    <EmbeddedResource Include="Forms\Materials\FrmMaterialsImportExcel.resx">
       <DependentUpon>FrmMaterialsImportExcel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsers.resx">
+    <EmbeddedResource Include="Forms\Users\FrmUsers.resx">
       <DependentUpon>FrmUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWhatsNew.resx">
@@ -541,6 +570,8 @@
   <ItemGroup>
     <Content Include="Cemagraphics-Classic-Cars-Bmw-mini.ico" />
     <Content Include="main-icon.ico" />
+    <None Include="Resources\edit2.png" />
+    <None Include="Resources\edit.png" />
     <None Include="Resources\Actions-edit-delete-icon.png" />
     <None Include="Resources\deleteuser.png" />
     <None Include="Resources\revert48.png" />

@@ -47,6 +47,16 @@ RM
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TRM.My.Resources.Resources.edit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TRM.My.Resources.Resources.edit2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TRM.My.Resources.Resources.Info">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

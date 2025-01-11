@@ -9,6 +9,7 @@ Public Class FrmMain
 
     Public Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Dock = DockStyle.Fill
+
         'System.Threading.Thread.Sleep(3000)
 
         'Me.Hide()
@@ -17,40 +18,109 @@ Public Class FrmMain
 
         If ReConnect = False Then
             FrmLogin.ShowDialog()
-        End If
-
-        ReConnect = False
-        For Each Frm As Form In Me.MdiChildren
-            Frm.Close()
-        Next
-        Me.Text = ActiveUser
-
-        If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
-            Dim CurrentVersion As String = My.Settings.CurrentVersion
-            With System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion
-                TSSLblVersion.Text = .Major & "." & .Minor & "." & .Build & "." & .Revision
-            End With
-            If CurrentVersion <> TSSLblVersion.Text Then
-                My.Settings.isShowWhatsNew = True
-                My.Settings.CurrentVersion = TSSLblVersion.Text
-                My.Settings.EditDataBase = True
-                My.Settings.Save()
-            End If
-            If FreshLogin = True Then
-                If My.Settings.isShowWhatsNew = True Then
-                    FrmWhatsNew.ShowDialog()
-                End If
-                FreshLogin = False
-            End If
-        End If
-
-        If AdminMode = True Then
-            SSAdminStatus.Text = "פעיל"
-            SSAdminStatus.ForeColor = Color.Green
         Else
-            SSAdminStatus.Text = "לא פעיל"
-            SSAdminStatus.ForeColor = Color.Red
+            ReConnect = False
+            For Each Frm As Form In Me.MdiChildren
+                Frm.Close()
+            Next
+            Me.Text = ActiveUser
+
+            'WhatsNew()
+
+            If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
+                Dim CurrentVersion As String = My.Settings.CurrentVersion
+                With System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion
+                    TSSLblVersion.Text = .Major & "." & .Minor & "." & .Build & "." & .Revision
+                End With
+                If CurrentVersion <> TSSLblVersion.Text Then
+                    My.Settings.isShowWhatsNew = True
+                    My.Settings.CurrentVersion = TSSLblVersion.Text
+                    My.Settings.EditDataBase = True
+                    My.Settings.Save()
+                End If
+                If FreshLogin = True Then
+                    If My.Settings.isShowWhatsNew = True Then
+                        FrmWhatsNew.ShowDialog()
+                    End If
+                    FreshLogin = False
+                End If
+            End If
+            If AlertsCount() > 0 Then
+                TSBtnAlerts.Visible = True
+                If AdminMode = True Then
+                    FrmAlerts.ShowDialog()
+                Else
+                    If isAllowed(9) = True Then
+                        FrmAlerts.ShowDialog()
+                    End If
+                End If
+            Else
+                TSBtnAlerts.Visible = False
+            End If
+
+
+
+            If AdminMode = True Then
+                SSAdminStatus.Text = "פעיל"
+                SSAdminStatus.ForeColor = Color.Green
+            Else
+                SSAdminStatus.Text = "לא פעיל"
+                SSAdminStatus.ForeColor = Color.Red
+            End If
+
         End If
+
+
+        'ReConnect = False
+        'For Each Frm As Form In Me.MdiChildren
+        '    Frm.Close()
+        'Next
+        'Me.Text = ActiveUser
+        ''WhatsNew()
+
+        'If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
+        '    Dim CurrentVersion As String = My.Settings.CurrentVersion
+        '    With System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion
+        '        TSSLblVersion.Text = .Major & "." & .Minor & "." & .Build & "." & .Revision
+        '    End With
+        '    If CurrentVersion <> TSSLblVersion.Text Then
+        '        My.Settings.isShowWhatsNew = True
+        '        My.Settings.CurrentVersion = TSSLblVersion.Text
+        '        My.Settings.EditDataBase = True
+        '        My.Settings.Save()
+        '    End If
+        '    If FreshLogin = True Then
+        '        If My.Settings.isShowWhatsNew = True Then
+        '            FrmWhatsNew.ShowDialog()
+        '        End If
+        '        FreshLogin = False
+        '    End If
+        'End If
+        'If AlertsCount() > 0 Then
+        '    TSBtnAlerts.Visible = True
+        '    If AdminMode = True Then
+        '        FrmAudits.Show()
+        '    Else
+        '        If isAllowed(9) = True Then
+        '            FrmAudits.Show()
+        '        End If
+        '    End If
+        'Else
+        '    TSBtnAlerts.Visible = False
+        'End If
+
+
+
+        'If AdminMode = True Then
+        '    SSAdminStatus.Text = "פעיל"
+        '    SSAdminStatus.ForeColor = Color.Green
+        'Else
+        '    SSAdminStatus.Text = "לא פעיל"
+        '    SSAdminStatus.ForeColor = Color.Red
+        'End If
+
+
+
     End Sub
 
     Private Sub TSMUsers_Click(sender As Object, e As EventArgs) Handles TSMUsers.Click
@@ -83,7 +153,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub BtnSale_Click(sender As Object, e As EventArgs)
-        FmCarSale = New FrmCarSale
+        FmCarSale = New FrmCostList
         FmCarSale.ShowDialog()
     End Sub
 
@@ -167,15 +237,11 @@ Public Class FrmMain
     End Sub
 
     Private Sub LblSoldCount_Click(sender As Object, e As EventArgs)
-        FmSoldReport = New FrmSoldReport
+        FmSoldReport = New FrmAlerts
         FmSoldReport.ShowDialog()
 
 
         'FrmSoldReport.ShowDialog()
-    End Sub
-
-    Private Sub LblDeletedCount_Click(sender As Object, e As EventArgs)
-        FrmDeletedReport.ShowDialog()
     End Sub
 
     Private Sub LblVendorsCount_Click(sender As Object, e As EventArgs)
@@ -205,49 +271,6 @@ Public Class FrmMain
 
     Private Sub עדכוןתוכנהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles עדכוןתוכנהToolStripMenuItem.Click
         ChkForUpdates()
-
-
-
-        'Dim TradeInCarSerial As Integer
-        'Dim Id As Integer
-        'Dim que As String
-        ''que = "select carserial,Priceout from MainList where carserial = 389"
-        'que = "select carserial,CarStatus from MainList where carserial = 389"
-
-        'FillList(que)
-        ''MsgBox(MyTab.Rows(0).Item(0).ToString)
-        ''For i = 0 To MyTab.Rows.Count - 1
-        ''    Id = MyTab.Rows(i).Item(0).ToString
-        ''    TradeInCarSerial = MyTab.Rows(i).Item(0).ToString
-        'Try
-        '    cmd = New SqlCommand
-        '    With cmd
-        '        .CommandType = CommandType.Text
-        '        '.CommandText = "update MainList set PriceOut=@PriceOut where carserial=@carserial"
-        '        .CommandText = "update MainList set CarStatus=@CarStatus where carserial=@carserial"
-        '        '.CommandText = "delete from MainList where carserial=@carserial"
-        '        .Connection = dbcon
-        '    End With
-        '    cmd.Parameters.AddWithValue("@CarStatus", True)
-
-        '    'cmd.Parameters.AddWithValue("@PriceOut", "38000")
-        '    'cmd.Parameters.AddWithValue("@carsaleinfo", "שולם 23200 בצקים + 1500 מזומן")
-        '    'cmd.Parameters.AddWithValue("@receiptnum", 274)
-
-        '    cmd.Parameters.AddWithValue("@carserial", 389)
-        '    dbcon.Open()
-        '    cmd.ExecuteNonQuery()
-        '    dbcon.Close()
-        '    cmd = Nothing
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'Finally
-        '    dbcon.Close()
-        'End Try
-        ''Next
-
-        'MsgBox("Done")
-
     End Sub
 
     Private Sub אודותToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles אודותToolStripMenuItem1.Click
@@ -419,7 +442,8 @@ Public Class FrmMain
 
     Private Sub TSBtnCreateTables_Click(sender As Object, e As EventArgs) Handles TSBtnCreateTables.Click
         If ActiveLvl = 0 Then
-            CreateTables()
+            'CreateTables()
+            WhatsNew()
         Else
             OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
         End If
@@ -447,5 +471,73 @@ Public Class FrmMain
 
     Private Sub تحريركلالنوافذالقيدالاستخدامToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles تحريركلالنوافذالقيدالاستخدامToolStripMenuItem.Click
         inUSEFree()
+    End Sub
+
+    Private Sub TSMAudits_Click(sender As Object, e As EventArgs) Handles TSMAudits.Click
+        Try
+            If AdminMode = True Then
+                If Application.OpenForms.OfType(Of FrmAudits).Any = True Then
+                    FmAudits.Activate()
+                Else
+                    FmAudits = New FrmAudits
+                    FmAudits.MdiParent = Me
+                    FmAudits.Show()
+                End If
+            Else
+                If isAllowed(9) = True Then
+                    If Application.OpenForms.OfType(Of FrmAudits).Any = True Then
+                        FmAudits.Activate()
+                    Else
+                        FmAudits = New FrmAudits
+                        FmAudits.MdiParent = Me
+                        FmAudits.Show()
+                    End If
+                Else
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        'If AdminMode = True Then
+        '    FrmAudits.ShowDialog()
+        'Else
+        '    If isAllowed(9) = True Then
+        '        FrmAudits.ShowDialog()
+        '    Else
+        '        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+        '    End If
+        'End If
+    End Sub
+
+    Private Sub TSMCostList_Click(sender As Object, e As EventArgs) Handles TSMCostList.Click
+        Try
+            If AdminMode = True Then
+                If Application.OpenForms.OfType(Of FrmCostList).Any = True Then
+                    FmCostList.Activate()
+                Else
+                    FmCostList = New FrmCostList
+                    FmCostList.MdiParent = Me
+                    FmCostList.Show()
+                End If
+            Else
+                If isAllowed(10) = True Then
+                    If Application.OpenForms.OfType(Of FrmCostList).Any = True Then
+                        FmCostList.Activate()
+                    Else
+                        FmCostList = New FrmCostList
+                        FmCostList.MdiParent = Me
+                        FmCostList.Show()
+                    End If
+                Else
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class
