@@ -270,7 +270,12 @@ Public Class FrmMain
     End Sub
 
     Private Sub עדכוןתוכנהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles עדכוןתוכנהToolStripMenuItem.Click
-        ChkForUpdates()
+        'ChkForUpdates()
+        If AdminMode = True Then
+            WhatsNew()
+        Else
+            MsgBox("only admin can make this option")
+        End If
     End Sub
 
     Private Sub אודותToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles אודותToolStripMenuItem1.Click
@@ -539,5 +544,9 @@ Public Class FrmMain
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub TSBtnCost_Click(sender As Object, e As EventArgs) Handles TSBtnCost.Click
+        TSMCostList_Click(Me, e)
     End Sub
 End Class

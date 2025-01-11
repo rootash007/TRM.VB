@@ -30,6 +30,7 @@ Partial Class FrmMain
         Me.TSMTickets = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMUsers = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMAudits = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMCostList = New System.Windows.Forms.ToolStripMenuItem()
         Me.הפקתמסמכיםToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הסכםמכירהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הכסםקנייהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,7 +66,7 @@ Partial Class FrmMain
         Me.TSPActions = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnProducts = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnAlerts = New System.Windows.Forms.ToolStripButton()
-        Me.TSMCostList = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSBtnCost = New System.Windows.Forms.ToolStripButton()
         Me.MenuMain.SuspendLayout()
         Me.SSMain.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -94,13 +95,13 @@ Partial Class FrmMain
         'החלפתמשתמשToolStripMenuItem
         '
         Me.החלפתמשתמשToolStripMenuItem.Name = "החלפתמשתמשToolStripMenuItem"
-        Me.החלפתמשתמשToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.החלפתמשתמשToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.החלפתמשתמשToolStripMenuItem.Text = "تبديل المستخدم"
         '
         'יציאהToolStripMenuItem
         '
         Me.יציאהToolStripMenuItem.Name = "יציאהToolStripMenuItem"
-        Me.יציאהToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.יציאהToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.יציאהToolStripMenuItem.Text = "خروج"
         '
         'TSMTickets
@@ -121,6 +122,12 @@ Partial Class FrmMain
         Me.TSMAudits.Name = "TSMAudits"
         Me.TSMAudits.Size = New System.Drawing.Size(180, 22)
         Me.TSMAudits.Text = "التحققات"
+        '
+        'TSMCostList
+        '
+        Me.TSMCostList.Name = "TSMCostList"
+        Me.TSMCostList.Size = New System.Drawing.Size(180, 22)
+        Me.TSMCostList.Text = "حساب التكاليف"
         '
         'הפקתמסמכיםToolStripMenuItem
         '
@@ -308,7 +315,7 @@ Partial Class FrmMain
         'ToolStrip1
         '
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBtnUsers, Me.TSBtnMaterial, Me.TSBtnBackUp, Me.TSPActions, Me.TSBtnProducts, Me.TSBtnAlerts})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBtnUsers, Me.TSBtnMaterial, Me.TSPActions, Me.TSBtnProducts, Me.TSBtnCost, Me.TSBtnBackUp, Me.TSBtnAlerts})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1349, 55)
@@ -325,7 +332,7 @@ Partial Class FrmMain
         Me.TSBtnUsers.Name = "TSBtnUsers"
         Me.TSBtnUsers.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.TSBtnUsers.Size = New System.Drawing.Size(67, 52)
-        Me.TSBtnUsers.Text = "مستخدمين"
+        Me.TSBtnUsers.Text = "المستخدمين"
         '
         'TSBtnMaterial
         '
@@ -337,7 +344,7 @@ Partial Class FrmMain
         Me.TSBtnMaterial.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.TSBtnMaterial.Size = New System.Drawing.Size(67, 52)
         Me.TSBtnMaterial.Tag = ""
-        Me.TSBtnMaterial.Text = "مواد"
+        Me.TSBtnMaterial.Text = "المواد"
         '
         'TSBtnBackUp
         '
@@ -370,7 +377,7 @@ Partial Class FrmMain
         Me.TSBtnProducts.Name = "TSBtnProducts"
         Me.TSBtnProducts.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.TSBtnProducts.Size = New System.Drawing.Size(67, 52)
-        Me.TSBtnProducts.Text = "ToolStripButton1"
+        Me.TSBtnProducts.Text = "المنتجات"
         '
         'TSBtnAlerts
         '
@@ -381,14 +388,19 @@ Partial Class FrmMain
         Me.TSBtnAlerts.Name = "TSBtnAlerts"
         Me.TSBtnAlerts.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.TSBtnAlerts.Size = New System.Drawing.Size(67, 52)
-        Me.TSBtnAlerts.Text = "تنبيهات"
+        Me.TSBtnAlerts.Text = "التنبيهات"
         Me.TSBtnAlerts.Visible = False
         '
-        'TSMCostList
+        'TSBtnCost
         '
-        Me.TSMCostList.Name = "TSMCostList"
-        Me.TSMCostList.Size = New System.Drawing.Size(180, 22)
-        Me.TSMCostList.Text = "حساب التكاليف"
+        Me.TSBtnCost.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.TSBtnCost.Image = CType(resources.GetObject("TSBtnCost.Image"), System.Drawing.Image)
+        Me.TSBtnCost.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.TSBtnCost.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TSBtnCost.Name = "TSBtnCost"
+        Me.TSBtnCost.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.TSBtnCost.Size = New System.Drawing.Size(67, 52)
+        Me.TSBtnCost.Text = "حساب التكاليف"
         '
         'FrmMain
         '
@@ -464,4 +476,5 @@ Partial Class FrmMain
     Friend WithEvents TSBtnAlerts As ToolStripButton
     Friend WithEvents TSMAudits As ToolStripMenuItem
     Friend WithEvents TSMCostList As ToolStripMenuItem
+    Friend WithEvents TSBtnCost As ToolStripButton
 End Class

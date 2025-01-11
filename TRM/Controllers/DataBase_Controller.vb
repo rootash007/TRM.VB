@@ -2,6 +2,58 @@
 
 Module DataBase_Controller
     Public Sub WhatsNew()
+        Dim que As String
+        Dim isFound As Boolean
+        que = "select * from permissions"
+        FillList(Que)
+        For i = 0 To MyTab.Rows.Count - 1
+            If MyTab.Rows(i).Item(1) = "Audits" Then
+                isFound = True
+            End If
+        Next
+        If isFound = False Then
+            Que = "INSERT INTO permissions (permission_name) values ('Audits')"
+            cmd = New SqlCommand
+            MyTab = New DataTable
+            Try
+                MyTab.Clear()
+                With cmd
+                    .CommandType = CommandType.Text
+                    .CommandText = Que
+                    .Connection = dbcon
+                End With
+                dbaddapter = New SqlDataAdapter(cmd)
+                dbaddapter.Fill(MyTab)
+                cmd = Nothing
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+        que = "select * from permissions"
+        FillList(que)
+        For i = 0 To MyTab.Rows.Count - 1
+            If MyTab.Rows(i).Item(1) = "Prices" Then
+                isFound = True
+            End If
+        Next
+        If isFound = False Then
+            que = "INSERT INTO permissions (permission_name) values ('Prices')"
+            cmd = New SqlCommand
+            MyTab = New DataTable
+            Try
+                MyTab.Clear()
+                With cmd
+                    .CommandType = CommandType.Text
+                    .CommandText = que
+                    .Connection = dbcon
+                End With
+                dbaddapter = New SqlDataAdapter(cmd)
+                dbaddapter.Fill(MyTab)
+                cmd = Nothing
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
 
         DropTableFromDataBase()
         CreateTables()

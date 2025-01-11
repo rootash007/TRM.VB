@@ -32,7 +32,7 @@ Module Costs_Controller
                 End If
             ElseIf FmCostList.DGV1.Rows.Count - 1 = i Then
                 FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(5).Value = FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(4).Value * FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(2).Value
-                FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(6).Value = FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(3).Value - FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(5).Value
+                FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(6).Value = FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(5).Value - FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(3).Value
                 'FmCostList.DGVCostList.Columns(6).DefaultCellStyle.Format = "0.00"
 
 
@@ -47,7 +47,7 @@ Module Costs_Controller
                     End If
                 Else
                     FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(5).Value = FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(4).Value * FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(2).Value
-                    FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(6).Value = FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(3).Value - FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(5).Value
+                    FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(6).Value = FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(5).Value - FmCostList.DGVCostList.Rows(FmCostList.DGVCostList.Rows.Count - 1).Cells(3).Value
                     que = "SELECT * FROM material_prices WHERE material_id IN (SELECT id FROM materials where material_name = '" & FmCostList.DGV1.Rows(i).Cells(1).Value & "')"
                     FillList(que)
                     If MyTab.Rows.Count > 0 Then

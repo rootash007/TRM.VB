@@ -37,12 +37,21 @@ Partial Class FrmCostList
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GrpMoney = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.BtnCancel = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGVActions = New System.Windows.Forms.DataGridView()
         Me.BtnCloseActions = New System.Windows.Forms.Button()
+        Me.BtnExportToExcel = New System.Windows.Forms.Button()
+        Me.TxtMaterialCount = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtDeff = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtCost = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtPaid = New System.Windows.Forms.TextBox()
         CType(Me.NumYear, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpList.SuspendLayout()
         CType(Me.DGVCostList, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,10 +79,10 @@ Partial Class FrmCostList
         '
         Me.DTPEndDate.CustomFormat = ""
         Me.DTPEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPEndDate.Location = New System.Drawing.Point(304, 84)
+        Me.DTPEndDate.Location = New System.Drawing.Point(8, 59)
         Me.DTPEndDate.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPEndDate.Name = "DTPEndDate"
-        Me.DTPEndDate.Size = New System.Drawing.Size(89, 23)
+        Me.DTPEndDate.Size = New System.Drawing.Size(90, 23)
         Me.DTPEndDate.TabIndex = 5
         Me.DTPEndDate.Visible = False
         '
@@ -94,10 +103,10 @@ Partial Class FrmCostList
         '
         Me.DTPStartDate.CustomFormat = "yyyy"
         Me.DTPStartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPStartDate.Location = New System.Drawing.Point(305, 53)
+        Me.DTPStartDate.Location = New System.Drawing.Point(8, 37)
         Me.DTPStartDate.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPStartDate.Name = "DTPStartDate"
-        Me.DTPStartDate.Size = New System.Drawing.Size(88, 23)
+        Me.DTPStartDate.Size = New System.Drawing.Size(90, 23)
         Me.DTPStartDate.TabIndex = 0
         Me.DTPStartDate.Visible = False
         '
@@ -189,6 +198,15 @@ Partial Class FrmCostList
         '
         Me.GrpMoney.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GrpMoney.Controls.Add(Me.Label5)
+        Me.GrpMoney.Controls.Add(Me.TxtPaid)
+        Me.GrpMoney.Controls.Add(Me.Label4)
+        Me.GrpMoney.Controls.Add(Me.TxtCost)
+        Me.GrpMoney.Controls.Add(Me.Label3)
+        Me.GrpMoney.Controls.Add(Me.TxtDeff)
+        Me.GrpMoney.Controls.Add(Me.Label2)
+        Me.GrpMoney.Controls.Add(Me.TxtMaterialCount)
+        Me.GrpMoney.Controls.Add(Me.BtnExportToExcel)
         Me.GrpMoney.Controls.Add(Me.DGV1)
         Me.GrpMoney.Controls.Add(Me.DTPEndDate)
         Me.GrpMoney.Controls.Add(Me.BtnCancel)
@@ -198,27 +216,16 @@ Partial Class FrmCostList
         Me.GrpMoney.Name = "GrpMoney"
         Me.GrpMoney.Padding = New System.Windows.Forms.Padding(4)
         Me.GrpMoney.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GrpMoney.Size = New System.Drawing.Size(782, 146)
+        Me.GrpMoney.Size = New System.Drawing.Size(1058, 146)
         Me.GrpMoney.TabIndex = 2
         Me.GrpMoney.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("David", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.Label1.Location = New System.Drawing.Point(44, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label1.Size = New System.Drawing.Size(31, 19)
-        Me.Label1.TabIndex = 33
-        Me.Label1.Text = "السنة"
         '
         'DGV1
         '
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(305, 23)
+        Me.DGV1.Location = New System.Drawing.Point(8, 14)
         Me.DGV1.Name = "DGV1"
-        Me.DGV1.Size = New System.Drawing.Size(88, 23)
+        Me.DGV1.Size = New System.Drawing.Size(90, 23)
         Me.DGV1.TabIndex = 27
         Me.DGV1.Visible = False
         '
@@ -238,6 +245,17 @@ Partial Class FrmCostList
         Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnCancel.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("David", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.Label1.Location = New System.Drawing.Point(44, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label1.Size = New System.Drawing.Size(31, 19)
+        Me.Label1.TabIndex = 33
+        Me.Label1.Text = "السنة"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -249,7 +267,7 @@ Partial Class FrmCostList
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GroupBox1.Size = New System.Drawing.Size(0, 366)
+        Me.GroupBox1.Size = New System.Drawing.Size(276, 366)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
@@ -270,7 +288,7 @@ Partial Class FrmCostList
         Me.DGVActions.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.DGVActions.RowHeadersVisible = False
         Me.DGVActions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVActions.Size = New System.Drawing.Size(0, 342)
+        Me.DGVActions.Size = New System.Drawing.Size(268, 342)
         Me.DGVActions.TabIndex = 0
         '
         'BtnCloseActions
@@ -279,7 +297,7 @@ Partial Class FrmCostList
         Me.BtnCloseActions.BackColor = System.Drawing.Color.White
         Me.BtnCloseActions.Font = New System.Drawing.Font("David", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnCloseActions.Image = CType(resources.GetObject("BtnCloseActions.Image"), System.Drawing.Image)
-        Me.BtnCloseActions.Location = New System.Drawing.Point(667, 9)
+        Me.BtnCloseActions.Location = New System.Drawing.Point(943, 9)
         Me.BtnCloseActions.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnCloseActions.Name = "BtnCloseActions"
         Me.BtnCloseActions.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -289,12 +307,108 @@ Partial Class FrmCostList
         Me.BtnCloseActions.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnCloseActions.UseVisualStyleBackColor = False
         '
+        'BtnExportToExcel
+        '
+        Me.BtnExportToExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnExportToExcel.BackColor = System.Drawing.Color.White
+        Me.BtnExportToExcel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnExportToExcel.Image = CType(resources.GetObject("BtnExportToExcel.Image"), System.Drawing.Image)
+        Me.BtnExportToExcel.Location = New System.Drawing.Point(144, 84)
+        Me.BtnExportToExcel.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
+        Me.BtnExportToExcel.Name = "BtnExportToExcel"
+        Me.BtnExportToExcel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtnExportToExcel.Size = New System.Drawing.Size(168, 55)
+        Me.BtnExportToExcel.TabIndex = 38
+        Me.BtnExportToExcel.Text = "انتاج ملف اكسيل"
+        Me.BtnExportToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnExportToExcel.UseVisualStyleBackColor = False
+        '
+        'TxtMaterialCount
+        '
+        Me.TxtMaterialCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtMaterialCount.Enabled = False
+        Me.TxtMaterialCount.Location = New System.Drawing.Point(859, 17)
+        Me.TxtMaterialCount.Name = "TxtMaterialCount"
+        Me.TxtMaterialCount.Size = New System.Drawing.Size(100, 23)
+        Me.TxtMaterialCount.TabIndex = 39
+        Me.TxtMaterialCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(1003, 20)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(48, 16)
+        Me.Label2.TabIndex = 40
+        Me.Label2.Text = "عدد المواد"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(1003, 107)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 16)
+        Me.Label3.TabIndex = 42
+        Me.Label3.Text = "فرق المبلغ"
+        '
+        'TxtDeff
+        '
+        Me.TxtDeff.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtDeff.Enabled = False
+        Me.TxtDeff.Location = New System.Drawing.Point(859, 104)
+        Me.TxtDeff.Name = "TxtDeff"
+        Me.TxtDeff.Size = New System.Drawing.Size(100, 23)
+        Me.TxtDeff.TabIndex = 41
+        Me.TxtDeff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(960, 78)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(91, 16)
+        Me.Label4.TabIndex = 44
+        Me.Label4.Text = "المبلغ الكلي المستحق"
+        '
+        'TxtCost
+        '
+        Me.TxtCost.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtCost.Enabled = False
+        Me.TxtCost.Location = New System.Drawing.Point(859, 75)
+        Me.TxtCost.Name = "TxtCost"
+        Me.TxtCost.Size = New System.Drawing.Size(100, 23)
+        Me.TxtCost.TabIndex = 43
+        Me.TxtCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(965, 49)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(86, 16)
+        Me.Label5.TabIndex = 46
+        Me.Label5.Text = "المبلغ الكلي المدفوع"
+        '
+        'TxtPaid
+        '
+        Me.TxtPaid.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtPaid.Enabled = False
+        Me.TxtPaid.Location = New System.Drawing.Point(859, 46)
+        Me.TxtPaid.Name = "TxtPaid"
+        Me.TxtPaid.Size = New System.Drawing.Size(100, 23)
+        Me.TxtPaid.TabIndex = 45
+        Me.TxtPaid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FrmCostList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(808, 592)
+        Me.ClientSize = New System.Drawing.Size(1084, 592)
         Me.Controls.Add(Me.BtnCloseActions)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnReload)
@@ -318,6 +432,7 @@ Partial Class FrmCostList
         Me.GrpList.ResumeLayout(False)
         CType(Me.DGVCostList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpMoney.ResumeLayout(False)
+        Me.GrpMoney.PerformLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGVActions, System.ComponentModel.ISupportInitialize).EndInit()
@@ -345,4 +460,13 @@ Partial Class FrmCostList
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DGVActions As DataGridView
     Friend WithEvents BtnCloseActions As Button
+    Friend WithEvents BtnExportToExcel As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TxtDeff As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtMaterialCount As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TxtPaid As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TxtCost As TextBox
 End Class

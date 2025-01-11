@@ -246,7 +246,7 @@
             Next
             If isFound = False Then
                 If NumPrice.Value = 0 Then
-                    MsgBox("no price")
+                    MsgBox("الرجاء ادخال السعر", vbOKOnly + vbInformation, "استعلام")
                     Return
                 End If
                 AddMaterialPrice(FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value, NumYear.Value, NumPrice.Value)
