@@ -8,6 +8,8 @@ Module Actions_Controller
     Public ActionEndDate As Date
     Public ActionsQuery As String
     Public isAddAction As Boolean
+    Public ActionSender As String
+
 
 
 

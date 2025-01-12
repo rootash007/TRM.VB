@@ -26,30 +26,31 @@ Partial Class FrmMaterials
         Me.GrpMaterials = New System.Windows.Forms.GroupBox()
         Me.TabMaterials = New System.Windows.Forms.TabControl()
         Me.TabMaterialsOn = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtFilter = New System.Windows.Forms.TextBox()
         Me.DgvMaterials = New System.Windows.Forms.DataGridView()
         Me.TabMaterialsOff = New System.Windows.Forms.TabPage()
         Me.DGVMaterialsOff = New System.Windows.Forms.DataGridView()
         Me.TabMaterialsAlarm = New System.Windows.Forms.TabPage()
         Me.DGVAlarm = New System.Windows.Forms.DataGridView()
-        Me.BtnExcelLoad = New System.Windows.Forms.Button()
+        Me.BtnImportFromExcel = New System.Windows.Forms.Button()
         Me.BtnAddMaterial = New System.Windows.Forms.Button()
         Me.BtnUpdateMaterial = New System.Windows.Forms.Button()
         Me.BtnDeleteMaterial = New System.Windows.Forms.Button()
         Me.BtnClose = New System.Windows.Forms.Button()
         Me.GrpButtons = New System.Windows.Forms.GroupBox()
-        Me.TxtFilter = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtmExportToExcel = New System.Windows.Forms.Button()
         Me.GrpMaterials.SuspendLayout()
         Me.TabMaterials.SuspendLayout()
         Me.TabMaterialsOn.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvMaterials, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabMaterialsOff.SuspendLayout()
         CType(Me.DGVMaterialsOff, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabMaterialsAlarm.SuspendLayout()
         CType(Me.DGVAlarm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpButtons.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GrpMaterials
@@ -97,6 +98,36 @@ Partial Class FrmMaterials
         Me.TabMaterialsOn.Text = "قائمة المواد المفعلة"
         Me.TabMaterialsOn.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox1.Image = Global.TRM.My.Resources.Resources.Cancel48
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(903, 10)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(26, 26)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(1099, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(32, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "بحث"
+        '
+        'TxtFilter
+        '
+        Me.TxtFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtFilter.Location = New System.Drawing.Point(935, 10)
+        Me.TxtFilter.Name = "TxtFilter"
+        Me.TxtFilter.Size = New System.Drawing.Size(158, 26)
+        Me.TxtFilter.TabIndex = 1
+        '
         'DgvMaterials
         '
         Me.DgvMaterials.AllowUserToAddRows = False
@@ -116,7 +147,7 @@ Partial Class FrmMaterials
         Me.DgvMaterials.RowHeadersVisible = False
         Me.DgvMaterials.RowHeadersWidth = 51
         Me.DgvMaterials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvMaterials.Size = New System.Drawing.Size(1129, 390)
+        Me.DgvMaterials.Size = New System.Drawing.Size(1129, 378)
         Me.DgvMaterials.TabIndex = 0
         '
         'TabMaterialsOff
@@ -186,21 +217,21 @@ Partial Class FrmMaterials
         Me.DGVAlarm.Size = New System.Drawing.Size(1129, 432)
         Me.DGVAlarm.TabIndex = 2
         '
-        'BtnExcelLoad
+        'BtnImportFromExcel
         '
-        Me.BtnExcelLoad.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnExcelLoad.BackColor = System.Drawing.Color.White
-        Me.BtnExcelLoad.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnExcelLoad.Image = CType(resources.GetObject("BtnExcelLoad.Image"), System.Drawing.Image)
-        Me.BtnExcelLoad.Location = New System.Drawing.Point(497, 25)
-        Me.BtnExcelLoad.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
-        Me.BtnExcelLoad.Name = "BtnExcelLoad"
-        Me.BtnExcelLoad.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnExcelLoad.Size = New System.Drawing.Size(155, 59)
-        Me.BtnExcelLoad.TabIndex = 37
-        Me.BtnExcelLoad.Text = "استخراج المعلومات"
-        Me.BtnExcelLoad.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnExcelLoad.UseVisualStyleBackColor = False
+        Me.BtnImportFromExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnImportFromExcel.BackColor = System.Drawing.Color.White
+        Me.BtnImportFromExcel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnImportFromExcel.Image = CType(resources.GetObject("BtnImportFromExcel.Image"), System.Drawing.Image)
+        Me.BtnImportFromExcel.Location = New System.Drawing.Point(497, 25)
+        Me.BtnImportFromExcel.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
+        Me.BtnImportFromExcel.Name = "BtnImportFromExcel"
+        Me.BtnImportFromExcel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtnImportFromExcel.Size = New System.Drawing.Size(155, 59)
+        Me.BtnImportFromExcel.TabIndex = 37
+        Me.BtnImportFromExcel.Text = "استيراد المعلومات"
+        Me.BtnImportFromExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnImportFromExcel.UseVisualStyleBackColor = False
         '
         'BtnAddMaterial
         '
@@ -269,8 +300,9 @@ Partial Class FrmMaterials
         '
         Me.GrpButtons.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GrpButtons.Controls.Add(Me.BtmExportToExcel)
         Me.GrpButtons.Controls.Add(Me.BtnClose)
-        Me.GrpButtons.Controls.Add(Me.BtnExcelLoad)
+        Me.GrpButtons.Controls.Add(Me.BtnImportFromExcel)
         Me.GrpButtons.Controls.Add(Me.BtnAddMaterial)
         Me.GrpButtons.Controls.Add(Me.BtnDeleteMaterial)
         Me.GrpButtons.Controls.Add(Me.BtnUpdateMaterial)
@@ -281,35 +313,21 @@ Partial Class FrmMaterials
         Me.GrpButtons.TabIndex = 38
         Me.GrpButtons.TabStop = False
         '
-        'TxtFilter
+        'BtmExportToExcel
         '
-        Me.TxtFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtFilter.Location = New System.Drawing.Point(935, 10)
-        Me.TxtFilter.Name = "TxtFilter"
-        Me.TxtFilter.Size = New System.Drawing.Size(158, 26)
-        Me.TxtFilter.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(1099, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "بحث"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.Image = Global.TRM.My.Resources.Resources.Cancel48
-        Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(903, 10)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(26, 26)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
+        Me.BtmExportToExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtmExportToExcel.BackColor = System.Drawing.Color.White
+        Me.BtmExportToExcel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtmExportToExcel.Image = CType(resources.GetObject("BtmExportToExcel.Image"), System.Drawing.Image)
+        Me.BtmExportToExcel.Location = New System.Drawing.Point(332, 25)
+        Me.BtmExportToExcel.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
+        Me.BtmExportToExcel.Name = "BtmExportToExcel"
+        Me.BtmExportToExcel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtmExportToExcel.Size = New System.Drawing.Size(155, 59)
+        Me.BtmExportToExcel.TabIndex = 38
+        Me.BtmExportToExcel.Text = "تصدير المعلومات"
+        Me.BtmExportToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtmExportToExcel.UseVisualStyleBackColor = False
         '
         'FrmMaterials
         '
@@ -332,13 +350,13 @@ Partial Class FrmMaterials
         Me.TabMaterials.ResumeLayout(False)
         Me.TabMaterialsOn.ResumeLayout(False)
         Me.TabMaterialsOn.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DgvMaterials, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabMaterialsOff.ResumeLayout(False)
         CType(Me.DGVMaterialsOff, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabMaterialsAlarm.ResumeLayout(False)
         CType(Me.DGVAlarm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpButtons.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -354,10 +372,11 @@ Partial Class FrmMaterials
     Friend WithEvents BtnDeleteMaterial As Button
     Friend WithEvents BtnClose As Button
     Friend WithEvents TabMaterialsAlarm As TabPage
-    Friend WithEvents BtnExcelLoad As Button
+    Friend WithEvents BtnImportFromExcel As Button
     Friend WithEvents GrpButtons As GroupBox
     Friend WithEvents DGVAlarm As DataGridView
     Friend WithEvents TxtFilter As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents BtmExportToExcel As Button
 End Class

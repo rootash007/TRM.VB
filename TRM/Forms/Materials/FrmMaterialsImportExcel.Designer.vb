@@ -82,14 +82,14 @@ Partial Class FrmMaterialsImportExcel
         Me.LinkLblSelect.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.LinkLblSelect.Location = New System.Drawing.Point(12, 335)
         Me.LinkLblSelect.Name = "LinkLblSelect"
-        Me.LinkLblSelect.Size = New System.Drawing.Size(65, 20)
+        Me.LinkLblSelect.Size = New System.Drawing.Size(52, 16)
         Me.LinkLblSelect.TabIndex = 4
         Me.LinkLblSelect.TabStop = True
         Me.LinkLblSelect.Text = "اختيار الكل"
         '
         'FrmMaterialsImportExcel
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(796, 402)

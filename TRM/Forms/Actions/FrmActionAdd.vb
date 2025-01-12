@@ -1,10 +1,17 @@
-﻿Public Class FrmActionAdd
+﻿Imports System.Reflection
+
+Public Class FrmActionAdd
     Dim ActionTypeTab As DataTable
     Dim MaterialTab As DataTable
     Dim isIncrease As Boolean
     Dim OldActionType As Boolean
     Dim OldQuantity As Double
+    Dim ActionID As Integer
+    'Dim MaterialName As String
     Private Sub FrmActionAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'If ActionSender = "FmCosts" Then
+        '    MaterialName = CmbMaterialName.Text
+        'End If
         If FmActions.DgvActionsList.RowCount > 0 Then FmActions.SelectedRow = FmActions.DgvActionsList.CurrentRow.Index
         Dim que As String
         Dim Increase As Boolean = isAllowed(2)
@@ -59,20 +66,37 @@
                 MsgBox(ex.Message)
             End Try
         Else
-            CmbMaterialName.Text = FmActions.DgvActionsList.CurrentRow.Cells(1).Value
-            CmbLocBarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(2).Value
-            Txtbarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(3).Value
-            TxtBlockNumber.Text = FmActions.DgvActionsList.CurrentRow.Cells(4).Value
-            CmbActionType.Text = FmActions.DgvActionsList.CurrentRow.Cells(12).Value
-            NumQuantity.Value = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
-            TxtVendor.Text = FmActions.DgvActionsList.CurrentRow.Cells(8).Value
-            TxtOrder.Text = FmActions.DgvActionsList.CurrentRow.Cells(9).Value
-            TxtMoreInfo.Text = FmActions.DgvActionsList.CurrentRow.Cells(10).Value
-            DTPDate.Value = FmActions.DgvActionsList.CurrentRow.Cells(7).Value
-            OldActionType = FmActions.DgvActionsList.CurrentRow.Cells(11).Value
-            OldQuantity = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
-            NumPrice.Value = FmActions.DgvActionsList.CurrentRow.Cells(13).Value
-
+            If ActionSender = "FmActions" Then
+                ActionID = FmActions.DgvActionsList.CurrentRow.Cells(0).Value
+                CmbMaterialName.Text = FmActions.DgvActionsList.CurrentRow.Cells(1).Value
+                CmbLocBarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(2).Value
+                Txtbarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(3).Value
+                TxtBlockNumber.Text = FmActions.DgvActionsList.CurrentRow.Cells(4).Value
+                CmbActionType.Text = FmActions.DgvActionsList.CurrentRow.Cells(12).Value
+                NumQuantity.Value = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
+                TxtVendor.Text = FmActions.DgvActionsList.CurrentRow.Cells(8).Value
+                TxtOrder.Text = FmActions.DgvActionsList.CurrentRow.Cells(9).Value
+                TxtMoreInfo.Text = FmActions.DgvActionsList.CurrentRow.Cells(10).Value
+                DTPDate.Value = FmActions.DgvActionsList.CurrentRow.Cells(7).Value
+                OldActionType = FmActions.DgvActionsList.CurrentRow.Cells(11).Value
+                OldQuantity = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
+                NumPrice.Value = FmActions.DgvActionsList.CurrentRow.Cells(13).Value
+            ElseIf ActionSender = "FmCosts" Then
+                ActionID = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(0).Value
+                CmbMaterialName.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(1).Value
+                CmbLocBarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(2).Value
+                Txtbarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(3).Value
+                TxtBlockNumber.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(4).Value
+                CmbActionType.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(12).Value
+                NumQuantity.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(6).Value
+                TxtVendor.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(8).Value
+                TxtOrder.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(9).Value
+                TxtMoreInfo.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(10).Value
+                DTPDate.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(7).Value
+                OldActionType = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(11).Value
+                OldQuantity = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(6).Value
+                NumPrice.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(13).Value
+            End If
         End If
 
 
@@ -204,20 +228,46 @@
                 If isAddAction = True Then
                     AddAction(CmbMaterialName.Text, CmbLocBarcode.Text, Txtbarcode.Text, TxtBlockNumber.Text, ActiveUser, CmbActionType.Text, NumQuantity.Value, DTPDate.Value, TxtVendor.Text, TxtOrder.Text, TxtMoreInfo.Text, NewQuantity, CmbActionType.SelectedValue, NumPrice.Value)
                 Else
-                    EditAction(CmbMaterialName.Text, CmbLocBarcode.Text, Txtbarcode.Text, TxtBlockNumber.Text, CmbActionType.Text, NumQuantity.Value, DTPDate.Value, TxtVendor.Text, TxtOrder.Text, TxtMoreInfo.Text, NewQuantity, CmbActionType.SelectedValue, FmActions.DgvActionsList.CurrentRow.Cells(0).Value, NumPrice.Value)
+                    EditAction(CmbMaterialName.Text, CmbLocBarcode.Text, Txtbarcode.Text, TxtBlockNumber.Text, CmbActionType.Text, NumQuantity.Value, DTPDate.Value, TxtVendor.Text, TxtOrder.Text, TxtMoreInfo.Text, NewQuantity, CmbActionType.SelectedValue, ActionID, NumPrice.Value)
                     ' admin edit
                 End If
             Else
                 If isAddAction = True Then
                     AddAction(CmbMaterialName.Text, CmbLocBarcode.Text, Txtbarcode.Text, TxtBlockNumber.Text, ActiveUser, CmbActionType.Text, NumQuantity.Value, Now, TxtVendor.Text, TxtOrder.Text, TxtMoreInfo.Text, NewQuantity, CmbActionType.SelectedValue, NumPrice.Value)
                 Else
-                    EditAction(CmbMaterialName.Text, CmbLocBarcode.Text, Txtbarcode.Text, TxtBlockNumber.Text, CmbActionType.Text, NumQuantity.Value, FmActions.DgvActionsList.CurrentRow.Cells(7).Value, TxtVendor.Text, TxtOrder.Text, TxtMoreInfo.Text, NewQuantity, CmbActionType.SelectedValue, FmActions.DgvActionsList.CurrentRow.Cells(0).Value, NumPrice.Value)
+                    EditAction(CmbMaterialName.Text, CmbLocBarcode.Text, Txtbarcode.Text, TxtBlockNumber.Text, CmbActionType.Text, NumQuantity.Value, FmActions.DgvActionsList.CurrentRow.Cells(7).Value, TxtVendor.Text, TxtOrder.Text, TxtMoreInfo.Text, NewQuantity, CmbActionType.SelectedValue, ActionID, NumPrice.Value)
 
                     ' edit
                 End If
             End If
             FmActions.FrmActions_Load(0, e)
             FmMaterials.FrmMaterials_Load(0, e)
+            If ActionSender = "FmCosts" Then
+                YearReLoad(FmCostsList.DTPStartDate.Value, FmCostsList.DTPEndDate.Value)
+                FmCostsList.DGVCostList.CurrentCell = FmCostsList.DGVCostList.Rows(CostsSelectedRow).Cells(0)
+                FmCostsList.BtnCloseActions.Visible = True
+                FmCostsList.DGVActions.Rows.Clear()
+                For i = 0 To FmCostsList.DGV1.RowCount - 1
+                    If FmCostsList.DGV1.Rows(i).Cells(1).Value = FmCostsList.DGVCostList.CurrentRow.Cells(0).Value Then
+                        FmCostsList.DGVActions.Rows.Add()
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(0).Value = FmCostsList.DGV1.Rows(i).Cells(1).Value
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(1).Value = FmCostsList.DGV1.Rows(i).Cells(2).Value
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(2).Value = FmCostsList.DGV1.Rows(i).Cells(5).Value
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(3).Value = FmCostsList.DGV1.Rows(i).Cells(6).Value
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(4).Value = FmCostsList.DGV1.Rows(i).Cells(7).Value
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(5).Value = FmCostsList.DGV1.Rows(i).Cells(9).Value
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(6).Value = FmCostsList.DGV1.Rows(i).Cells(13).Value
+                        FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).Cells(7).Value = FmCostsList.DGV1.Rows(i).Cells(0).Value
+                        If FmCostsList.DGV1.Rows(i).Cells(13).Value = 0 Then
+                            FmCostsList.DGVActions.Rows(FmCostsList.DGVActions.RowCount - 1).DefaultCellStyle.BackColor = Color.LightPink
+                        End If
+                    End If
+                Next
+                FmCostsList.DGVActions.CurrentCell = FmCostsList.DGVActions.Rows(ActionSelectedRow).Cells(0)
+
+                'FmCostsList.DGVActions.Columns(4).DefaultCellStyle.Format = "dd/MM/yyyy"
+                'FmCostsList.DGVActions.ClearSelection()
+            End If
             If FmActions.DgvActionsList.RowCount > 0 Then FmActions.DgvActionsList.CurrentCell = FmActions.DgvActionsList.Rows(FmActions.SelectedRow).Cells(1)
             Me.Close()
         Catch ex As Exception

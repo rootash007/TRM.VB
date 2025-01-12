@@ -35,7 +35,7 @@
     <SuiteName>TRM</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -269,10 +269,10 @@
     <Compile Include="FrmCarKMT.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Costs\FrmCostList.Designer.vb">
-      <DependentUpon>FrmCostList.vb</DependentUpon>
+    <Compile Include="Forms\Costs\FrmCostsList.Designer.vb">
+      <DependentUpon>FrmCostsList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Costs\FrmCostList.vb">
+    <Compile Include="Forms\Costs\FrmCostsList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Products\FrmProductAE.Designer.vb">
@@ -471,8 +471,8 @@
     <EmbeddedResource Include="FrmCarKMT.resx">
       <DependentUpon>FrmCarKMT.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Costs\FrmCostList.resx">
-      <DependentUpon>FrmCostList.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Costs\FrmCostsList.resx">
+      <DependentUpon>FrmCostsList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Products\FrmProductAE.resx">
       <DependentUpon>FrmProductAE.vb</DependentUpon>

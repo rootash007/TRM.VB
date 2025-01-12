@@ -149,6 +149,7 @@
             'MsgBox("القائمة فارغة", vbOKOnly + vbInformation, "رساله")
         Else
             isAddAction = False
+            ActionSender = "FmActions"
             FmActionAdd = New FrmActionAdd
             FmActionAdd.ShowDialog()
         End If

@@ -108,10 +108,6 @@ Public Class FrmLogin
         End If
     End Sub
 
-    Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox1.DoubleClick
-
-    End Sub
-
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If TxtUsername.Text = My.Settings.AdminUser And TxtPassWord.Text = My.Settings.AdminPass Then
             FrmDataBaseSettings.ShowDialog()

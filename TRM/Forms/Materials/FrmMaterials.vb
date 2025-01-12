@@ -30,7 +30,7 @@
         FmMaterialAddEdit.ShowDialog()
     End Sub
 
-    Private Sub BtnExcelLoad_Click(sender As Object, e As EventArgs) Handles BtnExcelLoad.Click
+    Private Sub BtnExcelLoad_Click(sender As Object, e As EventArgs) Handles BtnImportFromExcel.Click
 
         Dim FmMaterialsImportExcel = New FrmMaterialsImportExcel
         MaterialsDataImport(FmMaterialsImportExcel.DgvMaterials)
@@ -75,7 +75,7 @@
         End If
     End Sub
 
-    Private Sub DgvMaterials_KeyDown(sender As Object, e As KeyEventArgs) Handles TabMaterials.KeyDown, DgvMaterials.KeyDown, BtnUpdateMaterial.KeyDown, BtnExcelLoad.KeyDown, BtnDeleteMaterial.KeyDown, BtnClose.KeyDown, BtnAddMaterial.KeyDown
+    Private Sub DgvMaterials_KeyDown(sender As Object, e As KeyEventArgs) Handles TabMaterials.KeyDown, DgvMaterials.KeyDown, BtnUpdateMaterial.KeyDown, BtnImportFromExcel.KeyDown, BtnDeleteMaterial.KeyDown, BtnClose.KeyDown, BtnAddMaterial.KeyDown
         If e.KeyCode = Keys.Escape Then
             Me.Close()
         End If
@@ -194,5 +194,64 @@
                 End If
             Next
         End If
+    End Sub
+
+    Private Sub BtmExportToExcel_Click(sender As Object, e As EventArgs) Handles BtmExportToExcel.Click
+        If DgvMaterials.Rows.Count = 0 Then
+            MsgBox("القائمة فارغة", vbOKOnly + vbCritical, "خطأ")
+            Return
+        End If
+        Dim excel As Microsoft.Office.Interop.Excel._Application = New Microsoft.Office.Interop.Excel.Application()
+        Dim workbook As Microsoft.Office.Interop.Excel._Workbook = excel.Workbooks.Add(Type.Missing)
+        Dim worksheet As Microsoft.Office.Interop.Excel._Worksheet = Nothing
+        Try
+            worksheet = workbook.ActiveSheet
+            worksheet.Name = "المواد"
+
+            '.Columns(1).HeaderText = "اسم المادة"
+            '.Columns(2).HeaderText = "الرمز"
+            '.Columns(3).HeaderText = "الرمز المحلي"
+            '.Columns(4).HeaderText = "الكمية"
+            '.Columns(5).HeaderText = "الكمية الدنيا"
+            '.Columns(6).HeaderText = "وحدة القياس"
+            '.Columns(7).HeaderText = "الوزن"
+
+
+            worksheet.Cells(1, 1) = DgvMaterials.Columns(1).HeaderText
+            worksheet.Cells(1, 2) = DgvMaterials.Columns(3).HeaderText
+            worksheet.Cells(1, 3) = DgvMaterials.Columns(2).HeaderText
+            worksheet.Cells(1, 4) = DgvMaterials.Columns(4).HeaderText
+            worksheet.Cells(1, 5) = DgvMaterials.Columns(5).HeaderText
+            worksheet.Cells(1, 6) = DgvMaterials.Columns(6).HeaderText
+            worksheet.Cells(1, 7) = DgvMaterials.Columns(7).HeaderText
+
+
+            For i = 0 To DgvMaterials.Rows.Count - 1
+                For b = 1 To 7
+                    If b = 2 Then
+                        worksheet.Cells(i + 2, b + 1) = DgvMaterials.Rows(i).Cells(b).Value
+                    ElseIf b = 3 Then
+                        worksheet.Cells(i + 2, b - 1) = DgvMaterials.Rows(i).Cells(b).Value
+                    Else
+                        worksheet.Cells(i + 2, b) = DgvMaterials.Rows(i).Cells(b).Value
+                    End If
+                    'worksheet.Cells(i + 2, b + 1) = DgvMaterials.Rows(i).Cells(b).Value
+                Next
+            Next
+            Dim SaveDialog As New SaveFileDialog()
+            SaveDialog.Filter = "Excel Files(*.xlsx)|*.xlsx|All files (*.*)|*.*"
+            SaveDialog.FilterIndex = 2
+
+            If SaveDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                workbook.SaveAs(SaveDialog.FileName)
+                MsgBox("تم حفظ الملف بنجاح", vbOKOnly + vbInformation, "استعلام")
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            excel.Quit()
+            workbook = Nothing
+            excel = Nothing
+        End Try
     End Sub
 End Class

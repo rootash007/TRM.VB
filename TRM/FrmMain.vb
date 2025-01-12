@@ -153,7 +153,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub BtnSale_Click(sender As Object, e As EventArgs)
-        FmCarSale = New FrmCostList
+        FmCarSale = New FrmCostsList
         FmCarSale.ShowDialog()
     End Sub
 
@@ -520,21 +520,21 @@ Public Class FrmMain
     Private Sub TSMCostList_Click(sender As Object, e As EventArgs) Handles TSMCostList.Click
         Try
             If AdminMode = True Then
-                If Application.OpenForms.OfType(Of FrmCostList).Any = True Then
-                    FmCostList.Activate()
+                If Application.OpenForms.OfType(Of FrmCostsList).Any = True Then
+                    FmCostsList.Activate()
                 Else
-                    FmCostList = New FrmCostList
-                    FmCostList.MdiParent = Me
-                    FmCostList.Show()
+                    FmCostsList = New FrmCostsList
+                    FmCostsList.MdiParent = Me
+                    FmCostsList.Show()
                 End If
             Else
                 If isAllowed(10) = True Then
-                    If Application.OpenForms.OfType(Of FrmCostList).Any = True Then
-                        FmCostList.Activate()
+                    If Application.OpenForms.OfType(Of FrmCostsList).Any = True Then
+                        FmCostsList.Activate()
                     Else
-                        FmCostList = New FrmCostList
-                        FmCostList.MdiParent = Me
-                        FmCostList.Show()
+                        FmCostsList = New FrmCostsList
+                        FmCostsList.MdiParent = Me
+                        FmCostsList.Show()
                     End If
                 Else
                     OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")

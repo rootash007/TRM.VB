@@ -51,7 +51,7 @@ Module ModFunctions
     Public FmActionAdd As New FrmActionAdd
     Public FmProducts As New FrmProducts
     Public FmAudits As New FrmAudits
-    Public FmCostList As New FrmCostList
+    Public FmCostsList As New FrmCostsList
 
 
 
@@ -79,7 +79,7 @@ Module ModFunctions
 #Region "Variables for Forms Copies"
 
     Public FmAddNewCar As New FrmAddNewCar
-    Public FmCarSale As New FrmCostList
+    Public FmCarSale As New FrmCostsList
     Public FmSearch As New FrmSearch
     Public FmSoldcard As New FrmSoldCard
     Public FmVendors As New FrmVendors
