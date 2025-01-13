@@ -344,6 +344,7 @@ Partial Class FrmActions
         Me.BtnImportProducts.Text = "Import products"
         Me.BtnImportProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnImportProducts.UseVisualStyleBackColor = False
+        Me.BtnImportProducts.Visible = False
         '
         'FrmActions
         '

@@ -88,15 +88,8 @@
         Me.Close()
     End Sub
 
-    Private Sub TxtMaterialName_KeyDown(sender As Object, e As KeyEventArgs) Handles Txtbarcode.KeyDown, TxtMaterialName.KeyDown, TxtLocBarcode.KeyDown, NumWeigth.KeyDown, NumQuantity.KeyDown, NumMinQuantity.KeyDown, CmbUnits.KeyDown, BtnMaterialAE.KeyDown, BtnClose.KeyDown
-        If e.KeyCode = Keys.Escape Then
-            If FmMaterials.TabMaterials.SelectedIndex = 0 Then
-                inUSEMaterial(FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value, 0)
-            Else
-                inUSEMaterial(FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value, 0)
-            End If
-            Me.Close()
-        End If
+    Private Sub TxtMaterialName_KeyDown(sender As Object, e As KeyEventArgs)
+
     End Sub
 
     Private Sub IsActive_Click(sender As Object, e As EventArgs) Handles IsActive.Click
@@ -151,7 +144,7 @@
                     If TxtMaterialName.Text = MyTab.Rows(i).Item(1) And FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value <> MyTab.Rows(i).Item(0) Then
                         MsgBox("اسم المادة موجود في النظام , الرجاء اختيار اسم اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
                         Return
-                    ElseIf TxtLocBarcode.Text = MyTab.Rows(i).Item(2) And FmMaterials.DgvMaterialsoff.CurrentRow.Cells(0).Value <> MyTab.Rows(i).Item(0) Then
+                    ElseIf TxtLocBarcode.Text = MyTab.Rows(i).Item(2) And FmMaterials.DGVMaterialsOff.CurrentRow.Cells(0).Value <> MyTab.Rows(i).Item(0) Then
                         MsgBox("رمز المادة موجود في النظام , الرجاء اختيار رمز اخر", vbMsgBoxRtlReading + MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "خطأ")
                         Return
                     End If
@@ -291,5 +284,13 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub TxtMaterialName_KeyDown_1(sender As Object, e As KeyEventArgs) Handles TxtMaterialName.KeyDown, TxtLocBarcode.KeyDown, Txtbarcode.KeyDown, TabMaterialEA.KeyDown, NumWeigth.KeyDown, NumQuantity.KeyDown, NumMinQuantity.KeyDown, CmbUnits.KeyDown, BtnMaterialAE.KeyDown, BtnClose.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        ElseIf e.KeyCode = Keys.Enter Then
+            BtnMaterialAE.PerformClick()
+        End If
     End Sub
 End Class

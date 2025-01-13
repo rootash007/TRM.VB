@@ -85,12 +85,12 @@ Partial Class FrmMaterialAddEdit
         '
         Me.BtnMaterialAE.BackColor = System.Drawing.Color.White
         Me.BtnMaterialAE.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnMaterialAE.Image = CType(resources.GetObject("BtnMaterialAE.Image"), System.Drawing.Image)
+        Me.BtnMaterialAE.Image = Global.TRM.My.Resources.Resources.plus
         Me.BtnMaterialAE.Location = New System.Drawing.Point(226, 298)
         Me.BtnMaterialAE.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnMaterialAE.Name = "BtnMaterialAE"
         Me.BtnMaterialAE.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnMaterialAE.Size = New System.Drawing.Size(144, 80)
+        Me.BtnMaterialAE.Size = New System.Drawing.Size(144, 56)
         Me.BtnMaterialAE.TabIndex = 1
         Me.BtnMaterialAE.Text = "اضافة مادة"
         Me.BtnMaterialAE.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -105,7 +105,7 @@ Partial Class FrmMaterialAddEdit
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnClose.Size = New System.Drawing.Size(144, 80)
+        Me.BtnClose.Size = New System.Drawing.Size(144, 56)
         Me.BtnClose.TabIndex = 2
         Me.BtnClose.Text = "اغلاق"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -316,7 +316,7 @@ Partial Class FrmMaterialAddEdit
         Me.TabMaterialEA.Name = "TabMaterialEA"
         Me.TabMaterialEA.RightToLeftLayout = True
         Me.TabMaterialEA.SelectedIndex = 0
-        Me.TabMaterialEA.Size = New System.Drawing.Size(393, 420)
+        Me.TabMaterialEA.Size = New System.Drawing.Size(393, 396)
         Me.TabMaterialEA.TabIndex = 3
         '
         'TabMaterial
@@ -327,7 +327,7 @@ Partial Class FrmMaterialAddEdit
         Me.TabMaterial.Location = New System.Drawing.Point(4, 27)
         Me.TabMaterial.Name = "TabMaterial"
         Me.TabMaterial.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabMaterial.Size = New System.Drawing.Size(385, 389)
+        Me.TabMaterial.Size = New System.Drawing.Size(385, 365)
         Me.TabMaterial.TabIndex = 0
         Me.TabMaterial.Text = "تفاصيل المادة"
         Me.TabMaterial.UseVisualStyleBackColor = True
@@ -568,7 +568,7 @@ Partial Class FrmMaterialAddEdit
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(416, 442)
+        Me.ClientSize = New System.Drawing.Size(416, 417)
         Me.Controls.Add(Me.TabMaterialEA)
         Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)

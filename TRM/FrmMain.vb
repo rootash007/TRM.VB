@@ -124,15 +124,7 @@ Public Class FrmMain
     End Sub
 
     Private Sub TSMUsers_Click(sender As Object, e As EventArgs) Handles TSMUsers.Click
-        'FrmTerminate.ShowDialog()
-        TSBtnUsers_Click(Me, e)
-        'If Application.OpenForms.OfType(Of FrmUsers).Any = True Then
-        '    FmUsers.Activate()
-        'Else
-        '    FmUsers = New FrmUsers
-        '    FmUsers.MdiParent = Me
-        '    FmUsers.Show()
-        'End If
+        TSBtnUsers.PerformClick()
     End Sub
     '********************************************
     Private Sub BtnAddNewCar_Click(sender As Object, e As EventArgs)
@@ -271,11 +263,11 @@ Public Class FrmMain
 
     Private Sub עדכוןתוכנהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles עדכוןתוכנהToolStripMenuItem.Click
         'ChkForUpdates()
-        If AdminMode = True Then
-            WhatsNew()
-        Else
-            MsgBox("only admin can make this option")
-        End If
+        'If AdminMode = True Then
+        '    WhatsNew()
+        'Else
+        '    MsgBox("only admin can make this option")
+        'End If
     End Sub
 
     Private Sub אודותToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles אודותToolStripMenuItem1.Click
@@ -337,37 +329,13 @@ Public Class FrmMain
 
 
 
-    Private Sub TSPActions_Click(sender As Object, e As EventArgs) Handles TSPActions.Click
-        'Dim Increase As Boolean = isAlowed(4)
-        'Dim Decrease As Boolean = isAlowed(3)
-        'If AdminMode = True Then
-        '    If DgvActionsList.RowCount = 0 Then
-        '        MsgBox("list is empty", vbOKOnly + vbInformation, "message")
-        '    Else
-        '        isAddAction = False
-        '        FmActionAdd = New FrmActionAdd
-        '        FmActionAdd.ShowDialog()
-        '    End If
-        'Else
-        '    If isAlowed(4) = True Then
-        '        If DgvActionsList.RowCount = 0 Then
-        '            MsgBox("list is empty", vbOKOnly + vbInformation, "message")
-        '        Else
-        '            isAddAction = False
-        '            FmActionAdd = New FrmActionAdd
-        '            FmActionAdd.ShowDialog()
-        '        End If
-        '    Else
-        '        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
-        '    End If
-        'End If
-
-
+    Private Sub TSPActions_Click(sender As Object, e As EventArgs) Handles TSBtnActions.Click
         If Application.OpenForms.OfType(Of FrmActions).Any = True Then
             FmActions.Activate()
         Else
             FmActions = New FrmActions
             FmActions.MdiParent = Me
+            ActionsFormPrepair()
             FmActions.Show()
         End If
     End Sub
@@ -517,7 +485,11 @@ Public Class FrmMain
         'End If
     End Sub
 
-    Private Sub TSMCostList_Click(sender As Object, e As EventArgs) Handles TSMCostList.Click
+    Private Sub TSMCostList_Click(sender As Object, e As EventArgs) Handles TSMCostsList.Click
+        TSBtnCost.PerformClick()
+    End Sub
+
+    Private Sub TSBtnCost_Click(sender As Object, e As EventArgs) Handles TSBtnCost.Click
         Try
             If AdminMode = True Then
                 If Application.OpenForms.OfType(Of FrmCostsList).Any = True Then
@@ -546,7 +518,11 @@ Public Class FrmMain
         End Try
     End Sub
 
-    Private Sub TSBtnCost_Click(sender As Object, e As EventArgs) Handles TSBtnCost.Click
-        TSMCostList_Click(Me, e)
+    Private Sub TSMMaterials_Click(sender As Object, e As EventArgs) Handles TSMMaterials.Click
+        TSBtnMaterial.PerformClick()
+    End Sub
+
+    Private Sub TSMActions_Click(sender As Object, e As EventArgs) Handles TSMActions.Click
+        TSBtnActions.PerformClick()
     End Sub
 End Class

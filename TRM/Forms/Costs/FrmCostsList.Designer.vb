@@ -72,14 +72,14 @@ Partial Class FrmCostsList
         'BtnReload
         '
         Me.BtnReload.BackColor = System.Drawing.Color.White
-        Me.BtnReload.Font = New System.Drawing.Font("David", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnReload.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnReload.Image = CType(resources.GetObject("BtnReload.Image"), System.Drawing.Image)
         Me.BtnReload.Location = New System.Drawing.Point(111, 9)
         Me.BtnReload.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnReload.Name = "BtnReload"
         Me.BtnReload.Size = New System.Drawing.Size(129, 55)
         Me.BtnReload.TabIndex = 32
-        Me.BtnReload.Text = "שליפה"
+        Me.BtnReload.Text = "سحب المعلومات"
         Me.BtnReload.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnReload.UseVisualStyleBackColor = False
         '
@@ -459,6 +459,7 @@ Partial Class FrmCostsList
         'Column15
         '
         Me.Column15.HeaderText = "التسلسل"
+        Me.Column15.MinimumWidth = 6
         Me.Column15.Name = "Column15"
         Me.Column15.ReadOnly = True
         Me.Column15.Visible = False
@@ -503,7 +504,7 @@ Partial Class FrmCostsList
         Me.ShowInTaskbar = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "מכירת רכב"
+        Me.Text = "سجل التكاليف"
         CType(Me.NumYear, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpList.ResumeLayout(False)
         CType(Me.DGVCostList, System.ComponentModel.ISupportInitialize).EndInit()

@@ -1,12 +1,12 @@
 ﻿Public Class FrmActions
 
     'Dim IsIncrease As Boolean
-    Public SelectedRow As Integer
+    Public SelectedRow As Integer = 0
 
     Public Sub FrmActions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'MsgBox(SelectedRow)
         Me.Dock = DockStyle.Fill
         If DgvActionsList.RowCount > 0 Then DgvActionsList.CurrentCell = DgvActionsList.Rows(SelectedRow).Cells(1)
+
         If AdminMode = True Then
             BtnEditAction.Visible = True
             BtnDeleteAction.Visible = True
@@ -23,25 +23,26 @@
             End If
 
         End If
-        DTPStartDate.Value = Today
-        DTPEndDate.Value = Today.AddHours(23).AddMinutes(59).AddSeconds(59)
-        CBInActions.Checked = True
-        CBOutActions.Checked = True
 
-        Dim que As String = "select * from users where user_isactive = 1"
-        FillList(que)
-        CmbUserName.DataSource = MyTab
-        CmbUserName.DisplayMember = "user_name"
-        CmbUserName.ValueMember = "id"
-        CmbUserName.SelectedIndex = -1
+        'DTPStartDate.Value = Today
+        'DTPEndDate.Value = Today.AddHours(23).AddMinutes(59).AddSeconds(59)
+        'CBInActions.Checked = True
+        'CBOutActions.Checked = True
 
-        que = "select * from materials where material_isactive = 1"
-        FillList(que)
+        'Dim que As String = "select * from users where user_isactive = 1"
+        'FillList(que)
+        'CmbUserName.DataSource = MyTab
+        'CmbUserName.DisplayMember = "user_name"
+        'CmbUserName.ValueMember = "id"
+        'CmbUserName.SelectedIndex = -1
 
-        CmbMaterial.DataSource = MyTab
-        CmbMaterial.DisplayMember = "material_name"
-        CmbMaterial.ValueMember = "id"
-        CmbMaterial.SelectedIndex = -1
+        'que = "select * from materials where material_isactive = 1"
+        'FillList(que)
+
+        'CmbMaterial.DataSource = MyTab
+        'CmbMaterial.DisplayMember = "material_name"
+        'CmbMaterial.ValueMember = "id"
+        'CmbMaterial.SelectedIndex = -1
 
         ReloadActions()
 
@@ -113,11 +114,7 @@
         Me.Close()
     End Sub
 
-    Private Sub DTPEndDate_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtVendor.KeyDown, DTPStartDate.KeyDown, DTPEndDate.KeyDown, DgvActionsList.KeyDown, CmbUserName.KeyDown, CmbMaterial.KeyDown, CBOutActions.KeyDown, CBInActions.KeyDown, BtnEditAction.KeyDown, BtnReload.KeyDown, BtnExportToExcel.KeyDown, BtnDeleteAction.KeyDown, BtnClose.KeyDown, BtnAddAction.KeyDown
-        If e.KeyCode = Keys.Escape Then
-            Me.Close()
-        End If
-    End Sub
+
 
 
     Private Sub BtnEditAction_Click(sender As Object, e As EventArgs) Handles BtnEditAction.Click
@@ -192,6 +189,20 @@
     Private Sub BtnImportProducts_Click(sender As Object, e As EventArgs) Handles BtnImportProducts.Click
         FrmImportProductData.ShowDialog()
 
+    End Sub
+
+    Private Sub FrmActions_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown, DgvActionsList.KeyDown, BtnImportProducts.KeyDown, BtnExportToExcel.KeyDown, BtnEditAction.KeyDown, BtnDeleteAction.KeyDown, BtnClose.KeyDown, BtnAddAction.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub DTPStartDate_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtVendor.KeyDown, DTPStartDate.KeyDown, DTPEndDate.KeyDown, CmbUserName.KeyDown, CmbMaterial.KeyDown, CBOutActions.KeyDown, CBInActions.KeyDown, BtnReload.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnReload.PerformClick()
+        ElseIf e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
     End Sub
 
     'Private Sub FrmActions_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated

@@ -24,6 +24,9 @@ Public Class FrmCostsList
             TxtCost.Text += DGVCostList.Rows(i).Cells(5).Value
         Next
         TxtDeff.Text = TxtCost.Text - TxtPaid.Text
+        If DGVCostList.RowCount = 0 Then
+            MsgBox("لا يوجد معلومات متاحه لهذه السنه", vbOKOnly + vbInformation, "استعلام")
+        End If
     End Sub
     Private Sub NumYear_ValueChanged(sender As Object, e As EventArgs) Handles NumYear.ValueChanged
         DTPStartDate.Value = "01/01/" & NumYear.Value
@@ -146,5 +149,52 @@ Public Class FrmCostsList
             End If
         End While
         FmActionAdd.ShowDialog()
+    End Sub
+
+    Private Sub NumYear_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPaid.KeyDown, TxtMaterialCount.KeyDown, TxtDeff.KeyDown, TxtCost.KeyDown, MyBase.KeyDown, DGVCostList.KeyDown, DGVActions.KeyDown, BtnReload.KeyDown, BtnExportToExcel.KeyDown, BtnCloseActions.KeyDown, BtnCancel.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub NumYear_KeyDown_1(sender As Object, e As KeyEventArgs) Handles NumYear.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnReload.PerformClick()
+        End If
+    End Sub
+
+    Private Sub DGVCostList_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVCostList.CellClick
+        BtnCloseActions.Visible = True
+        CostsSelectedRow = DGVCostList.CurrentRow.Index
+        'Dim que As String = "select * from actions where material_name = '" & DGVCostList.CurrentRow.Cells(0).Value & "' "
+        'FillList(que)
+        'DGVActions.DataSource = MyTab
+        'For i = 0 To DGVActions.RowCount - 1
+        '    If DGVActions.Rows(i).Cells(13).Value = 0 Then
+        '        DGVActions.Rows(i).DefaultCellStyle.BackColor = Color.LightPink
+        '    End If
+        'Next
+        '//new code
+        DGVActions.Rows.Clear()
+        'DGVActions.Columns.Clear()
+        For i = 0 To DGV1.RowCount - 1
+            If DGV1.Rows(i).Cells(1).Value = DGVCostList.CurrentRow.Cells(0).Value Then
+                DGVActions.Rows.Add()
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(0).Value = DGV1.Rows(i).Cells(1).Value
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(1).Value = DGV1.Rows(i).Cells(2).Value
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(2).Value = DGV1.Rows(i).Cells(5).Value
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(3).Value = DGV1.Rows(i).Cells(6).Value
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(4).Value = DGV1.Rows(i).Cells(7).Value
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(5).Value = DGV1.Rows(i).Cells(9).Value
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(6).Value = DGV1.Rows(i).Cells(13).Value
+                DGVActions.Rows(DGVActions.RowCount - 1).Cells(7).Value = DGV1.Rows(i).Cells(0).Value
+                If DGV1.Rows(i).Cells(13).Value = 0 Then
+                    DGVActions.Rows(DGVActions.RowCount - 1).DefaultCellStyle.BackColor = Color.LightPink
+                End If
+            End If
+        Next
+        DGVActions.Columns(4).DefaultCellStyle.Format = "dd/MM/yyyy"
+        '//end new cde
+        DGVActions.ClearSelection()
     End Sub
 End Class

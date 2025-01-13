@@ -27,6 +27,7 @@
         isAddMaterial = True
         'Dim FmMaterialAddEdit = New FrmMaterialAddEdit
         FmMaterialAddEdit = New FrmMaterialAddEdit
+        FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.plus
         FmMaterialAddEdit.ShowDialog()
     End Sub
 
@@ -102,6 +103,8 @@
                 inUSEMaterial(DgvMaterials.CurrentRow.Cells(0).Value, 1)
                 isAddMaterial = False
                 FmMaterialAddEdit = New FrmMaterialAddEdit
+                FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.edit2
+
                 FmMaterialAddEdit.ShowDialog()
             Else
                 MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
@@ -113,6 +116,8 @@
                 inUSEMaterial(DGVMaterialsOff.CurrentRow.Cells(0).Value, 1)
                 isAddMaterial = False
                 FmMaterialAddEdit = New FrmMaterialAddEdit
+                FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.edit2
+
                 FmMaterialAddEdit.ShowDialog()
             Else
                 MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
@@ -142,7 +147,8 @@
         'isAddMaterial = False
         'Dim FmMaterialAddEdit = New FrmMaterialAddEdit
         'FmMaterialAddEdit.ShowDialog()
-        BtnUpdateMaterial_Click(Me, e)
+        'BtnUpdateMaterial_Click(Me, e)
+        BtnUpdateMaterial.PerformClick()
     End Sub
 
     Private Sub FrmMaterials_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated

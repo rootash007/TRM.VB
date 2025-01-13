@@ -164,20 +164,27 @@ Module Actions_Controller
         End Try
     End Sub
 
-    Public Sub MakeQuery()
-        'ActionsQuery = "select * from actions where action_date >= @start_date and action_date <= @end_date"
-        'If FmActions.CBOutActions.Checked = True And FmActions.CBInActions.Checked = True Then
-        '    ActionsQuery = "select * from actions where action_date >= @start_date and action_date <= @end_date"
-        'ElseIf FmActions.CBOutActions.Checked = False And FmActions.CBInActions.Checked = True Then
-        '    ActionsQuery = "select * from actions where action_date >= @start_date and action_date <= @end_date and action_isincrease = 1"
-        'ElseIf FmActions.CBOutActions.Checked = True And FmActions.CBInActions.Checked = False Then
-        '    ActionsQuery = "select * from actions where action_date >= @start_date and action_date <= @end_date and action_isincrease = 0"
-        'ElseIf FmActions.CBOutActions.Checked = False And FmActions.CBInActions.Checked = False Then
-        '    MsgBox("at least one of these options should be on")
+    Public Sub ActionsFormPrepair()
+        With FmActions
+            FmActions.DTPStartDate.Value = Today
+            FmActions.DTPEndDate.Value = Today.AddHours(23).AddMinutes(59).AddSeconds(59)
+            FmActions.CBInActions.Checked = True
+            FmActions.CBOutActions.Checked = True
 
-        'End If
-        'ActionsQuery += " order by action_date"
-        'ReloadActions()
+            Dim que As String = "select * from users where user_isactive = 1"
+            FillList(que)
+            FmActions.CmbUserName.DataSource = MyTab
+            FmActions.CmbUserName.DisplayMember = "user_name"
+            FmActions.CmbUserName.ValueMember = "id"
+            FmActions.CmbUserName.SelectedIndex = -1
+
+            que = "select * from materials where material_isactive = 1"
+            FillList(que)
+            FmActions.CmbMaterial.DataSource = MyTab
+            FmActions.CmbMaterial.DisplayMember = "material_name"
+            FmActions.CmbMaterial.ValueMember = "id"
+            FmActions.CmbMaterial.SelectedIndex = -1
+        End With
     End Sub
 
     Public Sub ReloadActions()
@@ -189,7 +196,7 @@ Module Actions_Controller
         ElseIf FmActions.CBOutActions.Checked = True And FmActions.CBInActions.Checked = False Then
             ActionsQuery = "select * from actions where action_date >= @start_date and action_date <= @end_date and action_isincrease = 0"
         ElseIf FmActions.CBOutActions.Checked = False And FmActions.CBInActions.Checked = False Then
-            MsgBox("at least one of ont or in options should be on", vbOKOnly + vbCritical, "error")
+            MsgBox("لا يمكن الغاء الخيارين , يجب تفعيل واحده من الخيارات على الاقل", vbOKOnly + vbCritical, "خطأ")
             Return
         End If
         If FmActions.CmbUserName.Text <> "" Then

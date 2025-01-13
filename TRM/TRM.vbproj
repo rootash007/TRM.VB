@@ -35,7 +35,7 @@
     <SuiteName>TRM</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>32</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -155,10 +155,10 @@
     <Compile Include="Forms\Materials\FrmMaterialPriceEdit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmWhatsNew.Designer.vb">
+    <Compile Include="Forms\System\FrmWhatsNew.Designer.vb">
       <DependentUpon>FrmWhatsNew.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmWhatsNew.vb">
+    <Compile Include="Forms\System\FrmWhatsNew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PermissionsIdList.vb" />
@@ -525,7 +525,7 @@
     <EmbeddedResource Include="Forms\Users\FrmUsers.resx">
       <DependentUpon>FrmUsers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmWhatsNew.resx">
+    <EmbeddedResource Include="Forms\System\FrmWhatsNew.resx">
       <DependentUpon>FrmWhatsNew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -568,7 +568,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cemagraphics-Classic-Cars-Bmw-mini.ico" />
     <Content Include="main-icon.ico" />
     <None Include="Resources\edit2.png" />
     <None Include="Resources\edit.png" />

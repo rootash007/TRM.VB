@@ -7,99 +7,98 @@ Public Class FrmActionAdd
     Dim OldActionType As Boolean
     Dim OldQuantity As Double
     Dim ActionID As Integer
-    'Dim MaterialName As String
     Private Sub FrmActionAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'If ActionSender = "FmCosts" Then
-        '    MaterialName = CmbMaterialName.Text
-        'End If
-        If FmActions.DgvActionsList.RowCount > 0 Then FmActions.SelectedRow = FmActions.DgvActionsList.CurrentRow.Index
-        Dim que As String
-        Dim Increase As Boolean = isAllowed(2)
-        Dim Decrease As Boolean = isAllowed(3)
-        If AdminMode = True Then
-            DTPDate.Visible = True
-            DTPDate.Value = Now
-            GrpPrice.Visible = True
-        Else
-            DTPDate.Visible = False
-            If isAllowed(10) = True And Increase = True Then
+
+        Try
+            If FmActions.DgvActionsList.RowCount > 0 Then FmActions.SelectedRow = FmActions.DgvActionsList.CurrentRow.Index
+            Dim que As String
+            Dim Increase As Boolean = isAllowed(2)
+            Dim Decrease As Boolean = isAllowed(3)
+            If AdminMode = True Then
+                DTPDate.Visible = True
+                DTPDate.Value = Now
                 GrpPrice.Visible = True
             Else
-                GrpPrice.Visible = False
+                DTPDate.Visible = False
+                If isAllowed(10) = True And Increase = True Then
+                    GrpPrice.Visible = True
+                Else
+                    GrpPrice.Visible = False
+                End If
             End If
-        End If
 
 
-        If AdminMode = True Or (Increase = True And Decrease = True) Then
-            que = "select * from action_types"
-        ElseIf Increase = True And Decrease = False Then
-            que = "select * from action_types where isincrease = 1"
-        ElseIf Increase = False And Decrease = True Then
-            que = "select * from action_types where isincrease = 0"
-        ElseIf Increase = False And Decrease = False Then
-            Me.Close()
-        End If
-        FillList(que)
-        'ActionTypeTab = MyTab
-        'Me.CmbActionType.DataSource = ActionTypeTab
-        Me.CmbActionType.DataSource = MyTab
-
-        Me.CmbActionType.DisplayMember = "action_type_name"
-        Me.CmbActionType.ValueMember = "isincrease"
-        que = "select * from materials where material_isactive = 1"
-        FillList(que)
-        MaterialTab = MyTab
-        Me.CmbMaterialName.DataSource = MyTab
-        Me.CmbMaterialName.DisplayMember = "material_name"
-        Me.CmbMaterialName.ValueMember = "material_loc_barcode"
-        CmbMaterialName.Text = ""
-
-        Me.CmbLocBarcode.DataSource = MyTab
-        Me.CmbLocBarcode.DisplayMember = "material_loc_barcode"
-        Me.CmbLocBarcode.ValueMember = "material_name"
-        If isAddAction = True Then
-            Try
-                CmbActionType.SelectedIndex = -1
-                CmbMaterialName.SelectedIndex = 0
-                CmbLocBarcode.SelectedIndex = -1
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Else
-            If ActionSender = "FmActions" Then
-                ActionID = FmActions.DgvActionsList.CurrentRow.Cells(0).Value
-                CmbMaterialName.Text = FmActions.DgvActionsList.CurrentRow.Cells(1).Value
-                CmbLocBarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(2).Value
-                Txtbarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(3).Value
-                TxtBlockNumber.Text = FmActions.DgvActionsList.CurrentRow.Cells(4).Value
-                CmbActionType.Text = FmActions.DgvActionsList.CurrentRow.Cells(12).Value
-                NumQuantity.Value = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
-                TxtVendor.Text = FmActions.DgvActionsList.CurrentRow.Cells(8).Value
-                TxtOrder.Text = FmActions.DgvActionsList.CurrentRow.Cells(9).Value
-                TxtMoreInfo.Text = FmActions.DgvActionsList.CurrentRow.Cells(10).Value
-                DTPDate.Value = FmActions.DgvActionsList.CurrentRow.Cells(7).Value
-                OldActionType = FmActions.DgvActionsList.CurrentRow.Cells(11).Value
-                OldQuantity = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
-                NumPrice.Value = FmActions.DgvActionsList.CurrentRow.Cells(13).Value
-            ElseIf ActionSender = "FmCosts" Then
-                ActionID = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(0).Value
-                CmbMaterialName.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(1).Value
-                CmbLocBarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(2).Value
-                Txtbarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(3).Value
-                TxtBlockNumber.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(4).Value
-                CmbActionType.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(12).Value
-                NumQuantity.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(6).Value
-                TxtVendor.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(8).Value
-                TxtOrder.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(9).Value
-                TxtMoreInfo.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(10).Value
-                DTPDate.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(7).Value
-                OldActionType = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(11).Value
-                OldQuantity = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(6).Value
-                NumPrice.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(13).Value
+            If AdminMode = True Or (Increase = True And Decrease = True) Then
+                que = "select * from action_types"
+            ElseIf Increase = True And Decrease = False Then
+                que = "select * from action_types where isincrease = 1"
+            ElseIf Increase = False And Decrease = True Then
+                que = "select * from action_types where isincrease = 0"
+            ElseIf Increase = False And Decrease = False Then
+                Me.Close()
             End If
-        End If
+            FillList(que)
+            'ActionTypeTab = MyTab
+            'Me.CmbActionType.DataSource = ActionTypeTab
+            Me.CmbActionType.DataSource = MyTab
 
+            Me.CmbActionType.DisplayMember = "action_type_name"
+            Me.CmbActionType.ValueMember = "isincrease"
+            que = "select * from materials where material_isactive = 1"
+            FillList(que)
+            MaterialTab = MyTab
+            Me.CmbMaterialName.DataSource = MyTab
+            Me.CmbMaterialName.DisplayMember = "material_name"
+            Me.CmbMaterialName.ValueMember = "material_loc_barcode"
+            CmbMaterialName.Text = ""
 
+            Me.CmbLocBarcode.DataSource = MyTab
+            Me.CmbLocBarcode.DisplayMember = "material_loc_barcode"
+            Me.CmbLocBarcode.ValueMember = "material_name"
+            If isAddAction = True Then
+                Try
+                    CmbActionType.SelectedIndex = -1
+                    CmbMaterialName.SelectedIndex = 0
+                    CmbLocBarcode.SelectedIndex = -1
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                End Try
+            Else
+                If ActionSender = "FmActions" Then
+                    ActionID = FmActions.DgvActionsList.CurrentRow.Cells(0).Value
+                    CmbMaterialName.Text = FmActions.DgvActionsList.CurrentRow.Cells(1).Value
+                    CmbLocBarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(2).Value
+                    Txtbarcode.Text = FmActions.DgvActionsList.CurrentRow.Cells(3).Value
+                    TxtBlockNumber.Text = FmActions.DgvActionsList.CurrentRow.Cells(4).Value
+                    CmbActionType.Text = FmActions.DgvActionsList.CurrentRow.Cells(12).Value
+                    NumQuantity.Value = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
+                    TxtVendor.Text = FmActions.DgvActionsList.CurrentRow.Cells(8).Value
+                    TxtOrder.Text = FmActions.DgvActionsList.CurrentRow.Cells(9).Value
+                    TxtMoreInfo.Text = FmActions.DgvActionsList.CurrentRow.Cells(10).Value
+                    DTPDate.Value = FmActions.DgvActionsList.CurrentRow.Cells(7).Value
+                    OldActionType = FmActions.DgvActionsList.CurrentRow.Cells(11).Value
+                    OldQuantity = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
+                    NumPrice.Value = FmActions.DgvActionsList.CurrentRow.Cells(13).Value
+                ElseIf ActionSender = "FmCosts" Then
+                    ActionID = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(0).Value
+                    CmbMaterialName.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(1).Value
+                    CmbLocBarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(2).Value
+                    Txtbarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(3).Value
+                    TxtBlockNumber.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(4).Value
+                    CmbActionType.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(12).Value
+                    NumQuantity.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(6).Value
+                    TxtVendor.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(8).Value
+                    TxtOrder.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(9).Value
+                    TxtMoreInfo.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(10).Value
+                    DTPDate.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(7).Value
+                    OldActionType = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(11).Value
+                    OldQuantity = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(6).Value
+                    NumPrice.Value = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(13).Value
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub CmbMaterialName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbMaterialName.SelectedIndexChanged
@@ -240,8 +239,7 @@ Public Class FrmActionAdd
                     ' edit
                 End If
             End If
-            FmActions.FrmActions_Load(0, e)
-            FmMaterials.FrmMaterials_Load(0, e)
+            'FmMaterials.FrmMaterials_Load(0, e)
             If ActionSender = "FmCosts" Then
                 YearReLoad(FmCostsList.DTPStartDate.Value, FmCostsList.DTPEndDate.Value)
                 FmCostsList.DGVCostList.CurrentCell = FmCostsList.DGVCostList.Rows(CostsSelectedRow).Cells(0)
@@ -267,6 +265,8 @@ Public Class FrmActionAdd
 
                 'FmCostsList.DGVActions.Columns(4).DefaultCellStyle.Format = "dd/MM/yyyy"
                 'FmCostsList.DGVActions.ClearSelection()
+            ElseIf ActionSender = "FmActions" Then
+                FmActions.FrmActions_Load(0, e)
             End If
             If FmActions.DgvActionsList.RowCount > 0 Then FmActions.DgvActionsList.CurrentCell = FmActions.DgvActionsList.Rows(FmActions.SelectedRow).Cells(1)
             Me.Close()
