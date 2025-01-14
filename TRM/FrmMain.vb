@@ -35,7 +35,7 @@ Public Class FrmMain
                 If CurrentVersion <> TSSLblVersion.Text Then
                     My.Settings.isShowWhatsNew = True
                     My.Settings.CurrentVersion = TSSLblVersion.Text
-                    My.Settings.EditDataBase = True
+                    My.Settings.EditDataBase = False
                     My.Settings.Save()
                 End If
                 If FreshLogin = True Then
@@ -263,11 +263,11 @@ Public Class FrmMain
 
     Private Sub עדכוןתוכנהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles עדכוןתוכנהToolStripMenuItem.Click
         'ChkForUpdates()
-        'If AdminMode = True Then
-        '    WhatsNew()
-        'Else
-        '    MsgBox("only admin can make this option")
-        'End If
+        If AdminMode = True Then
+            WhatsNew()
+        Else
+            MsgBox("ONLY Admin can make this option")
+        End If
     End Sub
 
     Private Sub אודותToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles אודותToolStripMenuItem1.Click
@@ -413,7 +413,7 @@ Public Class FrmMain
         'FrmProducts.ShowDialog()
     End Sub
 
-    Private Sub TSBtnCreateTables_Click(sender As Object, e As EventArgs) Handles TSBtnCreateTables.Click
+    Private Sub TSBtnCreateTables_Click(sender As Object, e As EventArgs)
         If ActiveLvl = 0 Then
             'CreateTables()
             WhatsNew()

@@ -1132,7 +1132,6 @@ Module ModFunctions
 
     Public Function isAllowed(PermissionID As Integer) As Boolean
         Dim Que As String
-        'Dim UserLvl As Integer
         Que = "select * from users where id = " & ActiveUserSerial
         FillList(Que)
         ActiveLvl = MyTab.Rows(0).Item(3)
@@ -1193,70 +1192,7 @@ Module ModFunctions
                 Else
                     isAllowed = False
                 End If
-
         End Select
-        'For i = 0 To MyTab.Rows.Count - 1
-        '    If MyTab.Rows(i).Item(1) = PermissionName Then
-        '        Select Case UserLvl
-        '            Case 1
-        '                If MyTab.Rows(i).Item(2) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 2
-        '                If MyTab.Rows(i).Item(3) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 3
-        '                If MyTab.Rows(i).Item(4) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 4
-        '                If MyTab.Rows(i).Item(5) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 5
-        '                If MyTab.Rows(i).Item(6) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 6
-        '                If MyTab.Rows(i).Item(7) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 7
-        '                If MyTab.Rows(i).Item(8) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 8
-        '                If MyTab.Rows(i).Item(9) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-        '            Case 9
-        '                If MyTab.Rows(i).Item(10) = True Then
-        '                    isAlowed = True
-        '                Else
-        '                    isAlowed = False
-        '                End If
-
-        '        End Select
-        '    End If
-        'Next
-
     End Function
 
     Public Sub SavePermissions(DGV As DataGridView)

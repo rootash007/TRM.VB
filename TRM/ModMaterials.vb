@@ -342,6 +342,7 @@ Module ModMaterials
             dbcon.Open()
             cmd.ExecuteNonQuery()
             dbcon.Close()
+            MsgBox("تم تحرير جميع نوافذ المواد", vbOKOnly + vbInformation, "استعلام")
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally

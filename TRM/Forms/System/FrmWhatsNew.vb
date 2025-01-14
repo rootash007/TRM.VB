@@ -14,6 +14,15 @@ Public Class FrmWhatsNew
             ChkEditDataBase.Visible = True
         End If
         '********** IF database needs update ********
+        'If PermissionCounter() = 10 Then
+        '    My.Settings.EditDataBase = False
+        '    ChkEditDataBase.Visible = False
+        '    My.Settings.Save()
+        'Else
+        '    My.Settings.EditDataBase = True
+        '    ChkEditDataBase.Visible = True
+        '    My.Settings.Save()
+        'End If
 
         'Que = "select * from permissions"
         'FillList(Que)

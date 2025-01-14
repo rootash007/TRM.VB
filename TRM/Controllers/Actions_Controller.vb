@@ -314,7 +314,6 @@ Module Actions_Controller
             With cmd
                 .CommandType = CommandType.Text
                 .CommandText = "update actions set material_name=@material_name,material_loc_barcode=@material_loc_barcode,material_barcode=@material_barcode,block_number=@block_number,action_type=@action_type,material_quantity=@material_quantity,action_date=@action_date,vendor_name=@vendor_name,action_order=@action_order,more_info=@more_info,action_isincrease=@action_isincrease,total_price=@total_price where id=@id"
-
                 .Connection = dbcon
             End With
             cmd.Parameters.AddWithValue("@material_name", material_name)

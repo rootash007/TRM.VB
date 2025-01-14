@@ -2,107 +2,30 @@
 
 Module DataBase_Controller
     Public Sub WhatsNew()
-        Dim que As String
-        Dim isFound As Boolean
-        que = "select * from permissions"
-        FillList(Que)
-        For i = 0 To MyTab.Rows.Count - 1
-            If MyTab.Rows(i).Item(1) = "Audits" Then
-                isFound = True
-            End If
-        Next
-        If isFound = False Then
-            Que = "INSERT INTO permissions (permission_name) values ('Audits')"
-            cmd = New SqlCommand
-            MyTab = New DataTable
-            Try
-                MyTab.Clear()
-                With cmd
-                    .CommandType = CommandType.Text
-                    .CommandText = Que
-                    .Connection = dbcon
-                End With
-                dbaddapter = New SqlDataAdapter(cmd)
-                dbaddapter.Fill(MyTab)
-                cmd = Nothing
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
-        que = "select * from permissions"
-        FillList(que)
-        For i = 0 To MyTab.Rows.Count - 1
-            If MyTab.Rows(i).Item(1) = "Prices" Then
-                isFound = True
-            End If
-        Next
-        If isFound = False Then
-            que = "INSERT INTO permissions (permission_name) values ('Prices')"
-            cmd = New SqlCommand
-            MyTab = New DataTable
-            Try
-                MyTab.Clear()
-                With cmd
-                    .CommandType = CommandType.Text
-                    .CommandText = que
-                    .Connection = dbcon
-                End With
-                dbaddapter = New SqlDataAdapter(cmd)
-                dbaddapter.Fill(MyTab)
-                cmd = Nothing
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
 
-        DropTableFromDataBase()
-        CreateTables()
-        AddColumnToTable()
+        AddPermission("Prices", 10)               '/  AddPermission(permission_name as String,permision_index as Integer)
+        'DropTableFromDataBase("test")             '/  DropTableFromDataBase(table_name as String)
+
+
+        'AddColumnToTable("test", "test_price")     '/  AddColumnToTable(table_name As String, column_name As String)
+
+
+        'CreateTables()
+        EditActionsPrice()
     End Sub
 
-    Public Sub DropTableFromDataBase()
-        Dim Que As String
-        Que = "IF EXISTS(SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'material_prices') AND type in (N'U'))
-               BEGIN
-               DROP TABLE material_prices
-               End
 
-               IF EXISTS(SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'material_pricies') AND type in (N'U'))
-               BEGIN
-               DROP TABLE material_pricies
-               End
-
-               "
-        cmd = New SqlCommand
-        MyTab = New DataTable
-        Try
-            MyTab.Clear()
-            With cmd
-                .CommandType = CommandType.Text
-                .CommandText = Que
-                .Connection = dbcon
-            End With
-            dbaddapter = New SqlDataAdapter(cmd)
-            dbaddapter.Fill(MyTab)
-            cmd = Nothing
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-    Public Sub AddColumnToTable()
+    Public Sub AddColumnToTable(table_name As String, column_name As String)
         Dim Que As String
         Que = "IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
-               WHERE TABLE_NAME = 'actions'
+               WHERE TABLE_NAME = '" & table_name & "'
                AND COLUMN_NAME = 'total_price')
                BEGIN
-               ALTER TABLE dbo.actions
-               ADD total_price decimal(18, 2)
-               CONSTRAINT [DF_actions_Column_total_price] 
+               ALTER TABLE dbo." & table_name & "
+               ADD " & column_name & " decimal(18, 2)
+               CONSTRAINT [DF_" & table_name & "_Column_" & column_name & "] 
                Default(0)  
                END
-
                "
         cmd = New SqlCommand
         MyTab = New DataTable
@@ -307,6 +230,152 @@ Module DataBase_Controller
             cmd = Nothing
         Catch ex As Exception
             MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Sub DropTableFromDataBase(table_name As String)
+        Dim Que As String
+        Que = "IF EXISTS(SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'" & table_name & "') AND type in (N'U'))
+               BEGIN
+               DROP TABLE " & table_name & "
+               End
+               "
+        cmd = New SqlCommand
+        MyTab = New DataTable
+        Try
+            MyTab.Clear()
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = Que
+                .Connection = dbcon
+            End With
+            dbaddapter = New SqlDataAdapter(cmd)
+            dbaddapter.Fill(MyTab)
+            cmd = Nothing
+            MsgBox("The Table " & table_name & " Has been Droped")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub AddPermission(permission_name As String, permission_index As Integer)
+        Try
+            Dim que As String
+            Dim isFound As Boolean = False
+            que = "select * from permissions"
+            FillList(que)
+            For i = 0 To MyTab.Rows.Count - 1
+                If MyTab.Rows(i).Item(1) = permission_name Then
+                    isFound = True
+                End If
+            Next
+            If isFound = False Then
+                cmd = New SqlCommand
+                With cmd
+                    .CommandType = CommandType.Text
+                    .CommandText = "insert into permissions (permission_name)values(@permission_name)"
+                    .Connection = dbcon
+                End With
+                cmd.Parameters.AddWithValue("@permission_name", permission_name)
+
+                dbcon.Open()
+                cmd.ExecuteNonQuery()
+                dbcon.Close()
+                MsgBox("The Permission called " & permission_name & " has been added successfully ")
+            Else
+                MsgBox("The Permission called " & permission_name & " is already found ")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
+    Private Sub AddPermission2(permission_name As String, permission_index As Integer)
+        Try
+            'Dim que As String
+            'Dim isFound As Boolean = False
+            'que = "select * from permissions"
+            'FillList(que)
+            'For i = 0 To MyTab.Rows.Count - 1
+            '    If MyTab.Rows(i).Item(1) = permission_name Then
+            '        isFound = True
+            '    End If
+            'Next
+            If PermissionCounter() = permission_index Then
+                MsgBox("index found")
+            Else
+                MsgBox("not found")
+            End If
+            'MsgBox(PermissionCounter())
+            'If isFound = False Then
+            '    cmd = New SqlCommand
+            '    With cmd
+            '        .CommandType = CommandType.Text
+            '        .CommandText = "insert into permissions (permission_name)values(@permission_name)"
+            '        .Connection = dbcon
+            '    End With
+            '    cmd.Parameters.AddWithValue("@permission_name", permission_name)
+
+            '    dbcon.Open()
+            '    cmd.ExecuteNonQuery()
+            '    dbcon.Close()
+            '    MsgBox(permission_name & " isthe new Permission has been added ")
+            'Else
+            '    MsgBox("The Permission called " & permission_name & " is already found ")
+
+            'End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
+    Public Function PermissionCounter() As Integer
+        Dim CountCMD As New SqlCommand
+        Dim Counter As Integer = 0
+        With CountCMD
+            .CommandType = CommandType.Text
+            .CommandText = "select count(*) from permissions"
+            .Connection = dbcon
+        End With
+        Try
+            dbcon.Open()
+            Counter = CountCMD.ExecuteScalar
+            dbcon.Close()
+            cmd = Nothing
+        Catch ex As Exception
+            Return Counter
+        Finally
+            dbcon.Close()
+        End Try
+        Return Counter
+    End Function
+
+    '//************************* Functions FOR ONCE ONLY ******************************
+
+    Public Sub EditActionsPrice()
+        Try
+            cmd = New SqlCommand
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "update actions set total_price=@total_price"
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("@total_price", 0)
+
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+            MsgBox("All Actions Prices have been edited to 0 successfully")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
         End Try
     End Sub
 

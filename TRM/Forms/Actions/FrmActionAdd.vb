@@ -78,9 +78,14 @@ Public Class FrmActionAdd
                     DTPDate.Value = FmActions.DgvActionsList.CurrentRow.Cells(7).Value
                     OldActionType = FmActions.DgvActionsList.CurrentRow.Cells(11).Value
                     OldQuantity = FmActions.DgvActionsList.CurrentRow.Cells(6).Value
+                    'If FmActions.DgvActionsList.CurrentRow.Cells(13).Value Is Nothing OrElse FmActions.DgvActionsList.CurrentRow.Cells(13).Value.ToString.Trim = "" Then
+                    '    MsgBox("is nothing")
+                    'Else
+                    '    MsgBox("else")
+                    'End If
                     NumPrice.Value = FmActions.DgvActionsList.CurrentRow.Cells(13).Value
                 ElseIf ActionSender = "FmCosts" Then
-                    ActionID = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(0).Value
+                        ActionID = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(0).Value
                     CmbMaterialName.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(1).Value
                     CmbLocBarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(2).Value
                     Txtbarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(3).Value
