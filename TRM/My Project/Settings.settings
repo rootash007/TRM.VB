@@ -29,8 +29,8 @@
     <Setting Name="CurrentVersion" Type="System.String" Scope="User">
       <Value Profile="(Default)">none</Value>
     </Setting>
-    <Setting Name="CarColor" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="AdminCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Admin123456</Value>
     </Setting>
     <Setting Name="CarOil" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

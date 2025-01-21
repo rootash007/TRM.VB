@@ -40,6 +40,7 @@ Module ModFunctions
     Public ReConnect As Boolean = False    'החלפת משתמש
     Public isAddProduct As Boolean = False
     Public AdminMode As Boolean = False    'מצב מנהל
+    Public isAdminCode As Boolean = False
     'Public isConnected As Boolean
 
 #Region "Variables for Forms Copies"
@@ -634,7 +635,7 @@ Module ModFunctions
         Else
             Frm.CmbCarType.BackColor = Color.White
         End If
-        If My.Settings.CarColor = True Then
+        If My.Settings.AdminCode = True Then
             Frm.TxtCarColor.BackColor = Color.LightPink
         Else
             Frm.TxtCarColor.BackColor = Color.White

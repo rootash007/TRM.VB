@@ -3,7 +3,7 @@
     Private Sub FrmRequiredAddCar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ChkCarKind.Checked = My.Settings.EditDataBase
         ChkCarType.Checked = My.Settings.CarType
-        ChkCarColor.Checked = My.Settings.CarColor
+        ChkCarColor.Checked = My.Settings.AdminCode
         ChkCarOil.Checked = My.Settings.CarOil
         ChkCarKM.Checked = My.Settings.CarKM
         ChkShelda.Checked = My.Settings.Shelda
@@ -30,7 +30,7 @@
         If ExitMsg = 6 Then
             My.Settings.EditDataBase = ChkCarKind.Checked
             My.Settings.CarType = ChkCarType.Checked
-            My.Settings.CarColor = ChkCarColor.Checked
+            My.Settings.AdminCode = ChkCarColor.Checked
             My.Settings.CarOil = ChkCarOil.Checked
             My.Settings.CarKM = ChkCarKM.Checked
             My.Settings.Shelda = ChkShelda.Checked

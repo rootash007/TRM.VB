@@ -101,3 +101,4 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAlerts.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAuditAdd.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAuditView.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCostsList.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAdminCode.resources

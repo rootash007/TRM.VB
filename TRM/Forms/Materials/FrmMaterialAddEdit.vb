@@ -1,5 +1,6 @@
 ﻿Public Class FrmMaterialAddEdit
     Dim Swicher As Boolean
+    Dim isLocked As Boolean = True
     Private Sub FrmMaterialAddEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadUnits()
         NumYear.Value = Today.Year
@@ -18,6 +19,8 @@
 
             'DGVMaterialTypes.
         Else
+            PBoxQuantityLocker.Image = My.Resources.locked48
+            NumQuantity.Enabled = False
             If FmMaterials.TabMaterials.SelectedIndex = 0 Then
                 IsActive.Visible = True
                 TxtMaterialName.Text = FmMaterials.DgvMaterials.CurrentRow.Cells(1).Value
@@ -50,8 +53,6 @@
                 Else
                     TabMaterialEA.TabPages.Remove(TabPrices)
                 End If
-
-
 
             ElseIf FmMaterials.TabMaterials.SelectedIndex = 1 Then
                 IsActive.Visible = True
@@ -291,6 +292,24 @@
             Me.Close()
         ElseIf e.KeyCode = Keys.Enter Then
             BtnMaterialAE.PerformClick()
+        End If
+    End Sub
+
+    Private Sub PBoxQuantityLocker_Click(sender As Object, e As EventArgs) Handles PBoxQuantityLocker.Click
+        If isLocked = True Then
+            'FrmAdminCode = New FrmAdminCode
+            FrmAdminCode.ShowDialog()
+            If isAdminCode = True Then
+                isAdminCode = False
+                isLocked = False
+                PBoxQuantityLocker.Image = My.Resources.unlocked48
+                NumQuantity.Enabled = True
+            End If
+        Else
+            isLocked = True
+            PBoxQuantityLocker.Image = My.Resources.locked48
+            NumQuantity.Enabled = False
+
         End If
     End Sub
 End Class

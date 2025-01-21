@@ -28,7 +28,6 @@ Partial Class FrmUnits
         Me.DGVUnits = New System.Windows.Forms.DataGridView()
         Me.CMSUnits = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.حذفToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BtnAdd = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnClose = New System.Windows.Forms.Button()
         Me.Grp.SuspendLayout()
@@ -39,7 +38,7 @@ Partial Class FrmUnits
         'Grp
         '
         Me.Grp.Controls.Add(Me.DGVUnits)
-        Me.Grp.Location = New System.Drawing.Point(15, 15)
+        Me.Grp.Location = New System.Drawing.Point(15, 5)
         Me.Grp.Margin = New System.Windows.Forms.Padding(4)
         Me.Grp.Name = "Grp"
         Me.Grp.Padding = New System.Windows.Forms.Padding(4)
@@ -77,29 +76,15 @@ Partial Class FrmUnits
         Me.حذفToolStripMenuItem.Size = New System.Drawing.Size(99, 22)
         Me.حذفToolStripMenuItem.Text = "حذف"
         '
-        'BtnAdd
-        '
-        Me.BtnAdd.BackColor = System.Drawing.Color.White
-        Me.BtnAdd.Font = New System.Drawing.Font("David", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnAdd.Image = CType(resources.GetObject("BtnAdd.Image"), System.Drawing.Image)
-        Me.BtnAdd.Location = New System.Drawing.Point(17, 325)
-        Me.BtnAdd.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.BtnAdd.Name = "BtnAdd"
-        Me.BtnAdd.Size = New System.Drawing.Size(329, 68)
-        Me.BtnAdd.TabIndex = 52
-        Me.BtnAdd.Text = "הדפסה"
-        Me.BtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnAdd.UseVisualStyleBackColor = False
-        '
         'BtnSave
         '
         Me.BtnSave.BackColor = System.Drawing.Color.White
         Me.BtnSave.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(15, 245)
+        Me.BtnSave.Location = New System.Drawing.Point(15, 236)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(158, 73)
+        Me.BtnSave.Size = New System.Drawing.Size(158, 56)
         Me.BtnSave.TabIndex = 54
         Me.BtnSave.Text = "حفظ"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -110,10 +95,10 @@ Partial Class FrmUnits
         Me.BtnClose.BackColor = System.Drawing.Color.White
         Me.BtnClose.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(184, 245)
+        Me.BtnClose.Location = New System.Drawing.Point(183, 236)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(162, 73)
+        Me.BtnClose.Size = New System.Drawing.Size(162, 56)
         Me.BtnClose.TabIndex = 55
         Me.BtnClose.Text = "الغاء"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -124,11 +109,10 @@ Partial Class FrmUnits
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(363, 407)
+        Me.ClientSize = New System.Drawing.Size(363, 305)
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnClose)
         Me.Controls.Add(Me.Grp)
-        Me.Controls.Add(Me.BtnAdd)
         Me.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -146,7 +130,6 @@ Partial Class FrmUnits
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents BtnAdd As System.Windows.Forms.Button
     Public WithEvents Grp As System.Windows.Forms.GroupBox
     Friend WithEvents DGVUnits As DataGridView
     Friend WithEvents BtnSave As Button

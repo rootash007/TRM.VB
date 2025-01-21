@@ -72,6 +72,11 @@ RM
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TRM.My.Resources.Resources.locked48">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TRM.My.Resources.Resources.plus">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -108,6 +113,11 @@ RM
 </summary>
 </member>
 <member name="P:TRM.My.Resources.Resources.swon1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TRM.My.Resources.Resources.unlocked48">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

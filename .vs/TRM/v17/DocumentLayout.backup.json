@@ -3,55 +3,79 @@
   "WorkspaceRootPath": "D:\\GithubProjects\\TRM.VB\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\users\\frmusers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\users\\frmusers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\users\\usermodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\users\\usermodel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\users\\frmusers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\users\\frmusers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\users\\frmuseraddedit.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\users\\frmuseraddedit.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\modfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\modfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|TRM||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\system\\frmpermissions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\system\\frmpermissions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\system\\frmadmincode.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\system\\frmadmincode.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\controllers\\database_controller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\system\\frmlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\system\\frmlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\frmunits.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\frmunits.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\frmunits.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\frmunits.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\system\\frmadmincode.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\system\\frmadmincode.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\materials\\frmmaterialaddedit.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\materials\\frmmaterialaddedit.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\materials\\frmmaterialaddedit.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\materials\\frmmaterialaddedit.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\controllers\\database_controller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\controllers\\database_controller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\forms\\audits\\frmauditview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\audits\\frmauditview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\forms\\audits\\frmaudits.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\audits\\frmaudits.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\forms\\system\\frmwhatsnew.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\system\\frmwhatsnew.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\forms\\system\\frmwhatsnew.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\system\\frmwhatsnew.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\controllers\\actions_controller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\controllers\\actions_controller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\forms\\actions\\frmactionadd.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\actions\\frmactionadd.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\forms\\actions\\frmactions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\actions\\frmactions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\forms\\actions\\frmactions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\forms\\actions\\frmactions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\frmmain.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\controllers\\audits_controller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\controllers\\audits_controller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|D:\\GithubProjects\\TRM.VB\\trm\\modfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|solutionrelative:trm\\modfunctions.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96CCCC21-16B0-432E-B1AF-612B24DFA28D}|TRM\\TRM.vbproj|d:\\githubprojects\\trm.vb\\trm\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|cc4014f5-b18d-439c-9352-f99d984cca85"
@@ -64,7 +88,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -72,78 +96,205 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmPermissions.vb [Design]",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmPermissions.vb",
-              "RelativeDocumentMoniker": "TRM\\Forms\\System\\FrmPermissions.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmPermissions.vb [Design]",
-              "RelativeToolTip": "TRM\\Forms\\System\\FrmPermissions.vb [Design]",
+              "DocumentIndex": 0,
+              "Title": "FrmUsers.vb",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\FrmUsers.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Users\\FrmUsers.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\FrmUsers.vb",
+              "RelativeToolTip": "TRM\\Forms\\Users\\FrmUsers.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-14T18:53:50.852Z",
+              "WhenOpened": "2025-01-15T19:44:04.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmUsers.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\FrmUsers.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Users\\FrmUsers.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\FrmUsers.vb [Design]",
+              "RelativeToolTip": "TRM\\Forms\\Users\\FrmUsers.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T19:44:00.897Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "FrmUserAddEdit.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\FrmUserAddEdit.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Users\\FrmUserAddEdit.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\FrmUserAddEdit.vb [Design]",
+              "RelativeToolTip": "TRM\\Forms\\Users\\FrmUserAddEdit.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T19:43:38.06Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserModel.vb",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\UserModel.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Users\\UserModel.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Users\\UserModel.vb",
+              "RelativeToolTip": "TRM\\Forms\\Users\\UserModel.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T19:32:24.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FrmUnits.vb",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\FrmUnits.vb",
+              "RelativeDocumentMoniker": "TRM\\FrmUnits.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\FrmUnits.vb",
+              "RelativeToolTip": "TRM\\FrmUnits.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T19:22:19.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FrmUnits.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\FrmUnits.vb",
+              "RelativeDocumentMoniker": "TRM\\FrmUnits.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\FrmUnits.vb [Design]",
+              "RelativeToolTip": "TRM\\FrmUnits.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T19:22:04.16Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ModFunctions.vb",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\ModFunctions.vb",
+              "RelativeDocumentMoniker": "TRM\\ModFunctions.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\ModFunctions.vb",
+              "RelativeToolTip": "TRM\\ModFunctions.vb",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T19:10:41.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FrmAdminCode.vb",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmAdminCode.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\System\\FrmAdminCode.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmAdminCode.vb",
+              "RelativeToolTip": "TRM\\Forms\\System\\FrmAdminCode.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAvwBgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T19:06:10.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmAdminCode.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmAdminCode.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\System\\FrmAdminCode.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmAdminCode.vb [Design]",
+              "RelativeToolTip": "TRM\\Forms\\System\\FrmAdminCode.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T18:49:37.742Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "TRM",
               "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\TRM.vbproj",
               "RelativeDocumentMoniker": "TRM\\TRM.vbproj",
               "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\TRM.vbproj",
               "RelativeToolTip": "TRM\\TRM.vbproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-14T18:50:24.636Z",
+              "WhenOpened": "2025-01-15T18:40:42.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FrmWhatsNew.vb",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmWhatsNew.vb",
-              "RelativeDocumentMoniker": "TRM\\Forms\\System\\FrmWhatsNew.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmWhatsNew.vb",
-              "RelativeToolTip": "TRM\\Forms\\System\\FrmWhatsNew.vb",
-              "ViewState": "AgIAADAAAAAAAAAAAAAYwBgAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "FrmLogin.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmLogin.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\System\\FrmLogin.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmLogin.vb [Design]",
+              "RelativeToolTip": "TRM\\Forms\\System\\FrmLogin.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-14T18:48:32.552Z"
+              "WhenOpened": "2025-01-15T18:35:24.492Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FrmWhatsNew.vb [Design]",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmWhatsNew.vb",
-              "RelativeDocumentMoniker": "TRM\\Forms\\System\\FrmWhatsNew.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\System\\FrmWhatsNew.vb [Design]",
-              "RelativeToolTip": "TRM\\Forms\\System\\FrmWhatsNew.vb [Design]",
+              "DocumentIndex": 11,
+              "Title": "FrmMaterialAddEdit.vb",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb",
+              "RelativeToolTip": "TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb",
+              "ViewState": "AgIAABUBAAAAAAAAAAAUwDIBAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-14T18:33:00.368Z"
+              "WhenOpened": "2025-01-15T18:33:10.245Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
+              "Title": "FrmMaterialAddEdit.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb [Design]",
+              "RelativeToolTip": "TRM\\Forms\\Materials\\FrmMaterialAddEdit.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T18:32:33.087Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "DataBase_Controller.vb",
               "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Controllers\\DataBase_Controller.vb",
               "RelativeDocumentMoniker": "TRM\\Controllers\\DataBase_Controller.vb",
               "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Controllers\\DataBase_Controller.vb",
               "RelativeToolTip": "TRM\\Controllers\\DataBase_Controller.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAMAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAALoAAAAAAAAAAAAowM8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-14T16:21:44.172Z"
+              "WhenOpened": "2025-01-15T18:19:55.013Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Actions_Controller.vb",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Controllers\\Actions_Controller.vb",
-              "RelativeDocumentMoniker": "TRM\\Controllers\\Actions_Controller.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Controllers\\Actions_Controller.vb",
-              "RelativeToolTip": "TRM\\Controllers\\Actions_Controller.vb",
-              "ViewState": "AgIAADcBAAAAAAAAAAAmwGMBAAALAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "FrmAuditView.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Audits\\FrmAuditView.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Audits\\FrmAuditView.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Audits\\FrmAuditView.vb [Design]",
+              "RelativeToolTip": "TRM\\Forms\\Audits\\FrmAuditView.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-14T16:20:53.026Z"
+              "WhenOpened": "2025-01-15T18:09:14.387Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
+              "Title": "FrmAudits.vb [Design]",
+              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Audits\\FrmAudits.vb",
+              "RelativeDocumentMoniker": "TRM\\Forms\\Audits\\FrmAudits.vb",
+              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Audits\\FrmAudits.vb [Design]",
+              "RelativeToolTip": "TRM\\Forms\\Audits\\FrmAudits.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T18:08:31.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "FrmMain.vb [Design]",
               "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\FrmMain.vb",
               "RelativeDocumentMoniker": "TRM\\FrmMain.vb",
@@ -154,19 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FrmActionAdd.vb",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Actions\\FrmActionAdd.vb",
-              "RelativeDocumentMoniker": "TRM\\Forms\\Actions\\FrmActionAdd.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Actions\\FrmActionAdd.vb",
-              "RelativeToolTip": "TRM\\Forms\\Actions\\FrmActionAdd.vb",
-              "ViewState": "AgIAADoAAAAAAAAAAAAQwFMAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-13T20:13:55.295Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 17,
               "Title": "FrmMain.vb",
               "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\FrmMain.vb",
               "RelativeDocumentMoniker": "TRM\\FrmMain.vb",
@@ -178,30 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FrmActions.vb [Design]",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Actions\\FrmActions.vb",
-              "RelativeDocumentMoniker": "TRM\\Forms\\Actions\\FrmActions.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Actions\\FrmActions.vb [Design]",
-              "RelativeToolTip": "TRM\\Forms\\Actions\\FrmActions.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-13T19:14:38.7Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FrmActions.vb",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Actions\\FrmActions.vb",
-              "RelativeDocumentMoniker": "TRM\\Forms\\Actions\\FrmActions.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\Forms\\Actions\\FrmActions.vb",
-              "RelativeToolTip": "TRM\\Forms\\Actions\\FrmActions.vb",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAswJYAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-13T19:14:41.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "Audits_Controller.vb",
               "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\Controllers\\Audits_Controller.vb",
               "RelativeDocumentMoniker": "TRM\\Controllers\\Audits_Controller.vb",
@@ -210,18 +326,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-14T16:37:41.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ModFunctions.vb",
-              "DocumentMoniker": "D:\\GithubProjects\\TRM.VB\\TRM\\ModFunctions.vb",
-              "RelativeDocumentMoniker": "TRM\\ModFunctions.vb",
-              "ToolTip": "D:\\GithubProjects\\TRM.VB\\TRM\\ModFunctions.vb",
-              "RelativeToolTip": "TRM\\ModFunctions.vb",
-              "ViewState": "AgIAAGUEAAAAAAAAAAAuwGwEAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-14T17:26:29.728Z"
             }
           ]
         }

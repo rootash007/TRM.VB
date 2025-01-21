@@ -164,13 +164,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property CarColor() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("Admin123456")>  _
+        Public Property AdminCode() As String
             Get
-                Return CType(Me("CarColor"),Boolean)
+                Return CType(Me("AdminCode"),String)
             End Get
             Set
-                Me("CarColor") = value
+                Me("AdminCode") = value
             End Set
         End Property
         

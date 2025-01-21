@@ -14,6 +14,13 @@ Public Class FrmUsers
     End Sub
 
     Private Sub BtnEditUser_Click(sender As Object, e As EventArgs) Handles BtnUpdateUser.Click
+        'Dim userinfo As New UserModel(FmUsers.DgvUsers.CurrentRow.Cells(0).Value,
+        '                              FmUsers.DgvUsers.CurrentRow.Cells(1).Value,
+        '                              FmUsers.DgvUsers.CurrentRow.Cells(2).Value,
+        '                              FmUsers.DgvUsers.CurrentRow.Cells(3).Value,
+        '                              FmUsers.DgvUsers.CurrentRow.Cells(4).Value,
+        '                              FmUsers.DgvUsers.CurrentRow.Cells(5).Value)
+        'MsgBox(userinfo.UserName)
         If FmUsers.TabUsers.SelectedIndex = 0 Then
             If DgvUsers.RowCount = 0 Then
                 MsgBox("אין שורות לעדכון", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "הודעה")

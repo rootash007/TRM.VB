@@ -3,7 +3,7 @@
 Module DataBase_Controller
     Public Sub WhatsNew()
 
-        AddPermission("Prices", 10)               '/  AddPermission(permission_name as String,permision_index as Integer)
+        'AddPermission("Prices", 10)               '/  AddPermission(permission_name as String,permision_index as Integer)
         'DropTableFromDataBase("test")             '/  DropTableFromDataBase(table_name as String)
 
 
@@ -11,7 +11,7 @@ Module DataBase_Controller
 
 
         'CreateTables()
-        EditActionsPrice()
+        'EditActionsPrice()
     End Sub
 
 
@@ -124,20 +124,6 @@ Module DataBase_Controller
                END
 
                IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'product_materials') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE product_materials(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               product_id int NOT NULL,
-               material_id int NOT NULL,
-               material_name nvarchar (50) NOT NULL,
-               material_loc_barcode nvarchar (50) NOT NULL,
-               material_quantity decimal(18, 2) NOT NULL Default(0),
-               material_unit nvarchar (15) NOT NULL,
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
                WHERE object_id = OBJECT_ID(N'units') AND type in (N'U'))
                BEGIN
                CREATE TABLE units(
@@ -160,19 +146,6 @@ Module DataBase_Controller
                material_weight int,
                material_isactive bit NOT NULL Default(1),
                material_inuse bit NOT NULL Default(0),
-               ) 
-               END
-
-               IF NOT EXISTS (SELECT * FROM sys.objects 
-               WHERE object_id = OBJECT_ID(N'products') AND type in (N'U'))
-               BEGIN
-               CREATE TABLE products(
-               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
-               product_name nvarchar (50),
-               product_barcode nvarchar (50),
-               product_can int,
-               product_box int,              
-               product_total int,              
                ) 
                END
 
@@ -210,6 +183,33 @@ Module DataBase_Controller
                audit_alert_date datetime,
                audit_alert_on bit NOT NULL,
                more_info nvarchar (200),
+               ) 
+               END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'products') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE products(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               product_name nvarchar (50),
+               product_barcode nvarchar (50),
+               product_can int,
+               product_box int,              
+               product_total int,              
+               ) 
+               END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'product_materials') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE product_materials(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               product_id int NOT NULL,
+               material_id int NOT NULL,
+               material_name nvarchar (50) NOT NULL,
+               material_loc_barcode nvarchar (50) NOT NULL,
+               material_quantity decimal(18, 2) NOT NULL Default(0),
+               material_unit nvarchar (15) NOT NULL,
                ) 
                END
 

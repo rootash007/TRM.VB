@@ -17,11 +17,6 @@
         Me.Close()
     End Sub
 
-    Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
-        'FrmCarCardPrint.ShowDialog()
-        '    Process.Start(FrmMainList.DgvMain.CurrentRow.Cells(42).Value)
-    End Sub
-
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         For i = 0 To DGVUnits.RowCount - 2
             If DGVUnits.Rows(i).Cells(1).Value Is Nothing OrElse DGVUnits.Rows(i).Cells(1).Value.ToString.Trim = "" Then

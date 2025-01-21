@@ -23,9 +23,6 @@ Partial Class FrmMaterialAddEdit
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMaterialAddEdit))
-        Me.BtnMaterialAE = New System.Windows.Forms.Button()
-        Me.BtnClose = New System.Windows.Forms.Button()
-        Me.IsActive = New System.Windows.Forms.PictureBox()
         Me.LblWeigth = New System.Windows.Forms.Label()
         Me.LblMinQuantity = New System.Windows.Forms.Label()
         Me.LblQuantity = New System.Windows.Forms.Label()
@@ -48,7 +45,6 @@ Partial Class FrmMaterialAddEdit
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DGVMaterialTypes = New System.Windows.Forms.DataGridView()
         Me.TxtTypeName = New System.Windows.Forms.TextBox()
-        Me.BtnAddType = New System.Windows.Forms.Button()
         Me.NumTypeQuantity = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -57,11 +53,15 @@ Partial Class FrmMaterialAddEdit
         Me.NumYear = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.DGVMaterialPrice = New System.Windows.Forms.DataGridView()
-        Me.BtnAddPrice = New System.Windows.Forms.Button()
         Me.NumPrice = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        CType(Me.IsActive, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PBoxQuantityLocker = New System.Windows.Forms.PictureBox()
+        Me.IsActive = New System.Windows.Forms.PictureBox()
+        Me.BtnClose = New System.Windows.Forms.Button()
+        Me.BtnMaterialAE = New System.Windows.Forms.Button()
+        Me.BtnAddType = New System.Windows.Forms.Button()
+        Me.BtnAddPrice = New System.Windows.Forms.Button()
         CType(Me.NumQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GrpDetails.SuspendLayout()
         CType(Me.NumWeigth, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,48 +79,9 @@ Partial Class FrmMaterialAddEdit
         Me.GroupBox4.SuspendLayout()
         CType(Me.DGVMaterialPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumPrice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBoxQuantityLocker, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IsActive, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'BtnMaterialAE
-        '
-        Me.BtnMaterialAE.BackColor = System.Drawing.Color.White
-        Me.BtnMaterialAE.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnMaterialAE.Image = Global.TRM.My.Resources.Resources.plus
-        Me.BtnMaterialAE.Location = New System.Drawing.Point(226, 298)
-        Me.BtnMaterialAE.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnMaterialAE.Name = "BtnMaterialAE"
-        Me.BtnMaterialAE.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnMaterialAE.Size = New System.Drawing.Size(144, 56)
-        Me.BtnMaterialAE.TabIndex = 1
-        Me.BtnMaterialAE.Text = "اضافة مادة"
-        Me.BtnMaterialAE.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnMaterialAE.UseVisualStyleBackColor = False
-        '
-        'BtnClose
-        '
-        Me.BtnClose.BackColor = System.Drawing.Color.White
-        Me.BtnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(7, 298)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtnClose.Size = New System.Drawing.Size(144, 56)
-        Me.BtnClose.TabIndex = 2
-        Me.BtnClose.Text = "اغلاق"
-        Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnClose.UseVisualStyleBackColor = False
-        '
-        'IsActive
-        '
-        Me.IsActive.Image = CType(resources.GetObject("IsActive.Image"), System.Drawing.Image)
-        Me.IsActive.Location = New System.Drawing.Point(8, 35)
-        Me.IsActive.Margin = New System.Windows.Forms.Padding(4)
-        Me.IsActive.Name = "IsActive"
-        Me.IsActive.Size = New System.Drawing.Size(60, 30)
-        Me.IsActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.IsActive.TabIndex = 44
-        Me.IsActive.TabStop = False
         '
         'LblWeigth
         '
@@ -203,6 +164,7 @@ Partial Class FrmMaterialAddEdit
         '
         'GrpDetails
         '
+        Me.GrpDetails.Controls.Add(Me.PBoxQuantityLocker)
         Me.GrpDetails.Controls.Add(Me.CmbUnits)
         Me.GrpDetails.Controls.Add(Me.NumWeigth)
         Me.GrpDetails.Controls.Add(Me.NumMinQuantity)
@@ -338,7 +300,7 @@ Partial Class FrmMaterialAddEdit
         Me.TabTypes.Location = New System.Drawing.Point(4, 27)
         Me.TabTypes.Name = "TabTypes"
         Me.TabTypes.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabTypes.Size = New System.Drawing.Size(385, 389)
+        Me.TabTypes.Size = New System.Drawing.Size(385, 365)
         Me.TabTypes.TabIndex = 1
         Me.TabTypes.Text = "انواع المادة"
         Me.TabTypes.UseVisualStyleBackColor = True
@@ -347,10 +309,10 @@ Partial Class FrmMaterialAddEdit
         '
         Me.GroupBox2.Controls.Add(Me.GroupBox1)
         Me.GroupBox2.Controls.Add(Me.TxtTypeName)
-        Me.GroupBox2.Controls.Add(Me.BtnAddType)
         Me.GroupBox2.Controls.Add(Me.NumTypeQuantity)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.BtnAddType)
         Me.GroupBox2.Location = New System.Drawing.Point(6, 17)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(373, 358)
@@ -394,18 +356,6 @@ Partial Class FrmMaterialAddEdit
         Me.TxtTypeName.Size = New System.Drawing.Size(179, 26)
         Me.TxtTypeName.TabIndex = 73
         Me.TxtTypeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'BtnAddType
-        '
-        Me.BtnAddType.BackColor = System.Drawing.Color.White
-        Me.BtnAddType.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnAddType.Image = Global.TRM.My.Resources.Resources.plus
-        Me.BtnAddType.Location = New System.Drawing.Point(26, 26)
-        Me.BtnAddType.Name = "BtnAddType"
-        Me.BtnAddType.Size = New System.Drawing.Size(61, 61)
-        Me.BtnAddType.TabIndex = 74
-        Me.BtnAddType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnAddType.UseVisualStyleBackColor = False
         '
         'NumTypeQuantity
         '
@@ -451,7 +401,7 @@ Partial Class FrmMaterialAddEdit
         Me.TabPrices.Location = New System.Drawing.Point(4, 27)
         Me.TabPrices.Name = "TabPrices"
         Me.TabPrices.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPrices.Size = New System.Drawing.Size(385, 389)
+        Me.TabPrices.Size = New System.Drawing.Size(385, 365)
         Me.TabPrices.TabIndex = 2
         Me.TabPrices.Text = "الاسعار"
         Me.TabPrices.UseVisualStyleBackColor = True
@@ -460,10 +410,10 @@ Partial Class FrmMaterialAddEdit
         '
         Me.GroupBox3.Controls.Add(Me.NumYear)
         Me.GroupBox3.Controls.Add(Me.GroupBox4)
-        Me.GroupBox3.Controls.Add(Me.BtnAddPrice)
         Me.GroupBox3.Controls.Add(Me.NumPrice)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Controls.Add(Me.BtnAddPrice)
         Me.GroupBox3.Location = New System.Drawing.Point(6, 17)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(373, 358)
@@ -513,18 +463,6 @@ Partial Class FrmMaterialAddEdit
         Me.DGVMaterialPrice.Size = New System.Drawing.Size(345, 224)
         Me.DGVMaterialPrice.TabIndex = 1
         '
-        'BtnAddPrice
-        '
-        Me.BtnAddPrice.BackColor = System.Drawing.Color.White
-        Me.BtnAddPrice.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnAddPrice.Image = Global.TRM.My.Resources.Resources.plus
-        Me.BtnAddPrice.Location = New System.Drawing.Point(26, 26)
-        Me.BtnAddPrice.Name = "BtnAddPrice"
-        Me.BtnAddPrice.Size = New System.Drawing.Size(61, 61)
-        Me.BtnAddPrice.TabIndex = 74
-        Me.BtnAddPrice.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnAddPrice.UseVisualStyleBackColor = False
-        '
         'NumPrice
         '
         Me.NumPrice.CausesValidation = False
@@ -563,6 +501,81 @@ Partial Class FrmMaterialAddEdit
         Me.Label5.TabIndex = 66
         Me.Label5.Text = "السعر"
         '
+        'PBoxQuantityLocker
+        '
+        Me.PBoxQuantityLocker.InitialImage = Nothing
+        Me.PBoxQuantityLocker.Location = New System.Drawing.Point(49, 139)
+        Me.PBoxQuantityLocker.Name = "PBoxQuantityLocker"
+        Me.PBoxQuantityLocker.Size = New System.Drawing.Size(30, 30)
+        Me.PBoxQuantityLocker.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PBoxQuantityLocker.TabIndex = 47
+        Me.PBoxQuantityLocker.TabStop = False
+        '
+        'IsActive
+        '
+        Me.IsActive.Image = CType(resources.GetObject("IsActive.Image"), System.Drawing.Image)
+        Me.IsActive.Location = New System.Drawing.Point(8, 35)
+        Me.IsActive.Margin = New System.Windows.Forms.Padding(4)
+        Me.IsActive.Name = "IsActive"
+        Me.IsActive.Size = New System.Drawing.Size(60, 30)
+        Me.IsActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.IsActive.TabIndex = 44
+        Me.IsActive.TabStop = False
+        '
+        'BtnClose
+        '
+        Me.BtnClose.BackColor = System.Drawing.Color.White
+        Me.BtnClose.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.Location = New System.Drawing.Point(7, 298)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtnClose.Size = New System.Drawing.Size(144, 56)
+        Me.BtnClose.TabIndex = 2
+        Me.BtnClose.Text = "اغلاق"
+        Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnClose.UseVisualStyleBackColor = False
+        '
+        'BtnMaterialAE
+        '
+        Me.BtnMaterialAE.BackColor = System.Drawing.Color.White
+        Me.BtnMaterialAE.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnMaterialAE.Image = Global.TRM.My.Resources.Resources.plus
+        Me.BtnMaterialAE.Location = New System.Drawing.Point(226, 298)
+        Me.BtnMaterialAE.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnMaterialAE.Name = "BtnMaterialAE"
+        Me.BtnMaterialAE.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtnMaterialAE.Size = New System.Drawing.Size(144, 56)
+        Me.BtnMaterialAE.TabIndex = 1
+        Me.BtnMaterialAE.Text = "اضافة مادة"
+        Me.BtnMaterialAE.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnMaterialAE.UseVisualStyleBackColor = False
+        '
+        'BtnAddType
+        '
+        Me.BtnAddType.BackColor = System.Drawing.Color.White
+        Me.BtnAddType.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnAddType.Image = Global.TRM.My.Resources.Resources.plus
+        Me.BtnAddType.Location = New System.Drawing.Point(26, 26)
+        Me.BtnAddType.Name = "BtnAddType"
+        Me.BtnAddType.Size = New System.Drawing.Size(61, 61)
+        Me.BtnAddType.TabIndex = 74
+        Me.BtnAddType.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnAddType.UseVisualStyleBackColor = False
+        '
+        'BtnAddPrice
+        '
+        Me.BtnAddPrice.BackColor = System.Drawing.Color.White
+        Me.BtnAddPrice.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnAddPrice.Image = Global.TRM.My.Resources.Resources.plus
+        Me.BtnAddPrice.Location = New System.Drawing.Point(26, 26)
+        Me.BtnAddPrice.Name = "BtnAddPrice"
+        Me.BtnAddPrice.Size = New System.Drawing.Size(61, 61)
+        Me.BtnAddPrice.TabIndex = 74
+        Me.BtnAddPrice.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnAddPrice.UseVisualStyleBackColor = False
+        '
         'FrmMaterialAddEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -580,7 +593,6 @@ Partial Class FrmMaterialAddEdit
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "اضافة / تعديل المادة"
-        CType(Me.IsActive, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumQuantity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GrpDetails.ResumeLayout(False)
         Me.GrpDetails.PerformLayout()
@@ -601,6 +613,8 @@ Partial Class FrmMaterialAddEdit
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.DGVMaterialPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumPrice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBoxQuantityLocker, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IsActive, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -643,4 +657,5 @@ Partial Class FrmMaterialAddEdit
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents NumYear As NumericUpDown
+    Friend WithEvents PBoxQuantityLocker As PictureBox
 End Class
