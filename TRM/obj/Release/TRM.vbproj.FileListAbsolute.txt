@@ -6,7 +6,6 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmMaterials.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmPermissions.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmActionAdd.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmPrintSoldReport.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAddCustomers.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAddNewCar.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmUserAddEdit.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmDataBaseSettings.resources
@@ -32,7 +31,6 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmActions.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmMaterialsImportExcel.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmUsers.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.Resources.resources
-D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmVendors.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.vbproj.GenerateResource.cache
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.vbproj.CoreCompileInputs.cache
 D:\GithubProjects\TRM.VB\TRM\bin\Release\x86\SqlServerSpatial160.dll
@@ -102,3 +100,6 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAuditAdd.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAuditView.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCostsList.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAdminCode.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCompany.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSuppliers.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSupplierView.resources

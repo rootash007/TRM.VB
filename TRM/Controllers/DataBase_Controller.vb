@@ -5,12 +5,12 @@ Module DataBase_Controller
 
         'AddPermission("Prices", 10)               '/  AddPermission(permission_name as String,permision_index as Integer)
         'DropTableFromDataBase("test")             '/  DropTableFromDataBase(table_name as String)
-
-
         'AddColumnToTable("test", "test_price")     '/  AddColumnToTable(table_name As String, column_name As String)
 
 
-        'CreateTables()
+        DropTableFromDataBase("suppliers")
+        CreateTables()
+
         'EditActionsPrice()
     End Sub
 
@@ -213,6 +213,29 @@ Module DataBase_Controller
                ) 
                END
 
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'suppliers') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE suppliers(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               supplier_name NVARCHAR(100) NOT NULL,
+               supplier_id NVARCHAR(15) NOT NULL,
+               supplier_contact NVARCHAR(50),
+               supplier_phone NVARCHAR(15),
+               supplier_fax NVARCHAR(15),
+               supplier_email NVARCHAR(100),
+               supplier_adress NVARCHAR(255),
+               supplier_city NVARCHAR(50),
+               postal_code NVARCHAR(20),
+               supplier_bank_details NVARCHAR(100),
+               currency NVARCHAR(10),
+               supplier_notes NVARCHAR(MAX),
+               isactive bit Default(1),
+               CreatedAt DATETIME DEFAULT GETDATE(),
+               UpdatedAt DATETIME DEFAULT GETDATE(),
+               ) 
+               END
+
        
                "
 
@@ -228,6 +251,7 @@ Module DataBase_Controller
             dbaddapter = New SqlDataAdapter(cmd)
             dbaddapter.Fill(MyTab)
             cmd = Nothing
+            MsgBox("Tables is up to date")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

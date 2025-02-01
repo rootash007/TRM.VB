@@ -93,6 +93,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property decrease48() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("decrease48", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property delete48() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("delete48", resourceCulture)
@@ -126,6 +136,16 @@ Namespace My.Resources
         Friend ReadOnly Property edit2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("edit2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property increase48() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("increase48", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

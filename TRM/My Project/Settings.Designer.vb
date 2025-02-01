@@ -176,13 +176,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property CarOil() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("1.18")>  _
+        Public Property Tax() As Double
             Get
-                Return CType(Me("CarOil"),Boolean)
+                Return CType(Me("Tax"),Double)
             End Get
             Set
-                Me("CarOil") = value
+                Me("Tax") = value
             End Set
         End Property
         

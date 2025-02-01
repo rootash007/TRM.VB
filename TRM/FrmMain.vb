@@ -141,7 +141,7 @@ Public Class FrmMain
 
     Private Sub BtnVendors_Click(sender As Object, e As EventArgs)
         VendorsWindow = "VendorUpdate"
-        FrmVendors.ShowDialog()
+        'FrmVendors.ShowDialog()
     End Sub
 
     Private Sub BtnSale_Click(sender As Object, e As EventArgs)
@@ -240,7 +240,7 @@ Public Class FrmMain
         VendorsWindow = "VendorUpdate"
         'FmVendors = New FrmVendors
         'FmVendors.ShowDialog()
-        FrmVendors.ShowDialog()
+        'FrmVendors.ShowDialog()
     End Sub
 
     Private Sub LblCustomersCount_Click(sender As Object, e As EventArgs)
@@ -415,8 +415,8 @@ Public Class FrmMain
 
     Private Sub TSBtnCreateTables_Click(sender As Object, e As EventArgs)
         If ActiveLvl = 0 Then
-            'CreateTables()
-            WhatsNew()
+            CreateTables()
+            'WhatsNew()
         Else
             OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
         End If
@@ -524,5 +524,52 @@ Public Class FrmMain
 
     Private Sub TSMActions_Click(sender As Object, e As EventArgs) Handles TSMActions.Click
         TSBtnActions.PerformClick()
+    End Sub
+
+    Private Sub TSMCompanyOptions_Click(sender As Object, e As EventArgs) Handles TSMCompanyOptions.Click
+
+        FrmAdminCode.ShowDialog()
+        If isAdminCode = True Then
+            isAdminCode = False
+            FrmCompany.ShowDialog()
+        End If
+
+    End Sub
+
+    Private Sub TSMSuppliers_Click(sender As Object, e As EventArgs) Handles TSMSuppliers.Click
+        'ChkFormPermission("FrmSuppliers")
+
+        'If AdminMode = True OrElse isAllowed(10) Then
+        '    ChkFormPermission("FrmSuppliers")
+        'Else
+        '    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية")
+        'End If
+
+        Try
+            If AdminMode = True Then
+                If Application.OpenForms.OfType(Of FrmSuppliers).Any = True Then
+                    FmSuppliers.Activate()
+                Else
+                    FmSuppliers = New FrmSuppliers
+                    FmSuppliers.MdiParent = Me
+                    FmSuppliers.Show()
+                End If
+            Else
+                If isAllowed(10) = True Then
+                    If Application.OpenForms.OfType(Of FrmSuppliers).Any = True Then
+                        FmSuppliers.Activate()
+                    Else
+                        FmSuppliers = New FrmSuppliers
+                        FmSuppliers.MdiParent = Me
+                        FmSuppliers.Show()
+                    End If
+                Else
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

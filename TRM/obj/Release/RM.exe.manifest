@@ -583,14 +583,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RM.exe" size="6674944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RM.exe" size="6510592">
       <assemblyIdentity name="RM" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>terKIM7iP9nPidWS5/9Vcz1OhQSFRQnp2UIwVUoCKj4=</dsig:DigestValue>
+        <dsig:DigestValue>7wOSqQC8vtnolwxpysvax6j5basvd8C/6btRj178S54=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -603,13 +603,13 @@
       <dsig:DigestValue>xX/oD56WPuauHM0I3O9IuJNpZXR/GiEvBjNnOazdtCg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RM.exe.config" size="5501">
+  <file name="RM.exe.config" size="5498">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4Su/mYuTY1Tcddu3gW8dvJ6kcmAFnyBh8QaxbmLRBVs=</dsig:DigestValue>
+      <dsig:DigestValue>i5k1lGu/pzoF0V/7KKAVsIkFP7AqwIDsKuD9TaU0RWk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="x64\SqlServerSpatial160.dll" size="681904">

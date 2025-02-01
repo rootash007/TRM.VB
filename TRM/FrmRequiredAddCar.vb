@@ -4,7 +4,7 @@
         ChkCarKind.Checked = My.Settings.EditDataBase
         ChkCarType.Checked = My.Settings.CarType
         ChkCarColor.Checked = My.Settings.AdminCode
-        ChkCarOil.Checked = My.Settings.CarOil
+        ChkCarOil.Checked = My.Settings.Tax
         ChkCarKM.Checked = My.Settings.CarKM
         ChkShelda.Checked = My.Settings.Shelda
         ChkPriceOut.Checked = My.Settings.PriceOut
@@ -31,7 +31,7 @@
             My.Settings.EditDataBase = ChkCarKind.Checked
             My.Settings.CarType = ChkCarType.Checked
             My.Settings.AdminCode = ChkCarColor.Checked
-            My.Settings.CarOil = ChkCarOil.Checked
+            My.Settings.Tax = ChkCarOil.Checked
             My.Settings.CarKM = ChkCarKM.Checked
             My.Settings.Shelda = ChkShelda.Checked
             My.Settings.PriceOut = ChkPriceOut.Checked

@@ -135,6 +135,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Audits_Controller.vb" />
     <Compile Include="Controllers\Costs_Controller.vb" />
+    <Compile Include="Controllers\Suppliers_Controller.vb" />
     <Compile Include="Controller_FrmMain.vb" />
     <Compile Include="Controllers\DataBase_Controller.vb" />
     <Compile Include="Forms\Audits\FrmAuditAdd.Designer.vb">
@@ -155,10 +156,22 @@
     <Compile Include="Forms\Materials\FrmMaterialPriceEdit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Suppliers\FrmSupplierView.Designer.vb">
+      <DependentUpon>FrmSupplierView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Suppliers\FrmSupplierView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\System\FrmAdminCode.Designer.vb">
       <DependentUpon>FrmAdminCode.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\System\FrmAdminCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\System\FrmCompany.Designer.vb">
+      <DependentUpon>FrmCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\System\FrmCompany.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\System\FrmWhatsNew.Designer.vb">
@@ -213,12 +226,6 @@
       <DependentUpon>FrmPrintSoldReport.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmPrintSoldReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAddCustomers.Designer.vb">
-      <DependentUpon>FrmAddCustomers.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAddCustomers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAddNewCar.Designer.vb">
@@ -392,7 +399,6 @@
     <Compile Include="ModMsgs.vb" />
     <Compile Include="ModMaterials.vb" />
     <Compile Include="ModUsers.vb" />
-    <Compile Include="ModVendors.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -409,10 +415,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="FrmVendors.Designer.vb">
-      <DependentUpon>FrmVendors.vb</DependentUpon>
+    <Compile Include="Forms\Suppliers\FrmSuppliers.Designer.vb">
+      <DependentUpon>FrmSuppliers.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmVendors.vb">
+    <Compile Include="Forms\Suppliers\FrmSuppliers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Users\UserModel.vb" />
@@ -439,8 +445,14 @@
     <EmbeddedResource Include="Forms\Materials\FrmMaterials.resx">
       <DependentUpon>FrmMaterials.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Suppliers\FrmSupplierView.resx">
+      <DependentUpon>FrmSupplierView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\System\FrmAdminCode.resx">
       <DependentUpon>FrmAdminCode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\System\FrmCompany.resx">
+      <DependentUpon>FrmCompany.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\System\FrmPermissions.resx">
       <DependentUpon>FrmPermissions.vb</DependentUpon>
@@ -450,9 +462,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrintSoldReport.resx">
       <DependentUpon>FrmPrintSoldReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddCustomers.resx">
-      <DependentUpon>FrmAddCustomers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddNewCar.resx">
       <DependentUpon>FrmAddNewCar.vb</DependentUpon>
@@ -544,8 +553,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVendors.resx">
-      <DependentUpon>FrmVendors.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Suppliers\FrmSuppliers.resx">
+      <DependentUpon>FrmSuppliers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RptSoldReport.rdlc" />
     <EmbeddedResource Include="RptSoldCard.rdlc" />
@@ -579,6 +588,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="main-icon.ico" />
+    <None Include="Resources\increase48.png" />
+    <None Include="Resources\decrease48.png" />
     <None Include="Resources\locked48.png" />
     <None Include="Resources\unlocked48.png" />
     <None Include="Resources\edit2.png" />

@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Diagnostics.Eventing.Reader
+Imports System.Reflection
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
 Imports Microsoft.Reporting.WinForms
 
@@ -53,6 +54,8 @@ Module ModFunctions
     Public FmProducts As New FrmProducts
     Public FmAudits As New FrmAudits
     Public FmCostsList As New FrmCostsList
+    Public FmSuppliers As New FrmSuppliers
+
 
 
 
@@ -83,7 +86,7 @@ Module ModFunctions
     Public FmCarSale As New FrmCostsList
     Public FmSearch As New FrmSearch
     Public FmSoldcard As New FrmSoldCard
-    Public FmVendors As New FrmVendors
+    Public FmVendors As New FrmSuppliers
     Public FmCustomers As New FrmCustomers
     Public FmSoldReport As New FrmAlerts
     Public FmTransactionCancel As New FrmMaterialsImportExcel
@@ -640,7 +643,7 @@ Module ModFunctions
         Else
             Frm.TxtCarColor.BackColor = Color.White
         End If
-        If My.Settings.CarOil = True Then
+        If My.Settings.Tax = True Then
             Frm.CmbCarOil.BackColor = Color.LightPink
         Else
             Frm.CmbCarOil.BackColor = Color.White
@@ -1343,6 +1346,59 @@ Module ModFunctions
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Public Sub ChkFormPermission(formName As String)
+        Try
+            ' Check if the form is already open
+            Dim openForm As Form = Application.OpenForms.OfType(Of Form)().FirstOrDefault(Function(f) f.Name = formName)
+
+            If openForm IsNot Nothing Then
+                ' If the form is already open, activate it
+                openForm.Activate()
+            Else
+                ' If the form is not open, create a new instance dynamically
+                Dim formType As Type = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(Function(t) t.Name = formName)
+
+                If formType IsNot Nothing AndAlso GetType(Form).IsAssignableFrom(formType) Then
+                    Dim newForm As Form = CType(Activator.CreateInstance(formType), Form)
+                    newForm.MdiParent = FrmMain ' Set the MDI parent (if applicable)
+                    newForm.Show()
+                Else
+                    Throw New Exception($"Form '{formName}' not found or is not a valid form.")
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox($"Error: {ex.Message}")
+        End Try
+
+
+        'Try
+        '    If AdminMode = True Then
+        '        If Application.OpenForms.OfType(Of FrmCostsList).Any = True Then
+        '            FmCostsList.Activate()
+        '        Else
+        '            FmCostsList = New FrmCostsList
+        '            FmCostsList.MdiParent = FrmMain
+        '            FmCostsList.Show()
+        '        End If
+        '    Else
+        '        If isAllowed(10) = True Then
+        '            If Application.OpenForms.OfType(Of FrmCostsList).Any = True Then
+        '                FmCostsList.Activate()
+        '            Else
+        '                FmCostsList = New FrmCostsList
+        '                FmCostsList.MdiParent = FrmMain
+        '                FmCostsList.Show()
+        '            End If
+        '        Else
+        '            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+        '        End If
+        '    End If
+
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
     End Sub
 
 End Module

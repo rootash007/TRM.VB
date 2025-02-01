@@ -37,6 +37,11 @@ RM
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:TRM.My.Resources.Resources.decrease48">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:TRM.My.Resources.Resources.delete48">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -53,6 +58,11 @@ RM
 </summary>
 </member>
 <member name="P:TRM.My.Resources.Resources.edit2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TRM.My.Resources.Resources.increase48">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

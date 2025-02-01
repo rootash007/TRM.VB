@@ -7,13 +7,15 @@ Public Class FrmActionAdd
     Dim OldActionType As Boolean
     Dim OldQuantity As Double
     Dim ActionID As Integer
+    Dim isTaxInc As Boolean = True
     Private Sub FrmActionAdd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Try
             If FmActions.DgvActionsList.RowCount > 0 Then FmActions.SelectedRow = FmActions.DgvActionsList.CurrentRow.Index
             Dim que As String
             Dim Increase As Boolean = isAllowed(2)
             Dim Decrease As Boolean = isAllowed(3)
+            PBoxTax.Image = My.Resources.decrease48
+
             If AdminMode = True Then
                 DTPDate.Visible = True
                 DTPDate.Value = Now
@@ -85,7 +87,7 @@ Public Class FrmActionAdd
                     'End If
                     NumPrice.Value = FmActions.DgvActionsList.CurrentRow.Cells(13).Value
                 ElseIf ActionSender = "FmCosts" Then
-                        ActionID = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(0).Value
+                    ActionID = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(0).Value
                     CmbMaterialName.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(1).Value
                     CmbLocBarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(2).Value
                     Txtbarcode.Text = FmCostsList.DGV1.Rows(ActionRowIndex).Cells(3).Value
@@ -331,5 +333,38 @@ Found:
         End If
     End Sub
 
+    Private Sub PBoxTax_Click(sender As Object, e As EventArgs) Handles PBoxTax.Click
+        If NumPrice.Value > 0 Then
+            Dim OldPrice As String = (NumPrice.Value).ToString("n")
+            Dim NewPrice As String
 
+            If isTaxInc = True Then
+                NewPrice = (NumPrice.Value / My.Settings.Tax).ToString("n")
+                Dim TaxMsg As DialogResult = MsgBox("السعر شامل الضريبة '" & OldPrice & "'" & vbNewLine & "السعر قبل الضريبة '" & NewPrice & "'" & vbNewLine & "هل توافق", vbYesNo + vbQuestion + vbMsgBoxRtlReading, "")
+                If TaxMsg = vbYes Then
+                    PBoxTax.Image = My.Resources.increase48
+                    isTaxInc = False
+                    NumPrice.Value = NumPrice.Value / My.Settings.Tax
+                End If
+            Else
+                NewPrice = (NumPrice.Value * My.Settings.Tax).ToString("n")
+                Dim TaxMsg As DialogResult = MsgBox("السعر قبل الضريبة '" & OldPrice & "'" & vbNewLine & "السعر شامل الضريبة '" & NewPrice & "'" & vbNewLine & "هل توافق", vbYesNo + vbQuestion + vbMsgBoxRtlReading, "")
+                If TaxMsg = vbYes Then
+                    PBoxTax.Image = My.Resources.decrease48
+                    isTaxInc = True
+                    NumPrice.Value = NumPrice.Value * My.Settings.Tax
+                End If
+            End If
+
+            'If isTaxInc = True Then
+            '    PBoxTax.Image = My.Resources.increase48
+            '    isTaxInc = False
+            '    NumPrice.Value = NumPrice.Value / My.Settings.Tax
+            'Else
+            '    PBoxTax.Image = My.Resources.decrease48
+            '    isTaxInc = True
+            '    NumPrice.Value = NumPrice.Value * My.Settings.Tax
+            'End If
+        End If
+    End Sub
 End Class

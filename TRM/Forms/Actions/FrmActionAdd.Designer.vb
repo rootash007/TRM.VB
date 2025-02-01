@@ -31,8 +31,6 @@ Partial Class FrmActionAdd
         Me.Label6 = New System.Windows.Forms.Label()
         Me.CmbLocBarcode = New System.Windows.Forms.ComboBox()
         Me.CmbMaterialName = New System.Windows.Forms.ComboBox()
-        Me.BtnSave = New System.Windows.Forms.Button()
-        Me.BtnCancel = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtMoreInfo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -48,10 +46,14 @@ Partial Class FrmActionAdd
         Me.LblBarecode = New System.Windows.Forms.Label()
         Me.Txtbarcode = New System.Windows.Forms.TextBox()
         Me.LblMaterialName = New System.Windows.Forms.Label()
+        Me.PBoxTax = New System.Windows.Forms.PictureBox()
+        Me.BtnSave = New System.Windows.Forms.Button()
+        Me.BtnCancel = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GrpPrice.SuspendLayout()
         CType(Me.NumPrice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBoxTax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -91,6 +93,7 @@ Partial Class FrmActionAdd
         '
         'GrpPrice
         '
+        Me.GrpPrice.Controls.Add(Me.PBoxTax)
         Me.GrpPrice.Controls.Add(Me.Label7)
         Me.GrpPrice.Controls.Add(Me.NumPrice)
         Me.GrpPrice.Location = New System.Drawing.Point(18, 175)
@@ -115,12 +118,12 @@ Partial Class FrmActionAdd
         '
         Me.NumPrice.DecimalPlaces = 2
         Me.NumPrice.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.NumPrice.Location = New System.Drawing.Point(14, 50)
+        Me.NumPrice.Location = New System.Drawing.Point(43, 50)
         Me.NumPrice.Margin = New System.Windows.Forms.Padding(7, 4, 7, 4)
         Me.NumPrice.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
         Me.NumPrice.Name = "NumPrice"
         Me.NumPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.NumPrice.Size = New System.Drawing.Size(124, 23)
+        Me.NumPrice.Size = New System.Drawing.Size(100, 23)
         Me.NumPrice.TabIndex = 74
         Me.NumPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -171,34 +174,6 @@ Partial Class FrmActionAdd
         Me.CmbMaterialName.Name = "CmbMaterialName"
         Me.CmbMaterialName.Size = New System.Drawing.Size(184, 24)
         Me.CmbMaterialName.TabIndex = 1
-        '
-        'BtnSave
-        '
-        Me.BtnSave.BackColor = System.Drawing.Color.White
-        Me.BtnSave.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(179, 420)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(151, 56)
-        Me.BtnSave.TabIndex = 9
-        Me.BtnSave.Text = "حفظ"
-        Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnSave.UseVisualStyleBackColor = False
-        '
-        'BtnCancel
-        '
-        Me.BtnCancel.BackColor = System.Drawing.Color.White
-        Me.BtnCancel.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtnCancel.Image = CType(resources.GetObject("BtnCancel.Image"), System.Drawing.Image)
-        Me.BtnCancel.Location = New System.Drawing.Point(18, 420)
-        Me.BtnCancel.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(151, 56)
-        Me.BtnCancel.TabIndex = 10
-        Me.BtnCancel.Text = "الغاء"
-        Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtnCancel.UseVisualStyleBackColor = False
         '
         'Label5
         '
@@ -366,6 +341,44 @@ Partial Class FrmActionAdd
         Me.LblMaterialName.TabIndex = 46
         Me.LblMaterialName.Text = "المادة"
         '
+        'PBoxTax
+        '
+        Me.PBoxTax.InitialImage = Nothing
+        Me.PBoxTax.Location = New System.Drawing.Point(6, 46)
+        Me.PBoxTax.Name = "PBoxTax"
+        Me.PBoxTax.Size = New System.Drawing.Size(30, 30)
+        Me.PBoxTax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PBoxTax.TabIndex = 76
+        Me.PBoxTax.TabStop = False
+        '
+        'BtnSave
+        '
+        Me.BtnSave.BackColor = System.Drawing.Color.White
+        Me.BtnSave.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.Location = New System.Drawing.Point(179, 420)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(151, 56)
+        Me.BtnSave.TabIndex = 9
+        Me.BtnSave.Text = "حفظ"
+        Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnSave.UseVisualStyleBackColor = False
+        '
+        'BtnCancel
+        '
+        Me.BtnCancel.BackColor = System.Drawing.Color.White
+        Me.BtnCancel.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnCancel.Image = CType(resources.GetObject("BtnCancel.Image"), System.Drawing.Image)
+        Me.BtnCancel.Location = New System.Drawing.Point(18, 420)
+        Me.BtnCancel.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.BtnCancel.Name = "BtnCancel"
+        Me.BtnCancel.Size = New System.Drawing.Size(151, 56)
+        Me.BtnCancel.TabIndex = 10
+        Me.BtnCancel.Text = "الغاء"
+        Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnCancel.UseVisualStyleBackColor = False
+        '
         'FrmActionAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 16.0!)
@@ -389,6 +402,7 @@ Partial Class FrmActionAdd
         Me.GrpPrice.PerformLayout()
         CType(Me.NumPrice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumQuantity, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBoxTax, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -417,4 +431,5 @@ Partial Class FrmActionAdd
     Friend WithEvents GrpPrice As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents NumPrice As NumericUpDown
+    Friend WithEvents PBoxTax As PictureBox
 End Class

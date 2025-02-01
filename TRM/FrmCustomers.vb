@@ -8,49 +8,49 @@
     End Sub
 
     Private Sub BtnAddNewCustomer_Click(sender As Object, e As EventArgs) Handles BtnAddNewCustomer.Click
-        FrmAddCustomers.BtnAdd.Image = My.Resources.plus
-        FrmAddCustomers.BtnAdd.Text = "הוספה"
-        FrmAddCustomers.TxtCName.Text = ""
-        FrmAddCustomers.TxtCContact.Text = ""
-        FrmAddCustomers.TxtCId.Text = ""
-        FrmAddCustomers.TxtCAdress.Text = ""
-        FrmAddCustomers.TxtCPhone.Text = ""
-        FrmAddCustomers.TxtCFax.Text = ""
-        FrmAddCustomers.TxtCEmail.Text = ""
-        FrmAddCustomers.TxtCInfo.Text = ""
-        FrmAddCustomers.StatusSwitch.Visible = False
-        FrmAddCustomers.LblStatus.Visible = False
+        FrmSupplierView.BtnAdd.Image = My.Resources.plus
+        FrmSupplierView.BtnAdd.Text = "הוספה"
+        FrmSupplierView.TxtName.Text = ""
+        FrmSupplierView.TxtID.Text = ""
+        FrmSupplierView.TxtContact.Text = ""
+        FrmSupplierView.TxtPhone.Text = ""
+        FrmSupplierView.TxtFax.Text = ""
+        FrmSupplierView.TxtEmail.Text = ""
+        FrmSupplierView.TxtAdress.Text = ""
+        FrmSupplierView.TxtInfo.Text = ""
+        FrmSupplierView.StatusSwitch.Visible = False
+        FrmSupplierView.LblStatus.Visible = False
 
-        FrmAddCustomers.Text = "הוספת לקוח חדש"
-        FrmAddCustomers.ShowDialog()
+        FrmSupplierView.Text = "הוספת לקוח חדש"
+        FrmSupplierView.ShowDialog()
     End Sub
 
     Private Sub LoadUpdateCustomer()
         If TabCustomers.SelectedIndex = 0 Then
             SelectedDGV = DgvCustomersOn
-            FrmAddCustomers.Text = "עדכון לקוח"
-            FrmAddCustomers.BtnAdd.Text = "עדכון"
+            FrmSupplierView.Text = "עדכון לקוח"
+            FrmSupplierView.BtnAdd.Text = "עדכון"
         Else
             SelectedDGV = DGVCustomersOff
-            FrmAddCustomers.Text = "שחזור לקוח"
-            FrmAddCustomers.BtnAdd.Text = "שחזור"
+            FrmSupplierView.Text = "שחזור לקוח"
+            FrmSupplierView.BtnAdd.Text = "שחזור"
         End If
-        FrmAddCustomers.StatusSwitch.Visible = True
-        FrmAddCustomers.LblStatus.Visible = True
-        FrmAddCustomers.TxtCName.Text = SelectedDGV.CurrentRow.Cells(1).Value
-        FrmAddCustomers.TxtCContact.Text = SelectedDGV.CurrentRow.Cells(2).Value
-        FrmAddCustomers.TxtCId.Text = SelectedDGV.CurrentRow.Cells(3).Value
-        FrmAddCustomers.TxtCAdress.Text = SelectedDGV.CurrentRow.Cells(4).Value
-        FrmAddCustomers.TxtCPhone.Text = SelectedDGV.CurrentRow.Cells(5).Value
-        FrmAddCustomers.TxtCFax.Text = SelectedDGV.CurrentRow.Cells(6).Value
-        FrmAddCustomers.TxtCEmail.Text = SelectedDGV.CurrentRow.Cells(7).Value
-        FrmAddCustomers.TxtCInfo.Text = SelectedDGV.CurrentRow.Cells(8).Value
+        FrmSupplierView.StatusSwitch.Visible = True
+        FrmSupplierView.LblStatus.Visible = True
+        FrmSupplierView.TxtName.Text = SelectedDGV.CurrentRow.Cells(1).Value
+        FrmSupplierView.TxtID.Text = SelectedDGV.CurrentRow.Cells(2).Value
+        FrmSupplierView.TxtContact.Text = SelectedDGV.CurrentRow.Cells(3).Value
+        FrmSupplierView.TxtPhone.Text = SelectedDGV.CurrentRow.Cells(4).Value
+        FrmSupplierView.TxtFax.Text = SelectedDGV.CurrentRow.Cells(5).Value
+        FrmSupplierView.TxtEmail.Text = SelectedDGV.CurrentRow.Cells(6).Value
+        FrmSupplierView.TxtAdress.Text = SelectedDGV.CurrentRow.Cells(7).Value
+        FrmSupplierView.TxtInfo.Text = SelectedDGV.CurrentRow.Cells(8).Value
         If SelectedDGV.CurrentRow.Cells(9).Value = True Then
             switcher = True
         Else
             switcher = False
         End If
-        FrmAddCustomers.BtnAdd.Image = My.Resources.save
+        FrmSupplierView.BtnAdd.Image = My.Resources.save
         'FrmAddCustomers.Text = "עדכון לקוח"
         'FrmAddCustomers.BtnAdd.Text = "עדכון"
     End Sub
@@ -79,7 +79,7 @@
         End If
         If SelectedDGV.RowCount > 0 Then
             LoadUpdateCustomer()
-            FrmAddCustomers.ShowDialog()
+            FrmSupplierView.ShowDialog()
             'Else
             '    OkMsgAlert("שגיאה", "אין שורות לבחירה")
             '    'MsgBox("אין שורות לבחירה", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "שגיאה")
@@ -98,7 +98,7 @@
 
     Private Sub DGVCustomersOff_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGVCustomersOff.CellMouseDoubleClick
         LoadUpdateCustomer()
-        FrmAddCustomers.ShowDialog()
+        FrmSupplierView.ShowDialog()
     End Sub
 
     Private Sub BtnUpdateCustomer_KeyDown(sender As Object, e As KeyEventArgs) Handles TabCustomers.KeyDown, BtnUpdateCustomer.KeyDown, BtnDeleteCustomer.KeyDown, BtnClose.KeyDown, BtnAddNewCustomer.KeyDown
