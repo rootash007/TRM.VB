@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Security.AccessControl
 
 Module Suppliers_Controller
+    Public SupplierTab As DataTable
 
     Public Sub DesignSuppliersDGV(dgv As DataGridView)
         With dgv
@@ -80,12 +82,23 @@ Module Suppliers_Controller
                 FmSuppliers.BtnDelete.Text = "حذف / استرجاع"
             End If
             FillList(Query)
-            FmSuppliers.DGVSuppliers.DataSource = MyTab
+            SupplierTab = MyTab
+            FmSuppliers.DGVSuppliers.DataSource = SupplierTab
             DesignSuppliersDGV(FmSuppliers.DGVSuppliers)
             FmSuppliers.Text = "قائمة الموردين" & " ( " & MyTab.Rows.Count & " ) "
 
             '////// add function to color the deleted suppliers
-
+            If FmSuppliers.RadAll.Checked = True Then
+                If FmSuppliers.DGVSuppliers.RowCount > 0 Then
+                    For i = 0 To FmSuppliers.DGVSuppliers.RowCount - 1
+                        If FmSuppliers.DGVSuppliers.Rows(i).Cells(13).Value = True Then
+                            FmSuppliers.DGVSuppliers.Rows(i).DefaultCellStyle.BackColor = Color.White
+                        Else
+                            FmSuppliers.DGVSuppliers.Rows(i).DefaultCellStyle.BackColor = Color.LightGray
+                        End If
+                    Next
+                End If
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -149,24 +162,30 @@ Module Suppliers_Controller
         End Try
     End Sub
 
-    Public Sub VendorDelete()
-        'Try
-        '    cmd = New SqlCommand
-        '    With cmd
-        '        .CommandType = CommandType.Text
-        '        .CommandText = "update vendors set VStatus=@VStatus where id=" & FrmVendors.DgvVendorsOn.CurrentRow.Cells(0).Value
-        '        .Connection = dbcon
-        '    End With
-        '    cmd.Parameters.AddWithValue("VStatus", False)
-        '    dbcon.Open()
-        '    cmd.ExecuteNonQuery()
-        '    dbcon.Close()
-        '    cmd = Nothing
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        'Finally
-        '    dbcon.Close()
-        'End Try
+    Public Sub SupplierStatusChange()
+        Try
+            Dim isActive As Boolean
+            If FmSuppliers.DGVSuppliers.CurrentRow.Cells(13).Value = True Then
+                isActive = False
+            Else
+                isActive = True
+            End If
+            cmd = New SqlCommand
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = "update suppliers set isactive=@isactive where id=" & FmSuppliers.DGVSuppliers.CurrentRow.Cells(0).Value
+                .Connection = dbcon
+            End With
+            cmd.Parameters.AddWithValue("isactive", isActive)
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+            cmd = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
     End Sub
 
 End Module

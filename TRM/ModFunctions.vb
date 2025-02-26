@@ -648,7 +648,7 @@ Module ModFunctions
         Else
             Frm.CmbCarOil.BackColor = Color.White
         End If
-        If My.Settings.CarKM = True Then
+        If My.Settings.MaterialQuantityLock = True Then
             Frm.TxtCarKM.BackColor = Color.LightPink
         Else
             Frm.TxtCarKM.BackColor = Color.White

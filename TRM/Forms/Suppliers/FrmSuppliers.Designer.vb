@@ -41,6 +41,7 @@ Partial Class FrmSuppliers
         Me.TxtContact = New System.Windows.Forms.TextBox()
         Me.TxtSupplierName = New System.Windows.Forms.TextBox()
         Me.DGVSuppliers = New System.Windows.Forms.DataGridView()
+        Me.LblClear = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGVSuppliers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,6 +165,7 @@ Partial Class FrmSuppliers
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.LblClear)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
@@ -246,6 +248,17 @@ Partial Class FrmSuppliers
         Me.DGVSuppliers.Size = New System.Drawing.Size(712, 347)
         Me.DGVSuppliers.TabIndex = 37
         '
+        'LblClear
+        '
+        Me.LblClear.AutoSize = True
+        Me.LblClear.Font = New System.Drawing.Font("David", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.LblClear.ForeColor = System.Drawing.Color.Blue
+        Me.LblClear.Location = New System.Drawing.Point(6, 83)
+        Me.LblClear.Name = "LblClear"
+        Me.LblClear.Size = New System.Drawing.Size(79, 16)
+        Me.LblClear.TabIndex = 43
+        Me.LblClear.Text = "تنظيف الخانات"
+        '
         'FrmSuppliers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -301,4 +314,5 @@ Partial Class FrmSuppliers
     Friend WithEvents TxtContact As TextBox
     Friend WithEvents TxtSupplierName As TextBox
     Friend WithEvents DGVSuppliers As DataGridView
+    Friend WithEvents LblClear As Label
 End Class

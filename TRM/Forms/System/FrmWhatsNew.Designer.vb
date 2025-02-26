@@ -86,25 +86,23 @@ Partial Class FrmWhatsNew
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(175, 91)
+        Me.Label8.Location = New System.Drawing.Point(140, 91)
         Me.Label8.Name = "Label8"
         Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label8.Size = New System.Drawing.Size(135, 13)
+        Me.Label8.Size = New System.Drawing.Size(170, 13)
         Me.Label8.TabIndex = 9
-        Me.Label8.Text = "اضافة انواع عمليات وتعديلها"
-        Me.Label8.Visible = False
+        Me.Label8.Text = "اضافة صفحه لخيارات الشركه والنظام"
         '
         'Label7
         '
         Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(203, 66)
+        Me.Label7.Location = New System.Drawing.Point(206, 66)
         Me.Label7.Name = "Label7"
         Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label7.Size = New System.Drawing.Size(104, 13)
         Me.Label7.TabIndex = 8
-        Me.Label7.Text = "اضافة انواع  وتعديلها"
-        Me.Label7.Visible = False
+        Me.Label7.Text = "اضافة صفحة الموردين"
         '
         'Label6
         '
@@ -137,7 +135,6 @@ Partial Class FrmWhatsNew
         Me.Label4.Size = New System.Drawing.Size(20, 25)
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "*"
-        Me.Label4.Visible = False
         '
         'Label3
         '
@@ -158,7 +155,6 @@ Partial Class FrmWhatsNew
         Me.Label2.Size = New System.Drawing.Size(20, 25)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "*"
-        Me.Label2.Visible = False
         '
         'Label1
         '

@@ -70,6 +70,7 @@ Public Class FrmWhatsNew
             '        MsgBox(ex.Message)
             '    End Try
             'End If
+            WhatsNew()
             My.Settings.EditDataBase = False
             My.Settings.Save()
         End If
@@ -84,6 +85,10 @@ Public Class FrmWhatsNew
                 MsgBox("يجب تعديل قاعدة البيانات بشكل الزامي", vbOKOnly + vbInformation, "استعلام")
                 Return
             End If
+        End If
+        If My.Settings.EditDataBase = True Then
+            MsgBox("يجب تعديل قاعدة البيانات بشكل الزامي", vbOKOnly + vbInformation, "استعلام")
+            Return
         End If
         Me.Close()
     End Sub

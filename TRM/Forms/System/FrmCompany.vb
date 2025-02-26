@@ -2,6 +2,7 @@
     Private Sub FrmCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         NumTax.Value = (My.Settings.Tax * 100) - 100
         TxtAdminCode.Text = My.Settings.AdminCode
+        ChkMaterialQuantity.Checked = My.Settings.MaterialQuantityLock
     End Sub
 
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
@@ -13,6 +14,8 @@
         If SaveMsg = vbYes Then
             My.Settings.Tax = (NumTax.Value + 100) / 100
             My.Settings.AdminCode = TxtAdminCode.Text
+            My.Settings.MaterialQuantityLock = ChkMaterialQuantity.Checked
+
             My.Settings.Save()
             Me.Close()
         ElseIf SaveMsg = vbNo Then

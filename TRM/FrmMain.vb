@@ -25,6 +25,8 @@ Public Class FrmMain
             Next
             Me.Text = ActiveUser
 
+            'My.Settings.AdminCode = "Admin123456"
+            'My.Settings.Save()
             'WhatsNew()
 
             If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
@@ -35,7 +37,8 @@ Public Class FrmMain
                 If CurrentVersion <> TSSLblVersion.Text Then
                     My.Settings.isShowWhatsNew = True
                     My.Settings.CurrentVersion = TSSLblVersion.Text
-                    My.Settings.EditDataBase = False
+                    My.Settings.EditDataBase = True
+                    'WhatsNew()
                     My.Settings.Save()
                 End If
                 If FreshLogin = True Then
@@ -555,7 +558,7 @@ Public Class FrmMain
                     FmSuppliers.Show()
                 End If
             Else
-                If isAllowed(10) = True Then
+                If isAllowed(11) = True Then
                     If Application.OpenForms.OfType(Of FrmSuppliers).Any = True Then
                         FmSuppliers.Activate()
                     Else

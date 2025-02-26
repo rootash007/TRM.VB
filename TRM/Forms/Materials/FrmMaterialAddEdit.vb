@@ -19,8 +19,18 @@
 
             'DGVMaterialTypes.
         Else
+
+            '////
             PBoxQuantityLocker.Image = My.Resources.locked48
-            NumQuantity.Enabled = False
+
+            If My.Settings.MaterialQuantityLock = True Then
+                NumQuantity.Enabled = False
+                PBoxQuantityLocker.Visible = True
+            Else
+                NumQuantity.Enabled = True
+                PBoxQuantityLocker.Visible = False
+            End If
+            '/////
             If FmMaterials.TabMaterials.SelectedIndex = 0 Then
                 IsActive.Visible = True
                 TxtMaterialName.Text = FmMaterials.DgvMaterials.CurrentRow.Cells(1).Value

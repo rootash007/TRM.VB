@@ -33,10 +33,10 @@ Partial Class FrmSupplierView
         Me.TxtAdress = New System.Windows.Forms.TextBox()
         Me.LblVId = New System.Windows.Forms.Label()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TxtPostalCode = New System.Windows.Forms.TextBox()
         Me.LblVAdress = New System.Windows.Forms.Label()
         Me.TxtFax = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TxtCity = New System.Windows.Forms.TextBox()
         Me.LblVPhone = New System.Windows.Forms.Label()
         Me.TxtPhone = New System.Windows.Forms.TextBox()
         Me.LblVFax = New System.Windows.Forms.Label()
@@ -48,13 +48,13 @@ Partial Class FrmSupplierView
         Me.BtnAdd = New System.Windows.Forms.Button()
         Me.BtnCancel = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DtpCreatedAt = New System.Windows.Forms.DateTimePicker()
+        Me.TxtBank = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TxtCurrency = New System.Windows.Forms.TextBox()
         Me.GrpUser.SuspendLayout()
         CType(Me.StatusSwitch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -72,10 +72,10 @@ Partial Class FrmSupplierView
         Me.GrpUser.Controls.Add(Me.TxtAdress)
         Me.GrpUser.Controls.Add(Me.LblVId)
         Me.GrpUser.Controls.Add(Me.TxtEmail)
-        Me.GrpUser.Controls.Add(Me.TextBox7)
+        Me.GrpUser.Controls.Add(Me.TxtPostalCode)
         Me.GrpUser.Controls.Add(Me.LblVAdress)
         Me.GrpUser.Controls.Add(Me.TxtFax)
-        Me.GrpUser.Controls.Add(Me.TextBox8)
+        Me.GrpUser.Controls.Add(Me.TxtCity)
         Me.GrpUser.Controls.Add(Me.LblVPhone)
         Me.GrpUser.Controls.Add(Me.TxtPhone)
         Me.GrpUser.Controls.Add(Me.LblVFax)
@@ -93,6 +93,7 @@ Partial Class FrmSupplierView
         '
         'LblStatus
         '
+        Me.LblStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblStatus.AutoSize = True
         Me.LblStatus.Location = New System.Drawing.Point(107, 28)
         Me.LblStatus.Name = "LblStatus"
@@ -174,13 +175,14 @@ Partial Class FrmSupplierView
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(235, 20)
         Me.TxtEmail.TabIndex = 5
+        Me.TxtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TextBox7
+        'TxtPostalCode
         '
-        Me.TextBox7.Location = New System.Drawing.Point(6, 265)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(235, 20)
-        Me.TextBox7.TabIndex = 8
+        Me.TxtPostalCode.Location = New System.Drawing.Point(6, 265)
+        Me.TxtPostalCode.Name = "TxtPostalCode"
+        Me.TxtPostalCode.Size = New System.Drawing.Size(235, 20)
+        Me.TxtPostalCode.TabIndex = 8
         '
         'LblVAdress
         '
@@ -200,12 +202,12 @@ Partial Class FrmSupplierView
         Me.TxtFax.Size = New System.Drawing.Size(235, 20)
         Me.TxtFax.TabIndex = 4
         '
-        'TextBox8
+        'TxtCity
         '
-        Me.TextBox8.Location = New System.Drawing.Point(6, 239)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(235, 20)
-        Me.TextBox8.TabIndex = 7
+        Me.TxtCity.Location = New System.Drawing.Point(6, 239)
+        Me.TxtCity.Name = "TxtCity"
+        Me.TxtCity.Size = New System.Drawing.Size(235, 20)
+        Me.TxtCity.TabIndex = 7
         '
         'LblVPhone
         '
@@ -306,14 +308,14 @@ Partial Class FrmSupplierView
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.DtpCreatedAt)
+        Me.GroupBox1.Controls.Add(Me.TxtBank)
         Me.GroupBox1.Controls.Add(Me.TxtInfo)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Controls.Add(Me.TxtCurrency)
         Me.GroupBox1.Location = New System.Drawing.Point(348, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -321,21 +323,21 @@ Partial Class FrmSupplierView
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
-        'DateTimePicker1
+        'DtpCreatedAt
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(6, 19)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(235, 20)
-        Me.DateTimePicker1.TabIndex = 0
+        Me.DtpCreatedAt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtpCreatedAt.Location = New System.Drawing.Point(6, 19)
+        Me.DtpCreatedAt.Name = "DtpCreatedAt"
+        Me.DtpCreatedAt.Size = New System.Drawing.Size(235, 20)
+        Me.DtpCreatedAt.TabIndex = 0
         '
-        'TextBox1
+        'TxtBank
         '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 187)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(235, 98)
-        Me.TextBox1.TabIndex = 3
+        Me.TxtBank.Location = New System.Drawing.Point(6, 187)
+        Me.TxtBank.Multiline = True
+        Me.TxtBank.Name = "TxtBank"
+        Me.TxtBank.Size = New System.Drawing.Size(235, 98)
+        Me.TxtBank.TabIndex = 3
         '
         'Label4
         '
@@ -377,13 +379,13 @@ Partial Class FrmSupplierView
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "معلومات اضافيه"
         '
-        'TextBox6
+        'TxtCurrency
         '
-        Me.TextBox6.Location = New System.Drawing.Point(6, 45)
-        Me.TextBox6.MaxLength = 9
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(235, 20)
-        Me.TextBox6.TabIndex = 1
+        Me.TxtCurrency.Location = New System.Drawing.Point(6, 45)
+        Me.TxtCurrency.MaxLength = 9
+        Me.TxtCurrency.Name = "TxtCurrency"
+        Me.TxtCurrency.Size = New System.Drawing.Size(235, 20)
+        Me.TxtCurrency.TabIndex = 1
         '
         'FrmSupplierView
         '
@@ -433,13 +435,13 @@ Partial Class FrmSupplierView
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtBank As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TxtCurrency As TextBox
+    Friend WithEvents TxtPostalCode As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents TxtCity As TextBox
+    Friend WithEvents DtpCreatedAt As DateTimePicker
 End Class

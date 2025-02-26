@@ -8,9 +8,11 @@ Module DataBase_Controller
         'AddColumnToTable("test", "test_price")     '/  AddColumnToTable(table_name As String, column_name As String)
 
 
-        DropTableFromDataBase("suppliers")
-        CreateTables()
+        'DropTableFromDataBase("suppliers")
+        AddPermission("Suppliers", 11)               '/  AddPermission(permission_name as String,permision_index as Integer)
 
+        CreateTables()
+        MsgBox("تم التحديث بنجاح", vbOKOnly + vbInformation, "استعلام")
         'EditActionsPrice()
     End Sub
 
@@ -251,7 +253,7 @@ Module DataBase_Controller
             dbaddapter = New SqlDataAdapter(cmd)
             dbaddapter.Fill(MyTab)
             cmd = Nothing
-            MsgBox("Tables is up to date")
+            'MsgBox("تم تعديل الجداول بنجاح", vbOKOnly + vbInformation, "استعلام")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -307,7 +309,7 @@ Module DataBase_Controller
                 dbcon.Close()
                 MsgBox("The Permission called " & permission_name & " has been added successfully ")
             Else
-                MsgBox("The Permission called " & permission_name & " is already found ")
+                'MsgBox("The Permission called " & permission_name & " is already found ")
             End If
 
         Catch ex As Exception
