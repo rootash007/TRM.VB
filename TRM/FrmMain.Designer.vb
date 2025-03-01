@@ -33,6 +33,7 @@ Partial Class FrmMain
         Me.TSMCostsList = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMActions = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMMaterials = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMSuppliers = New System.Windows.Forms.ToolStripMenuItem()
         Me.הפקתמסמכיםToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הסכםמכירהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הכסםקנייהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -69,7 +70,8 @@ Partial Class FrmMain
         Me.TSBtnCost = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnBackUp = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnAlerts = New System.Windows.Forms.ToolStripButton()
-        Me.TSMSuppliers = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.فحصالاصدارالاخيرToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuMain.SuspendLayout()
         Me.SSMain.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -145,6 +147,12 @@ Partial Class FrmMain
         Me.TSMMaterials.Name = "TSMMaterials"
         Me.TSMMaterials.Size = New System.Drawing.Size(180, 22)
         Me.TSMMaterials.Text = "المواد"
+        '
+        'TSMSuppliers
+        '
+        Me.TSMSuppliers.Name = "TSMSuppliers"
+        Me.TSMSuppliers.Size = New System.Drawing.Size(180, 22)
+        Me.TSMSuppliers.Text = "الموردين"
         '
         'הפקתמסמכיםToolStripMenuItem
         '
@@ -231,7 +239,7 @@ Partial Class FrmMain
         '
         'מערכתToolStripMenuItem
         '
-        Me.מערכתToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.גיבוישחזורToolStripMenuItem1, Me.עדכוןתוכנהToolStripMenuItem, Me.PermisionsTSM, Me.تحريركلالنوافذالقيدالاستخدامToolStripMenuItem, Me.TSMCompanyOptions, Me.אודותToolStripMenuItem1})
+        Me.מערכתToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.גיבוישחזורToolStripMenuItem1, Me.עדכוןתוכנהToolStripMenuItem, Me.PermisionsTSM, Me.تحريركلالنوافذالقيدالاستخدامToolStripMenuItem, Me.TSMCompanyOptions, Me.אודותToolStripMenuItem1, Me.فحصالاصدارالاخيرToolStripMenuItem})
         Me.מערכתToolStripMenuItem.Name = "מערכתToolStripMenuItem"
         Me.מערכתToolStripMenuItem.Size = New System.Drawing.Size(45, 22)
         Me.מערכתToolStripMenuItem.Text = "النظام"
@@ -297,7 +305,7 @@ Partial Class FrmMain
         '
         Me.SSMain.BackColor = System.Drawing.Color.White
         Me.SSMain.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.SSMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSAdminStatus, Me.SSAdmin, Me.TSSLblVersion, Me.TSMainProgBar})
+        Me.SSMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSAdminStatus, Me.SSAdmin, Me.TSMainProgBar, Me.ToolStripStatusLabel1, Me.TSSLblVersion})
         Me.SSMain.Location = New System.Drawing.Point(0, 605)
         Me.SSMain.Name = "SSMain"
         Me.SSMain.Padding = New System.Windows.Forms.Padding(12, 0, 1, 0)
@@ -322,7 +330,8 @@ Partial Class FrmMain
         'TSSLblVersion
         '
         Me.TSSLblVersion.Name = "TSSLblVersion"
-        Me.TSSLblVersion.Size = New System.Drawing.Size(0, 19)
+        Me.TSSLblVersion.Size = New System.Drawing.Size(88, 19)
+        Me.TSSLblVersion.Text = "Current version"
         '
         'TSMainProgBar
         '
@@ -420,11 +429,17 @@ Partial Class FrmMain
         Me.TSBtnAlerts.Text = "التنبيهات"
         Me.TSBtnAlerts.Visible = False
         '
-        'TSMSuppliers
+        'ToolStripStatusLabel1
         '
-        Me.TSMSuppliers.Name = "TSMSuppliers"
-        Me.TSMSuppliers.Size = New System.Drawing.Size(180, 22)
-        Me.TSMSuppliers.Text = "الموردين"
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(117, 19)
+        Me.ToolStripStatusLabel1.Text = "          النسخه الحاليه :  "
+        '
+        'فحصالاصدارالاخيرToolStripMenuItem
+        '
+        Me.فحصالاصدارالاخيرToolStripMenuItem.Name = "فحصالاصدارالاخيرToolStripMenuItem"
+        Me.فحصالاصدارالاخيرToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.فحصالاصدارالاخيرToolStripMenuItem.Text = "فحص الاصدار الاخير"
         '
         'FrmMain
         '
@@ -504,4 +519,6 @@ Partial Class FrmMain
     Friend WithEvents TSMMaterials As ToolStripMenuItem
     Friend WithEvents TSMCompanyOptions As ToolStripMenuItem
     Friend WithEvents TSMSuppliers As ToolStripMenuItem
+    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents فحصالاصدارالاخيرToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -39,6 +39,7 @@
             FrmSupplierView.TxtCurrency.Text = DGVSuppliers.CurrentRow.Cells(11).Value.ToString
             FrmSupplierView.TxtInfo.Text = DGVSuppliers.CurrentRow.Cells(12).Value.ToString
             FrmSupplierView.DtpCreatedAt.Text = DGVSuppliers.CurrentRow.Cells(14).Value.ToString
+            FrmSupplierView.TxtSupplierFolder.Text = DGVSuppliers.CurrentRow.Cells(16).Value.ToString
             FrmSupplierView.ShowDialog()
         End If
     End Sub

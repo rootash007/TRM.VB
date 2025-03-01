@@ -35,7 +35,7 @@ Partial Class FrmNewUpdate
         Me.BtnUpdate.BackColor = System.Drawing.Color.White
         Me.BtnUpdate.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnUpdate.Image = CType(resources.GetObject("BtnUpdate.Image"), System.Drawing.Image)
-        Me.BtnUpdate.Location = New System.Drawing.Point(25, 84)
+        Me.BtnUpdate.Location = New System.Drawing.Point(14, 83)
         Me.BtnUpdate.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnUpdate.Name = "BtnUpdate"
         Me.BtnUpdate.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -48,46 +48,49 @@ Partial Class FrmNewUpdate
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(109, 20)
+        Me.Label1.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.Label1.Location = New System.Drawing.Point(29, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 16)
+        Me.Label1.Size = New System.Drawing.Size(65, 16)
         Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Current Version"
+        Me.Label1.Text = "التسخه الحاليه"
         '
         'LblCurrentVersion
         '
         Me.LblCurrentVersion.AutoSize = True
-        Me.LblCurrentVersion.Location = New System.Drawing.Point(36, 20)
+        Me.LblCurrentVersion.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.LblCurrentVersion.Location = New System.Drawing.Point(133, 24)
         Me.LblCurrentVersion.Name = "LblCurrentVersion"
-        Me.LblCurrentVersion.Size = New System.Drawing.Size(55, 16)
+        Me.LblCurrentVersion.Size = New System.Drawing.Size(47, 16)
         Me.LblCurrentVersion.TabIndex = 11
-        Me.LblCurrentVersion.Text = "Label2"
+        Me.LblCurrentVersion.Text = "0.0.0.0"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(131, 46)
+        Me.Label3.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.Label3.Location = New System.Drawing.Point(29, 50)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 16)
+        Me.Label3.Size = New System.Drawing.Size(68, 16)
         Me.Label3.TabIndex = 12
-        Me.Label3.Text = "New Version"
+        Me.Label3.Text = "النسخه الاحدث"
         '
         'LblNewVersion
         '
         Me.LblNewVersion.AutoSize = True
-        Me.LblNewVersion.Location = New System.Drawing.Point(36, 46)
+        Me.LblNewVersion.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.LblNewVersion.Location = New System.Drawing.Point(133, 50)
         Me.LblNewVersion.Name = "LblNewVersion"
-        Me.LblNewVersion.Size = New System.Drawing.Size(55, 16)
+        Me.LblNewVersion.Size = New System.Drawing.Size(47, 16)
         Me.LblNewVersion.TabIndex = 13
-        Me.LblNewVersion.Text = "Label4"
+        Me.LblNewVersion.Text = "0.0.0.0"
         '
         'FrmNewUpdate
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(251, 189)
-        Me.ControlBox = False
+        Me.ClientSize = New System.Drawing.Size(218, 148)
         Me.Controls.Add(Me.LblNewVersion)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LblCurrentVersion)
@@ -102,7 +105,7 @@ Partial Class FrmNewUpdate
         Me.RightToLeftLayout = True
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Update new version"
+        Me.Text = "فحص التحديث"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -92,6 +92,7 @@ Partial Class FrmWhatsNew
         Me.Label8.Size = New System.Drawing.Size(170, 13)
         Me.Label8.TabIndex = 9
         Me.Label8.Text = "اضافة صفحه لخيارات الشركه والنظام"
+        Me.Label8.Visible = False
         '
         'Label7
         '
@@ -155,6 +156,7 @@ Partial Class FrmWhatsNew
         Me.Label2.Size = New System.Drawing.Size(20, 25)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "*"
+        Me.Label2.Visible = False
         '
         'Label1
         '

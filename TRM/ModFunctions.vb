@@ -1341,7 +1341,7 @@ Module ModFunctions
                 FmNewUpdate.LblNewVersion.Text = NewVersion
                 FmNewUpdate.ShowDialog()
             Else
-                'MsgBox("There is no update available", vbOKOnly + vbInformation, "No Update")
+                MsgBox("There is no update available", vbOKOnly + vbInformation, "No Update")
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

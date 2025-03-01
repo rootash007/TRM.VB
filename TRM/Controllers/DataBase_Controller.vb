@@ -4,14 +4,17 @@ Module DataBase_Controller
     Public Sub WhatsNew()
 
         'AddPermission("Prices", 10)               '/  AddPermission(permission_name as String,permision_index as Integer)
+        'AddPermission("Suppliers", 11)               '/  AddPermission(permission_name as String,permision_index as Integer)
         'DropTableFromDataBase("test")             '/  DropTableFromDataBase(table_name as String)
         'AddColumnToTable("test", "test_price")     '/  AddColumnToTable(table_name As String, column_name As String)
+        'AddColumnToTable("suppliers", "supplier_folder")     '/  AddColumnToTable(table_name As String, column_name As String)
 
 
         'DropTableFromDataBase("suppliers")
-        AddPermission("Suppliers", 11)               '/  AddPermission(permission_name as String,permision_index as Integer)
 
-        CreateTables()
+
+        'CreateTables()
+        AddColumnToTable("suppliers", "supplier_folder")     '/  AddColumnToTable(table_name As String, column_name As String)
         MsgBox("تم التحديث بنجاح", vbOKOnly + vbInformation, "استعلام")
         'EditActionsPrice()
     End Sub
@@ -19,14 +22,22 @@ Module DataBase_Controller
 
     Public Sub AddColumnToTable(table_name As String, column_name As String)
         Dim Que As String
+        'Que = "IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+        '       WHERE TABLE_NAME = '" & table_name & "'
+        '       AND COLUMN_NAME = '" & column_name & "')
+        '       BEGIN
+        '       ALTER TABLE dbo." & table_name & "
+        '       ADD " & column_name & " decimal(18, 2)
+        '       CONSTRAINT [DF_" & table_name & "_Column_" & column_name & "] 
+        '       Default(0)  
+        '       END
+        '       "
         Que = "IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
                WHERE TABLE_NAME = '" & table_name & "'
-               AND COLUMN_NAME = 'total_price')
+               AND COLUMN_NAME = '" & column_name & "')
                BEGIN
                ALTER TABLE dbo." & table_name & "
-               ADD " & column_name & " decimal(18, 2)
-               CONSTRAINT [DF_" & table_name & "_Column_" & column_name & "] 
-               Default(0)  
+               ADD " & column_name & " nvarchar (50) 
                END
                "
         cmd = New SqlCommand
@@ -235,6 +246,7 @@ Module DataBase_Controller
                isactive bit Default(1),
                CreatedAt DATETIME DEFAULT GETDATE(),
                UpdatedAt DATETIME DEFAULT GETDATE(),
+               supplier_folder NVARCHAR(50),
                ) 
                END
 

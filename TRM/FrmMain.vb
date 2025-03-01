@@ -23,7 +23,7 @@ Public Class FrmMain
             For Each Frm As Form In Me.MdiChildren
                 Frm.Close()
             Next
-            Me.Text = ActiveUser
+            Me.Text += " - TRM - " & ActiveUser
 
             'My.Settings.AdminCode = "Admin123456"
             'My.Settings.Save()
@@ -571,6 +571,29 @@ Public Class FrmMain
                 End If
             End If
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub فحصالاصدارالاخيرToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles فحصالاصدارالاخيرToolStripMenuItem.Click
+        Try
+            'Dim Request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("https://www.ctrlmanager.com/TRM/RM.application")
+            'Dim Response As System.Net.HttpWebResponse = Request.GetResponse()
+            'Dim StreamR As System.IO.StreamReader = New System.IO.StreamReader(Response.GetResponseStream())
+            'Dim NewVersion As String = StreamR.ReadToEnd()
+            'Dim CurVersion As String = My.Settings.CurrentVersion
+            'If NewVersion > CurVersion Then
+            Dim FmNewUpdate As New FrmNewUpdate
+            'With System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion
+            'FmNewUpdate.LblCurrentVersion.Text = My.Settings.CurrentVersion
+            'End With
+
+            'FmNewUpdate.LblNewVersion.Text = NewVersion
+            FmNewUpdate.ShowDialog()
+            'Else
+            '    'MsgBox("There is no update available", vbOKOnly + vbInformation, "No Update")
+            'End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

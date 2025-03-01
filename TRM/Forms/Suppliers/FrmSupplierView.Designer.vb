@@ -55,6 +55,8 @@ Partial Class FrmSupplierView
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtCurrency = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtSupplierFolder = New System.Windows.Forms.TextBox()
         Me.GrpUser.SuspendLayout()
         CType(Me.StatusSwitch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -171,7 +173,6 @@ Partial Class FrmSupplierView
         'TxtEmail
         '
         Me.TxtEmail.Location = New System.Drawing.Point(6, 187)
-        Me.TxtEmail.MaxLength = 11
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(235, 20)
         Me.TxtEmail.TabIndex = 5
@@ -270,11 +271,11 @@ Partial Class FrmSupplierView
         '
         'TxtInfo
         '
-        Me.TxtInfo.Location = New System.Drawing.Point(6, 83)
+        Me.TxtInfo.Location = New System.Drawing.Point(6, 97)
         Me.TxtInfo.Multiline = True
         Me.TxtInfo.Name = "TxtInfo"
-        Me.TxtInfo.Size = New System.Drawing.Size(235, 98)
-        Me.TxtInfo.TabIndex = 2
+        Me.TxtInfo.Size = New System.Drawing.Size(235, 84)
+        Me.TxtInfo.TabIndex = 3
         '
         'BtnAdd
         '
@@ -308,6 +309,8 @@ Partial Class FrmSupplierView
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.TxtSupplierFolder)
         Me.GroupBox1.Controls.Add(Me.DtpCreatedAt)
         Me.GroupBox1.Controls.Add(Me.TxtBank)
         Me.GroupBox1.Controls.Add(Me.TxtInfo)
@@ -337,7 +340,7 @@ Partial Class FrmSupplierView
         Me.TxtBank.Multiline = True
         Me.TxtBank.Name = "TxtBank"
         Me.TxtBank.Size = New System.Drawing.Size(235, 98)
-        Me.TxtBank.TabIndex = 3
+        Me.TxtBank.TabIndex = 4
         '
         'Label4
         '
@@ -372,7 +375,7 @@ Partial Class FrmSupplierView
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(242, 86)
+        Me.Label1.Location = New System.Drawing.Point(242, 100)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Label1.Size = New System.Drawing.Size(78, 13)
@@ -386,6 +389,24 @@ Partial Class FrmSupplierView
         Me.TxtCurrency.Name = "TxtCurrency"
         Me.TxtCurrency.Size = New System.Drawing.Size(235, 20)
         Me.TxtCurrency.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(271, 74)
+        Me.Label2.Name = "Label2"
+        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 32
+        Me.Label2.Text = "رقم الملف"
+        '
+        'TxtSupplierFolder
+        '
+        Me.TxtSupplierFolder.Location = New System.Drawing.Point(6, 71)
+        Me.TxtSupplierFolder.MaxLength = 9
+        Me.TxtSupplierFolder.Name = "TxtSupplierFolder"
+        Me.TxtSupplierFolder.Size = New System.Drawing.Size(235, 20)
+        Me.TxtSupplierFolder.TabIndex = 2
         '
         'FrmSupplierView
         '
@@ -444,4 +465,6 @@ Partial Class FrmSupplierView
     Friend WithEvents Label10 As Label
     Friend WithEvents TxtCity As TextBox
     Friend WithEvents DtpCreatedAt As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtSupplierFolder As TextBox
 End Class

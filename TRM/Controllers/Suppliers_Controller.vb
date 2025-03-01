@@ -62,6 +62,9 @@ Module Suppliers_Controller
 
             .Columns(15).HeaderText = "UpdatedAt"
             .Columns(15).Visible = False
+
+            .Columns(16).HeaderText = "Supplier Folder"
+            .Columns(16).Visible = False
         End With
     End Sub
 
@@ -104,22 +107,27 @@ Module Suppliers_Controller
         End Try
     End Sub
 
-    Public Sub AddSubpplier(VName As String, VContact As String, VId As String, VAdress As String, VPhone As String, VFax As String, VEmail As String, VInfo As String)
+    Public Sub AddSubpplier(supplier_name As String, supplier_id As String, supplier_contact As String, supplier_phone As String, supplier_fax As String, supplier_email As String, supplier_adress As String, supplier_city As String, postal_code As String, supplier_bank_details As String, currency As String, supplier_notes As String, supplier_folder As String)
         Try
             cmd = New SqlCommand
             With cmd
                 .CommandType = CommandType.Text
-                .CommandText = "insert into Vendors(VName,VContact,VId,VAdress,VPhone,VFax,VEmail,VInfo) values (@VName,@VContact,@VId,@VAdress,@VPhone,@VFax,@VEmail,@VInfo)"
+                .CommandText = "insert into suppliers(supplier_name,supplier_id,supplier_contact,supplier_phone,supplier_fax,supplier_email,supplier_adress,supplier_city,postal_code,supplier_bank_details,currency,supplier_notes,supplier_folder) values (@supplier_name,@supplier_id,@supplier_contact,@supplier_phone,@supplier_fax,@supplier_email,@supplier_adress,@supplier_city,@postal_code,@supplier_bank_details,@currency,@supplier_notes,@supplier_folder)"
                 .Connection = dbcon
             End With
-            cmd.Parameters.AddWithValue("VName", VName)
-            cmd.Parameters.AddWithValue("VContact", VContact)
-            cmd.Parameters.AddWithValue("VId", VId)
-            cmd.Parameters.AddWithValue("VAdress", VAdress)
-            cmd.Parameters.AddWithValue("VPhone", VPhone)
-            cmd.Parameters.AddWithValue("VFax", VFax)
-            cmd.Parameters.AddWithValue("VEmail", VEmail)
-            cmd.Parameters.AddWithValue("VInfo", VInfo)
+            cmd.Parameters.AddWithValue("supplier_name", supplier_name)
+            cmd.Parameters.AddWithValue("supplier_id", supplier_id)
+            cmd.Parameters.AddWithValue("supplier_contact", supplier_contact)
+            cmd.Parameters.AddWithValue("supplier_phone", supplier_phone)
+            cmd.Parameters.AddWithValue("supplier_fax", supplier_fax)
+            cmd.Parameters.AddWithValue("supplier_email", supplier_email)
+            cmd.Parameters.AddWithValue("supplier_adress", supplier_adress)
+            cmd.Parameters.AddWithValue("supplier_city", supplier_city)
+            cmd.Parameters.AddWithValue("postal_code", postal_code)
+            cmd.Parameters.AddWithValue("supplier_bank_details", supplier_bank_details)
+            cmd.Parameters.AddWithValue("currency", currency)
+            cmd.Parameters.AddWithValue("supplier_notes", supplier_notes)
+            cmd.Parameters.AddWithValue("supplier_folder", supplier_folder)
 
             dbcon.Open()
             cmd.ExecuteNonQuery()
@@ -132,24 +140,29 @@ Module Suppliers_Controller
         End Try
     End Sub
 
-    Public Sub UpdateVendor(VName As String, VContact As String, VId As String, VAdress As String, VPhone As String, VFax As String, VEmail As String, VInfo As String, VStatus As Boolean, id As Integer)
+    Public Sub UpdateSupplier(supplier_name As String, supplier_id As String, supplier_contact As String, supplier_phone As String, supplier_fax As String, supplier_email As String, supplier_adress As String, supplier_city As String, postal_code As String, supplier_bank_details As String, currency As String, supplier_notes As String, isactive As Boolean, supplier_folder As String, id As Integer)
         Try
             cmd = New SqlCommand
 
             With cmd
                 .CommandType = CommandType.Text
-                .CommandText = "update vendors set VName=@VName, Vcontact=@VContact , VId=@VId , VAdress=@VAdress ,VPhone=@VPhone , VFax=@VFax , VEmail=@VEmail , VInfo=@VInfo , VStatus=@VStatus where id=@id"
+                .CommandText = "update suppliers set supplier_name=@supplier_name,supplier_id=@supplier_id,supplier_contact=@supplier_contact,supplier_phone=@supplier_phone,supplier_fax=@supplier_fax,supplier_email=@supplier_email,supplier_adress=@supplier_adress,supplier_city=@supplier_city,postal_code=@postal_code,supplier_bank_details=@supplier_bank_details,currency=@currency,supplier_notes=@supplier_notes,isactive=@isactive,supplier_folder=@supplier_folder where id=@id"
                 .Connection = dbcon
             End With
-            cmd.Parameters.AddWithValue("VName", VName)
-            cmd.Parameters.AddWithValue("VContact", VContact)
-            cmd.Parameters.AddWithValue("VId", VId)
-            cmd.Parameters.AddWithValue("VAdress", VAdress)
-            cmd.Parameters.AddWithValue("VPhone", VPhone)
-            cmd.Parameters.AddWithValue("VFax", VFax)
-            cmd.Parameters.AddWithValue("VEmail", VEmail)
-            cmd.Parameters.AddWithValue("VInfo", VInfo)
-            cmd.Parameters.AddWithValue("VStatus", VStatus)
+            cmd.Parameters.AddWithValue("supplier_name", supplier_name)
+            cmd.Parameters.AddWithValue("supplier_id", supplier_id)
+            cmd.Parameters.AddWithValue("supplier_contact", supplier_contact)
+            cmd.Parameters.AddWithValue("supplier_phone", supplier_phone)
+            cmd.Parameters.AddWithValue("supplier_fax", supplier_fax)
+            cmd.Parameters.AddWithValue("supplier_email", supplier_email)
+            cmd.Parameters.AddWithValue("supplier_adress", supplier_adress)
+            cmd.Parameters.AddWithValue("supplier_city", supplier_city)
+            cmd.Parameters.AddWithValue("postal_code", postal_code)
+            cmd.Parameters.AddWithValue("supplier_bank_details", supplier_bank_details)
+            cmd.Parameters.AddWithValue("currency", currency)
+            cmd.Parameters.AddWithValue("supplier_notes", supplier_notes)
+            cmd.Parameters.AddWithValue("isactive", isactive)
+            cmd.Parameters.AddWithValue("supplier_folder", supplier_folder)
             cmd.Parameters.AddWithValue("@id", id)
             dbcon.Open()
             cmd.ExecuteNonQuery()
