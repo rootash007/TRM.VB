@@ -48,6 +48,8 @@ Partial Class FrmSupplierView
         Me.BtnAdd = New System.Windows.Forms.Button()
         Me.BtnCancel = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtSupplierFolder = New System.Windows.Forms.TextBox()
         Me.DtpCreatedAt = New System.Windows.Forms.DateTimePicker()
         Me.TxtBank = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -55,8 +57,7 @@ Partial Class FrmSupplierView
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtCurrency = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtSupplierFolder = New System.Windows.Forms.TextBox()
+        Me.CmbCurrency = New System.Windows.Forms.ComboBox()
         Me.GrpUser.SuspendLayout()
         CType(Me.StatusSwitch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -198,7 +199,7 @@ Partial Class FrmSupplierView
         'TxtFax
         '
         Me.TxtFax.Location = New System.Drawing.Point(6, 161)
-        Me.TxtFax.MaxLength = 11
+        Me.TxtFax.MaxLength = 20
         Me.TxtFax.Name = "TxtFax"
         Me.TxtFax.Size = New System.Drawing.Size(235, 20)
         Me.TxtFax.TabIndex = 4
@@ -223,6 +224,7 @@ Partial Class FrmSupplierView
         'TxtPhone
         '
         Me.TxtPhone.Location = New System.Drawing.Point(6, 135)
+        Me.TxtPhone.MaxLength = 20
         Me.TxtPhone.Name = "TxtPhone"
         Me.TxtPhone.Size = New System.Drawing.Size(235, 20)
         Me.TxtPhone.TabIndex = 3
@@ -240,7 +242,7 @@ Partial Class FrmSupplierView
         'TxtContact
         '
         Me.TxtContact.Location = New System.Drawing.Point(6, 109)
-        Me.TxtContact.MaxLength = 9
+        Me.TxtContact.MaxLength = 200
         Me.TxtContact.Name = "TxtContact"
         Me.TxtContact.Size = New System.Drawing.Size(235, 20)
         Me.TxtContact.TabIndex = 2
@@ -326,6 +328,24 @@ Partial Class FrmSupplierView
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(271, 74)
+        Me.Label2.Name = "Label2"
+        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 32
+        Me.Label2.Text = "رقم الملف"
+        '
+        'TxtSupplierFolder
+        '
+        Me.TxtSupplierFolder.Location = New System.Drawing.Point(6, 71)
+        Me.TxtSupplierFolder.MaxLength = 9
+        Me.TxtSupplierFolder.Name = "TxtSupplierFolder"
+        Me.TxtSupplierFolder.Size = New System.Drawing.Size(235, 20)
+        Me.TxtSupplierFolder.TabIndex = 2
+        '
         'DtpCreatedAt
         '
         Me.DtpCreatedAt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
@@ -390,23 +410,14 @@ Partial Class FrmSupplierView
         Me.TxtCurrency.Size = New System.Drawing.Size(235, 20)
         Me.TxtCurrency.TabIndex = 1
         '
-        'Label2
+        'CmbCurrency
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(271, 74)
-        Me.Label2.Name = "Label2"
-        Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
-        Me.Label2.TabIndex = 32
-        Me.Label2.Text = "رقم الملف"
-        '
-        'TxtSupplierFolder
-        '
-        Me.TxtSupplierFolder.Location = New System.Drawing.Point(6, 71)
-        Me.TxtSupplierFolder.MaxLength = 9
-        Me.TxtSupplierFolder.Name = "TxtSupplierFolder"
-        Me.TxtSupplierFolder.Size = New System.Drawing.Size(235, 20)
-        Me.TxtSupplierFolder.TabIndex = 2
+        Me.CmbCurrency.FormattingEnabled = True
+        Me.CmbCurrency.Items.AddRange(New Object() {"", "שקל", "Dollar", "Euro"})
+        Me.CmbCurrency.Location = New System.Drawing.Point(114, 338)
+        Me.CmbCurrency.Name = "CmbCurrency"
+        Me.CmbCurrency.Size = New System.Drawing.Size(121, 21)
+        Me.CmbCurrency.TabIndex = 4
         '
         'FrmSupplierView
         '
@@ -414,6 +425,7 @@ Partial Class FrmSupplierView
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(686, 378)
+        Me.Controls.Add(Me.CmbCurrency)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GrpUser)
         Me.Controls.Add(Me.BtnAdd)
@@ -467,4 +479,5 @@ Partial Class FrmSupplierView
     Friend WithEvents DtpCreatedAt As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtSupplierFolder As TextBox
+    Friend WithEvents CmbCurrency As ComboBox
 End Class

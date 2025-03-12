@@ -74,4 +74,42 @@ Module Audits_Controller
         End Try
     End Sub
 
+    'Public Sub AddAuditDynamic(parameters As Dictionary(Of String, Object))
+    '    ' Validate inputs
+    '    If parameters Is Nothing OrElse parameters.Count = 0 Then
+    '        MsgBox("No parameters provided.")
+    '        Return
+    '    End If
+
+    '    Try
+    '        Using dbcon As New SqlConnection("YourConnectionString")
+    '            Using cmd As New SqlCommand()
+    '                cmd.Connection = dbcon
+
+    '                ' Dynamically build the SQL query
+    '                Dim columns As String = String.Join(", ", parameters.Keys)
+    '                Dim values As String = String.Join(", ", parameters.Keys.Select(Function(k) "@" & k))
+    '                cmd.CommandText = $"INSERT INTO audits ({columns}) VALUES ({values})"
+
+    '                ' Add parameters to the command
+    '                For Each kvp As KeyValuePair(Of String, Object) In parameters
+    '                    If kvp.Value Is Nothing Then
+    '                        cmd.Parameters.AddWithValue("@" & kvp.Key, DBNull.Value)
+    '                    Else
+    '                        cmd.Parameters.AddWithValue("@" & kvp.Key, kvp.Value)
+    '                    End If
+    '                Next
+
+    '                ' Execute the command
+    '                dbcon.Open()
+    '                cmd.ExecuteNonQuery()
+    '            End Using
+    '        End Using
+    '    Catch ex As Exception
+    '        ' Log the exception
+    '        My.Application.Log.WriteException(ex)
+    '        MsgBox("An error occurred while adding the audit. Please check the logs.")
+    '    End Try
+    'End Sub
+
 End Module

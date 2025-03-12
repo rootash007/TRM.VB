@@ -5,6 +5,7 @@ Module DataBase_Controller
 
         'AddPermission("Prices", 10)               '/  AddPermission(permission_name as String,permision_index as Integer)
         'AddPermission("Suppliers", 11)               '/  AddPermission(permission_name as String,permision_index as Integer)
+
         'DropTableFromDataBase("test")             '/  DropTableFromDataBase(table_name as String)
         'AddColumnToTable("test", "test_price")     '/  AddColumnToTable(table_name As String, column_name As String)
         'AddColumnToTable("suppliers", "supplier_folder")     '/  AddColumnToTable(table_name As String, column_name As String)
@@ -13,8 +14,10 @@ Module DataBase_Controller
         'DropTableFromDataBase("suppliers")
 
 
-        'CreateTables()
-        AddColumnToTable("suppliers", "supplier_folder")     '/  AddColumnToTable(table_name As String, column_name As String)
+        CreateTables()
+        'AddColumnToTable("suppliers", "supplier_folder")     '/  AddColumnToTable(table_name As String, column_name As String)
+        AddPermission("Currency", 12)               '/  AddPermission(permission_name as String,permision_index as Integer)
+
         MsgBox("تم التحديث بنجاح", vbOKOnly + vbInformation, "استعلام")
         'EditActionsPrice()
     End Sub
@@ -109,7 +112,8 @@ Module DataBase_Controller
                INSERT INTO permissions (permission_name) values ('Action Types')
                INSERT INTO permissions (permission_name) values ('Audits')
                INSERT INTO permissions (permission_name) values ('Prices')
-
+               INSERT INTO permissions (permission_name) values ('Suppliers')
+               INSERT INTO permissions (permission_name) values ('Currency')
                END
 
                IF NOT EXISTS (SELECT * FROM sys.objects 
@@ -250,6 +254,16 @@ Module DataBase_Controller
                ) 
                END
 
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'currency') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE currency(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               currency_name NVARCHAR(100) NOT NULL,
+               currency_short NVARCHAR(15) NOT NULL,   
+               isactive bit Default(1),                
+               ) 
+               END
        
                "
 
@@ -265,7 +279,7 @@ Module DataBase_Controller
             dbaddapter = New SqlDataAdapter(cmd)
             dbaddapter.Fill(MyTab)
             cmd = Nothing
-            'MsgBox("تم تعديل الجداول بنجاح", vbOKOnly + vbInformation, "استعلام")
+            MsgBox("تم تعديل الجداول بنجاح", vbOKOnly + vbInformation, "استعلام")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

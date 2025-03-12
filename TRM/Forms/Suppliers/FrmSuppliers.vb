@@ -1,4 +1,6 @@
-﻿Public Class FrmSuppliers
+﻿Imports System.Globalization
+
+Public Class FrmSuppliers
 
     Public SelectedDGV As DataGridView
     Private Sub FrmSuppliers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -46,14 +48,29 @@
     Private Sub BtnDeleteSupplier_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         If DGVSuppliers.RowCount > 0 Then
             Dim StatusChangeMsg As DialogResult
+            Dim isActive As Boolean
 
             If FmSuppliers.DGVSuppliers.CurrentRow.Cells(13).Value = True Then
                 StatusChangeMsg = MsgBox("هل تريد فعلا حذف المورد", vbYesNo + vbQuestion, "حذف")
+                isActive = False
             Else
                 StatusChangeMsg = MsgBox("هل تريد فعلا استرجاع المورد", vbYesNo + vbQuestion, "استرجاع")
+                isActive = True
             End If
             If StatusChangeMsg = 6 Then
-                SupplierStatusChange()
+                'If FmSuppliers.DGVSuppliers.CurrentRow.Cells(13).Value = True Then
+                'Else
+                'End If
+                Dim SupplierUpdateParams As New Dictionary(Of String, Object) From {
+                    {"isactive", isActive}
+                }
+                ' Specify the condition (e.g., update the record where supplier_id = 1)
+                Dim conditionField As String = "id"
+                Dim conditionValue As Object = DGVSuppliers.CurrentRow.Cells(0).Value
+
+                ' Call the update function
+                UpdateSupplierDynamic(SupplierUpdateParams, conditionField, conditionValue)
+                'SupplierStatusChange()
                 LoadSuppliers()
             End If
         End If

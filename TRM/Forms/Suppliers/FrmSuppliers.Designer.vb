@@ -23,6 +23,7 @@ Partial Class FrmSuppliers
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSuppliers))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BtnSelect = New System.Windows.Forms.Button()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.BtnAdd = New System.Windows.Forms.Button()
@@ -34,6 +35,7 @@ Partial Class FrmSuppliers
         Me.RadOff = New System.Windows.Forms.RadioButton()
         Me.RadOn = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.LblClear = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,7 +43,6 @@ Partial Class FrmSuppliers
         Me.TxtContact = New System.Windows.Forms.TextBox()
         Me.TxtSupplierName = New System.Windows.Forms.TextBox()
         Me.DGVSuppliers = New System.Windows.Forms.DataGridView()
-        Me.LblClear = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGVSuppliers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,7 +119,7 @@ Partial Class FrmSuppliers
         '
         Me.TxtSearch.Location = New System.Drawing.Point(12, 62)
         Me.TxtSearch.Name = "TxtSearch"
-        Me.TxtSearch.Size = New System.Drawing.Size(189, 23)
+        Me.TxtSearch.Size = New System.Drawing.Size(189, 27)
         Me.TxtSearch.TabIndex = 34
         '
         'GroupBox1
@@ -137,7 +138,7 @@ Partial Class FrmSuppliers
         Me.RadAll.AutoSize = True
         Me.RadAll.Location = New System.Drawing.Point(8, 14)
         Me.RadAll.Name = "RadAll"
-        Me.RadAll.Size = New System.Drawing.Size(42, 20)
+        Me.RadAll.Size = New System.Drawing.Size(51, 24)
         Me.RadAll.TabIndex = 2
         Me.RadAll.Text = "الكل"
         Me.RadAll.UseVisualStyleBackColor = True
@@ -147,7 +148,7 @@ Partial Class FrmSuppliers
         Me.RadOff.AutoSize = True
         Me.RadOff.Location = New System.Drawing.Point(58, 14)
         Me.RadOff.Name = "RadOff"
-        Me.RadOff.Size = New System.Drawing.Size(68, 20)
+        Me.RadOff.Size = New System.Drawing.Size(82, 24)
         Me.RadOff.TabIndex = 1
         Me.RadOff.Text = "الغير مفعل"
         Me.RadOff.UseVisualStyleBackColor = True
@@ -157,7 +158,7 @@ Partial Class FrmSuppliers
         Me.RadOn.AutoSize = True
         Me.RadOn.Location = New System.Drawing.Point(132, 14)
         Me.RadOn.Name = "RadOn"
-        Me.RadOn.Size = New System.Drawing.Size(51, 20)
+        Me.RadOn.Size = New System.Drawing.Size(61, 24)
         Me.RadOn.TabIndex = 0
         Me.RadOn.TabStop = True
         Me.RadOn.Text = "المفعل"
@@ -179,12 +180,23 @@ Partial Class FrmSuppliers
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "معطيات سحب المعلومات"
         '
+        'LblClear
+        '
+        Me.LblClear.AutoSize = True
+        Me.LblClear.Font = New System.Drawing.Font("David", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.LblClear.ForeColor = System.Drawing.Color.Blue
+        Me.LblClear.Location = New System.Drawing.Point(6, 83)
+        Me.LblClear.Name = "LblClear"
+        Me.LblClear.Size = New System.Drawing.Size(97, 20)
+        Me.LblClear.TabIndex = 43
+        Me.LblClear.Text = "تنظيف الخانات"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(435, 83)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 16)
+        Me.Label3.Size = New System.Drawing.Size(75, 20)
         Me.Label3.TabIndex = 42
         Me.Label3.Text = "معرف المورد"
         '
@@ -193,7 +205,7 @@ Partial Class FrmSuppliers
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(432, 54)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 16)
+        Me.Label2.Size = New System.Drawing.Size(80, 20)
         Me.Label2.TabIndex = 41
         Me.Label2.Text = "وجهة الاتصال"
         '
@@ -202,7 +214,7 @@ Partial Class FrmSuppliers
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(446, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 16)
+        Me.Label1.Size = New System.Drawing.Size(62, 20)
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "اسم المورد"
         '
@@ -210,21 +222,21 @@ Partial Class FrmSuppliers
         '
         Me.TxtID.Location = New System.Drawing.Point(225, 80)
         Me.TxtID.Name = "TxtID"
-        Me.TxtID.Size = New System.Drawing.Size(189, 23)
+        Me.TxtID.Size = New System.Drawing.Size(189, 27)
         Me.TxtID.TabIndex = 39
         '
         'TxtContact
         '
         Me.TxtContact.Location = New System.Drawing.Point(225, 51)
         Me.TxtContact.Name = "TxtContact"
-        Me.TxtContact.Size = New System.Drawing.Size(189, 23)
+        Me.TxtContact.Size = New System.Drawing.Size(189, 27)
         Me.TxtContact.TabIndex = 38
         '
         'TxtSupplierName
         '
         Me.TxtSupplierName.Location = New System.Drawing.Point(6, 22)
         Me.TxtSupplierName.Name = "TxtSupplierName"
-        Me.TxtSupplierName.Size = New System.Drawing.Size(408, 23)
+        Me.TxtSupplierName.Size = New System.Drawing.Size(408, 27)
         Me.TxtSupplierName.TabIndex = 37
         '
         'DGVSuppliers
@@ -234,7 +246,7 @@ Partial Class FrmSuppliers
         Me.DGVSuppliers.AllowUserToResizeColumns = False
         Me.DGVSuppliers.AllowUserToResizeRows = False
         Me.DGVSuppliers.BackgroundColor = System.Drawing.Color.White
-        Me.DGVSuppliers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DGVSuppliers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.DGVSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVSuppliers.GridColor = System.Drawing.Color.LightGray
         Me.DGVSuppliers.Location = New System.Drawing.Point(12, 136)
@@ -243,25 +255,16 @@ Partial Class FrmSuppliers
         Me.DGVSuppliers.ReadOnly = True
         Me.DGVSuppliers.RowHeadersVisible = False
         Me.DGVSuppliers.RowHeadersWidth = 51
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DGVSuppliers.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVSuppliers.RowTemplate.Height = 28
         Me.DGVSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVSuppliers.Size = New System.Drawing.Size(712, 347)
         Me.DGVSuppliers.TabIndex = 37
         '
-        'LblClear
-        '
-        Me.LblClear.AutoSize = True
-        Me.LblClear.Font = New System.Drawing.Font("David", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.LblClear.ForeColor = System.Drawing.Color.Blue
-        Me.LblClear.Location = New System.Drawing.Point(6, 83)
-        Me.LblClear.Name = "LblClear"
-        Me.LblClear.Size = New System.Drawing.Size(79, 16)
-        Me.LblClear.TabIndex = 43
-        Me.LblClear.Text = "تنظيف الخانات"
-        '
         'FrmSuppliers
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.CancelButton = Me.BtnClose

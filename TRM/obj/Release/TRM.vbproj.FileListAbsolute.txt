@@ -103,3 +103,4 @@ D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmAdminCode.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCompany.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSuppliers.resources
 D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmSupplierView.resources
+D:\GithubProjects\TRM.VB\TRM\obj\Release\TRM.FrmCurrency.resources

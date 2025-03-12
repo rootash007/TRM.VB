@@ -36,7 +36,7 @@
     <MinimumRequiredVersion>1.0.0.42</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>49</ApplicationRevision>
+    <ApplicationRevision>50</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -139,6 +139,7 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Controllers\Audits_Controller.vb" />
     <Compile Include="Controllers\Costs_Controller.vb" />
+    <Compile Include="Controllers\Currency_Controller.vb" />
     <Compile Include="Controllers\Suppliers_Controller.vb" />
     <Compile Include="Controller_FrmMain.vb" />
     <Compile Include="Controllers\DataBase_Controller.vb" />
@@ -152,6 +153,12 @@
       <DependentUpon>FrmAuditView.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Audits\FrmAuditView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Currency\FrmCurrency.Designer.vb">
+      <DependentUpon>FrmCurrency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Currency\FrmCurrency.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Materials\FrmMaterialPriceEdit.Designer.vb">
@@ -436,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Audits\FrmAuditView.resx">
       <DependentUpon>FrmAuditView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Currency\FrmCurrency.resx">
+      <DependentUpon>FrmCurrency.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Products\FrmImportProductData.resx">
       <DependentUpon>FrmImportProductData.vb</DependentUpon>

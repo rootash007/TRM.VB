@@ -598,4 +598,32 @@ Public Class FrmMain
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub TSMCurrency_Click(sender As Object, e As EventArgs) Handles TSMCurrency.Click
+        Try
+            If AdminMode = True Then
+                If Application.OpenForms.OfType(Of FrmCurrency).Any = True Then
+                    FrmCurrency.Activate()
+                Else
+                    FrmCurrency = Nothing
+                    FrmCurrency.MdiParent = Me
+                    FrmCurrency.Show()
+                End If
+            Else
+                If isAllowed(12) = True Then
+                    If Application.OpenForms.OfType(Of FrmCurrency).Any = True Then
+                        FrmCurrency.Activate()
+                    Else
+                        FrmCurrency = Nothing
+                        FrmCurrency.MdiParent = Me
+                        FrmCurrency.Show()
+                    End If
+                Else
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

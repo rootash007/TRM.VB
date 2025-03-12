@@ -107,7 +107,7 @@ Module Suppliers_Controller
         End Try
     End Sub
 
-    Public Sub AddSubpplier(supplier_name As String, supplier_id As String, supplier_contact As String, supplier_phone As String, supplier_fax As String, supplier_email As String, supplier_adress As String, supplier_city As String, postal_code As String, supplier_bank_details As String, currency As String, supplier_notes As String, supplier_folder As String)
+    Public Sub AddSupplier(supplier_name As String, supplier_id As String, supplier_contact As String, supplier_phone As String, supplier_fax As String, supplier_email As String, supplier_adress As String, supplier_city As String, postal_code As String, supplier_bank_details As String, currency As String, supplier_notes As String, supplier_folder As String)
         Try
             cmd = New SqlCommand
             With cmd
@@ -134,6 +134,46 @@ Module Suppliers_Controller
             dbcon.Close()
             cmd = Nothing
         Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
+    Public Sub AddSupplierDynamic(parameters As Dictionary(Of String, Object))
+        ' Validate inputs
+        If parameters Is Nothing OrElse parameters.Count = 0 Then
+            MsgBox("No parameters provided.")
+            Return
+        End If
+
+        Try
+            cmd = New SqlCommand
+            With cmd
+                .CommandType = CommandType.Text
+                Dim columns As String = String.Join(", ", parameters.Keys)
+                Dim values As String = String.Join(", ", parameters.Keys.Select(Function(k) "@" & k))
+                .CommandText = $"INSERT INTO suppliers ({columns}) VALUES ({values})"
+                .Connection = dbcon
+            End With
+            ' Add parameters to the command
+            For Each kvp As KeyValuePair(Of String, Object) In parameters
+                If kvp.Value Is Nothing Then
+                    cmd.Parameters.AddWithValue("@" & kvp.Key, DBNull.Value)
+                Else
+                    cmd.Parameters.AddWithValue("@" & kvp.Key, kvp.Value)
+                End If
+            Next
+
+            ' Execute the command
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+            cmd = Nothing
+        Catch ex As Exception
+            ' Log the exception
+            'My.Application.Log.WriteException(ex)
+            'MsgBox("An error occurred while adding the supplier. Please check the logs.")
             MsgBox(ex.Message)
         Finally
             dbcon.Close()
@@ -175,6 +215,55 @@ Module Suppliers_Controller
         End Try
     End Sub
 
+    Public Sub UpdateSupplierDynamic(parameters As Dictionary(Of String, Object), conditionField As String, conditionValue As Object)
+        ' Validate inputs
+        If parameters Is Nothing OrElse parameters.Count = 0 Then
+            MsgBox("No parameters provided.")
+            Return
+        End If
+        If String.IsNullOrEmpty(conditionField) Then
+            MsgBox("Condition field cannot be empty.")
+            Return
+        End If
+
+        Try
+            cmd = New SqlCommand
+
+            With cmd
+                .CommandType = CommandType.Text
+                ' Dynamically build the SQL query
+                Dim setClause As String = String.Join(", ", parameters.Keys.Select(Function(k) $"{k} = @{k}"))
+                .CommandText = $"UPDATE suppliers SET {setClause} WHERE {conditionField} = @conditionValue"
+                .Connection = dbcon
+            End With
+
+            ' Add parameters to the command
+            For Each kvp As KeyValuePair(Of String, Object) In parameters
+                If kvp.Value Is Nothing Then
+                    cmd.Parameters.AddWithValue("@" & kvp.Key, DBNull.Value)
+                Else
+                    cmd.Parameters.AddWithValue("@" & kvp.Key, kvp.Value)
+                End If
+            Next
+
+            ' Add the condition parameter
+            cmd.Parameters.AddWithValue("@conditionValue", conditionValue)
+
+            ' Execute the command
+            dbcon.Open()
+            cmd.ExecuteNonQuery()
+            dbcon.Close()
+            cmd = Nothing
+        Catch ex As Exception
+            ' Log the exception
+            'My.Application.Log.WriteException(ex)
+            'MsgBox("An error occurred while updating the audit. Please check the logs.")
+            MsgBox(ex.Message)
+        Finally
+            dbcon.Close()
+        End Try
+    End Sub
+
     Public Sub SupplierStatusChange()
         Try
             Dim isActive As Boolean
@@ -200,5 +289,31 @@ Module Suppliers_Controller
             dbcon.Close()
         End Try
     End Sub
+
+    Public Function IsRecordExists(tableName As String, columnName As String, value As String) As Boolean
+        Dim isExists As Boolean = False
+        cmd = New SqlCommand
+        With cmd
+            .CommandType = CommandType.Text
+            .CommandText = $"SELECT COUNT(*) FROM {tableName} WHERE {columnName} = @Value"
+            .Connection = dbcon
+        End With
+        ' Add parameter to prevent SQL injection
+        cmd.Parameters.AddWithValue("@Value", value)
+        Try
+            dbcon.Open()
+            Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+            ' If count > 0, the record exists
+            If count > 0 Then
+                isExists = True
+            End If
+            dbcon.Close()
+            cmd = Nothing
+        Catch ex As Exception
+            ' Handle exceptions (e.g., log the error)
+            MsgBox("Error: " & ex.Message)
+        End Try
+        Return isExists
+    End Function
 
 End Module
