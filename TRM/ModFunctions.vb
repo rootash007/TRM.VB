@@ -42,6 +42,7 @@ Module ModFunctions
     Public isAddProduct As Boolean = False
     Public AdminMode As Boolean = False    'מצב מנהל
     Public isAdminCode As Boolean = False
+    Public AppLanguage As String
     'Public isConnected As Boolean
 
 #Region "Variables for Forms Copies"
@@ -383,25 +384,6 @@ Module ModFunctions
         'DesignMainDGV(FrmMainList.DgvMain)
     End Sub
 
-    Public Sub ReLoadMain()
-        'FrmMain.LblMainCount.Text = CountMe()
-        'Dim TestCount As Integer
-        'FillTestList()
-        'TestCount = MyTab.Rows.Count
-        'FrmMain.LblTestCount.Text = TestCount
-        'FrmMain.LblDeletedCount.Text = DeletedCount()
-
-        'Dim DateFrom As Date
-        'Dim DateTo As Date
-        'DateFrom = Today.AddDays(-(Today.Day - 1))
-        'DateTo = Today.ToShortDateString
-        'Fill2Dates(DateFrom, DateTo)
-        'FrmMain.LblSoldCount.Text = SoldTab.Rows.Count
-
-        'FrmMain.LblCustomersCount.Text = CustomersCount()
-        'FrmMain.LblVendorsCount.Text = VendorsCount()
-    End Sub
-
     Public Sub AddNewCar(CarSerial As Integer, CarId As String, CarKind As String, carmodel As String, cartype As String, caryear As Integer, carcolor As String, carhand As Integer, mainis As String, caroil As String, cargear As String, engine As String, carkm As String, priceout As Integer, shelda As String, carcode As String, keynum As Integer, datein As Date, datetest As Date, salername As String, salerid As String, carbuyinfo As String, roof As Boolean, vav As Boolean, wheels As Boolean, seats As Boolean, pricein As Integer, saleradress As String, salerphone As String, BuyAgreement As String)
         Try
             cmd = New SqlCommand
@@ -604,24 +586,6 @@ Module ModFunctions
         End If
     End Sub
 
-    Public Sub OpenNewCar()
-        FmAddNewCar = New FrmAddNewCar
-        If AdminMode = True Then
-            FmAddNewCar.TxtCarSerial.ReadOnly = False
-        Else
-            FmAddNewCar.TxtCarSerial.ReadOnly = True
-        End If
-        FmAddNewCar.Text = "הוספת רכב חדש"
-        FmAddNewCar.BtnAdd.Text = "הוספה"
-        FmAddNewCar.TxtCarSerial.Text = My.Settings.LocalDataBase
-        FmAddNewCar.BtnAdd.Image = My.Resources.plus
-        FmAddNewCar.LblShowPrice.Visible = False
-        FmAddNewCar.BtnBuyAgreement.Enabled = False
-        LoadRequired(FmAddNewCar)
-        FmAddNewCar.TxtPriceIn.Visible = True
-        FmAddNewCar.ShowDialog()
-    End Sub
-
     Public Sub LoadRequired(Frm As Object)
         If Frm.TxtCarId.Text = "" Then
             Frm.TxtCarId.BackColor = Color.LightPink
@@ -653,7 +617,7 @@ Module ModFunctions
         Else
             Frm.TxtCarKM.BackColor = Color.White
         End If
-        If My.Settings.Shelda = True Then
+        If My.Settings.Language = True Then
             Frm.TxtShelda.BackColor = Color.LightPink
         Else
             Frm.TxtShelda.BackColor = Color.White
@@ -1330,7 +1294,7 @@ Module ModFunctions
 
     Public Sub ChkForUpdates()
         Try
-            Dim Request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("https://www.ctrlmanager.com/TRM/Version.txt")
+            Dim Request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("http://www.ctrlmanager.com/TRM/Version.txt")
             Dim Response As System.Net.HttpWebResponse = Request.GetResponse()
             Dim StreamR As System.IO.StreamReader = New System.IO.StreamReader(Response.GetResponseStream())
             Dim NewVersion As String = StreamR.ReadToEnd()
@@ -1400,5 +1364,6 @@ Module ModFunctions
         '    MsgBox(ex.Message)
         'End Try
     End Sub
+
 
 End Module

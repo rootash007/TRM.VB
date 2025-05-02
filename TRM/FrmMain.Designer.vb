@@ -24,16 +24,19 @@ Partial Class FrmMain
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
         Me.MenuMain = New System.Windows.Forms.MenuStrip()
-        Me.קובץToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.החלפתמשתמשToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.יציאהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSILang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.עבריתToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.عربيToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSILogOut = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSIExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMTickets = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMUsers = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMAudits = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMCostsList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMActions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMMaterials = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMSuppliers = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSIUsers = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSIAudits = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSICostsList = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSIActions = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSIMaterials = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSISuppliers = New System.Windows.Forms.ToolStripMenuItem()
         Me.הפקתמסמכיםToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הסכםמכירהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הכסםקנייהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,27 +46,27 @@ Partial Class FrmMain
         Me.הגדרתפרטיביתהעסקToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הגדרתשדותחובהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.הפעלתמצבמנהלToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.טבלאותToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMUnits = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSUsers = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSActions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMCurrency = New System.Windows.Forms.ToolStripMenuItem()
-        Me.מערכתToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.גיבוישחזורToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.עדכוןתוכנהToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PermisionsTSM = New System.Windows.Forms.ToolStripMenuItem()
-        Me.تحريركلالنوافذالقيدالاستخدامToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMCompanyOptions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.אודותToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.فحصالاصدارالاخيرToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.חלונותToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TSMCloseAll = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMTables = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSTUnits = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSTUsers = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSTActions = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSTCurrency = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMSystem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiBackUp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiUpgrade = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiPermissions = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiWindowsUnLock = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiCompanyOptions = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiUpgradeCheck = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMWindows = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSiCloseAll = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.SSMain = New System.Windows.Forms.StatusStrip()
         Me.SSAdminStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.SSAdmin = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSMainProgBar = New System.Windows.Forms.ToolStripProgressBar()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TSSCurentVersion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSSLblVersion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TSBtnUsers = New System.Windows.Forms.ToolStripButton()
@@ -82,78 +85,100 @@ Partial Class FrmMain
         '
         Me.MenuMain.Font = New System.Drawing.Font("David", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuMain.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.קובץToolStripMenuItem, Me.TSMTickets, Me.הפקתמסמכיםToolStripMenuItem, Me.הגדרותToolStripMenuItem, Me.טבלאותToolStripMenuItem, Me.מערכתToolStripMenuItem, Me.חלונותToolStripMenuItem})
+        Me.MenuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMFile, Me.TSMTickets, Me.הפקתמסמכיםToolStripMenuItem, Me.הגדרותToolStripMenuItem, Me.TSMTables, Me.TSMSystem, Me.TSMWindows})
         Me.MenuMain.Location = New System.Drawing.Point(0, 0)
-        Me.MenuMain.MdiWindowListItem = Me.חלונותToolStripMenuItem
+        Me.MenuMain.MdiWindowListItem = Me.TSMWindows
         Me.MenuMain.Name = "MenuMain"
         Me.MenuMain.Padding = New System.Windows.Forms.Padding(5, 1, 0, 1)
         Me.MenuMain.Size = New System.Drawing.Size(1349, 24)
         Me.MenuMain.TabIndex = 0
         Me.MenuMain.Text = "MenuStrip1"
         '
-        'קובץToolStripMenuItem
+        'TSMFile
         '
-        Me.קובץToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.החלפתמשתמשToolStripMenuItem, Me.יציאהToolStripMenuItem})
-        Me.קובץToolStripMenuItem.Name = "קובץToolStripMenuItem"
-        Me.קובץToolStripMenuItem.Size = New System.Drawing.Size(36, 22)
-        Me.קובץToolStripMenuItem.Text = "ملف"
+        Me.TSMFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSILang, Me.TSILogOut, Me.TSIExit})
+        Me.TSMFile.Name = "TSMFile"
+        Me.TSMFile.Size = New System.Drawing.Size(36, 22)
+        Me.TSMFile.Text = "ملف"
         '
-        'החלפתמשתמשToolStripMenuItem
+        'TSILang
         '
-        Me.החלפתמשתמשToolStripMenuItem.Image = CType(resources.GetObject("החלפתמשתמשToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.החלפתמשתמשToolStripMenuItem.Name = "החלפתמשתמשToolStripMenuItem"
-        Me.החלפתמשתמשToolStripMenuItem.Size = New System.Drawing.Size(146, 26)
-        Me.החלפתמשתמשToolStripMenuItem.Text = "تبديل المستخدم"
+        Me.TSILang.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.עבריתToolStripMenuItem, Me.عربيToolStripMenuItem})
+        Me.TSILang.Image = CType(resources.GetObject("TSILang.Image"), System.Drawing.Image)
+        Me.TSILang.Name = "TSILang"
+        Me.TSILang.Size = New System.Drawing.Size(184, 26)
+        Me.TSILang.Text = "اللغه"
         '
-        'יציאהToolStripMenuItem
+        'עבריתToolStripMenuItem
         '
-        Me.יציאהToolStripMenuItem.Image = CType(resources.GetObject("יציאהToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.יציאהToolStripMenuItem.Name = "יציאהToolStripMenuItem"
-        Me.יציאהToolStripMenuItem.Size = New System.Drawing.Size(146, 26)
-        Me.יציאהToolStripMenuItem.Text = "خروج"
+        Me.עבריתToolStripMenuItem.Image = CType(resources.GetObject("עבריתToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.עבריתToolStripMenuItem.Name = "עבריתToolStripMenuItem"
+        Me.עבריתToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.עבריתToolStripMenuItem.Text = "עברית"
+        '
+        'عربيToolStripMenuItem
+        '
+        Me.عربيToolStripMenuItem.Image = CType(resources.GetObject("عربيToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.عربيToolStripMenuItem.Name = "عربيToolStripMenuItem"
+        Me.عربيToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.عربيToolStripMenuItem.Text = "عربي"
+        '
+        'TSILogOut
+        '
+        Me.TSILogOut.Image = CType(resources.GetObject("TSILogOut.Image"), System.Drawing.Image)
+        Me.TSILogOut.Name = "TSILogOut"
+        Me.TSILogOut.Size = New System.Drawing.Size(184, 26)
+        Me.TSILogOut.Text = "تبديل المستخدم"
+        '
+        'TSIExit
+        '
+        Me.TSIExit.Image = CType(resources.GetObject("TSIExit.Image"), System.Drawing.Image)
+        Me.TSIExit.Name = "TSIExit"
+        Me.TSIExit.Size = New System.Drawing.Size(184, 26)
+        Me.TSIExit.Text = "خروج"
         '
         'TSMTickets
         '
-        Me.TSMTickets.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMUsers, Me.TSMAudits, Me.TSMCostsList, Me.TSMActions, Me.TSMMaterials, Me.TSMSuppliers})
+        Me.TSMTickets.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSIUsers, Me.TSIAudits, Me.TSICostsList, Me.TSIActions, Me.TSIMaterials, Me.TSISuppliers})
         Me.TSMTickets.Name = "TSMTickets"
         Me.TSMTickets.Size = New System.Drawing.Size(57, 22)
         Me.TSMTickets.Text = "مستندات"
         '
-        'TSMUsers
+        'TSIUsers
         '
-        Me.TSMUsers.Name = "TSMUsers"
-        Me.TSMUsers.Size = New System.Drawing.Size(142, 22)
-        Me.TSMUsers.Text = "المستخدمين"
+        Me.TSIUsers.Name = "TSIUsers"
+        Me.TSIUsers.Size = New System.Drawing.Size(180, 22)
+        Me.TSIUsers.Text = "المستخدمين"
         '
-        'TSMAudits
+        'TSIAudits
         '
-        Me.TSMAudits.Name = "TSMAudits"
-        Me.TSMAudits.Size = New System.Drawing.Size(142, 22)
-        Me.TSMAudits.Text = "التحققات"
+        Me.TSIAudits.Name = "TSIAudits"
+        Me.TSIAudits.Size = New System.Drawing.Size(180, 22)
+        Me.TSIAudits.Text = "التحققات"
         '
-        'TSMCostsList
+        'TSICostsList
         '
-        Me.TSMCostsList.Name = "TSMCostsList"
-        Me.TSMCostsList.Size = New System.Drawing.Size(142, 22)
-        Me.TSMCostsList.Text = "حساب التكاليف"
+        Me.TSICostsList.Name = "TSICostsList"
+        Me.TSICostsList.Size = New System.Drawing.Size(180, 22)
+        Me.TSICostsList.Text = "حساب التكاليف"
         '
-        'TSMActions
+        'TSIActions
         '
-        Me.TSMActions.Name = "TSMActions"
-        Me.TSMActions.Size = New System.Drawing.Size(142, 22)
-        Me.TSMActions.Text = "العمليات"
+        Me.TSIActions.Name = "TSIActions"
+        Me.TSIActions.Size = New System.Drawing.Size(180, 22)
+        Me.TSIActions.Text = "العمليات"
         '
-        'TSMMaterials
+        'TSIMaterials
         '
-        Me.TSMMaterials.Name = "TSMMaterials"
-        Me.TSMMaterials.Size = New System.Drawing.Size(142, 22)
-        Me.TSMMaterials.Text = "المواد"
+        Me.TSIMaterials.Name = "TSIMaterials"
+        Me.TSIMaterials.Size = New System.Drawing.Size(180, 22)
+        Me.TSIMaterials.Text = "المواد"
         '
-        'TSMSuppliers
+        'TSISuppliers
         '
-        Me.TSMSuppliers.Name = "TSMSuppliers"
-        Me.TSMSuppliers.Size = New System.Drawing.Size(142, 22)
-        Me.TSMSuppliers.Text = "الموردين"
+        Me.TSISuppliers.Name = "TSISuppliers"
+        Me.TSISuppliers.Size = New System.Drawing.Size(180, 22)
+        Me.TSISuppliers.Text = "الموردين"
         '
         'הפקתמסמכיםToolStripMenuItem
         '
@@ -166,25 +191,25 @@ Partial Class FrmMain
         'הסכםמכירהToolStripMenuItem
         '
         Me.הסכםמכירהToolStripMenuItem.Name = "הסכםמכירהToolStripMenuItem"
-        Me.הסכםמכירהToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.הסכםמכירהToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.הסכםמכירהToolStripMenuItem.Text = "הסכם מכירה"
         '
         'הכסםקנייהToolStripMenuItem
         '
         Me.הכסםקנייהToolStripMenuItem.Name = "הכסםקנייהToolStripMenuItem"
-        Me.הכסםקנייהToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.הכסםקנייהToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.הכסםקנייהToolStripMenuItem.Text = "הכסם קנייה"
         '
         'הסכםריקToolStripMenuItem
         '
         Me.הסכםריקToolStripMenuItem.Name = "הסכםריקToolStripMenuItem"
-        Me.הסכםריקToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.הסכםריקToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.הסכםריקToolStripMenuItem.Text = "הסכם ריק"
         '
         'ספירתמלאיToolStripMenuItem
         '
         Me.ספירתמלאיToolStripMenuItem.Name = "ספירתמלאיToolStripMenuItem"
-        Me.ספירתמלאיToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.ספירתמלאיToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ספירתמלאיToolStripMenuItem.Text = "ספירת מלאי"
         '
         'הגדרותToolStripMenuItem
@@ -213,112 +238,112 @@ Partial Class FrmMain
         Me.הפעלתמצבמנהלToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.הפעלתמצבמנהלToolStripMenuItem.Text = "הפעלת מצב מנהל"
         '
-        'טבלאותToolStripMenuItem
+        'TSMTables
         '
-        Me.טבלאותToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMUnits, Me.TSUsers, Me.TSActions, Me.TSMCurrency})
-        Me.טבלאותToolStripMenuItem.Name = "טבלאותToolStripMenuItem"
-        Me.טבלאותToolStripMenuItem.Size = New System.Drawing.Size(47, 22)
-        Me.טבלאותToolStripMenuItem.Text = "جداول"
+        Me.TSMTables.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSTUnits, Me.TSTUsers, Me.TSTActions, Me.TSTCurrency})
+        Me.TSMTables.Name = "TSMTables"
+        Me.TSMTables.Size = New System.Drawing.Size(47, 22)
+        Me.TSMTables.Text = "جداول"
         '
-        'TSMUnits
+        'TSTUnits
         '
-        Me.TSMUnits.Name = "TSMUnits"
-        Me.TSMUnits.Size = New System.Drawing.Size(180, 22)
-        Me.TSMUnits.Text = "وحدات القياس"
+        Me.TSTUnits.Name = "TSTUnits"
+        Me.TSTUnits.Size = New System.Drawing.Size(180, 22)
+        Me.TSTUnits.Text = "وحدات القياس"
         '
-        'TSUsers
+        'TSTUsers
         '
-        Me.TSUsers.Name = "TSUsers"
-        Me.TSUsers.Size = New System.Drawing.Size(180, 22)
-        Me.TSUsers.Text = "مستخدمين"
+        Me.TSTUsers.Name = "TSTUsers"
+        Me.TSTUsers.Size = New System.Drawing.Size(180, 22)
+        Me.TSTUsers.Text = "مستخدمين"
         '
-        'TSActions
+        'TSTActions
         '
-        Me.TSActions.Name = "TSActions"
-        Me.TSActions.Size = New System.Drawing.Size(180, 22)
-        Me.TSActions.Text = "العمليات"
+        Me.TSTActions.Name = "TSTActions"
+        Me.TSTActions.Size = New System.Drawing.Size(180, 22)
+        Me.TSTActions.Text = "العمليات"
         '
-        'TSMCurrency
+        'TSTCurrency
         '
-        Me.TSMCurrency.Name = "TSMCurrency"
-        Me.TSMCurrency.Size = New System.Drawing.Size(180, 22)
-        Me.TSMCurrency.Text = "العملات"
+        Me.TSTCurrency.Name = "TSTCurrency"
+        Me.TSTCurrency.Size = New System.Drawing.Size(180, 22)
+        Me.TSTCurrency.Text = "العملات"
         '
-        'מערכתToolStripMenuItem
+        'TSMSystem
         '
-        Me.מערכתToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.גיבוישחזורToolStripMenuItem1, Me.עדכוןתוכנהToolStripMenuItem, Me.PermisionsTSM, Me.تحريركلالنوافذالقيدالاستخدامToolStripMenuItem, Me.TSMCompanyOptions, Me.אודותToolStripMenuItem1, Me.فحصالاصدارالاخيرToolStripMenuItem})
-        Me.מערכתToolStripMenuItem.Name = "מערכתToolStripMenuItem"
-        Me.מערכתToolStripMenuItem.Size = New System.Drawing.Size(45, 22)
-        Me.מערכתToolStripMenuItem.Text = "النظام"
+        Me.TSMSystem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSiBackUp, Me.TSiUpgrade, Me.TSiPermissions, Me.TSiWindowsUnLock, Me.TSiCompanyOptions, Me.TSiAbout, Me.TSiUpgradeCheck})
+        Me.TSMSystem.Name = "TSMSystem"
+        Me.TSMSystem.Size = New System.Drawing.Size(45, 22)
+        Me.TSMSystem.Text = "النظام"
         '
-        'גיבוישחזורToolStripMenuItem1
+        'TSiBackUp
         '
-        Me.גיבוישחזורToolStripMenuItem1.Name = "גיבוישחזורToolStripMenuItem1"
-        Me.גיבוישחזורToolStripMenuItem1.Size = New System.Drawing.Size(222, 22)
-        Me.גיבוישחזורToolStripMenuItem1.Text = "النسخ الاحتياطي"
+        Me.TSiBackUp.Name = "TSiBackUp"
+        Me.TSiBackUp.Size = New System.Drawing.Size(222, 22)
+        Me.TSiBackUp.Text = "النسخ الاحتياطي"
         '
-        'עדכוןתוכנהToolStripMenuItem
+        'TSiUpgrade
         '
-        Me.עדכוןתוכנהToolStripMenuItem.Name = "עדכוןתוכנהToolStripMenuItem"
-        Me.עדכוןתוכנהToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.עדכוןתוכנהToolStripMenuItem.Text = "تحديث البرنامج"
+        Me.TSiUpgrade.Name = "TSiUpgrade"
+        Me.TSiUpgrade.Size = New System.Drawing.Size(222, 22)
+        Me.TSiUpgrade.Text = "تحديث البرنامج"
         '
-        'PermisionsTSM
+        'TSiPermissions
         '
-        Me.PermisionsTSM.Name = "PermisionsTSM"
-        Me.PermisionsTSM.Size = New System.Drawing.Size(222, 22)
-        Me.PermisionsTSM.Text = "Permissions"
+        Me.TSiPermissions.Name = "TSiPermissions"
+        Me.TSiPermissions.Size = New System.Drawing.Size(222, 22)
+        Me.TSiPermissions.Text = "Permissions"
         '
-        'تحريركلالنوافذالقيدالاستخدامToolStripMenuItem
+        'TSiWindowsUnLock
         '
-        Me.تحريركلالنوافذالقيدالاستخدامToolStripMenuItem.Name = "تحريركلالنوافذالقيدالاستخدامToolStripMenuItem"
-        Me.تحريركلالنوافذالقيدالاستخدامToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.تحريركلالنوافذالقيدالاستخدامToolStripMenuItem.Text = "تحرير نوافذ المواد القيد الاستخدام"
+        Me.TSiWindowsUnLock.Name = "TSiWindowsUnLock"
+        Me.TSiWindowsUnLock.Size = New System.Drawing.Size(222, 22)
+        Me.TSiWindowsUnLock.Text = "تحرير نوافذ المواد القيد الاستخدام"
         '
-        'TSMCompanyOptions
+        'TSiCompanyOptions
         '
-        Me.TSMCompanyOptions.Name = "TSMCompanyOptions"
-        Me.TSMCompanyOptions.Size = New System.Drawing.Size(222, 22)
-        Me.TSMCompanyOptions.Text = "خيارات الشركة"
+        Me.TSiCompanyOptions.Name = "TSiCompanyOptions"
+        Me.TSiCompanyOptions.Size = New System.Drawing.Size(222, 22)
+        Me.TSiCompanyOptions.Text = "خيارات الشركة"
         '
-        'אודותToolStripMenuItem1
+        'TSiAbout
         '
-        Me.אודותToolStripMenuItem1.Name = "אודותToolStripMenuItem1"
-        Me.אודותToolStripMenuItem1.Size = New System.Drawing.Size(222, 22)
-        Me.אודותToolStripMenuItem1.Text = "حول"
+        Me.TSiAbout.Name = "TSiAbout"
+        Me.TSiAbout.Size = New System.Drawing.Size(222, 22)
+        Me.TSiAbout.Text = "حول"
         '
-        'فحصالاصدارالاخيرToolStripMenuItem
+        'TSiUpgradeCheck
         '
-        Me.فحصالاصدارالاخيرToolStripMenuItem.Name = "فحصالاصدارالاخيرToolStripMenuItem"
-        Me.فحصالاصدارالاخيرToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
-        Me.فحصالاصدارالاخيرToolStripMenuItem.Text = "فحص الاصدار الاخير"
+        Me.TSiUpgradeCheck.Name = "TSiUpgradeCheck"
+        Me.TSiUpgradeCheck.Size = New System.Drawing.Size(222, 22)
+        Me.TSiUpgradeCheck.Text = "فحص الاصدار الاخير"
         '
-        'חלונותToolStripMenuItem
+        'TSMWindows
         '
-        Me.חלונותToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMCloseAll, Me.ToolStripSeparator1})
-        Me.חלונותToolStripMenuItem.Name = "חלונותToolStripMenuItem"
-        Me.חלונותToolStripMenuItem.Size = New System.Drawing.Size(43, 22)
-        Me.חלונותToolStripMenuItem.Text = "نوافذ"
+        Me.TSMWindows.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSiCloseAll, Me.ToolStripSeparator1})
+        Me.TSMWindows.Name = "TSMWindows"
+        Me.TSMWindows.Size = New System.Drawing.Size(43, 22)
+        Me.TSMWindows.Text = "نوافذ"
         '
-        'TSMCloseAll
+        'TSiCloseAll
         '
-        Me.TSMCloseAll.Font = New System.Drawing.Font("David", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TSMCloseAll.Image = Global.TRM.My.Resources.Resources.Cancel48
-        Me.TSMCloseAll.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.TSMCloseAll.Name = "TSMCloseAll"
-        Me.TSMCloseAll.Size = New System.Drawing.Size(162, 26)
-        Me.TSMCloseAll.Text = "اغلاق جميع النوافذ"
+        Me.TSiCloseAll.Font = New System.Drawing.Font("David", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TSiCloseAll.Image = Global.TRM.My.Resources.Resources.Cancel48
+        Me.TSiCloseAll.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.TSiCloseAll.Name = "TSiCloseAll"
+        Me.TSiCloseAll.Size = New System.Drawing.Size(184, 26)
+        Me.TSiCloseAll.Text = "اغلاق جميع النوافذ"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(159, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(181, 6)
         '
         'SSMain
         '
         Me.SSMain.BackColor = System.Drawing.Color.White
         Me.SSMain.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.SSMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSAdminStatus, Me.SSAdmin, Me.TSMainProgBar, Me.ToolStripStatusLabel1, Me.TSSLblVersion})
+        Me.SSMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSAdminStatus, Me.SSAdmin, Me.TSMainProgBar, Me.TSSCurentVersion, Me.TSSLblVersion})
         Me.SSMain.Location = New System.Drawing.Point(0, 605)
         Me.SSMain.Name = "SSMain"
         Me.SSMain.Padding = New System.Windows.Forms.Padding(12, 0, 1, 0)
@@ -345,11 +370,11 @@ Partial Class FrmMain
         Me.TSMainProgBar.Name = "TSMainProgBar"
         Me.TSMainProgBar.Size = New System.Drawing.Size(100, 18)
         '
-        'ToolStripStatusLabel1
+        'TSSCurentVersion
         '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(117, 19)
-        Me.ToolStripStatusLabel1.Text = "          النسخه الحاليه :  "
+        Me.TSSCurentVersion.Name = "TSSCurentVersion"
+        Me.TSSCurentVersion.Size = New System.Drawing.Size(117, 19)
+        Me.TSSCurentVersion.Text = "          النسخه الحاليه :  "
         '
         'TSSLblVersion
         '
@@ -480,31 +505,31 @@ Partial Class FrmMain
 
     End Sub
     Friend WithEvents MenuMain As System.Windows.Forms.MenuStrip
-    Friend WithEvents קובץToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSMFile As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TSMTickets As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents יציאהToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSIExit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הגדרותToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents מערכתToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSMSystem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הגדרתפרטיביתהעסקToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הגדרתשדותחובהToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents טבלאותToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TSMUnits As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents גיבוישחזורToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents אודותToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSMTables As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSTUnits As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSiBackUp As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSiAbout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הפקתמסמכיםToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הסכםמכירהToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הכסםקנייהToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents הסכםריקToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents עדכוןתוכנהToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSiUpgrade As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SSMain As System.Windows.Forms.StatusStrip
     Friend WithEvents SSAdmin As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents SSAdminStatus As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents החלפתמשתמשToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TSUsers As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSILogOut As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSTUsers As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ספירתמלאיToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TSMUsers As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents חלונותToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TSMCloseAll As ToolStripMenuItem
+    Friend WithEvents TSIUsers As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TSMWindows As ToolStripMenuItem
+    Friend WithEvents TSiCloseAll As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents TSBtnMaterial As ToolStripButton
@@ -513,20 +538,23 @@ Partial Class FrmMain
     Friend WithEvents TSBtnProducts As ToolStripButton
     Friend WithEvents TSMainProgBar As ToolStripProgressBar
     Friend WithEvents TSBtnActions As ToolStripButton
-    Friend WithEvents TSActions As ToolStripMenuItem
+    Friend WithEvents TSTActions As ToolStripMenuItem
     Friend WithEvents הפעלתמצבמנהלToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PermisionsTSM As ToolStripMenuItem
+    Friend WithEvents TSiPermissions As ToolStripMenuItem
     Friend WithEvents TSSLblVersion As ToolStripStatusLabel
-    Friend WithEvents تحريركلالنوافذالقيدالاستخدامToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TSiWindowsUnLock As ToolStripMenuItem
     Friend WithEvents TSBtnAlerts As ToolStripButton
-    Friend WithEvents TSMAudits As ToolStripMenuItem
-    Friend WithEvents TSMCostsList As ToolStripMenuItem
+    Friend WithEvents TSIAudits As ToolStripMenuItem
+    Friend WithEvents TSICostsList As ToolStripMenuItem
     Friend WithEvents TSBtnCost As ToolStripButton
-    Friend WithEvents TSMActions As ToolStripMenuItem
-    Friend WithEvents TSMMaterials As ToolStripMenuItem
-    Friend WithEvents TSMCompanyOptions As ToolStripMenuItem
-    Friend WithEvents TSMSuppliers As ToolStripMenuItem
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents فحصالاصدارالاخيرToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TSMCurrency As ToolStripMenuItem
+    Friend WithEvents TSIActions As ToolStripMenuItem
+    Friend WithEvents TSIMaterials As ToolStripMenuItem
+    Friend WithEvents TSiCompanyOptions As ToolStripMenuItem
+    Friend WithEvents TSISuppliers As ToolStripMenuItem
+    Friend WithEvents TSSCurentVersion As ToolStripStatusLabel
+    Friend WithEvents TSiUpgradeCheck As ToolStripMenuItem
+    Friend WithEvents TSTCurrency As ToolStripMenuItem
+    Friend WithEvents TSILang As ToolStripMenuItem
+    Friend WithEvents עבריתToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents عربيToolStripMenuItem As ToolStripMenuItem
 End Class

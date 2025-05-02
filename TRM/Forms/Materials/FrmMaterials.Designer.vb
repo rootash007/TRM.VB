@@ -27,7 +27,7 @@ Partial Class FrmMaterials
         Me.TabMaterials = New System.Windows.Forms.TabControl()
         Me.TabMaterialsOn = New System.Windows.Forms.TabPage()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblSearch = New System.Windows.Forms.Label()
         Me.TxtFilter = New System.Windows.Forms.TextBox()
         Me.DgvMaterials = New System.Windows.Forms.DataGridView()
         Me.TabMaterialsOff = New System.Windows.Forms.TabPage()
@@ -40,7 +40,7 @@ Partial Class FrmMaterials
         Me.BtnDeleteMaterial = New System.Windows.Forms.Button()
         Me.BtnClose = New System.Windows.Forms.Button()
         Me.GrpButtons = New System.Windows.Forms.GroupBox()
-        Me.BtmExportToExcel = New System.Windows.Forms.Button()
+        Me.BtnExportToExcel = New System.Windows.Forms.Button()
         Me.GrpMaterials.SuspendLayout()
         Me.TabMaterials.SuspendLayout()
         Me.TabMaterialsOn.SuspendLayout()
@@ -86,7 +86,7 @@ Partial Class FrmMaterials
         'TabMaterialsOn
         '
         Me.TabMaterialsOn.Controls.Add(Me.PictureBox1)
-        Me.TabMaterialsOn.Controls.Add(Me.Label1)
+        Me.TabMaterialsOn.Controls.Add(Me.LblSearch)
         Me.TabMaterialsOn.Controls.Add(Me.TxtFilter)
         Me.TabMaterialsOn.Controls.Add(Me.DgvMaterials)
         Me.TabMaterialsOn.Location = New System.Drawing.Point(4, 29)
@@ -110,15 +110,15 @@ Partial Class FrmMaterials
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
-        'Label1
+        'LblSearch
         '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(1099, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "بحث"
+        Me.LblSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LblSearch.AutoSize = True
+        Me.LblSearch.Location = New System.Drawing.Point(1099, 13)
+        Me.LblSearch.Name = "LblSearch"
+        Me.LblSearch.Size = New System.Drawing.Size(32, 20)
+        Me.LblSearch.TabIndex = 2
+        Me.LblSearch.Text = "بحث"
         '
         'TxtFilter
         '
@@ -147,7 +147,7 @@ Partial Class FrmMaterials
         Me.DgvMaterials.RowHeadersVisible = False
         Me.DgvMaterials.RowHeadersWidth = 51
         Me.DgvMaterials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvMaterials.Size = New System.Drawing.Size(1129, 378)
+        Me.DgvMaterials.Size = New System.Drawing.Size(1129, 372)
         Me.DgvMaterials.TabIndex = 0
         '
         'TabMaterialsOff
@@ -157,7 +157,7 @@ Partial Class FrmMaterials
         Me.TabMaterialsOff.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsOff.Name = "TabMaterialsOff"
         Me.TabMaterialsOff.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
-        Me.TabMaterialsOff.Size = New System.Drawing.Size(1139, 446)
+        Me.TabMaterialsOff.Size = New System.Drawing.Size(1139, 440)
         Me.TabMaterialsOff.TabIndex = 1
         Me.TabMaterialsOff.Text = "قائمة المواد الغير مفعلة"
         Me.TabMaterialsOff.UseVisualStyleBackColor = True
@@ -179,7 +179,7 @@ Partial Class FrmMaterials
         Me.DGVMaterialsOff.RowHeadersVisible = False
         Me.DGVMaterialsOff.RowHeadersWidth = 51
         Me.DGVMaterialsOff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVMaterialsOff.Size = New System.Drawing.Size(1129, 432)
+        Me.DGVMaterialsOff.Size = New System.Drawing.Size(1129, 426)
         Me.DGVMaterialsOff.TabIndex = 1
         '
         'TabMaterialsAlarm
@@ -192,7 +192,7 @@ Partial Class FrmMaterials
         Me.TabMaterialsAlarm.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsAlarm.Name = "TabMaterialsAlarm"
         Me.TabMaterialsAlarm.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
-        Me.TabMaterialsAlarm.Size = New System.Drawing.Size(1139, 446)
+        Me.TabMaterialsAlarm.Size = New System.Drawing.Size(1139, 440)
         Me.TabMaterialsAlarm.TabIndex = 2
         Me.TabMaterialsAlarm.Tag = ""
         Me.TabMaterialsAlarm.Text = "قائمة التنبيهات"
@@ -214,7 +214,7 @@ Partial Class FrmMaterials
         Me.DGVAlarm.RowHeadersVisible = False
         Me.DGVAlarm.RowHeadersWidth = 51
         Me.DGVAlarm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVAlarm.Size = New System.Drawing.Size(1129, 432)
+        Me.DGVAlarm.Size = New System.Drawing.Size(1129, 426)
         Me.DGVAlarm.TabIndex = 2
         '
         'BtnImportFromExcel
@@ -300,7 +300,7 @@ Partial Class FrmMaterials
         '
         Me.GrpButtons.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GrpButtons.Controls.Add(Me.BtmExportToExcel)
+        Me.GrpButtons.Controls.Add(Me.BtnExportToExcel)
         Me.GrpButtons.Controls.Add(Me.BtnClose)
         Me.GrpButtons.Controls.Add(Me.BtnImportFromExcel)
         Me.GrpButtons.Controls.Add(Me.BtnAddMaterial)
@@ -313,21 +313,21 @@ Partial Class FrmMaterials
         Me.GrpButtons.TabIndex = 38
         Me.GrpButtons.TabStop = False
         '
-        'BtmExportToExcel
+        'BtnExportToExcel
         '
-        Me.BtmExportToExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtmExportToExcel.BackColor = System.Drawing.Color.White
-        Me.BtmExportToExcel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
-        Me.BtmExportToExcel.Image = CType(resources.GetObject("BtmExportToExcel.Image"), System.Drawing.Image)
-        Me.BtmExportToExcel.Location = New System.Drawing.Point(332, 25)
-        Me.BtmExportToExcel.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
-        Me.BtmExportToExcel.Name = "BtmExportToExcel"
-        Me.BtmExportToExcel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BtmExportToExcel.Size = New System.Drawing.Size(155, 59)
-        Me.BtmExportToExcel.TabIndex = 38
-        Me.BtmExportToExcel.Text = "تصدير المعلومات"
-        Me.BtmExportToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BtmExportToExcel.UseVisualStyleBackColor = False
+        Me.BtnExportToExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExportToExcel.BackColor = System.Drawing.Color.White
+        Me.BtnExportToExcel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
+        Me.BtnExportToExcel.Image = CType(resources.GetObject("BtnExportToExcel.Image"), System.Drawing.Image)
+        Me.BtnExportToExcel.Location = New System.Drawing.Point(332, 25)
+        Me.BtnExportToExcel.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
+        Me.BtnExportToExcel.Name = "BtnExportToExcel"
+        Me.BtnExportToExcel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.BtnExportToExcel.Size = New System.Drawing.Size(155, 59)
+        Me.BtnExportToExcel.TabIndex = 38
+        Me.BtnExportToExcel.Text = "تصدير المعلومات"
+        Me.BtnExportToExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BtnExportToExcel.UseVisualStyleBackColor = False
         '
         'FrmMaterials
         '
@@ -376,7 +376,7 @@ Partial Class FrmMaterials
     Friend WithEvents GrpButtons As GroupBox
     Friend WithEvents DGVAlarm As DataGridView
     Friend WithEvents TxtFilter As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LblSearch As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents BtmExportToExcel As Button
+    Friend WithEvents BtnExportToExcel As Button
 End Class

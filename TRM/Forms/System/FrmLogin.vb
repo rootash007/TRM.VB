@@ -11,6 +11,7 @@ Public Class FrmLogin
         TxtUsername.Text = ""
         TxtPassWord.Text = ""
         'ChkForUpdates()
+        FrmLoginLang(AppLanguage)
     End Sub
 
     Private Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
@@ -27,7 +28,11 @@ Public Class FrmLogin
 
             UserChk(que)
             If UserTab.Rows.Count <= 0 Then
-                OkMsgAlert("اسم المستخدم او كلمة المرور", "اسم المستخدم او كلمة المرور خاطئة")
+                If AppLanguage = "AR" Then
+                    OkMsgAlert("اسم المستخدم او كلمة المرور", "اسم المستخدم او كلمة المرور خاطئة")
+                ElseIf AppLanguage = "HE" Then
+                    OkMsgAlert("שם משתמש או סיסמה", "שם משתמש או סיסמה שגויים")
+                End If
                 'MsgBox("שם משתמש או סיסמה שגוי", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "שם משתמש או סיסמה")
             Else
                 If UserTab.Rows(0).Item(3) <= 1 Then
@@ -66,7 +71,11 @@ Public Class FrmLogin
 
     Private Sub TxtPassWord_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPassWord.KeyDown
         If e.KeyData = Keys.Alt + Keys.F4 Then
-            OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("הודעת אבטחה", "נא להכניס שם משתמש וסיסמה")
+            End If
             'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
             e.Handled = True
         ElseIf e.KeyCode = Keys.Enter Then
@@ -76,16 +85,22 @@ Public Class FrmLogin
 
     Private Sub FrmLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyData = Keys.Alt + Keys.F4 Then
-            OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
-            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("הודעת אבטחה", "נא להכניס שם משתמש וסיסמה")
+            End If            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
             e.Handled = True
         End If
     End Sub
 
     Private Sub TxtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtUsername.KeyDown
         If e.KeyData = Keys.Alt + Keys.F4 Then
-            OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
-            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("הודעת אבטחה", "נא להכניס שם משתמש וסיסמה")
+            End If            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
             e.Handled = True
         ElseIf e.KeyCode = Keys.Enter Then
             TxtPassWord.Focus()
@@ -94,16 +109,22 @@ Public Class FrmLogin
 
     Private Sub BtnLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles BtnLogin.KeyDown
         If e.KeyData = Keys.Alt + Keys.F4 Then
-            OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
-            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("הודעת אבטחה", "נא להכניס שם משתמש וסיסמה")
+            End If            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
             e.Handled = True
         End If
     End Sub
 
     Private Sub BtnClose_KeyDown(sender As Object, e As KeyEventArgs) Handles BtnClose.KeyDown
         If e.KeyData = Keys.Alt + Keys.F4 Then
-            OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
-            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("رسالة الامان", "الرجاء ادخال اسم المستخدم و كلمة المرور")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("הודעת אבטחה", "נא להכניס שם משתמש וסיסמה")
+            End If            'MsgBox("נא להקיש שם משתמש וסיסמה", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "הודעת אבטחה")
             e.Handled = True
         End If
     End Sub

@@ -39,7 +39,7 @@ Public Class FrmNewUpdate
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
-        Process.Start("https://www.ctrlmanager.com/TRM/publish.htm")
+        Process.Start("http://www.ctrlmanager.com/TRM/publish.htm")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -75,8 +75,7 @@ Public Class FrmNewUpdate
 
     Async Function GetLatestVersionAsync() As Task(Of Version)
         ' URL to the .application file on the host
-        Dim applicationUrl As String = "https://www.ctrlmanager.com/TRM/RM.application"
-
+        Dim applicationUrl As String = "http://www.ctrlmanager.com/TRM/RM.application"
         Try
             ' Use HttpClient to fetch the .application file
             Using client As New HttpClient()
@@ -97,6 +96,7 @@ Public Class FrmNewUpdate
             End Using
         Catch ex As Exception
             Console.WriteLine("Error fetching latest version: " & ex.Message)
+            MsgBox(ex.Message)
             Return Nothing
         End Try
     End Function

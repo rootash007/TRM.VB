@@ -4,6 +4,7 @@
     Public Sub FrmMaterials_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadMaterials()
         Me.Dock = DockStyle.Fill
+        FrmMaterialsLang(AppLanguage)
 
         'Me.AutoSize = True
         'Dim ss As String = Me.AutoSizeMode.
@@ -47,13 +48,21 @@
     Private Sub BtnDeleteMaterial_Click(sender As Object, e As EventArgs) Handles BtnDeleteMaterial.Click
         If FmMaterials.TabMaterials.SelectedIndex = 0 Then
             If DgvMaterials.RowCount = 0 Then
-                MsgBox("القائمة فارغة", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "رسالة")
+                If AppLanguage = "AR" Then
+                    MsgBox("القائمة فارغة", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "رسالة")
+                ElseIf AppLanguage = "HE" Then
+                    MsgBox("הרשימה ריקה", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "הודעה")
+                End If
                 Return
             Else
 
                 '***deactive Material
                 Dim DelMsg As DialogResult
-                DelMsg = MsgBox("هل تريد حذف المادة فعلا", vbYesNo + vbQuestion, "حذف")
+                If AppLanguage = "AR" Then
+                    DelMsg = MsgBox("هل تريد حذف المادة فعلا", vbYesNo + vbQuestion, "حذف")
+                ElseIf AppLanguage = "HE" Then
+                    DelMsg = MsgBox("האם אתה בטוח שברצונך למחוק חומר", vbYesNo + vbQuestion, "מחיקה")
+                End If
                 If DelMsg = 6 Then
                     DeleteMaterial(DgvMaterials.CurrentRow.Cells(0).Value)
                     Me.FrmMaterials_Load(Me, e)
@@ -62,12 +71,20 @@
             End If
         Else
             If DGVMaterialsOff.RowCount = 0 Then
-                MsgBox("القائمة فارغة", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "رسالة")
+                If AppLanguage = "AR" Then
+                    MsgBox("القائمة فارغة", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "رسالة")
+                ElseIf AppLanguage = "HE" Then
+                    MsgBox("הרשימה ריקה", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "הודעה")
+                End If
                 Return
             Else
                 '****active material
                 Dim DelMsg As DialogResult
-                DelMsg = MsgBox("هل تريد استرجاع المادة فعلا", vbYesNo + vbQuestion, "استرجاع")
+                If AppLanguage = "AR" Then
+                    DelMsg = MsgBox("هل تريد استرجاع المادة فعلا", vbYesNo + vbQuestion, "استرجاع")
+                ElseIf AppLanguage = "HE" Then
+                    DelMsg = MsgBox("האם אתה בטוח שברצונך לשחזר חומר", vbYesNo + vbQuestion, "שחזור")
+                End If
                 If DelMsg = 6 Then
                     ReActiveMaterial(DGVMaterialsOff.CurrentRow.Cells(0).Value)
                     Me.FrmMaterials_Load(Me, e)
@@ -85,11 +102,19 @@
     Private Sub TabMaterials_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabMaterials.SelectedIndexChanged
         If FmMaterials.TabMaterials.SelectedIndex = 0 Then
             FmMaterials.BtnDeleteMaterial.Image = My.Resources.delete48
-            FmMaterials.BtnDeleteMaterial.Text = "حذف"
+            If AppLanguage = "AR" Then
+                FmMaterials.BtnDeleteMaterial.Text = "حذف"
+            ElseIf AppLanguage = "HE" Then
+                FmMaterials.BtnDeleteMaterial.Text = "מחיקה"
+            End If
 
         Else
             FmMaterials.BtnDeleteMaterial.Image = My.Resources.revert48
-            FmMaterials.BtnDeleteMaterial.Text = "استرجاع"
+            If AppLanguage = "AR" Then
+                FmMaterials.BtnDeleteMaterial.Text = "استرجاع"
+            ElseIf AppLanguage = "HE" Then
+                FmMaterials.BtnDeleteMaterial.Text = "שחזור"
+            End If
 
         End If
     End Sub
@@ -107,7 +132,11 @@
 
                 FmMaterialAddEdit.ShowDialog()
             Else
-                MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+                If AppLanguage = "AR" Then
+                    MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+                ElseIf AppLanguage = "HE" Then
+                    MsgBox("החומר תפוס על ידי משתמש אחר", vbOKOnly + vbInformation, "בשימוש")
+                End If
             End If
         ElseIf TabMaterials.SelectedIndex = 1 Then
             que = "select * from materials where id =" & DGVMaterialsOff.CurrentRow.Cells(0).Value
@@ -120,7 +149,11 @@
 
                 FmMaterialAddEdit.ShowDialog()
             Else
-                MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+                If AppLanguage = "AR" Then
+                    MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+                ElseIf AppLanguage = "HE" Then
+                    MsgBox("החומר תפוס על ידי משתמש אחר", vbOKOnly + vbInformation, "בשימוש")
+                End If
             End If
         End If
 
@@ -202,9 +235,13 @@
         End If
     End Sub
 
-    Private Sub BtmExportToExcel_Click(sender As Object, e As EventArgs) Handles BtmExportToExcel.Click
+    Private Sub BtmExportToExcel_Click(sender As Object, e As EventArgs) Handles BtnExportToExcel.Click
         If DgvMaterials.Rows.Count = 0 Then
-            MsgBox("القائمة فارغة", vbOKOnly + vbCritical, "خطأ")
+            If AppLanguage = "AR" Then
+                MsgBox("القائمة فارغة", vbOKOnly + vbCritical, "خطأ")
+            ElseIf AppLanguage = "HE" Then
+                MsgBox("רשימה ריקה", vbOKOnly + vbCritical, "שגיאה")
+            End If
             Return
         End If
         Dim excel As Microsoft.Office.Interop.Excel._Application = New Microsoft.Office.Interop.Excel.Application()
@@ -212,7 +249,11 @@
         Dim worksheet As Microsoft.Office.Interop.Excel._Worksheet = Nothing
         Try
             worksheet = workbook.ActiveSheet
-            worksheet.Name = "المواد"
+            If AppLanguage = "AR" Then
+                worksheet.Name = "المواد"
+            ElseIf AppLanguage = "HE" Then
+                worksheet.Name = "חומרים"
+            End If
 
             '.Columns(1).HeaderText = "اسم المادة"
             '.Columns(2).HeaderText = "الرمز"
@@ -250,7 +291,11 @@
 
             If SaveDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
                 workbook.SaveAs(SaveDialog.FileName)
-                MsgBox("تم حفظ الملف بنجاح", vbOKOnly + vbInformation, "استعلام")
+                If AppLanguage = "AR" Then
+                    MsgBox("تم حفظ الملف بنجاح", vbOKOnly + vbInformation, "استعلام")
+                ElseIf AppLanguage = "HE" Then
+                    MsgBox("הקובץ נשמר בהצלחה", vbOKOnly + vbInformation, "הודעה")
+                End If
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)

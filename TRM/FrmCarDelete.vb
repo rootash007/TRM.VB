@@ -11,7 +11,6 @@
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         'CarDeleteRestore(FrmMainList.DgvMain.CurrentRow.Cells(0).Value, 1, TxtDeleteInfo.Text, DtpDeleteDate.Value.ToShortDateString)
         ReloadMainList()
-        ReLoadMain()
         Me.Close()
     End Sub
 

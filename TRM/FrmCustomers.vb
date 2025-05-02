@@ -66,7 +66,6 @@
             If ExitMsg = 6 Then
                 CustomerDelete()
                 ReloadCustomers()
-                ReLoadMain()
             End If
         End If
     End Sub

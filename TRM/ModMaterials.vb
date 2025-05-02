@@ -99,11 +99,19 @@ Module ModMaterials
         FillList(queAlarm)
         FmMaterials.DGVAlarm.DataSource = MyTab
         If MyTab.Rows.Count > 0 Then
-            FmMaterials.TabMaterialsAlarm.Text = "قائمة التنبيهات ( " & MyTab.Rows.Count & " )"
+            If AppLanguage = "AR" Then
+                FmMaterials.TabMaterialsAlarm.Text = "قائمة التنبيهات ( " & MyTab.Rows.Count & " )"
+            ElseIf AppLanguage = "HE" Then
+                FmMaterials.TabMaterialsAlarm.Text = "רשימת התראות ( " & MyTab.Rows.Count & " )"
+            End If
             'FmMaterials.TabMaterialsAlarm.ForeColor = Color.Red
         Else
             'FmMaterials.TabMaterialsAlarm.Visible = False
-            FmMaterials.TabMaterialsAlarm.Text = "قائمة التنبيهات ( فارغ )"
+            If AppLanguage = "AR" Then
+                FmMaterials.TabMaterialsAlarm.Text = "قائمة التنبيهات ( فارغ )"
+            ElseIf AppLanguage = "HE" Then
+                FmMaterials.TabMaterialsAlarm.Text = "רשימת התראות ( ריק )"
+            End If
         End If
         DesignMaterialsDGV(FmMaterials.DGVAlarm)
 
@@ -173,31 +181,39 @@ Module ModMaterials
             .Columns(8).Visible = False
             .Columns(9).Visible = False
 
-
             '.Columns(0).HeaderText = "מס"
-            .Columns(1).HeaderText = "اسم المادة"
-            .Columns(2).HeaderText = "الرمز"
-            .Columns(3).HeaderText = "الرمز المحلي"
-            .Columns(4).HeaderText = "الكمية"
-            .Columns(5).HeaderText = "الكمية الدنيا"
-            .Columns(6).HeaderText = "وحدة القياس"
-            .Columns(7).HeaderText = "الوزن"
-            .Columns(8).HeaderText = "مفعل"
-            .Columns(9).HeaderText = "بالاستخدام"
+            If AppLanguage = "AR" Then
+                .Columns(1).HeaderText = "اسم المادة"
+                .Columns(2).HeaderText = "الرمز"
+                .Columns(3).HeaderText = "الرمز المحلي"
+                .Columns(4).HeaderText = "الكمية"
+                .Columns(5).HeaderText = "الكمية الدنيا"
+                .Columns(6).HeaderText = "الوحدة"
+                .Columns(7).HeaderText = "الوزن"
+                .Columns(8).HeaderText = "مفعل"
+                .Columns(9).HeaderText = "بالاستخدام"
+            ElseIf AppLanguage = "HE" Then
+                .Columns(1).HeaderText = "שם חומר"
+                .Columns(2).HeaderText = "קוד"
+                .Columns(3).HeaderText = "קוד מקומי"
+                .Columns(4).HeaderText = "כמות"
+                .Columns(5).HeaderText = "כ.מינימום"
+                .Columns(6).HeaderText = "יחידה"
+                .Columns(7).HeaderText = "משקל"
+                .Columns(8).HeaderText = "פעיל"
+                .Columns(9).HeaderText = "בשימוש"
+            End If
 
-
-
-            '.Columns(0).Width = 55
             .Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             '.Columns(1).Width = 140
             .Columns(2).Width = 120
             .Columns(3).Width = 120
-            .Columns(4).Width = 80
-            .Columns(5).Width = 80
-            .Columns(6).Width = 80
-            .Columns(7).Width = 70
+            .Columns(4).Width = 100
+            .Columns(5).Width = 100
+            .Columns(6).Width = 75
+            .Columns(7).Width = 75
             .DefaultCellStyle.Font = New Font(10, 12)
-            .ColumnHeadersDefaultCellStyle.Font = New Font(10, 12)
+            .ColumnHeadersDefaultCellStyle.Font = New Font(10, 10)
             '.ColumnHeadersDefaultCellStyle. = New Font(10, 12)
 
             '.Columns(8).Width = 55
@@ -342,7 +358,11 @@ Module ModMaterials
             dbcon.Open()
             cmd.ExecuteNonQuery()
             dbcon.Close()
-            MsgBox("تم تحرير جميع نوافذ المواد", vbOKOnly + vbInformation, "استعلام")
+            If AppLanguage = "AR" Then
+                MsgBox("تم تحرير جميع نوافذ المواد", vbOKOnly + vbInformation, "استعلام")
+            ElseIf AppLanguage = "HE" Then
+                MsgBox("כל חלונות החומרים שוחררו", vbOKOnly + vbInformation, "הודעה")
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally

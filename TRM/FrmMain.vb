@@ -9,6 +9,8 @@ Public Class FrmMain
 
     Public Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Dock = DockStyle.Fill
+        AppLanguage = My.Settings.Language
+        FrmMainLang(AppLanguage)
 
         'System.Threading.Thread.Sleep(3000)
 
@@ -23,7 +25,13 @@ Public Class FrmMain
             For Each Frm As Form In Me.MdiChildren
                 Frm.Close()
             Next
-            Me.Text += " - TRM - " & ActiveUser
+
+            'If AppLanguage = "AR" Then
+            '    FrmMainLang("AR")
+            'ElseIf AppLanguage = "HE" Then
+            '    FrmMainLang("HE")
+            'End If
+            'Me.Text += " - TRM - " & ActiveUser
 
             'My.Settings.AdminCode = "Admin123456"
             'My.Settings.Save()
@@ -63,13 +71,13 @@ Public Class FrmMain
 
 
 
-            If AdminMode = True Then
-                SSAdminStatus.Text = "פעיל"
-                SSAdminStatus.ForeColor = Color.Green
-            Else
-                SSAdminStatus.Text = "לא פעיל"
-                SSAdminStatus.ForeColor = Color.Red
-            End If
+            'If AdminMode = True Then
+            '    SSAdminStatus.Text = "פעיל"
+            '    SSAdminStatus.ForeColor = Color.Green
+            'Else
+            '    SSAdminStatus.Text = "לא פעיל"
+            '    SSAdminStatus.ForeColor = Color.Red
+            'End If
 
         End If
 
@@ -126,41 +134,35 @@ Public Class FrmMain
 
     End Sub
 
-    Private Sub TSMUsers_Click(sender As Object, e As EventArgs) Handles TSMUsers.Click
+    Private Sub TSMUsers_Click(sender As Object, e As EventArgs) Handles TSIUsers.Click
         TSBtnUsers.PerformClick()
     End Sub
-    '********************************************
-    Private Sub BtnAddNewCar_Click(sender As Object, e As EventArgs)
-        OpenNewCar()
-    End Sub
 
-    Private Sub יציאהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles יציאהToolStripMenuItem.Click
+    Private Sub יציאהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSIExit.Click
         Dim ExitMsg As DialogResult
-        ExitMsg = MsgBox("هل انت متأكد من انك تريد الخروج", vbYesNo + vbQuestion, "خروج")
+        If AppLanguage = "AR" Then
+            ExitMsg = MsgBox("هل انت متأكد من انك تريد الخروج", vbYesNo + vbQuestion, "خروج")
+        ElseIf AppLanguage = "HE" Then
+            ExitMsg = MsgBox("האם אתה בטוח שברצונך לצאת", vbYesNo + vbQuestion, "יציאה")
+        End If
         If ExitMsg = 6 Then
             Me.Close()
         End If
-    End Sub
-
-    Private Sub BtnVendors_Click(sender As Object, e As EventArgs)
-        VendorsWindow = "VendorUpdate"
-        'FrmVendors.ShowDialog()
-    End Sub
-
-    Private Sub BtnSale_Click(sender As Object, e As EventArgs)
-        FmCarSale = New FrmCostsList
-        FmCarSale.ShowDialog()
     End Sub
 
     Private Sub הגדרתשדותחובהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles הגדרתשדותחובהToolStripMenuItem.Click
         If AdminMode = True Then
             FrmRequiredAddCar.ShowDialog()
         Else
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+            End If
         End If
     End Sub
 
-    Private Sub רכביםToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSMUnits.Click
+    Private Sub רכביםToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSTUnits.Click
         If ActiveLvl < 2 Then
             Dim FmUnits As New FrmUnits
             If Application.OpenForms.OfType(Of FrmUnits).Any = True Then
@@ -171,15 +173,16 @@ Public Class FrmMain
                 FmUnits.Show()
             End If
         Else
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
-
+            If AppLanguage = "AR" Then
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+            End If
         End If
 
-
-        'FmUnits.ShowDialog()
     End Sub
 
-    Private Sub גיבוישחזורToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles גיבוישחזורToolStripMenuItem1.Click
+    Private Sub גיבוישחזורToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TSiBackUp.Click
         FrmBackUp.ShowDialog()
     End Sub
 
@@ -204,7 +207,7 @@ Public Class FrmMain
         FrmAgreementPrint.ShowDialog()
     End Sub
 
-    Private Sub החלפתמשתמשToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles החלפתמשתמשToolStripMenuItem.Click
+    Private Sub החלפתמשתמשToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSILogOut.Click
         ReConnect = True
         FrmLogin.ShowDialog()
     End Sub
@@ -217,7 +220,11 @@ Public Class FrmMain
         If AdminMode = True Then
             FrmCarDelete.ShowDialog()
         Else
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+            End If
         End If
     End Sub
 
@@ -225,46 +232,17 @@ Public Class FrmMain
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs)
         Dim ExitMsg As DialogResult
-        ExitMsg = MsgBox("هل تريد الخروج فعلا", vbYesNo + vbQuestion, "خروج")
+        If AppLanguage = "AR" Then
+            ExitMsg = MsgBox("هل انت متأكد من انك تريد الخروج", vbYesNo + vbQuestion, "خروج")
+        ElseIf AppLanguage = "HE" Then
+            ExitMsg = MsgBox("האם אתה בטוח שברצונך לצאת", vbYesNo + vbQuestion, "יציאה")
+        End If
         If ExitMsg = 6 Then
             Me.Close()
         End If
     End Sub
 
-    Private Sub LblSoldCount_Click(sender As Object, e As EventArgs)
-        FmSoldReport = New FrmAlerts
-        FmSoldReport.ShowDialog()
-
-
-        'FrmSoldReport.ShowDialog()
-    End Sub
-
-    Private Sub LblVendorsCount_Click(sender As Object, e As EventArgs)
-        VendorsWindow = "VendorUpdate"
-        'FmVendors = New FrmVendors
-        'FmVendors.ShowDialog()
-        'FrmVendors.ShowDialog()
-    End Sub
-
-    Private Sub LblCustomersCount_Click(sender As Object, e As EventArgs)
-        CustomersWindow = "CustomerUpdate"
-        'FmCustomers = New FrmCustomers
-        'FmCustomers.ShowDialog()
-        FrmCustomers.ShowDialog()
-    End Sub
-
-
-    Private Sub BtnSearch_Click(sender As Object, e As EventArgs)
-        FmSearch = New FrmSearch
-        FmSearch.ShowDialog()
-    End Sub
-
-    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs)
-        ReLoadMain()
-        'MsgBox(KindCount())
-    End Sub
-
-    Private Sub עדכוןתוכנהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles עדכוןתוכנהToolStripMenuItem.Click
+    Private Sub עדכוןתוכנהToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSiUpgrade.Click
         'ChkForUpdates()
         If AdminMode = True Then
             WhatsNew()
@@ -273,7 +251,7 @@ Public Class FrmMain
         End If
     End Sub
 
-    Private Sub אודותToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles אודותToolStripMenuItem1.Click
+    Private Sub אודותToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles TSiAbout.Click
         'My.Settings.EmptyCarSerial = 1
         'My.Settings.Save()
         MsgBox(My.Settings.EmptyCarSerial)
@@ -283,7 +261,7 @@ Public Class FrmMain
         MsgBox(ActiveUser)
     End Sub
 
-    Private Sub TSMCloseAll_Click(sender As Object, e As EventArgs) Handles TSMCloseAll.Click
+    Private Sub TSMCloseAll_Click(sender As Object, e As EventArgs) Handles TSiCloseAll.Click
         For Each Frm As Form In Me.MdiChildren
             Frm.Close()
         Next
@@ -319,7 +297,11 @@ Public Class FrmMain
                     FmUsers.Show()
                 End If
             Else
-                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                If AppLanguage = "AR" Then
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                ElseIf AppLanguage = "HE" Then
+                    OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                End If
             End If
         End If
         'ChkPermission()
@@ -343,7 +325,7 @@ Public Class FrmMain
         End If
     End Sub
 
-    Private Sub TSUsers_Click(sender As Object, e As EventArgs) Handles TSUsers.Click
+    Private Sub TSUsers_Click(sender As Object, e As EventArgs) Handles TSTUsers.Click
         Try
             If Application.OpenForms.OfType(Of FrmUsers).Any = True Then
                 FmUsers.Activate()
@@ -357,7 +339,7 @@ Public Class FrmMain
         End Try
     End Sub
 
-    Private Sub TSActions_Click(sender As Object, e As EventArgs) Handles TSActions.Click
+    Private Sub TSActions_Click(sender As Object, e As EventArgs) Handles TSTActions.Click
         Try
             If AdminMode = True Then
                 If Application.OpenForms.OfType(Of FrmActionsTypes).Any = True Then
@@ -377,7 +359,11 @@ Public Class FrmMain
                         FmActionsTypes.Show()
                     End If
                 Else
-                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    If AppLanguage = "AR" Then
+                        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    ElseIf AppLanguage = "HE" Then
+                        OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                    End If
                 End If
             End If
         Catch ex As Exception
@@ -406,7 +392,11 @@ Public Class FrmMain
                         FmProducts.Show()
                     End If
                 Else
-                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    If AppLanguage = "AR" Then
+                        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    ElseIf AppLanguage = "HE" Then
+                        OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                    End If
                 End If
             End If
 
@@ -421,35 +411,46 @@ Public Class FrmMain
             CreateTables()
             'WhatsNew()
         Else
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            If AppLanguage = "AR" Then
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+            End If
         End If
     End Sub
 
     Private Sub הפקתמסמכיםToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles הפקתמסמכיםToolStripMenuItem.Click
         If ActiveLvl > 0 Then
-            OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
-
+            If AppLanguage = "AR" Then
+                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+            ElseIf AppLanguage = "HE" Then
+                OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+            End If
             Return
         End If
     End Sub
 
-    Private Sub PermisionsTSM_Click(sender As Object, e As EventArgs) Handles PermisionsTSM.Click
+    Private Sub PermisionsTSM_Click(sender As Object, e As EventArgs) Handles TSiPermissions.Click
         If AdminMode = True Then
             FrmPermissions.ShowDialog()
         Else
             If isAllowed(6) = True Then
                 FrmPermissions.ShowDialog()
             Else
-                OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                If AppLanguage = "AR" Then
+                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                ElseIf AppLanguage = "HE" Then
+                    OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                End If
             End If
         End If
     End Sub
 
-    Private Sub تحريركلالنوافذالقيدالاستخدامToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles تحريركلالنوافذالقيدالاستخدامToolStripMenuItem.Click
+    Private Sub تحريركلالنوافذالقيدالاستخدامToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSiWindowsUnLock.Click
         inUSEFree()
     End Sub
 
-    Private Sub TSMAudits_Click(sender As Object, e As EventArgs) Handles TSMAudits.Click
+    Private Sub TSMAudits_Click(sender As Object, e As EventArgs) Handles TSIAudits.Click
         Try
             If AdminMode = True Then
                 If Application.OpenForms.OfType(Of FrmAudits).Any = True Then
@@ -469,7 +470,11 @@ Public Class FrmMain
                         FmAudits.Show()
                     End If
                 Else
-                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    If AppLanguage = "AR" Then
+                        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    ElseIf AppLanguage = "HE" Then
+                        OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                    End If
                 End If
             End If
 
@@ -488,7 +493,7 @@ Public Class FrmMain
         'End If
     End Sub
 
-    Private Sub TSMCostList_Click(sender As Object, e As EventArgs) Handles TSMCostsList.Click
+    Private Sub TSMCostList_Click(sender As Object, e As EventArgs) Handles TSICostsList.Click
         TSBtnCost.PerformClick()
     End Sub
 
@@ -512,7 +517,11 @@ Public Class FrmMain
                         FmCostsList.Show()
                     End If
                 Else
-                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    If AppLanguage = "AR" Then
+                        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    ElseIf AppLanguage = "HE" Then
+                        OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                    End If
                 End If
             End If
 
@@ -521,25 +530,34 @@ Public Class FrmMain
         End Try
     End Sub
 
-    Private Sub TSMMaterials_Click(sender As Object, e As EventArgs) Handles TSMMaterials.Click
+    Private Sub TSMMaterials_Click(sender As Object, e As EventArgs) Handles TSIMaterials.Click
         TSBtnMaterial.PerformClick()
     End Sub
 
-    Private Sub TSMActions_Click(sender As Object, e As EventArgs) Handles TSMActions.Click
+    Private Sub TSMActions_Click(sender As Object, e As EventArgs) Handles TSIActions.Click
         TSBtnActions.PerformClick()
     End Sub
 
-    Private Sub TSMCompanyOptions_Click(sender As Object, e As EventArgs) Handles TSMCompanyOptions.Click
+    Private Sub TSMCompanyOptions_Click(sender As Object, e As EventArgs) Handles TSiCompanyOptions.Click
 
-        FrmAdminCode.ShowDialog()
-        If isAdminCode = True Then
-            isAdminCode = False
+        'FrmAdminCode.ShowDialog()
+        'If isAdminCode = True Then
+        '    isAdminCode = False
+        '    FrmCompany.ShowDialog()
+        'End If
+        If ActiveLvl = 0 Then
             FrmCompany.ShowDialog()
+        Else
+            FrmAdminCode.ShowDialog()
+            If isAdminCode = True Then
+                isAdminCode = False
+                FrmCompany.ShowDialog()
+            End If
         End If
 
     End Sub
 
-    Private Sub TSMSuppliers_Click(sender As Object, e As EventArgs) Handles TSMSuppliers.Click
+    Private Sub TSMSuppliers_Click(sender As Object, e As EventArgs) Handles TSISuppliers.Click
         'ChkFormPermission("FrmSuppliers")
 
         'If AdminMode = True OrElse isAllowed(10) Then
@@ -567,7 +585,11 @@ Public Class FrmMain
                         FmSuppliers.Show()
                     End If
                 Else
-                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    If AppLanguage = "AR" Then
+                        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    ElseIf AppLanguage = "HE" Then
+                        OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                    End If
                 End If
             End If
 
@@ -576,7 +598,7 @@ Public Class FrmMain
         End Try
     End Sub
 
-    Private Sub فحصالاصدارالاخيرToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles فحصالاصدارالاخيرToolStripMenuItem.Click
+    Private Sub فحصالاصدارالاخيرToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSiUpgradeCheck.Click
         Try
             'Dim Request As System.Net.HttpWebRequest = System.Net.HttpWebRequest.Create("https://www.ctrlmanager.com/TRM/RM.application")
             'Dim Response As System.Net.HttpWebResponse = Request.GetResponse()
@@ -599,7 +621,7 @@ Public Class FrmMain
         End Try
     End Sub
 
-    Private Sub TSMCurrency_Click(sender As Object, e As EventArgs) Handles TSMCurrency.Click
+    Private Sub TSMCurrency_Click(sender As Object, e As EventArgs) Handles TSTCurrency.Click
         Try
             If AdminMode = True Then
                 If Application.OpenForms.OfType(Of FrmCurrency).Any = True Then
@@ -619,11 +641,48 @@ Public Class FrmMain
                         FrmCurrency.Show()
                     End If
                 Else
-                    OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    If AppLanguage = "AR" Then
+                        OkMsgAlert("لا توجد صلاحية", "ليس لديك اذن لهذه العملية ")
+                    ElseIf AppLanguage = "HE" Then
+                        OkMsgAlert("אין הרשאה", "אין לך הרשאה לפעולה זו ")
+                    End If
                 End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub עבריתToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles עבריתToolStripMenuItem.Click
+        Dim LangMsg As DialogResult
+        If AppLanguage = "AR" Then
+            LangMsg = MsgBox("يجب اغلاق جميع النوافذ لتغيير اللغه , هل تريد الاستمرار", vbYesNo + vbQuestion, "اللغه")
+            If LangMsg = 6 Then
+                My.Settings.Language = "HE"
+                My.Settings.Save()
+                ReConnect = True
+                ''//need to close all forms before change the language
+                'TSMCloseAll_Click(e, e)
+                FrmMain_Load(e, e)
+            End If
+        End If
+    End Sub
+
+    Private Sub عربيToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles عربيToolStripMenuItem.Click
+        Dim LangMsg As DialogResult
+        If AppLanguage = "HE" Then
+            LangMsg = MsgBox("צריך לסגור כל החלונות כדי לשנות שפה , האם להמשיך", vbYesNo + vbQuestion, "שפה")
+            If LangMsg = 6 Then
+                My.Settings.Language = "AR"
+                My.Settings.Save()
+                ReConnect = True
+                ''//need to close all forms before change the language
+                'TSMCloseAll_Click(e, e)
+                'For Each Frm As Form In Me.MdiChildren
+                '    Frm.Activate()
+                'Next
+                FrmMain_Load(e, e)
+            End If
+        End If
     End Sub
 End Class
