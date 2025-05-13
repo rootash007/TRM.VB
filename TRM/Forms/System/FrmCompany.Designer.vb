@@ -23,30 +23,30 @@ Partial Class FrmCompany
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmCompany))
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblTax = New System.Windows.Forms.Label()
         Me.NumTax = New System.Windows.Forms.NumericUpDown()
         Me.TxtAdminCode = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LblAdminCode = New System.Windows.Forms.Label()
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnCancel = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.CompanyTab = New System.Windows.Forms.TabControl()
         Me.TabValues = New System.Windows.Forms.TabPage()
         Me.TabLocker = New System.Windows.Forms.TabPage()
         Me.ChkMaterialQuantity = New System.Windows.Forms.CheckBox()
         CType(Me.NumTax, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabControl1.SuspendLayout()
+        Me.CompanyTab.SuspendLayout()
         Me.TabValues.SuspendLayout()
         Me.TabLocker.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
+        'LblTax
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(400, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 16)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "نسبة الضريبة"
+        Me.LblTax.AutoSize = True
+        Me.LblTax.Location = New System.Drawing.Point(400, 12)
+        Me.LblTax.Name = "LblTax"
+        Me.LblTax.Size = New System.Drawing.Size(61, 16)
+        Me.LblTax.TabIndex = 0
+        Me.LblTax.Text = "نسبة الضريبة"
         '
         'NumTax
         '
@@ -63,24 +63,24 @@ Partial Class FrmCompany
         Me.TxtAdminCode.Size = New System.Drawing.Size(99, 23)
         Me.TxtAdminCode.TabIndex = 2
         '
-        'Label2
+        'LblAdminCode
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(374, 39)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 16)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "كلمة مرور المسؤول"
+        Me.LblAdminCode.AutoSize = True
+        Me.LblAdminCode.Location = New System.Drawing.Point(374, 39)
+        Me.LblAdminCode.Name = "LblAdminCode"
+        Me.LblAdminCode.Size = New System.Drawing.Size(87, 16)
+        Me.LblAdminCode.TabIndex = 3
+        Me.LblAdminCode.Text = "كلمة مرور المسؤول"
         '
         'BtnSave
         '
         Me.BtnSave.BackColor = System.Drawing.Color.White
         Me.BtnSave.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(177, Byte))
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(390, 317)
+        Me.BtnSave.Location = New System.Drawing.Point(374, 317)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(93, 56)
+        Me.BtnSave.Size = New System.Drawing.Size(105, 56)
         Me.BtnSave.TabIndex = 11
         Me.BtnSave.Text = "حفظ"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
@@ -94,30 +94,30 @@ Partial Class FrmCompany
         Me.BtnCancel.Location = New System.Drawing.Point(9, 317)
         Me.BtnCancel.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(93, 56)
+        Me.BtnCancel.Size = New System.Drawing.Size(105, 56)
         Me.BtnCancel.TabIndex = 12
         Me.BtnCancel.Text = "الغاء"
         Me.BtnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BtnCancel.UseVisualStyleBackColor = False
         '
-        'TabControl1
+        'CompanyTab
         '
-        Me.TabControl1.Controls.Add(Me.TabValues)
-        Me.TabControl1.Controls.Add(Me.TabLocker)
-        Me.TabControl1.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(9, 10)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.RightToLeftLayout = True
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(474, 301)
-        Me.TabControl1.TabIndex = 14
+        Me.CompanyTab.Controls.Add(Me.TabValues)
+        Me.CompanyTab.Controls.Add(Me.TabLocker)
+        Me.CompanyTab.Font = New System.Drawing.Font("David", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CompanyTab.Location = New System.Drawing.Point(9, 10)
+        Me.CompanyTab.Margin = New System.Windows.Forms.Padding(2)
+        Me.CompanyTab.Name = "CompanyTab"
+        Me.CompanyTab.RightToLeftLayout = True
+        Me.CompanyTab.SelectedIndex = 0
+        Me.CompanyTab.Size = New System.Drawing.Size(474, 301)
+        Me.CompanyTab.TabIndex = 14
         '
         'TabValues
         '
-        Me.TabValues.Controls.Add(Me.Label1)
+        Me.TabValues.Controls.Add(Me.LblTax)
         Me.TabValues.Controls.Add(Me.NumTax)
-        Me.TabValues.Controls.Add(Me.Label2)
+        Me.TabValues.Controls.Add(Me.LblAdminCode)
         Me.TabValues.Controls.Add(Me.TxtAdminCode)
         Me.TabValues.Location = New System.Drawing.Point(4, 26)
         Me.TabValues.Margin = New System.Windows.Forms.Padding(2)
@@ -157,7 +157,7 @@ Partial Class FrmCompany
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(493, 384)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.CompanyTab)
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.BtnCancel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -168,7 +168,7 @@ Partial Class FrmCompany
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "خيارات الشركة"
         CType(Me.NumTax, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabControl1.ResumeLayout(False)
+        Me.CompanyTab.ResumeLayout(False)
         Me.TabValues.ResumeLayout(False)
         Me.TabValues.PerformLayout()
         Me.TabLocker.ResumeLayout(False)
@@ -177,13 +177,13 @@ Partial Class FrmCompany
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LblTax As Label
     Friend WithEvents NumTax As NumericUpDown
     Friend WithEvents TxtAdminCode As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LblAdminCode As Label
     Friend WithEvents BtnSave As Button
     Friend WithEvents BtnCancel As Button
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents CompanyTab As TabControl
     Friend WithEvents TabValues As TabPage
     Friend WithEvents TabLocker As TabPage
     Friend WithEvents ChkMaterialQuantity As CheckBox

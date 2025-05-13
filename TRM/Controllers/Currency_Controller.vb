@@ -3,23 +3,7 @@
 Module Currency_Controller
 
     Public Sub DesignCurrencyDGV(dgv As DataGridView)
-        'With dgv
-        '    .Columns(0).HeaderText = "تسلسل"
-        '    .Columns(0).Visible = True
-        '    .Columns(0).Width = 40
 
-        '    .Columns(1).HeaderText = "اسم العمله"
-        '    .Columns(1).Visible = True
-        '    .Columns(1).Width = 120
-        '    .Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-
-        '    .Columns(2).HeaderText = "رمز العمله"
-        '    .Columns(2).Visible = True
-
-        '    .Columns(3).HeaderText = "مفعل"
-        '    .Columns(3).Visible = True
-        'End With
-        'Ensure the DataGridView has columns
         If dgv.Columns.Count = 0 Then
             Throw New ArgumentException("The DataGridView must have columns.")
         End If

@@ -76,6 +76,7 @@ Partial Class FrmMain
         Me.TSBtnCost = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnBackUp = New System.Windows.Forms.ToolStripButton()
         Me.TSBtnAlerts = New System.Windows.Forms.ToolStripButton()
+        Me.ישאדToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuMain.SuspendLayout()
         Me.SSMain.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -106,35 +107,35 @@ Partial Class FrmMain
         Me.TSILang.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.עבריתToolStripMenuItem, Me.عربيToolStripMenuItem})
         Me.TSILang.Image = CType(resources.GetObject("TSILang.Image"), System.Drawing.Image)
         Me.TSILang.Name = "TSILang"
-        Me.TSILang.Size = New System.Drawing.Size(184, 26)
+        Me.TSILang.Size = New System.Drawing.Size(146, 26)
         Me.TSILang.Text = "اللغه"
         '
         'עבריתToolStripMenuItem
         '
         Me.עבריתToolStripMenuItem.Image = CType(resources.GetObject("עבריתToolStripMenuItem.Image"), System.Drawing.Image)
         Me.עבריתToolStripMenuItem.Name = "עבריתToolStripMenuItem"
-        Me.עבריתToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.עבריתToolStripMenuItem.Size = New System.Drawing.Size(113, 26)
         Me.עבריתToolStripMenuItem.Text = "עברית"
         '
         'عربيToolStripMenuItem
         '
         Me.عربيToolStripMenuItem.Image = CType(resources.GetObject("عربيToolStripMenuItem.Image"), System.Drawing.Image)
         Me.عربيToolStripMenuItem.Name = "عربيToolStripMenuItem"
-        Me.عربيToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.عربيToolStripMenuItem.Size = New System.Drawing.Size(113, 26)
         Me.عربيToolStripMenuItem.Text = "عربي"
         '
         'TSILogOut
         '
         Me.TSILogOut.Image = CType(resources.GetObject("TSILogOut.Image"), System.Drawing.Image)
         Me.TSILogOut.Name = "TSILogOut"
-        Me.TSILogOut.Size = New System.Drawing.Size(184, 26)
+        Me.TSILogOut.Size = New System.Drawing.Size(146, 26)
         Me.TSILogOut.Text = "تبديل المستخدم"
         '
         'TSIExit
         '
         Me.TSIExit.Image = CType(resources.GetObject("TSIExit.Image"), System.Drawing.Image)
         Me.TSIExit.Name = "TSIExit"
-        Me.TSIExit.Size = New System.Drawing.Size(184, 26)
+        Me.TSIExit.Size = New System.Drawing.Size(146, 26)
         Me.TSIExit.Text = "خروج"
         '
         'TSMTickets
@@ -147,37 +148,37 @@ Partial Class FrmMain
         'TSIUsers
         '
         Me.TSIUsers.Name = "TSIUsers"
-        Me.TSIUsers.Size = New System.Drawing.Size(180, 22)
+        Me.TSIUsers.Size = New System.Drawing.Size(142, 22)
         Me.TSIUsers.Text = "المستخدمين"
         '
         'TSIAudits
         '
         Me.TSIAudits.Name = "TSIAudits"
-        Me.TSIAudits.Size = New System.Drawing.Size(180, 22)
+        Me.TSIAudits.Size = New System.Drawing.Size(142, 22)
         Me.TSIAudits.Text = "التحققات"
         '
         'TSICostsList
         '
         Me.TSICostsList.Name = "TSICostsList"
-        Me.TSICostsList.Size = New System.Drawing.Size(180, 22)
+        Me.TSICostsList.Size = New System.Drawing.Size(142, 22)
         Me.TSICostsList.Text = "حساب التكاليف"
         '
         'TSIActions
         '
         Me.TSIActions.Name = "TSIActions"
-        Me.TSIActions.Size = New System.Drawing.Size(180, 22)
+        Me.TSIActions.Size = New System.Drawing.Size(142, 22)
         Me.TSIActions.Text = "العمليات"
         '
         'TSIMaterials
         '
         Me.TSIMaterials.Name = "TSIMaterials"
-        Me.TSIMaterials.Size = New System.Drawing.Size(180, 22)
+        Me.TSIMaterials.Size = New System.Drawing.Size(142, 22)
         Me.TSIMaterials.Text = "المواد"
         '
         'TSISuppliers
         '
         Me.TSISuppliers.Name = "TSISuppliers"
-        Me.TSISuppliers.Size = New System.Drawing.Size(180, 22)
+        Me.TSISuppliers.Size = New System.Drawing.Size(142, 22)
         Me.TSISuppliers.Text = "الموردين"
         '
         'הפקתמסמכיםToolStripMenuItem
@@ -191,25 +192,25 @@ Partial Class FrmMain
         'הסכםמכירהToolStripMenuItem
         '
         Me.הסכםמכירהToolStripMenuItem.Name = "הסכםמכירהToolStripMenuItem"
-        Me.הסכםמכירהToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.הסכםמכירהToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.הסכםמכירהToolStripMenuItem.Text = "הסכם מכירה"
         '
         'הכסםקנייהToolStripMenuItem
         '
         Me.הכסםקנייהToolStripMenuItem.Name = "הכסםקנייהToolStripMenuItem"
-        Me.הכסםקנייהToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.הכסםקנייהToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.הכסםקנייהToolStripMenuItem.Text = "הכסם קנייה"
         '
         'הסכםריקToolStripMenuItem
         '
         Me.הסכםריקToolStripMenuItem.Name = "הסכםריקToolStripMenuItem"
-        Me.הסכםריקToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.הסכםריקToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.הסכםריקToolStripMenuItem.Text = "הסכם ריק"
         '
         'ספירתמלאיToolStripMenuItem
         '
         Me.ספירתמלאיToolStripMenuItem.Name = "ספירתמלאיToolStripMenuItem"
-        Me.ספירתמלאיToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ספירתמלאיToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.ספירתמלאיToolStripMenuItem.Text = "ספירת מלאי"
         '
         'הגדרותToolStripMenuItem
@@ -248,30 +249,30 @@ Partial Class FrmMain
         'TSTUnits
         '
         Me.TSTUnits.Name = "TSTUnits"
-        Me.TSTUnits.Size = New System.Drawing.Size(180, 22)
+        Me.TSTUnits.Size = New System.Drawing.Size(134, 22)
         Me.TSTUnits.Text = "وحدات القياس"
         '
         'TSTUsers
         '
         Me.TSTUsers.Name = "TSTUsers"
-        Me.TSTUsers.Size = New System.Drawing.Size(180, 22)
+        Me.TSTUsers.Size = New System.Drawing.Size(134, 22)
         Me.TSTUsers.Text = "مستخدمين"
         '
         'TSTActions
         '
         Me.TSTActions.Name = "TSTActions"
-        Me.TSTActions.Size = New System.Drawing.Size(180, 22)
+        Me.TSTActions.Size = New System.Drawing.Size(134, 22)
         Me.TSTActions.Text = "العمليات"
         '
         'TSTCurrency
         '
         Me.TSTCurrency.Name = "TSTCurrency"
-        Me.TSTCurrency.Size = New System.Drawing.Size(180, 22)
+        Me.TSTCurrency.Size = New System.Drawing.Size(134, 22)
         Me.TSTCurrency.Text = "العملات"
         '
         'TSMSystem
         '
-        Me.TSMSystem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSiBackUp, Me.TSiUpgrade, Me.TSiPermissions, Me.TSiWindowsUnLock, Me.TSiCompanyOptions, Me.TSiAbout, Me.TSiUpgradeCheck})
+        Me.TSMSystem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSiBackUp, Me.TSiUpgrade, Me.TSiPermissions, Me.TSiWindowsUnLock, Me.TSiCompanyOptions, Me.TSiAbout, Me.TSiUpgradeCheck, Me.ישאדToolStripMenuItem})
         Me.TSMSystem.Name = "TSMSystem"
         Me.TSMSystem.Size = New System.Drawing.Size(45, 22)
         Me.TSMSystem.Text = "النظام"
@@ -331,13 +332,13 @@ Partial Class FrmMain
         Me.TSiCloseAll.Image = Global.TRM.My.Resources.Resources.Cancel48
         Me.TSiCloseAll.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.TSiCloseAll.Name = "TSiCloseAll"
-        Me.TSiCloseAll.Size = New System.Drawing.Size(184, 26)
+        Me.TSiCloseAll.Size = New System.Drawing.Size(162, 26)
         Me.TSiCloseAll.Text = "اغلاق جميع النوافذ"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(181, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(159, 6)
         '
         'SSMain
         '
@@ -473,6 +474,12 @@ Partial Class FrmMain
         Me.TSBtnAlerts.Text = "التنبيهات"
         Me.TSBtnAlerts.Visible = False
         '
+        'ישאדToolStripMenuItem
+        '
+        Me.ישאדToolStripMenuItem.Name = "ישאדToolStripMenuItem"
+        Me.ישאדToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.ישאדToolStripMenuItem.Text = "'ישאד"
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -557,4 +564,5 @@ Partial Class FrmMain
     Friend WithEvents TSILang As ToolStripMenuItem
     Friend WithEvents עבריתToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents عربيToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ישאדToolStripMenuItem As ToolStripMenuItem
 End Class

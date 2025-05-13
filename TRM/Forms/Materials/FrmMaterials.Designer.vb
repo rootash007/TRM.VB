@@ -75,12 +75,12 @@ Partial Class FrmMaterials
         Me.TabMaterials.Controls.Add(Me.TabMaterialsAlarm)
         Me.TabMaterials.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabMaterials.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabMaterials.Location = New System.Drawing.Point(5, 26)
+        Me.TabMaterials.Location = New System.Drawing.Point(5, 30)
         Me.TabMaterials.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterials.Name = "TabMaterials"
         Me.TabMaterials.RightToLeftLayout = True
         Me.TabMaterials.SelectedIndex = 0
-        Me.TabMaterials.Size = New System.Drawing.Size(1147, 473)
+        Me.TabMaterials.Size = New System.Drawing.Size(1147, 469)
         Me.TabMaterials.TabIndex = 1
         '
         'TabMaterialsOn
@@ -89,11 +89,11 @@ Partial Class FrmMaterials
         Me.TabMaterialsOn.Controls.Add(Me.LblSearch)
         Me.TabMaterialsOn.Controls.Add(Me.TxtFilter)
         Me.TabMaterialsOn.Controls.Add(Me.DgvMaterials)
-        Me.TabMaterialsOn.Location = New System.Drawing.Point(4, 29)
+        Me.TabMaterialsOn.Location = New System.Drawing.Point(4, 33)
         Me.TabMaterialsOn.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsOn.Name = "TabMaterialsOn"
         Me.TabMaterialsOn.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
-        Me.TabMaterialsOn.Size = New System.Drawing.Size(1139, 440)
+        Me.TabMaterialsOn.Size = New System.Drawing.Size(1139, 432)
         Me.TabMaterialsOn.TabIndex = 0
         Me.TabMaterialsOn.Text = "قائمة المواد المفعلة"
         Me.TabMaterialsOn.UseVisualStyleBackColor = True
@@ -116,7 +116,7 @@ Partial Class FrmMaterials
         Me.LblSearch.AutoSize = True
         Me.LblSearch.Location = New System.Drawing.Point(1099, 13)
         Me.LblSearch.Name = "LblSearch"
-        Me.LblSearch.Size = New System.Drawing.Size(32, 20)
+        Me.LblSearch.Size = New System.Drawing.Size(33, 24)
         Me.LblSearch.TabIndex = 2
         Me.LblSearch.Text = "بحث"
         '
@@ -125,7 +125,7 @@ Partial Class FrmMaterials
         Me.TxtFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtFilter.Location = New System.Drawing.Point(935, 10)
         Me.TxtFilter.Name = "TxtFilter"
-        Me.TxtFilter.Size = New System.Drawing.Size(158, 26)
+        Me.TxtFilter.Size = New System.Drawing.Size(158, 30)
         Me.TxtFilter.TabIndex = 1
         '
         'DgvMaterials
@@ -147,17 +147,17 @@ Partial Class FrmMaterials
         Me.DgvMaterials.RowHeadersVisible = False
         Me.DgvMaterials.RowHeadersWidth = 51
         Me.DgvMaterials.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvMaterials.Size = New System.Drawing.Size(1129, 372)
+        Me.DgvMaterials.Size = New System.Drawing.Size(1129, 364)
         Me.DgvMaterials.TabIndex = 0
         '
         'TabMaterialsOff
         '
         Me.TabMaterialsOff.Controls.Add(Me.DGVMaterialsOff)
-        Me.TabMaterialsOff.Location = New System.Drawing.Point(4, 29)
+        Me.TabMaterialsOff.Location = New System.Drawing.Point(4, 33)
         Me.TabMaterialsOff.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsOff.Name = "TabMaterialsOff"
         Me.TabMaterialsOff.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
-        Me.TabMaterialsOff.Size = New System.Drawing.Size(1139, 440)
+        Me.TabMaterialsOff.Size = New System.Drawing.Size(1139, 432)
         Me.TabMaterialsOff.TabIndex = 1
         Me.TabMaterialsOff.Text = "قائمة المواد الغير مفعلة"
         Me.TabMaterialsOff.UseVisualStyleBackColor = True
@@ -179,7 +179,7 @@ Partial Class FrmMaterials
         Me.DGVMaterialsOff.RowHeadersVisible = False
         Me.DGVMaterialsOff.RowHeadersWidth = 51
         Me.DGVMaterialsOff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVMaterialsOff.Size = New System.Drawing.Size(1129, 426)
+        Me.DGVMaterialsOff.Size = New System.Drawing.Size(1129, 418)
         Me.DGVMaterialsOff.TabIndex = 1
         '
         'TabMaterialsAlarm
@@ -188,11 +188,11 @@ Partial Class FrmMaterials
         Me.TabMaterialsAlarm.Controls.Add(Me.DGVAlarm)
         Me.TabMaterialsAlarm.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254, Byte))
         Me.TabMaterialsAlarm.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.TabMaterialsAlarm.Location = New System.Drawing.Point(4, 29)
+        Me.TabMaterialsAlarm.Location = New System.Drawing.Point(4, 33)
         Me.TabMaterialsAlarm.Margin = New System.Windows.Forms.Padding(5, 7, 5, 7)
         Me.TabMaterialsAlarm.Name = "TabMaterialsAlarm"
         Me.TabMaterialsAlarm.Padding = New System.Windows.Forms.Padding(5, 7, 5, 7)
-        Me.TabMaterialsAlarm.Size = New System.Drawing.Size(1139, 440)
+        Me.TabMaterialsAlarm.Size = New System.Drawing.Size(1139, 432)
         Me.TabMaterialsAlarm.TabIndex = 2
         Me.TabMaterialsAlarm.Tag = ""
         Me.TabMaterialsAlarm.Text = "قائمة التنبيهات"
@@ -214,7 +214,7 @@ Partial Class FrmMaterials
         Me.DGVAlarm.RowHeadersVisible = False
         Me.DGVAlarm.RowHeadersWidth = 51
         Me.DGVAlarm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVAlarm.Size = New System.Drawing.Size(1129, 426)
+        Me.DGVAlarm.Size = New System.Drawing.Size(1129, 418)
         Me.DGVAlarm.TabIndex = 2
         '
         'BtnImportFromExcel
@@ -331,7 +331,7 @@ Partial Class FrmMaterials
         '
         'FrmMaterials
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1186, 631)

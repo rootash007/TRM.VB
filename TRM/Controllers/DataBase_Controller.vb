@@ -9,21 +9,48 @@ Module DataBase_Controller
         'DropTableFromDataBase("test")             '/  DropTableFromDataBase(table_name as String)
         'AddColumnToTable("test", "test_price")     '/  AddColumnToTable(table_name As String, column_name As String)
         'AddColumnToTable("suppliers", "supplier_folder")     '/  AddColumnToTable(table_name As String, column_name As String)
-
+        'Add_Decimal_ColumnToTable("materials", "block_quantity")
+        'Add_INT_ColumnToTable("materials", "block_capacity")     '/  AddColumnToTable(table_name As String, column_name As String)
+        'AddPermission("Currency", 12)               '/  AddPermission(permission_name as String,permision_index as Integer)
 
         'DropTableFromDataBase("suppliers")
 
 
         CreateTables()
-        'AddColumnToTable("suppliers", "supplier_folder")     '/  AddColumnToTable(table_name As String, column_name As String)
-        AddPermission("Currency", 12)               '/  AddPermission(permission_name as String,permision_index as Integer)
 
-        MsgBox("تم التحديث بنجاح", vbOKOnly + vbInformation, "استعلام")
+
+
+        'Dim que As String = "select * from materials"
+        'FillList(que)
+        'For i = 0 To MyTab.Rows.Count - 1
+        '    If MyTab.Rows(i).Item(4) > 0 And MyTab.Rows(i).Item(10) > 0 Then
+        '        Dim UpdateParams As New Dictionary(Of String, Object) From {
+        '               {"block_quantity", MyTab.Rows(i).Item(4) / MyTab.Rows(i).Item(10)}
+        '               }
+        '        Dim conditionField As String = "id"
+        '        Dim conditionValue As Object = MyTab.Rows(i).Item(0) ''//FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value
+        '        UpdateData("materials", UpdateParams, conditionField, conditionValue)
+        '    Else
+        '        Dim UpdateParams As New Dictionary(Of String, Object) From {
+        '               {"block_quantity", 0}
+        '               }
+        '        Dim conditionField As String = "id"
+        '        Dim conditionValue As Object = MyTab.Rows(i).Item(0) ''//FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value
+        '        UpdateData("materials", UpdateParams, conditionField, conditionValue)
+        '    End If
+        'Next
+
+
+        If AppLanguage = "AR" Then
+            MsgBox("تم التحديث بنجاح", vbOKOnly + vbInformation, "استعلام")
+        ElseIf AppLanguage = "HE" Then
+            MsgBox("עדכון בוצע בהצלחה", vbOKOnly + vbInformation, "הודעה")
+        End If
         'EditActionsPrice()
     End Sub
 
 
-    Public Sub AddColumnToTable(table_name As String, column_name As String)
+    Public Sub Add_STR_ColumnToTable(table_name As String, column_name As String)
         Dim Que As String
         'Que = "IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
         '       WHERE TABLE_NAME = '" & table_name & "'
@@ -41,6 +68,65 @@ Module DataBase_Controller
                BEGIN
                ALTER TABLE dbo." & table_name & "
                ADD " & column_name & " nvarchar (50) 
+               END
+               "
+        cmd = New SqlCommand
+        MyTab = New DataTable
+        Try
+            MyTab.Clear()
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = Que
+                .Connection = dbcon
+            End With
+            dbaddapter = New SqlDataAdapter(cmd)
+            dbaddapter.Fill(MyTab)
+            cmd = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub Add_Decimal_ColumnToTable(table_name As String, column_name As String)
+        Dim Que As String
+        Que = "IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+               WHERE TABLE_NAME = '" & table_name & "'
+               AND COLUMN_NAME = '" & column_name & "')
+               BEGIN
+               ALTER TABLE dbo." & table_name & "
+               ADD " & column_name & " decimal(18, 2)
+               CONSTRAINT [DF_" & table_name & "_Column_" & column_name & "] 
+               Default(0)  
+               END
+               "
+        cmd = New SqlCommand
+        MyTab = New DataTable
+        Try
+            MyTab.Clear()
+            With cmd
+                .CommandType = CommandType.Text
+                .CommandText = Que
+                .Connection = dbcon
+            End With
+            dbaddapter = New SqlDataAdapter(cmd)
+            dbaddapter.Fill(MyTab)
+            cmd = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub Add_INT_ColumnToTable(table_name As String, column_name As String)
+        Dim Que As String
+        Que = "IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+               WHERE TABLE_NAME = '" & table_name & "'
+               AND COLUMN_NAME = '" & column_name & "')
+               BEGIN
+               ALTER TABLE dbo." & table_name & "
+               ADD " & column_name & " int
+               CONSTRAINT [DF_" & table_name & "_Column_" & column_name & "] 
+               Default(0)  
+               NOT NULL
                END
                "
         cmd = New SqlCommand
@@ -163,6 +249,9 @@ Module DataBase_Controller
                material_weight int,
                material_isactive bit NOT NULL Default(1),
                material_inuse bit NOT NULL Default(0),
+               block_capacity int NOT NULL Default(0),
+               block_quantity decimal(18, 2) Default(0),
+               
                ) 
                END
 
@@ -264,6 +353,19 @@ Module DataBase_Controller
                isactive bit Default(1),                
                ) 
                END
+
+               IF NOT EXISTS (SELECT * FROM sys.objects 
+               WHERE object_id = OBJECT_ID(N'branches') AND type in (N'U'))
+               BEGIN
+               CREATE TABLE branches(
+               id BIGINT IDENTITY (1, 1) NOT NULL PRIMARY KEY,
+               branch_name nvarchar (50),
+               branch_admin_code nvarchar (50) NOT NULL,
+               branch_tax decimal(18, 2) Default(0),
+               isactive bit NOT NULL Default(1),             
+               ) 
+               INSERT INTO branches (branch_name,branch_admin_code) values ('main','Admin')
+               END
        
                "
 
@@ -279,7 +381,11 @@ Module DataBase_Controller
             dbaddapter = New SqlDataAdapter(cmd)
             dbaddapter.Fill(MyTab)
             cmd = Nothing
-            MsgBox("تم تعديل الجداول بنجاح", vbOKOnly + vbInformation, "استعلام")
+            If AppLanguage = "AR" Then
+                MsgBox("تم تعديل الجداول بنجاح", vbOKOnly + vbInformation, "استعلام")
+            ElseIf AppLanguage = "HE" Then
+                MsgBox("טבלאות עודכנו בהצלחה", vbOKOnly + vbInformation, "הודעה")
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

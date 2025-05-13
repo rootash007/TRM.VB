@@ -14,7 +14,6 @@ Public Class FrmMain
 
         'System.Threading.Thread.Sleep(3000)
 
-        'Me.Hide()
 
         '***********
 
@@ -25,13 +24,6 @@ Public Class FrmMain
             For Each Frm As Form In Me.MdiChildren
                 Frm.Close()
             Next
-
-            'If AppLanguage = "AR" Then
-            '    FrmMainLang("AR")
-            'ElseIf AppLanguage = "HE" Then
-            '    FrmMainLang("HE")
-            'End If
-            'Me.Text += " - TRM - " & ActiveUser
 
             'My.Settings.AdminCode = "Admin123456"
             'My.Settings.Save()
@@ -81,55 +73,10 @@ Public Class FrmMain
 
         End If
 
-
-        'ReConnect = False
-        'For Each Frm As Form In Me.MdiChildren
-        '    Frm.Close()
-        'Next
-        'Me.Text = ActiveUser
+        'Dim que As String = "select * from branches"
+        'FillList(que)
+        'AdminCode = MyTab.Rows(0).Item(2)
         ''WhatsNew()
-
-        'If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
-        '    Dim CurrentVersion As String = My.Settings.CurrentVersion
-        '    With System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion
-        '        TSSLblVersion.Text = .Major & "." & .Minor & "." & .Build & "." & .Revision
-        '    End With
-        '    If CurrentVersion <> TSSLblVersion.Text Then
-        '        My.Settings.isShowWhatsNew = True
-        '        My.Settings.CurrentVersion = TSSLblVersion.Text
-        '        My.Settings.EditDataBase = True
-        '        My.Settings.Save()
-        '    End If
-        '    If FreshLogin = True Then
-        '        If My.Settings.isShowWhatsNew = True Then
-        '            FrmWhatsNew.ShowDialog()
-        '        End If
-        '        FreshLogin = False
-        '    End If
-        'End If
-        'If AlertsCount() > 0 Then
-        '    TSBtnAlerts.Visible = True
-        '    If AdminMode = True Then
-        '        FrmAudits.Show()
-        '    Else
-        '        If isAllowed(9) = True Then
-        '            FrmAudits.Show()
-        '        End If
-        '    End If
-        'Else
-        '    TSBtnAlerts.Visible = False
-        'End If
-
-
-
-        'If AdminMode = True Then
-        '    SSAdminStatus.Text = "פעיל"
-        '    SSAdminStatus.ForeColor = Color.Green
-        'Else
-        '    SSAdminStatus.Text = "לא פעיל"
-        '    SSAdminStatus.ForeColor = Color.Red
-        'End If
-
 
 
     End Sub
@@ -447,7 +394,13 @@ Public Class FrmMain
     End Sub
 
     Private Sub تحريركلالنوافذالقيدالاستخدامToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSiWindowsUnLock.Click
-        inUSEFree()
+        'inUSEFree()
+        Dim UpdateParams As New Dictionary(Of String, Object) From {
+                      {"material_inuse", 0}
+                      }
+        Dim conditionField As String = "material_inuse"
+        Dim conditionValue As Object = 1 ''//FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value
+        UpdateData("materials", UpdateParams, conditionField, conditionValue)
     End Sub
 
     Private Sub TSMAudits_Click(sender As Object, e As EventArgs) Handles TSIAudits.Click
@@ -684,5 +637,9 @@ Public Class FrmMain
                 FrmMain_Load(e, e)
             End If
         End If
+    End Sub
+
+    Private Sub ישאדToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ישאדToolStripMenuItem.Click
+        FrmWhatsNew.ShowDialog()
     End Sub
 End Class

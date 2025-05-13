@@ -108,7 +108,6 @@
         End If
     End Sub
 
-
     Public Sub FrmLoginLang(Lang As String)
         If Lang = "AR" Then
             With FrmLogin
@@ -140,7 +139,13 @@
                 .LblSearch.Text = "بحث"
                 .BtnAddMaterial.Text = "اضافة مادة"
                 .BtnUpdateMaterial.Text = "تعديل مادة"
-                .BtnDeleteMaterial.Text = "حذف مادة"
+                If FmMaterials.TabMaterials.SelectedIndex = 0 Then
+                    FmMaterials.BtnDeleteMaterial.Image = My.Resources.delete48
+                    FmMaterials.BtnDeleteMaterial.Text = "حذف"
+                Else
+                    FmMaterials.BtnDeleteMaterial.Image = My.Resources.revert48
+                    FmMaterials.BtnDeleteMaterial.Text = "استرجاع"
+                End If
                 .BtnImportFromExcel.Text = "استيراد المعلومات"
                 .BtnExportToExcel.Text = "تصدير المعلومات"
                 .BtnClose.Text = "اغلاق"
@@ -155,7 +160,13 @@
                 .LblSearch.Text = "חיפוש"
                 .BtnAddMaterial.Text = "הוספת חומר"
                 .BtnUpdateMaterial.Text = "עדכון חומר"
-                .BtnDeleteMaterial.Text = "מחק חומר"
+                If FmMaterials.TabMaterials.SelectedIndex = 0 Then
+                    FmMaterials.BtnDeleteMaterial.Image = My.Resources.delete48
+                    FmMaterials.BtnDeleteMaterial.Text = "מחיקה"
+                Else
+                    FmMaterials.BtnDeleteMaterial.Image = My.Resources.revert48
+                    FmMaterials.BtnDeleteMaterial.Text = "שחזור"
+                End If
                 .BtnImportFromExcel.Text = "ייבוא נתונים"
                 .BtnExportToExcel.Text = "ייצוא נתונים"
                 .BtnClose.Text = "סגור"
@@ -163,6 +174,113 @@
         End If
     End Sub
 
+    Public Sub FrmMaterialAddEditLang(Lang As String)
+        If Lang = "AR" Then
+            With FmMaterialAddEdit
+                If isAddMaterial Then
+                    .BtnMaterialAE.Text = "اضافة مادة"
+                    .Text = "اضافة مادة"
+                Else
+                    .BtnMaterialAE.Text = "تعديل مادة"
+                    .Text = "تعديل مادة"
+                End If
+                .TabMaterial.Text = "تفاصيل المادة"
+                .TabTypes.Text = "انواع المادة"
+                .TabPrices.Text = "الاسعار"
+                .GrpDetails.Text = "تفاصيل المادة"
+                .LblMaterialName.Text = "اسم المادة"
+                .LblLocCode.Text = "الرمز المحلي"
+                .LblBarcode.Text = "الرمز"
+                .LblQuantity.Text = "الكمية"
+                .LblMinQuantity.Text = "الكمية الدنيا"
+                .LblUnit.Text = "وحدة القياس"
+                .LblWeigth.Text = "الوزن"
+                .LblBlockCapacity.Text = "سعة المشتاح"
+                .LblBlockQuantity.Text = "عدد المشاتيح"
+                '.BtnMaterialAE.Text = ""
+                .BtnClose.Text = "اغلاق"
+                .LblMaterialType.Text = "نوع المادة"
+                .LblTypeQuantity.Text = "الكمية"
+                .GrpTypes.Text = "انواع المنتج"
+                .LblYear.Text = "السنة"
+                .LblPrice.Text = "السعر"
+                .GrpPrices.Text = "الاسعار"
+
+            End With
+        ElseIf Lang = "HE" Then
+            With FmMaterialAddEdit
+                If isAddMaterial Then
+                    .BtnMaterialAE.Text = "הוספת חומר"
+                    .Text = "הוספת חומר"
+                Else
+                    .BtnMaterialAE.Text = "עדכון חומר"
+                    .Text = "עדכון חומר"
+                End If
+                .TabMaterial.Text = "פרטי חומר"
+                .TabTypes.Text = "סוגי חומר"
+                .TabPrices.Text = "מחירים"
+                .GrpDetails.Text = "פרטי חומר"
+                .LblMaterialName.Text = "שם חומר"
+                .LblMaterialName.Left = 293
+                .LblLocCode.Text = "קוד מקומי"
+                .LblLocCode.Left = 290
+                .LblBarcode.Text = "ברקוד"
+                .LblBarcode.Left = 311
+                .LblQuantity.Text = "כמות"
+                .LblQuantity.Left = 320
+                .LblMinQuantity.Text = "כמות מינימום"
+                .LblMinQuantity.Left = 270
+                .LblUnit.Text = "יחידה"
+                .LblUnit.Left = 312
+                .LblWeigth.Text = "משקל"
+                .LblWeigth.Left = 310
+                .LblBlockCapacity.Text = "קיבולת משטח"
+                .LblBlockCapacity.Left = 265
+                .LblBlockQuantity.Text = "כמות משטחים"
+                .LblBlockQuantity.Left = 265
+
+                '.BtnMaterialAE.Text = ""
+                .BtnClose.Text = "סגור"
+                .LblMaterialType.Text = "סוג חומר"
+                .LblTypeQuantity.Text = "כמות"
+                .LblTypeQuantity.Left = 322
+                .GrpTypes.Text = "סוגי חומר"
+                .LblYear.Text = "שנה"
+                .LblPrice.Text = "מחיר"
+                .GrpPrices.Text = "מחירים"
+            End With
+        End If
+    End Sub
+
+    Public Sub FrmCompanyLang(Lang As String)
+        If Lang = "AR" Then
+            With FrmCompany
+                .Text = "خيارات الشركة"
+                .TabValues.Text = "الاساسيات"
+                .TabLocker.Text = "القفل"
+                .ChkMaterialQuantity.Text = "تعديل كمية المواد"
+                .LblTax.Text = "نسبة الضريبة"
+                .LblAdminCode.Text = "كلمة مرور المسؤول"
+                .BtnCancel.Text = "الغاء"
+                .BtnSave.Text = "حفظ"
+
+            End With
+        ElseIf Lang = "HE" Then
+            With FrmCompany
+                .Text = "הגדרות חברה"
+                .TabValues.Text = "בסיסי"
+                .TabLocker.Text = "נעילות"
+                .ChkMaterialQuantity.Text = "עדכון כמות חומר"
+                .ChkMaterialQuantity.Left = 330
+                .LblTax.Text = "אחוז מע''מ"
+                .LblTax.Left = 390
+                .LblAdminCode.Text = "קוד מנהל"
+                .LblAdminCode.Left = 400
+                .BtnCancel.Text = "ביטול"
+                .BtnSave.Text = "שמירה"
+            End With
+        End If
+    End Sub
 
     'Public Sub FrmLang(Lang As String)
     '    If Lang = "AR" Then

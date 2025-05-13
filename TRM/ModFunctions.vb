@@ -43,6 +43,8 @@ Module ModFunctions
     Public AdminMode As Boolean = False    'מצב מנהל
     Public isAdminCode As Boolean = False
     Public AppLanguage As String
+    Public AdminCode As String
+
     'Public isConnected As Boolean
 
 #Region "Variables for Forms Copies"

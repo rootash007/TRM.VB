@@ -1,7 +1,12 @@
 ﻿Public Class FrmCompany
     Private Sub FrmCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        NumTax.Value = (My.Settings.Tax * 100) - 100
-        TxtAdminCode.Text = My.Settings.AdminCode
+        Dim que As String = "select * from branches"
+        FillList(que)
+        FrmCompanyLang(AppLanguage)
+        'NumTax.Value = (My.Settings.Tax * 100) - 100
+        'TxtAdminCode.Text = My.Settings.AdminCode
+        NumTax.Value = MyTab.Rows(0).Item(3)
+        TxtAdminCode.Text = MyTab.Rows(0).Item(2)
         ChkMaterialQuantity.Checked = My.Settings.MaterialQuantityLock
     End Sub
 
@@ -12,8 +17,14 @@
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dim SaveMsg As DialogResult = MsgBox("save?", vbYesNoCancel + vbQuestion, "")
         If SaveMsg = vbYes Then
-            My.Settings.Tax = (NumTax.Value + 100) / 100
-            My.Settings.AdminCode = TxtAdminCode.Text
+            'My.Settings.Tax = (NumTax.Value + 100) / 100
+            'My.Settings.AdminCode = TxtAdminCode.Text
+            Dim updateParams As New Dictionary(Of String, Object) From {
+                {"branch_admin_code", TxtAdminCode.Text},
+                {"branch_tax", NumTax.Value}
+                }
+            UpdateData("branches", updateParams, "id", MyTab.Rows(0).Item(0))
+
             My.Settings.MaterialQuantityLock = ChkMaterialQuantity.Checked
 
             My.Settings.Save()

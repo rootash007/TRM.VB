@@ -22,7 +22,16 @@
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        EditMaterialPrice(FmMaterialAddEdit.DGVMaterialPrice.CurrentRow.Cells(2).Value, NumPrice.Value, NumMainPrice.Value, NumDiscount.Value)
+        Dim UpdateParams As New Dictionary(Of String, Object) From {
+                      {"material_price", NumPrice.Value},
+                      {"material_main_price", NumMainPrice.Value},
+                      {"price_discount", NumDiscount.Value}
+                      }
+        Dim conditionField As String = "id"
+        Dim conditionValue As Object = FmMaterialAddEdit.DGVMaterialPrice.CurrentRow.Cells(2).Value ''//FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value
+        UpdateData("material_prices", UpdateParams, conditionField, conditionValue)
+
+        'EditMaterialPrice(FmMaterialAddEdit.DGVMaterialPrice.CurrentRow.Cells(2).Value, NumPrice.Value, NumMainPrice.Value, NumDiscount.Value)
         Me.Close()
         Dim que As String = "select * from material_prices where material_id = " & FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value & " order by price_year"
         FillList(que)

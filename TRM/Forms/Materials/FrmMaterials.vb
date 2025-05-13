@@ -65,7 +65,8 @@
                 End If
                 If DelMsg = 6 Then
                     DeleteMaterial(DgvMaterials.CurrentRow.Cells(0).Value)
-                    Me.FrmMaterials_Load(Me, e)
+                    'Me.FrmMaterials_Load(Me, e)
+                    LoadMaterials()
                 End If
 
             End If
@@ -87,7 +88,8 @@
                 End If
                 If DelMsg = 6 Then
                     ReActiveMaterial(DGVMaterialsOff.CurrentRow.Cells(0).Value)
-                    Me.FrmMaterials_Load(Me, e)
+                    'Me.FrmMaterials_Load(Me, e)
+                    LoadMaterials()
                 End If
             End If
         End If
@@ -122,40 +124,72 @@
     Private Sub BtnUpdateMaterial_Click(sender As Object, e As EventArgs) Handles BtnUpdateMaterial.Click
         Dim que As String
         If TabMaterials.SelectedIndex = 0 Then
-            que = "select * from materials where id =" & DgvMaterials.CurrentRow.Cells(0).Value
-            FillList(que)
-            If MyTab.Rows(0).Item(9) = 0 Then
-                inUSEMaterial(DgvMaterials.CurrentRow.Cells(0).Value, 1)
-                isAddMaterial = False
-                FmMaterialAddEdit = New FrmMaterialAddEdit
-                FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.edit2
-
-                FmMaterialAddEdit.ShowDialog()
-            Else
-                If AppLanguage = "AR" Then
-                    MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
-                ElseIf AppLanguage = "HE" Then
-                    MsgBox("החומר תפוס על ידי משתמש אחר", vbOKOnly + vbInformation, "בשימוש")
-                End If
-            End If
+            SelectedMaterialID = DgvMaterials.CurrentRow.Cells(0).Value
         ElseIf TabMaterials.SelectedIndex = 1 Then
-            que = "select * from materials where id =" & DGVMaterialsOff.CurrentRow.Cells(0).Value
-            FillList(que)
-            If MyTab.Rows(0).Item(9) = 0 Then
-                inUSEMaterial(DGVMaterialsOff.CurrentRow.Cells(0).Value, 1)
-                isAddMaterial = False
-                FmMaterialAddEdit = New FrmMaterialAddEdit
-                FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.edit2
-
-                FmMaterialAddEdit.ShowDialog()
-            Else
-                If AppLanguage = "AR" Then
-                    MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
-                ElseIf AppLanguage = "HE" Then
-                    MsgBox("החומר תפוס על ידי משתמש אחר", vbOKOnly + vbInformation, "בשימוש")
-                End If
+            SelectedMaterialID = DGVMaterialsOff.CurrentRow.Cells(0).Value
+        End If
+        que = "select * from materials where id =" & SelectedMaterialID
+        FillList(que)
+        SelectedMaterialTab = MyTab
+        If SelectedMaterialTab.Rows(0).Item(9) = 0 Then
+            Dim UpdateParams As New Dictionary(Of String, Object) From {
+                       {"material_inuse", 1}
+                       }
+            Dim conditionField As String = "id"
+            Dim conditionValue As Object = SelectedMaterialID ''//FmMaterials.DgvMaterials.CurrentRow.Cells(0).Value
+            UpdateData("materials", UpdateParams, conditionField, conditionValue)
+            isAddMaterial = False
+            FmMaterialAddEdit = New FrmMaterialAddEdit
+            FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.edit2
+            FmMaterialAddEdit.ShowDialog()
+        Else
+            If AppLanguage = "AR" Then
+                MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+            ElseIf AppLanguage = "HE" Then
+                MsgBox("החומר תפוס על ידי משתמש אחר", vbOKOnly + vbInformation, "בשימוש")
             End If
         End If
+
+        ''///////////////////////////////////////////
+        'Dim que As String
+        'If TabMaterials.SelectedIndex = 0 Then
+        '    que = "select * from materials where id =" & DgvMaterials.CurrentRow.Cells(0).Value
+        '    FillList(que)
+        '    If MyTab.Rows(0).Item(9) = 0 Then
+        '        SelectedMaterialID = DgvMaterials.CurrentRow.Cells(0).Value
+        '        inUSEMaterial(SelectedMaterialID, 1)
+        '        'inUSEMaterial(DgvMaterials.CurrentRow.Cells(0).Value, 1)
+        '        isAddMaterial = False
+        '        FmMaterialAddEdit = New FrmMaterialAddEdit
+        '        FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.edit2
+        '        FmMaterialAddEdit.ShowDialog()
+        '    Else
+        '        If AppLanguage = "AR" Then
+        '            MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+        '        ElseIf AppLanguage = "HE" Then
+        '            MsgBox("החומר תפוס על ידי משתמש אחר", vbOKOnly + vbInformation, "בשימוש")
+        '        End If
+        '    End If
+        'ElseIf TabMaterials.SelectedIndex = 1 Then
+        '    que = "select * from materials where id =" & DGVMaterialsOff.CurrentRow.Cells(0).Value
+        '    FillList(que)
+        '    If MyTab.Rows(0).Item(9) = 0 Then
+        '        inUSEMaterial(DGVMaterialsOff.CurrentRow.Cells(0).Value, 1)
+        '        isAddMaterial = False
+        '        FmMaterialAddEdit = New FrmMaterialAddEdit
+        '        FmMaterialAddEdit.BtnMaterialAE.Image = My.Resources.edit2
+
+        '        FmMaterialAddEdit.ShowDialog()
+        '    Else
+        '        If AppLanguage = "AR" Then
+        '            MsgBox("المادة قيد الاستخدام من قبل مستخدم اخر", vbOKOnly + vbInformation, "قيد الاستخدام")
+        '        ElseIf AppLanguage = "HE" Then
+        '            MsgBox("החומר תפוס על ידי משתמש אחר", vbOKOnly + vbInformation, "בשימוש")
+        '        End If
+        '    End If
+        'End If
+        ''///////////////////////////////////////////
+
 
         'isAddMaterial = False
         'FmMaterialAddEdit.ShowDialog()

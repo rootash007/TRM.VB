@@ -31,8 +31,16 @@
 
                 Else
                     'MsgBox("added")
-                    AddMaterial(DgvMaterials.Rows(i).Cells(1).Value, DgvMaterials.Rows(i).Cells(2).Value, DgvMaterials.Rows(i).Cells(3).Value, DgvMaterials.Rows(i).Cells(4).Value, DgvMaterials.Rows(i).Cells(5).Value, DgvMaterials.Rows(i).Cells(6).Value, DgvMaterials.Rows(i).Cells(7).Value)
-
+                    Dim InsertParams As New Dictionary(Of String, Object) From {
+                       {"material_name", DgvMaterials.Rows(i).Cells(1).Value},
+                       {"material_loc_barcode", DgvMaterials.Rows(i).Cells(2).Value},
+                       {"material_barcode", DgvMaterials.Rows(i).Cells(3).Value},
+                       {"material_quantity", DgvMaterials.Rows(i).Cells(4).Value},
+                       {"material_min_quantity", DgvMaterials.Rows(i).Cells(5).Value},
+                       {"material_unit", DgvMaterials.Rows(i).Cells(6).Value},
+                       {"material_weigth", DgvMaterials.Rows(i).Cells(7).Value}
+                       }
+                    InsertData("materials", InsertParams)
                 End If
                 isNameFound = False
                 isLocBarcodeFound = False
